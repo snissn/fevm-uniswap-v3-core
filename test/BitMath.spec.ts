@@ -2,6 +2,7 @@ import { expect } from './shared/expect'
 import { BitMathTest } from '../typechain/BitMathTest'
 import { ethers, waffle } from 'hardhat'
 import snapshotGasCost from './shared/snapshotGasCost'
+import { deploy2 } from './shared/deploy2'
 
 const { BigNumber } = ethers
 
@@ -12,7 +13,8 @@ describe('BitMath', () => {
     return (await factory.deploy()) as BitMathTest
   }
   beforeEach('deploy BitMathTest', async () => {
-    bitMath = await waffle.loadFixture(fixture)
+    const factory = await ethers.getContractFactory('BitMathTest')
+    bitMath = (await deploy2(factory)) as BitMathTest
   })
 
   describe('#mostSignificantBit', () => {
