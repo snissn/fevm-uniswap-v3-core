@@ -1,6 +1,7 @@
 import { Wallet } from 'ethers'
 import { ethers, waffle } from 'hardhat'
 import { UniswapV3Factory } from '../typechain/UniswapV3Factory'
+import { deploy2, type2 } from './shared/deploy2'
 import { expect } from './shared/expect'
 import snapshotGasCost from './shared/snapshotGasCost'
 
@@ -22,7 +23,7 @@ describe('UniswapV3Factory', () => {
   let poolBytecode: string
   const fixture = async () => {
     const factoryFactory = await ethers.getContractFactory('UniswapV3Factory')
-    return (await factoryFactory.deploy()) as UniswapV3Factory
+    return (await deploy2(factoryFactory)) as UniswapV3Factory
   }
 
   let loadFixture: ReturnType<typeof createFixtureLoader>
@@ -37,7 +38,7 @@ describe('UniswapV3Factory', () => {
   })
 
   beforeEach('deploy factory', async () => {
-    factory = await loadFixture(fixture)
+    factory = await fixture()
   })
 
   it('owner is deployer', async () => {
@@ -66,14 +67,15 @@ describe('UniswapV3Factory', () => {
     tickSpacing: number = TICK_SPACINGS[feeAmount]
   ) {
     const create2Address = getCreate2Address(factory.address, tokens, feeAmount, poolBytecode)
-    const create = factory.createPool(tokens[0], tokens[1], feeAmount)
-
+    const create = await factory.createPool(tokens[0], tokens[1], feeAmount)
+  
     await expect(create)
       .to.emit(factory, 'PoolCreated')
       .withArgs(TEST_ADDRESSES[0], TEST_ADDRESSES[1], feeAmount, tickSpacing, create2Address)
 
-    await expect(factory.createPool(tokens[0], tokens[1], feeAmount)).to.be.reverted
-    await expect(factory.createPool(tokens[1], tokens[0], feeAmount)).to.be.reverted
+
+    await expect(factory.createPool(tokens[0], tokens[1], feeAmount, await type2())).to.be.reverted
+    await expect(factory.createPool(tokens[1], tokens[0], feeAmount, await type2())).to.be.reverted
     expect(await factory.getPool(tokens[0], tokens[1], feeAmount), 'getPool in order').to.eq(create2Address)
     expect(await factory.getPool(tokens[1], tokens[0], feeAmount), 'getPool in reverse').to.eq(create2Address)
 
@@ -103,74 +105,74 @@ describe('UniswapV3Factory', () => {
     })
 
     it('fails if token a == token b', async () => {
-      await expect(factory.createPool(TEST_ADDRESSES[0], TEST_ADDRESSES[0], FeeAmount.LOW)).to.be.reverted
+      await expect(factory.createPool(TEST_ADDRESSES[0], TEST_ADDRESSES[0], FeeAmount.LOW, await type2())).to.be.reverted
     })
 
     it('fails if token a is 0 or token b is 0', async () => {
-      await expect(factory.createPool(TEST_ADDRESSES[0], constants.AddressZero, FeeAmount.LOW)).to.be.reverted
-      await expect(factory.createPool(constants.AddressZero, TEST_ADDRESSES[0], FeeAmount.LOW)).to.be.reverted
-      await expect(factory.createPool(constants.AddressZero, constants.AddressZero, FeeAmount.LOW)).to.be.revertedWith(
+      await expect(factory.createPool(TEST_ADDRESSES[0], constants.AddressZero, FeeAmount.LOW, await type2())).to.be.reverted
+      await expect(factory.createPool(constants.AddressZero, TEST_ADDRESSES[0], FeeAmount.LOW, await type2())).to.be.reverted
+      await expect(factory.createPool(constants.AddressZero, constants.AddressZero, FeeAmount.LOW, await type2())).to.be.revertedWith(
         ''
       )
     })
 
     it('fails if fee amount is not enabled', async () => {
-      await expect(factory.createPool(TEST_ADDRESSES[0], TEST_ADDRESSES[1], 250)).to.be.reverted
+      await expect(factory.createPool(TEST_ADDRESSES[0], TEST_ADDRESSES[1], 250, await type2())).to.be.reverted
     })
 
     it('gas', async () => {
-      await snapshotGasCost(factory.createPool(TEST_ADDRESSES[0], TEST_ADDRESSES[1], FeeAmount.MEDIUM))
+      await snapshotGasCost(factory.createPool(TEST_ADDRESSES[0], TEST_ADDRESSES[1], FeeAmount.MEDIUM, await type2()))
     })
   })
 
   describe('#setOwner', () => {
     it('fails if caller is not owner', async () => {
-      await expect(factory.connect(other).setOwner(wallet.address)).to.be.reverted
+      await expect(factory.connect(other).setOwner(wallet.address, await type2())).to.be.reverted
     })
 
     it('updates owner', async () => {
-      await factory.setOwner(other.address)
+      await factory.setOwner(other.address, await type2())
       expect(await factory.owner()).to.eq(other.address)
     })
 
     it('emits event', async () => {
-      await expect(factory.setOwner(other.address))
+      await expect(factory.setOwner(other.address, await type2()))
         .to.emit(factory, 'OwnerChanged')
         .withArgs(wallet.address, other.address)
     })
 
     it('cannot be called by original owner', async () => {
-      await factory.setOwner(other.address)
-      await expect(factory.setOwner(wallet.address)).to.be.reverted
+      await factory.setOwner(other.address, await type2())
+      await expect(factory.setOwner(wallet.address, await type2())).to.be.reverted
     })
   })
 
   describe('#enableFeeAmount', () => {
     it('fails if caller is not owner', async () => {
-      await expect(factory.connect(other).enableFeeAmount(100, 2)).to.be.reverted
+      await expect(factory.connect(other).enableFeeAmount(100, 2, await type2())).to.be.reverted
     })
     it('fails if fee is too great', async () => {
-      await expect(factory.enableFeeAmount(1000000, 10)).to.be.reverted
+      await expect(factory.enableFeeAmount(1000000, 10, await type2())).to.be.reverted
     })
     it('fails if tick spacing is too small', async () => {
-      await expect(factory.enableFeeAmount(500, 0)).to.be.reverted
+      await expect(factory.enableFeeAmount(500, 0, await type2())).to.be.reverted
     })
     it('fails if tick spacing is too large', async () => {
-      await expect(factory.enableFeeAmount(500, 16834)).to.be.reverted
+      await expect(factory.enableFeeAmount(500, 16834, await type2())).to.be.reverted
     })
     it('fails if already initialized', async () => {
-      await factory.enableFeeAmount(100, 5)
+      await factory.enableFeeAmount(100, 5, await type2())
       await expect(factory.enableFeeAmount(100, 10)).to.be.reverted
     })
     it('sets the fee amount in the mapping', async () => {
-      await factory.enableFeeAmount(100, 5)
+      await (await factory.enableFeeAmount(100, 5, await type2())).wait()
       expect(await factory.feeAmountTickSpacing(100)).to.eq(5)
     })
     it('emits an event', async () => {
-      await expect(factory.enableFeeAmount(100, 5)).to.emit(factory, 'FeeAmountEnabled').withArgs(100, 5)
+      await expect(factory.enableFeeAmount(100, 5, await type2())).to.emit(factory, 'FeeAmountEnabled').withArgs(100, 5)
     })
     it('enables pool creation', async () => {
-      await factory.enableFeeAmount(250, 15)
+      await (await factory.enableFeeAmount(250, 15, await type2())).wait()
       await createAndCheckPool([TEST_ADDRESSES[0], TEST_ADDRESSES[1]], 250, 15)
     })
   })

@@ -494,9 +494,9 @@ describe('UniswapV3Pool swap tests', () => {
       let poolFunctions: PoolFunctions
 
       beforeEach('load fixture', async () => {
-        ;({ token0, token1, pool, poolFunctions, poolBalance0, poolBalance1, swapTarget } = await loadFixture(
-          poolCaseFixture
-        ))
+        ;({ token0, token1, pool, poolFunctions, poolBalance0, poolBalance1, swapTarget } = await 
+          poolCaseFixture()
+        )
       })
 
       afterEach('check can burn positions', async () => {

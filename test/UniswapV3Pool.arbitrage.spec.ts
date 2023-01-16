@@ -120,7 +120,7 @@ describe('UniswapV3Pool arbitrage tests', () => {
 
           beforeEach('load the fixture', async () => {
             ;({ swapExact0For1, pool, mint, swapToHigherPrice, swapToLowerPrice, swapExact1For0, tester, tickMath } =
-              await loadFixture(arbTestFixture))
+              await arbTestFixture([wallet, arbitrageur]))
           })
 
           async function simulateSwap(
