@@ -52,7 +52,7 @@ export default {
     },
     itest: {
       url: nodeUrl + "/rpc/v0",
-      accounts: [process.env.DEPLOYER_PRIVATE_KEY],
+      accounts: [process.env.DEPLOYER_PRIVATE_KEY, process.env.USER_1_PRIVATE_KEY],
     }
   },
   etherscan: {
