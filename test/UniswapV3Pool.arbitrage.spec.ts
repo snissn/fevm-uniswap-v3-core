@@ -4,6 +4,7 @@ import { ethers, waffle } from 'hardhat'
 import { MockTimeUniswapV3Pool } from '../typechain/MockTimeUniswapV3Pool'
 import { TickMathTest } from '../typechain/TickMathTest'
 import { UniswapV3PoolSwapTest } from '../typechain/UniswapV3PoolSwapTest'
+import { deploy2, type2 } from './shared/deploy2'
 import { expect } from './shared/expect'
 
 import { poolFixture } from './shared/fixtures'
@@ -75,12 +76,14 @@ describe('UniswapV3Pool arbitrage tests', () => {
       ]) {
         describe(`passive liquidity of ${formatTokenAmount(passiveLiquidity)}`, () => {
           const arbTestFixture = async ([wallet, arbitrageur]: Wallet[]) => {
+            console.log("arbTestFixture")
             const fix = await poolFixture([wallet], waffle.provider)
+            console.log("arbTestFixture pool")
 
             const pool = await fix.createPool(feeAmount, tickSpacing)
 
-            await fix.token0.transfer(arbitrageur.address, BigNumber.from(2).pow(254))
-            await fix.token1.transfer(arbitrageur.address, BigNumber.from(2).pow(254))
+            await fix.token0.transfer(arbitrageur.address, BigNumber.from(2).pow(254), await type2())
+            await fix.token1.transfer(arbitrageur.address, BigNumber.from(2).pow(254), await type2())
 
             const { swapExact0For1, swapToHigherPrice, swapToLowerPrice, swapExact1For0, mint } =
               await createPoolFunctions({
@@ -91,18 +94,18 @@ describe('UniswapV3Pool arbitrage tests', () => {
               })
 
             const testerFactory = await ethers.getContractFactory('UniswapV3PoolSwapTest')
-            const tester = (await testerFactory.deploy()) as UniswapV3PoolSwapTest
+            const tester = (await deploy2(testerFactory)) as UniswapV3PoolSwapTest
 
             const tickMathFactory = await ethers.getContractFactory('TickMathTest')
-            const tickMath = (await tickMathFactory.deploy()) as TickMathTest
+            const tickMath = (await deploy2(tickMathFactory)) as TickMathTest
 
-            await fix.token0.approve(tester.address, MaxUint256)
-            await fix.token1.approve(tester.address, MaxUint256)
+            await fix.token0.approve(tester.address, MaxUint256, await type2())
+            await fix.token1.approve(tester.address, MaxUint256, await type2())
 
             await pool.initialize(startingPrice)
-            if (feeProtocol != 0) await pool.setFeeProtocol(feeProtocol, feeProtocol)
+            if (feeProtocol != 0) await pool.setFeeProtocol(feeProtocol, feeProtocol, await type2())
             await mint(wallet.address, minTick, maxTick, passiveLiquidity)
-
+console.log("after fee proto")
             expect((await pool.slot0()).tick).to.eq(startingTick)
             expect((await pool.slot0()).sqrtPriceX96).to.eq(startingPrice)
 

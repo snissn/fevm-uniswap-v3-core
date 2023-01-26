@@ -20,6 +20,7 @@ import {
 } from './shared/utilities'
 import { TestUniswapV3Router } from '../typechain/TestUniswapV3Router'
 import { TestUniswapV3Callee } from '../typechain/TestUniswapV3Callee'
+import { type2 } from './shared/deploy2'
 
 const feeAmount = FeeAmount.MEDIUM
 const tickSpacing = TICK_SPACINGS[feeAmount]
@@ -58,7 +59,6 @@ describe('UniswapV3Pool', () => {
 
   beforeEach('deploy first fixture', async () => {
     ;({ token0, token1, token2, factory, createPool, swapTargetCallee, swapTargetRouter } = await poolFixture())
-
     const createPoolWrapped = async (
       amount: number,
       spacing: number,
@@ -72,6 +72,7 @@ describe('UniswapV3Pool', () => {
         token1: secondToken,
         pool,
       })
+
       minTick = getMinTick(spacing)
       maxTick = getMaxTick(spacing)
       return [pool, poolFunctions]
@@ -99,8 +100,8 @@ describe('UniswapV3Pool', () => {
       inputToken = token0
       outputToken = token2
 
-      await pool0.initialize(encodePriceSqrt(1, 1))
-      await pool1.initialize(encodePriceSqrt(1, 1))
+      await pool0.initialize(encodePriceSqrt(1, 1), await type2())
+      await pool1.initialize(encodePriceSqrt(1, 1), await type2())
 
       await pool0Functions.mint(wallet.address, minTick, maxTick, expandTo18Decimals(1))
       await pool1Functions.mint(wallet.address, minTick, maxTick, expandTo18Decimals(1))

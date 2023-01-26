@@ -5,6 +5,7 @@ import { MockTimeUniswapV3Pool } from '../typechain/MockTimeUniswapV3Pool'
 import { TestERC20 } from '../typechain/TestERC20'
 
 import { TestUniswapV3Callee } from '../typechain/TestUniswapV3Callee'
+import { type2 } from './shared/deploy2'
 import { expect } from './shared/expect'
 import { poolFixture } from './shared/fixtures'
 import { formatPrice, formatTokenAmount } from './shared/format'
@@ -469,10 +470,10 @@ describe('UniswapV3Pool swap tests', () => {
         } = await poolFixture([wallet], waffle.provider)
         const pool = await createPool(poolCase.feeAmount, poolCase.tickSpacing)
         const poolFunctions = createPoolFunctions({ swapTarget, token0, token1, pool })
-        await pool.initialize(poolCase.startingPrice)
+        await (await pool.initialize(poolCase.startingPrice, await type2())).wait()
         // mint all positions
         for (const position of poolCase.positions) {
-          await poolFunctions.mint(wallet.address, position.tickLower, position.tickUpper, position.liquidity)
+          await (await poolFunctions.mint(wallet.address, position.tickLower, position.tickUpper, position.liquidity)).wait()
         }
 
         const [poolBalance0, poolBalance1] = await Promise.all([
@@ -501,8 +502,8 @@ describe('UniswapV3Pool swap tests', () => {
 
       afterEach('check can burn positions', async () => {
         for (const { liquidity, tickUpper, tickLower } of poolCase.positions) {
-          await pool.burn(tickLower, tickUpper, liquidity)
-          await pool.collect(POSITION_PROCEEDS_OUTPUT_ADDRESS, tickLower, tickUpper, MaxUint128, MaxUint128)
+          await pool.burn(tickLower, tickUpper, liquidity, await type2())
+          await pool.collect(POSITION_PROCEEDS_OUTPUT_ADDRESS, tickLower, tickUpper, MaxUint128, MaxUint128, await type2())
         }
       })
 
@@ -511,7 +512,7 @@ describe('UniswapV3Pool swap tests', () => {
           const slot0 = await pool.slot0()
           const tx = executeSwap(pool, testCase, poolFunctions)
           try {
-            await tx
+            await (await tx).wait()
           } catch (error) {
             expect({
               swapError: error.message,

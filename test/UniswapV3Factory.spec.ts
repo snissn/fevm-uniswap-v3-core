@@ -23,7 +23,9 @@ describe('UniswapV3Factory', () => {
   let poolBytecode: string
   const fixture = async () => {
     const factoryFactory = await ethers.getContractFactory('UniswapV3Factory')
-    return (await deploy2(factoryFactory)) as UniswapV3Factory
+    const factory = (await deploy2(factoryFactory)) as UniswapV3Factory
+    await factory.deployTransaction.wait()
+    return factory
   }
 
   let loadFixture: ReturnType<typeof createFixtureLoader>
@@ -50,7 +52,7 @@ describe('UniswapV3Factory', () => {
   })
 
   it('pool bytecode size', async () => {
-    await factory.createPool(TEST_ADDRESSES[0], TEST_ADDRESSES[1], FeeAmount.MEDIUM)
+    await (await factory.createPool(TEST_ADDRESSES[0], TEST_ADDRESSES[1], FeeAmount.MEDIUM, await type2())).wait()
     const poolAddress = getCreate2Address(factory.address, TEST_ADDRESSES, FeeAmount.MEDIUM, poolBytecode)
     expect(((await waffle.provider.getCode(poolAddress)).length - 2) / 2).to.matchSnapshot()
   })
@@ -67,8 +69,10 @@ describe('UniswapV3Factory', () => {
     tickSpacing: number = TICK_SPACINGS[feeAmount]
   ) {
     const create2Address = getCreate2Address(factory.address, tokens, feeAmount, poolBytecode)
-    const create = await factory.createPool(tokens[0], tokens[1], feeAmount)
+    const create = await factory.createPool(tokens[0], tokens[1], feeAmount, await type2())
   
+    await create.wait()
+
     await expect(create)
       .to.emit(factory, 'PoolCreated')
       .withArgs(TEST_ADDRESSES[0], TEST_ADDRESSES[1], feeAmount, tickSpacing, create2Address)
@@ -131,7 +135,7 @@ describe('UniswapV3Factory', () => {
     })
 
     it('updates owner', async () => {
-      await factory.setOwner(other.address, await type2())
+      await (await factory.setOwner(other.address, await type2())).wait()
       expect(await factory.owner()).to.eq(other.address)
     })
 
