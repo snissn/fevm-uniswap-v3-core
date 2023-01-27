@@ -50,8 +50,16 @@ export default {
     polygon: {
       url: `https://polygon-mainnet.infura.io/v3/${process.env.INFURA_API_KEY}`,
     },
+    hyper: {
+      url: `https://api.hyperspace.node.glif.io/rpc/v0`,
+      accounts: [process.env.DEPLOYER_PRIVATE_KEY, process.env.USER_1_PRIVATE_KEY],
+    },
     itest: {
       url: nodeUrl + "/rpc/v0",
+      accounts: [process.env.DEPLOYER_PRIVATE_KEY, process.env.USER_1_PRIVATE_KEY],
+    },
+    local: {
+      url: process.env.LOCAL_NODE_URL + "/rpc/v0",
       accounts: [process.env.DEPLOYER_PRIVATE_KEY, process.env.USER_1_PRIVATE_KEY],
     }
   },
@@ -59,6 +67,9 @@ export default {
     // Your API key for Etherscan
     // Obtain one at https://etherscan.io/
     apiKey: process.env.ETHERSCAN_API_KEY,
+  },
+  mocha: {
+    timeout: 100000000
   },
   solidity: {
     version: '0.7.6',

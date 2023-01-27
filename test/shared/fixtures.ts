@@ -78,15 +78,15 @@ export const poolFixture: Fixture<PoolFixture> = async function (): Promise<Pool
     createPool: async (fee, tickSpacing, firstToken = token0, secondToken = token1) => {
       const mockTimePoolDeployer =
         (await deploy2(MockTimeUniswapV3PoolDeployerFactory)) as MockTimeUniswapV3PoolDeployer
+      await mockTimePoolDeployer.deployTransaction.wait()
       const tx = await mockTimePoolDeployer.deploy(
         factory.address,
         firstToken.address,
         secondToken.address,
         fee,
         tickSpacing,
-        await type2(),
+        await type2()
       )
-
       const receipt = await tx.wait()
       const poolAddress = receipt.events?.[0].args?.pool as string
       return MockTimeUniswapV3PoolFactory.attach(poolAddress) as MockTimeUniswapV3Pool
