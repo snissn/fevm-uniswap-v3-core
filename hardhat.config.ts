@@ -1,7 +1,16 @@
-import 'hardhat-typechain'
+import '@typechain/hardhat'
 import '@nomiclabs/hardhat-ethers'
 import '@nomiclabs/hardhat-waffle'
 import '@nomiclabs/hardhat-etherscan'
+
+require('dotenv').config()
+
+var nodeUrl;
+try {
+  nodeUrl = require('../../kit')(100);
+} catch {
+  nodeUrl = '';
+}
 
 export default {
   networks: {
@@ -41,6 +50,10 @@ export default {
     polygon: {
       url: `https://polygon-mainnet.infura.io/v3/${process.env.INFURA_API_KEY}`,
     },
+    itest: {
+      url: nodeUrl + "/rpc/v0",
+      accounts: [process.env.DEPLOYER_PRIVATE_KEY, process.env.USER_1_PRIVATE_KEY],
+    }
   },
   etherscan: {
     // Your API key for Etherscan
