@@ -1191,7 +1191,7 @@ describe('UniswapV3Pool', () => {
           .withArgs(pool.address, other.address, '83333333333332')
       })
 
-      it.only('fees collected can differ between token0 and token1', async () => {
+      it('fees collected can differ between token0 and token1', async () => {
         await pool.setFeeProtocol(8, 5, await type2())
 
         await swapAndGetFeesOwed({
@@ -1785,7 +1785,7 @@ describe('UniswapV3Pool', () => {
       expect(tickCumulativeInside, 'tickCumulativeInside').to.eq(0)
       expect(secondsInside).to.eq(5)
     })
-    it.only('relative behavior of snapshots', async () => {
+    it('relative behavior of snapshots', async () => {
       await pool.advanceTime(5, await type2())
       await mint(wallet.address, getMinTick(tickSpacing), tickLower, 15)
       const {
@@ -1812,7 +1812,7 @@ describe('UniswapV3Pool', () => {
     })
   })
 
-  describe.only('fees overflow scenarios', async () => {
+  describe('fees overflow scenarios', async () => {
     it('up to max uint 128', async () => {
       await pool.initialize(encodePriceSqrt(1, 1), await type2())
       await mint(wallet.address, minTick, maxTick, 1)
