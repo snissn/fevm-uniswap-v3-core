@@ -7,7 +7,7 @@ require('dotenv').config()
 
 var nodeUrl;
 try {
-  nodeUrl = require('../../kit')(100);
+  nodeUrl = require('../../kit').initNode(1000, 200);
 } catch {
   nodeUrl = '';
 }
