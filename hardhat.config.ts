@@ -7,7 +7,7 @@ require('dotenv').config()
 
 var nodeUrl;
 try {
-  nodeUrl = require('../../kit')(100);
+  nodeUrl = require('../../kit').initNode(1000, 200);
 } catch {
   nodeUrl = '';
 }
@@ -55,7 +55,7 @@ export default {
       accounts: [process.env.DEPLOYER_PRIVATE_KEY, process.env.USER_1_PRIVATE_KEY],
     },
     itest: {
-      url: nodeUrl + "/rpc/v0",
+      url: nodeUrl + "/rpc/v1",
       accounts: [process.env.DEPLOYER_PRIVATE_KEY, process.env.USER_1_PRIVATE_KEY],
     },
     local: {
