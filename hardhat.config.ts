@@ -51,7 +51,7 @@ export default {
       url: `https://polygon-mainnet.infura.io/v3/${process.env.INFURA_API_KEY}`,
     },
     hyper: {
-      url: `https://api.hyperspace.node.glif.io/rpc/v0`,
+      url: `https://api.hyperspace.node.glif.io/rpc/v1`,
       accounts: [process.env.DEPLOYER_PRIVATE_KEY, process.env.USER_1_PRIVATE_KEY],
     },
     itest: {
