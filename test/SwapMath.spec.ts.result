@@ -1,0 +1,176 @@
+
+
+  SwapMath
+    #computeSwapStep
+      ✔ exact amount in that gets capped at price target in one for zero (4115ms)
+      ✔ exact amount out that gets capped at price target in one for zero
+      ✔ exact amount in that is fully spent in one for zero
+      ✔ exact amount out that is fully received in one for zero
+      ✔ amount out is capped at the desired amount out
+      ✔ target price of 1 uses partial input amount
+      ✔ entire input amount taken as fee
+      ✔ handles intermediate insufficient liquidity in zero for one exact output case
+      ✔ handles intermediate insufficient liquidity in one for zero exact output case
+      gas
+        1) swap one for zero exact in capped
+        2) swap zero for one exact in capped
+        3) swap one for zero exact out capped
+        4) swap zero for one exact out capped
+        5) swap one for zero exact in partial
+        6) swap zero for one exact in partial
+        7) swap one for zero exact out partial
+        8) swap zero for one exact out partial
+
+
+Snapshot Summary
+ › 8 snapshots failed from 1 test suite. Inspect your code changes or re-run mocha with `--update` to update them to update them.
+
+  9 passing (5s)
+  8 failing
+
+  1) SwapMath
+       #computeSwapStep
+         gas
+           swap one for zero exact in capped:
+
+      AssertionError: Snapshot name: `SwapMath #computeSwapStep gas swap one for zero exact in capped 1`: expected '596496' to equal '577196'
+      + expected - actual
+
+      -596496
+      +577196
+      
+      at SnapshotManager.assert (node_modules/mocha-chai-jest-snapshot/src/manager.ts:63:29)
+      at Proxy.<anonymous> (node_modules/mocha-chai-jest-snapshot/src/index.ts:81:20)
+      at Proxy.methodWrapper (node_modules/chai/lib/chai/utils/addMethod.js:57:25)
+      at snapshotGasCost (test/shared/snapshotGasCost.ts:25:33)
+      at processTicksAndRejections (node:internal/process/task_queues:96:5)
+      at async Context.<anonymous> (test/SwapMath.spec.ts:236:9)
+
+  2) SwapMath
+       #computeSwapStep
+         gas
+           swap zero for one exact in capped:
+
+      AssertionError: Snapshot name: `SwapMath #computeSwapStep gas swap zero for one exact in capped 1`: expected '633408' to equal '614900'
+      + expected - actual
+
+      -633408
+      +614900
+      
+      at SnapshotManager.assert (node_modules/mocha-chai-jest-snapshot/src/manager.ts:63:29)
+      at Proxy.<anonymous> (node_modules/mocha-chai-jest-snapshot/src/index.ts:81:20)
+      at Proxy.methodWrapper (node_modules/chai/lib/chai/utils/addMethod.js:57:25)
+      at snapshotGasCost (test/shared/snapshotGasCost.ts:25:33)
+      at processTicksAndRejections (node:internal/process/task_queues:96:5)
+      at async Context.<anonymous> (test/SwapMath.spec.ts:247:9)
+
+  3) SwapMath
+       #computeSwapStep
+         gas
+           swap one for zero exact out capped:
+
+      AssertionError: Snapshot name: `SwapMath #computeSwapStep gas swap one for zero exact out capped 1`: expected '530516' to equal '513800'
+      + expected - actual
+
+      -530516
+      +513800
+      
+      at SnapshotManager.assert (node_modules/mocha-chai-jest-snapshot/src/manager.ts:63:29)
+      at Proxy.<anonymous> (node_modules/mocha-chai-jest-snapshot/src/index.ts:81:20)
+      at Proxy.methodWrapper (node_modules/chai/lib/chai/utils/addMethod.js:57:25)
+      at snapshotGasCost (test/shared/snapshotGasCost.ts:25:33)
+      at processTicksAndRejections (node:internal/process/task_queues:96:5)
+      at async Context.<anonymous> (test/SwapMath.spec.ts:258:9)
+
+  4) SwapMath
+       #computeSwapStep
+         gas
+           swap zero for one exact out capped:
+
+      AssertionError: Snapshot name: `SwapMath #computeSwapStep gas swap zero for one exact out capped 1`: expected '567428' to equal '551504'
+      + expected - actual
+
+      -567428
+      +551504
+      
+      at SnapshotManager.assert (node_modules/mocha-chai-jest-snapshot/src/manager.ts:63:29)
+      at Proxy.<anonymous> (node_modules/mocha-chai-jest-snapshot/src/index.ts:81:20)
+      at Proxy.methodWrapper (node_modules/chai/lib/chai/utils/addMethod.js:57:25)
+      at snapshotGasCost (test/shared/snapshotGasCost.ts:25:33)
+      at processTicksAndRejections (node:internal/process/task_queues:96:5)
+      at async Context.<anonymous> (test/SwapMath.spec.ts:269:9)
+
+  5) SwapMath
+       #computeSwapStep
+         gas
+           swap one for zero exact in partial:
+
+      AssertionError: Snapshot name: `SwapMath #computeSwapStep gas swap one for zero exact in partial 1`: expected '725268' to equal '701768'
+      + expected - actual
+
+      -725268
+      +701768
+      
+      at SnapshotManager.assert (node_modules/mocha-chai-jest-snapshot/src/manager.ts:63:29)
+      at Proxy.<anonymous> (node_modules/mocha-chai-jest-snapshot/src/index.ts:81:20)
+      at Proxy.methodWrapper (node_modules/chai/lib/chai/utils/addMethod.js:57:25)
+      at snapshotGasCost (test/shared/snapshotGasCost.ts:25:33)
+      at processTicksAndRejections (node:internal/process/task_queues:96:5)
+      at async Context.<anonymous> (test/SwapMath.spec.ts:280:9)
+
+  6) SwapMath
+       #computeSwapStep
+         gas
+           swap zero for one exact in partial:
+
+      AssertionError: Snapshot name: `SwapMath #computeSwapStep gas swap zero for one exact in partial 1`: expected '976938' to equal '950516'
+      + expected - actual
+
+      -976938
+      +950516
+      
+      at SnapshotManager.assert (node_modules/mocha-chai-jest-snapshot/src/manager.ts:63:29)
+      at Proxy.<anonymous> (node_modules/mocha-chai-jest-snapshot/src/index.ts:81:20)
+      at Proxy.methodWrapper (node_modules/chai/lib/chai/utils/addMethod.js:57:25)
+      at snapshotGasCost (test/shared/snapshotGasCost.ts:25:33)
+      at processTicksAndRejections (node:internal/process/task_queues:96:5)
+      at async Context.<anonymous> (test/SwapMath.spec.ts:291:9)
+
+  7) SwapMath
+       #computeSwapStep
+         gas
+           swap one for zero exact out partial:
+
+      AssertionError: Snapshot name: `SwapMath #computeSwapStep gas swap one for zero exact out partial 1`: expected '725268' to equal '701768'
+      + expected - actual
+
+      -725268
+      +701768
+      
+      at SnapshotManager.assert (node_modules/mocha-chai-jest-snapshot/src/manager.ts:63:29)
+      at Proxy.<anonymous> (node_modules/mocha-chai-jest-snapshot/src/index.ts:81:20)
+      at Proxy.methodWrapper (node_modules/chai/lib/chai/utils/addMethod.js:57:25)
+      at snapshotGasCost (test/shared/snapshotGasCost.ts:25:33)
+      at processTicksAndRejections (node:internal/process/task_queues:96:5)
+      at async Context.<anonymous> (test/SwapMath.spec.ts:302:9)
+
+  8) SwapMath
+       #computeSwapStep
+         gas
+           swap zero for one exact out partial:
+
+      AssertionError: Snapshot name: `SwapMath #computeSwapStep gas swap zero for one exact out partial 1`: expected '976938' to equal '950516'
+      + expected - actual
+
+      -976938
+      +950516
+      
+      at SnapshotManager.assert (node_modules/mocha-chai-jest-snapshot/src/manager.ts:63:29)
+      at Proxy.<anonymous> (node_modules/mocha-chai-jest-snapshot/src/index.ts:81:20)
+      at Proxy.methodWrapper (node_modules/chai/lib/chai/utils/addMethod.js:57:25)
+      at snapshotGasCost (test/shared/snapshotGasCost.ts:25:33)
+      at processTicksAndRejections (node:internal/process/task_queues:96:5)
+      at async Context.<anonymous> (test/SwapMath.spec.ts:313:9)
+
+
+

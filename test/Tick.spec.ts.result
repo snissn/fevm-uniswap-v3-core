@@ -1,0 +1,38 @@
+
+
+  Tick
+    #tickSpacingToMaxLiquidityPerTick
+      ✔ returns the correct value for low fee (4125ms)
+      ✔ returns the correct value for medium fee (4098ms)
+      ✔ returns the correct value for high fee (4071ms)
+      ✔ returns the correct value for entire range (4039ms)
+      ✔ returns the correct value for 2302 (4058ms)
+    #getFeeGrowthInside
+      ✔ returns all for two uninitialized ticks if tick is inside (4073ms)
+      ✔ returns 0 for two uninitialized ticks if tick is above (4051ms)
+      ✔ returns 0 for two uninitialized ticks if tick is below (4068ms)
+      ✔ subtracts upper tick if below (8131ms)
+      ✔ subtracts lower tick if above (8139ms)
+      ✔ subtracts upper and lower tick if inside (12306ms)
+      ✔ works correctly with overflow on inside tick (12294ms)
+    #update
+      ✔ flips from zero to nonzero (4106ms)
+      ✔ does not flip from nonzero to greater nonzero (8145ms)
+      ✔ flips from nonzero to zero (8158ms)
+      ✔ does not flip from nonzero to lesser nonzero (8154ms)
+      ✔ does not flip from nonzero to lesser nonzero (8100ms)
+      ✔ reverts if total liquidity gross is greater than max (8249ms)
+      ✔ nets the liquidity based on upper flag (8242ms)
+      ✔ reverts on overflow liquidity gross (8138ms)
+      ✔ assumes all growth happens below ticks lte current tick (8178ms)
+      ✔ does not set any growth fields if tick is already initialized (8194ms)
+      ✔ does not set any growth fields for ticks gt current tick (8184ms)
+    #clear
+      ✔ deletes all the data in the tick (8167ms)
+    #cross
+      ✔ flips the growth variables (8125ms)
+      ✔ two flips are no op (12226ms)
+
+
+  26 passing (3m)
+

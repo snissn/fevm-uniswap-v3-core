@@ -1,0 +1,48 @@
+
+
+  UniswapV3Pool gas tests
+    fee is off
+      #swapExact0For1
+        1) "before each" hook: load the fixture for "first swap in block with no tick movement"
+    fee is on
+      #swapExact0For1
+        2) "before each" hook: load the fixture for "first swap in block with no tick movement"
+
+
+  0 passing (23s)
+  2 failing
+
+  1) UniswapV3Pool gas tests
+       fee is off
+         "before each" hook: load the fixture for "first swap in block with no tick movement":
+
+      AssertionError: expected -8090 to equal +0
+      + expected - actual
+
+      --8090
+      +0
+      
+      at gasTestFixture (test/UniswapV3Pool.gas.spec.ts:68:46)
+      at processTicksAndRejections (node:internal/process/task_queues:96:5)
+      at async Context.<anonymous> (test/UniswapV3Pool.gas.spec.ts:81:81)
+
+  2) UniswapV3Pool gas tests
+       fee is on
+         "before each" hook: load the fixture for "first swap in block with no tick movement":
+
+      AssertionError: Expected "79228162514264337593543950336" to be equal 79228558654086561835532822693
+      + expected - actual
+
+       {
+      -  "_hex": "0x01000053e2c8652237c04228a5"
+      +  "_hex": "0x01000000000000000000000000"
+         "_isBigNumber": true
+       }
+      
+      at gasTestFixture (test/UniswapV3Pool.gas.spec.ts:69:54)
+      at runMicrotasks (<anonymous>)
+      at processTicksAndRejections (node:internal/process/task_queues:96:5)
+      at async Context.<anonymous> (test/UniswapV3Pool.gas.spec.ts:81:81)
+
+
+

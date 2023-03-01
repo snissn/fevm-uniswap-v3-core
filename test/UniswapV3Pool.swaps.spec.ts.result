@@ -1,0 +1,767 @@
+
+
+  UniswapV3Pool swap tests
+    low fee, 1:1 price, 2e18 max range liquidity
+      ✔ swap exactly 1.0000 token0 for token1 (4300ms)
+      ✔ swap exactly 1.0000 token1 for token0 (4293ms)
+      ✔ swap token0 for exactly 1.0000 token1 (4224ms)
+      ✔ swap token1 for exactly 1.0000 token0 (4249ms)
+      ✔ swap exactly 1.0000 token0 for token1 to price 0.50000 (4235ms)
+      ✔ swap exactly 1.0000 token1 for token0 to price 2.0000 (4244ms)
+      ✔ swap token0 for exactly 1.0000 token1 to price 0.50000 (4259ms)
+      ✔ swap token1 for exactly 1.0000 token0 to price 2.0000 (4249ms)
+      ✔ swap exactly 0.0000000000000010000 token0 for token1 (4203ms)
+      ✔ swap exactly 0.0000000000000010000 token1 for token0 (4190ms)
+      ✔ swap token0 for exactly 0.0000000000000010000 token1 (4180ms)
+      ✔ swap token1 for exactly 0.0000000000000010000 token0 (4228ms)
+      ✔ swap token1 for token0 to price 2.5000 (4223ms)
+      ✔ swap token0 for token1 to price 0.40000 (4224ms)
+      1) swap token0 for token1 to price 2.5000
+      2) swap token1 for token0 to price 0.40000
+    medium fee, 1:1 price, 2e18 max range liquidity
+      ✔ swap exactly 1.0000 token0 for token1 (4347ms)
+      ✔ swap exactly 1.0000 token1 for token0 (4193ms)
+      ✔ swap token0 for exactly 1.0000 token1 (4197ms)
+      ✔ swap token1 for exactly 1.0000 token0 (4279ms)
+      ✔ swap exactly 1.0000 token0 for token1 to price 0.50000 (4219ms)
+      ✔ swap exactly 1.0000 token1 for token0 to price 2.0000 (4210ms)
+      ✔ swap token0 for exactly 1.0000 token1 to price 0.50000 (4235ms)
+      ✔ swap token1 for exactly 1.0000 token0 to price 2.0000 (4212ms)
+      ✔ swap exactly 0.0000000000000010000 token0 for token1 (4212ms)
+      ✔ swap exactly 0.0000000000000010000 token1 for token0 (4227ms)
+      ✔ swap token0 for exactly 0.0000000000000010000 token1 (4197ms)
+      ✔ swap token1 for exactly 0.0000000000000010000 token0 (4165ms)
+      ✔ swap token1 for token0 to price 2.5000 (4217ms)
+      ✔ swap token0 for token1 to price 0.40000 (4176ms)
+      3) swap token0 for token1 to price 2.5000
+      4) swap token1 for token0 to price 0.40000
+    high fee, 1:1 price, 2e18 max range liquidity
+      ✔ swap exactly 1.0000 token0 for token1 (4221ms)
+      ✔ swap exactly 1.0000 token1 for token0 (4207ms)
+      ✔ swap token0 for exactly 1.0000 token1 (4218ms)
+      ✔ swap token1 for exactly 1.0000 token0 (14968ms)
+      ✔ swap exactly 1.0000 token0 for token1 to price 0.50000 (4200ms)
+      ✔ swap exactly 1.0000 token1 for token0 to price 2.0000 (4216ms)
+      ✔ swap token0 for exactly 1.0000 token1 to price 0.50000 (4199ms)
+      ✔ swap token1 for exactly 1.0000 token0 to price 2.0000 (4176ms)
+      ✔ swap exactly 0.0000000000000010000 token0 for token1 (4217ms)
+      ✔ swap exactly 0.0000000000000010000 token1 for token0 (8247ms)
+      ✔ swap token0 for exactly 0.0000000000000010000 token1 (4186ms)
+      ✔ swap token1 for exactly 0.0000000000000010000 token0 (4202ms)
+      ✔ swap token1 for token0 to price 2.5000 (4220ms)
+      ✔ swap token0 for token1 to price 0.40000 (4220ms)
+      5) swap token0 for token1 to price 2.5000
+      6) swap token1 for token0 to price 0.40000
+    medium fee, 10:1 price, 2e18 max range liquidity
+      ✔ swap exactly 1.0000 token0 for token1 (4208ms)
+      ✔ swap exactly 1.0000 token1 for token0 (4192ms)
+      ✔ swap token0 for exactly 1.0000 token1 (4190ms)
+      ✔ swap token1 for exactly 1.0000 token0 (4373ms)
+      ✔ swap exactly 1.0000 token0 for token1 to price 0.50000 (4187ms)
+      7) swap exactly 1.0000 token1 for token0 to price 2.0000
+      ✔ swap token0 for exactly 1.0000 token1 to price 0.50000 (4241ms)
+      8) swap token1 for exactly 1.0000 token0 to price 2.0000
+      ✔ swap exactly 0.0000000000000010000 token0 for token1 (4238ms)
+      ✔ swap exactly 0.0000000000000010000 token1 for token0 (4200ms)
+      ✔ swap token0 for exactly 0.0000000000000010000 token1 (4209ms)
+      ✔ swap token1 for exactly 0.0000000000000010000 token0 (4181ms)
+      9) swap token1 for token0 to price 2.5000
+      ✔ swap token0 for token1 to price 0.40000 (4225ms)
+      ✔ swap token0 for token1 to price 2.5000 (4198ms)
+      10) swap token1 for token0 to price 0.40000
+    medium fee, 1:10 price, 2e18 max range liquidity
+      ✔ swap exactly 1.0000 token0 for token1 (4195ms)
+      ✔ swap exactly 1.0000 token1 for token0 (4202ms)
+      ✔ swap token0 for exactly 1.0000 token1 (4378ms)
+      ✔ swap token1 for exactly 1.0000 token0 (4182ms)
+      11) swap exactly 1.0000 token0 for token1 to price 0.50000
+      ✔ swap exactly 1.0000 token1 for token0 to price 2.0000 (4181ms)
+      12) swap token0 for exactly 1.0000 token1 to price 0.50000
+      ✔ swap token1 for exactly 1.0000 token0 to price 2.0000 (4177ms)
+      ✔ swap exactly 0.0000000000000010000 token0 for token1 (4171ms)
+      ✔ swap exactly 0.0000000000000010000 token1 for token0 (4218ms)
+      ✔ swap token0 for exactly 0.0000000000000010000 token1 (4191ms)
+      ✔ swap token1 for exactly 0.0000000000000010000 token0 (4187ms)
+      ✔ swap token1 for token0 to price 2.5000 (4209ms)
+      13) swap token0 for token1 to price 0.40000
+      14) swap token0 for token1 to price 2.5000
+      ✔ swap token1 for token0 to price 0.40000 (4210ms)
+    medium fee, 1:1 price, 0 liquidity, all liquidity around current price
+      ✔ swap exactly 1.0000 token0 for token1 (4190ms)
+      ✔ swap exactly 1.0000 token1 for token0 (4201ms)
+      ✔ swap token0 for exactly 1.0000 token1 (4240ms)
+      ✔ swap token1 for exactly 1.0000 token0 (4187ms)
+      ✔ swap exactly 1.0000 token0 for token1 to price 0.50000 (4216ms)
+      ✔ swap exactly 1.0000 token1 for token0 to price 2.0000 (4212ms)
+      ✔ swap token0 for exactly 1.0000 token1 to price 0.50000 (4204ms)
+      ✔ swap token1 for exactly 1.0000 token0 to price 2.0000 (4199ms)
+      ✔ swap exactly 0.0000000000000010000 token0 for token1 (4202ms)
+      ✔ swap exactly 0.0000000000000010000 token1 for token0 (4180ms)
+      ✔ swap token0 for exactly 0.0000000000000010000 token1 (4213ms)
+      ✔ swap token1 for exactly 0.0000000000000010000 token0 (4208ms)
+      ✔ swap token1 for token0 to price 2.5000 (4219ms)
+      ✔ swap token0 for token1 to price 0.40000 (4203ms)
+      15) swap token0 for token1 to price 2.5000
+      16) swap token1 for token0 to price 0.40000
+    medium fee, 1:1 price, additional liquidity around current price
+      ✔ swap exactly 1.0000 token0 for token1 (4226ms)
+      ✔ swap exactly 1.0000 token1 for token0 (4318ms)
+      ✔ swap token0 for exactly 1.0000 token1 (4203ms)
+      ✔ swap token1 for exactly 1.0000 token0 (4222ms)
+      ✔ swap exactly 1.0000 token0 for token1 to price 0.50000 (4185ms)
+      ✔ swap exactly 1.0000 token1 for token0 to price 2.0000 (4177ms)
+      ✔ swap token0 for exactly 1.0000 token1 to price 0.50000 (4199ms)
+      ✔ swap token1 for exactly 1.0000 token0 to price 2.0000 (4202ms)
+      ✔ swap exactly 0.0000000000000010000 token0 for token1 (4205ms)
+      ✔ swap exactly 0.0000000000000010000 token1 for token0 (4179ms)
+      ✔ swap token0 for exactly 0.0000000000000010000 token1 (4176ms)
+      ✔ swap token1 for exactly 0.0000000000000010000 token0 (4182ms)
+      ✔ swap token1 for token0 to price 2.5000 (4195ms)
+      ✔ swap token0 for token1 to price 0.40000 (4189ms)
+      17) swap token0 for token1 to price 2.5000
+      18) swap token1 for token0 to price 0.40000
+    low fee, large liquidity around current price (stable swap)
+      ✔ swap exactly 1.0000 token0 for token1 (5222ms)
+      ✔ swap exactly 1.0000 token1 for token0 (5228ms)
+      ✔ swap token0 for exactly 1.0000 token1 (5138ms)
+      ✔ swap token1 for exactly 1.0000 token0 (5175ms)
+      ✔ swap exactly 1.0000 token0 for token1 to price 0.50000 (4222ms)
+      ✔ swap exactly 1.0000 token1 for token0 to price 2.0000 (4223ms)
+      ✔ swap token0 for exactly 1.0000 token1 to price 0.50000 (4185ms)
+      ✔ swap token1 for exactly 1.0000 token0 to price 2.0000 (4219ms)
+      ✔ swap exactly 0.0000000000000010000 token0 for token1 (4190ms)
+      ✔ swap exactly 0.0000000000000010000 token1 for token0 (4243ms)
+      ✔ swap token0 for exactly 0.0000000000000010000 token1 (4219ms)
+      ✔ swap token1 for exactly 0.0000000000000010000 token0 (4193ms)
+      ✔ swap token1 for token0 to price 2.5000 (4206ms)
+      ✔ swap token0 for token1 to price 0.40000 (4219ms)
+      19) swap token0 for token1 to price 2.5000
+      20) swap token1 for token0 to price 0.40000
+    medium fee, token0 liquidity only
+      ✔ swap exactly 1.0000 token0 for token1 (4356ms)
+      ✔ swap exactly 1.0000 token1 for token0 (4175ms)
+      ✔ swap token0 for exactly 1.0000 token1 (4324ms)
+      ✔ swap token1 for exactly 1.0000 token0 (4178ms)
+      ✔ swap exactly 1.0000 token0 for token1 to price 0.50000 (4180ms)
+      ✔ swap exactly 1.0000 token1 for token0 to price 2.0000 (4164ms)
+      ✔ swap token0 for exactly 1.0000 token1 to price 0.50000 (4134ms)
+      ✔ swap token1 for exactly 1.0000 token0 to price 2.0000 (4176ms)
+      ✔ swap exactly 0.0000000000000010000 token0 for token1 (4342ms)
+      ✔ swap exactly 0.0000000000000010000 token1 for token0 (4230ms)
+      ✔ swap token0 for exactly 0.0000000000000010000 token1 (4313ms)
+      ✔ swap token1 for exactly 0.0000000000000010000 token0 (8226ms)
+      ✔ swap token1 for token0 to price 2.5000 (4203ms)
+      ✔ swap token0 for token1 to price 0.40000 (4186ms)
+      21) swap token0 for token1 to price 2.5000
+      22) swap token1 for token0 to price 0.40000
+    medium fee, token1 liquidity only
+      ✔ swap exactly 1.0000 token0 for token1 (4181ms)
+      ✔ swap exactly 1.0000 token1 for token0 (4320ms)
+      ✔ swap token0 for exactly 1.0000 token1 (4184ms)
+      ✔ swap token1 for exactly 1.0000 token0 (4344ms)
+      ✔ swap exactly 1.0000 token0 for token1 to price 0.50000 (4192ms)
+      ✔ swap exactly 1.0000 token1 for token0 to price 2.0000 (4160ms)
+      ✔ swap token0 for exactly 1.0000 token1 to price 0.50000 (4178ms)
+      ✔ swap token1 for exactly 1.0000 token0 to price 2.0000 (4168ms)
+      ✔ swap exactly 0.0000000000000010000 token0 for token1 (4189ms)
+      ✔ swap exactly 0.0000000000000010000 token1 for token0 (8361ms)
+      ✔ swap token0 for exactly 0.0000000000000010000 token1 (4183ms)
+      ✔ swap token1 for exactly 0.0000000000000010000 token0 (4316ms)
+      ✔ swap token1 for token0 to price 2.5000 (4167ms)
+      ✔ swap token0 for token1 to price 0.40000 (4197ms)
+      23) swap token0 for token1 to price 2.5000
+      24) swap token1 for token0 to price 0.40000
+    close to max price
+      ✔ swap exactly 1.0000 token0 for token1 (4382ms)
+      ✔ swap exactly 1.0000 token1 for token0 (4173ms)
+      ✔ swap token0 for exactly 1.0000 token1 (4245ms)
+      ✔ swap token1 for exactly 1.0000 token0 (4190ms)
+      ✔ swap exactly 1.0000 token0 for token1 to price 0.50000 (4367ms)
+      25) swap exactly 1.0000 token1 for token0 to price 2.0000
+      ✔ swap token0 for exactly 1.0000 token1 to price 0.50000 (4191ms)
+      26) swap token1 for exactly 1.0000 token0 to price 2.0000
+      ✔ swap exactly 0.0000000000000010000 token0 for token1 (4443ms)
+      ✔ swap exactly 0.0000000000000010000 token1 for token0 (4182ms)
+      ✔ swap token0 for exactly 0.0000000000000010000 token1 (4201ms)
+      ✔ swap token1 for exactly 0.0000000000000010000 token0 (4206ms)
+      27) swap token1 for token0 to price 2.5000
+      ✔ swap token0 for token1 to price 0.40000 (4414ms)
+      ✔ swap token0 for token1 to price 2.5000 (4394ms)
+      28) swap token1 for token0 to price 0.40000
+    close to min price
+      ✔ swap exactly 1.0000 token0 for token1 (4190ms)
+      ✔ swap exactly 1.0000 token1 for token0 (4375ms)
+      ✔ swap token0 for exactly 1.0000 token1 (4167ms)
+      ✔ swap token1 for exactly 1.0000 token0 (4159ms)
+      29) swap exactly 1.0000 token0 for token1 to price 0.50000
+      ✔ swap exactly 1.0000 token1 for token0 to price 2.0000 (8426ms)
+      30) swap token0 for exactly 1.0000 token1 to price 0.50000
+      ✔ swap token1 for exactly 1.0000 token0 to price 2.0000 (4167ms)
+      ✔ swap exactly 0.0000000000000010000 token0 for token1 (4183ms)
+      ✔ swap exactly 0.0000000000000010000 token1 for token0 (4206ms)
+      ✔ swap token0 for exactly 0.0000000000000010000 token1 (4170ms)
+      ✔ swap token1 for exactly 0.0000000000000010000 token0 (4183ms)
+      ✔ swap token1 for token0 to price 2.5000 (4397ms)
+      31) swap token0 for token1 to price 0.40000
+      32) swap token0 for token1 to price 2.5000
+      ✔ swap token1 for token0 to price 0.40000 (4383ms)
+    max full range liquidity at 1:1 price with default fee
+      ✔ swap exactly 1.0000 token0 for token1 (8303ms)
+      ✔ swap exactly 1.0000 token1 for token0 (4208ms)
+      ✔ swap token0 for exactly 1.0000 token1 (4197ms)
+      ✔ swap token1 for exactly 1.0000 token0 (4193ms)
+      ✔ swap exactly 1.0000 token0 for token1 to price 0.50000 (4224ms)
+      ✔ swap exactly 1.0000 token1 for token0 to price 2.0000 (4198ms)
+      ✔ swap token0 for exactly 1.0000 token1 to price 0.50000 (4187ms)
+      ✔ swap token1 for exactly 1.0000 token0 to price 2.0000 (4193ms)
+      ✔ swap exactly 0.0000000000000010000 token0 for token1 (4171ms)
+      ✔ swap exactly 0.0000000000000010000 token1 for token0 (4171ms)
+      ✔ swap token0 for exactly 0.0000000000000010000 token1 (4180ms)
+      ✔ swap token1 for exactly 0.0000000000000010000 token0 (4168ms)
+      ✔ swap token1 for token0 to price 2.5000 (4184ms)
+      ✔ swap token0 for token1 to price 0.40000 (4206ms)
+      33) swap token0 for token1 to price 2.5000
+      34) swap token1 for token0 to price 0.40000
+    initialized at the max ratio
+      ✔ swap exactly 1.0000 token0 for token1 (4391ms)
+      35) swap exactly 1.0000 token1 for token0
+      ✔ swap token0 for exactly 1.0000 token1 (4191ms)
+      36) swap token1 for exactly 1.0000 token0
+      ✔ swap exactly 1.0000 token0 for token1 to price 0.50000 (4398ms)
+      37) swap exactly 1.0000 token1 for token0 to price 2.0000
+      ✔ swap token0 for exactly 1.0000 token1 to price 0.50000 (4174ms)
+      38) swap token1 for exactly 1.0000 token0 to price 2.0000
+      ✔ swap exactly 0.0000000000000010000 token0 for token1 (4211ms)
+      39) swap exactly 0.0000000000000010000 token1 for token0
+      ✔ swap token0 for exactly 0.0000000000000010000 token1 (4219ms)
+      40) swap token1 for exactly 0.0000000000000010000 token0
+      41) swap token1 for token0 to price 2.5000
+      ✔ swap token0 for token1 to price 0.40000 (4401ms)
+      ✔ swap token0 for token1 to price 2.5000 (4434ms)
+      42) swap token1 for token0 to price 0.40000
+    initialized at the min ratio
+      43) swap exactly 1.0000 token0 for token1
+      ✔ swap exactly 1.0000 token1 for token0 (8447ms)
+      44) swap token0 for exactly 1.0000 token1
+      ✔ swap token1 for exactly 1.0000 token0 (4194ms)
+      45) swap exactly 1.0000 token0 for token1 to price 0.50000
+      ✔ swap exactly 1.0000 token1 for token0 to price 2.0000 (4432ms)
+      46) swap token0 for exactly 1.0000 token1 to price 0.50000
+      ✔ swap token1 for exactly 1.0000 token0 to price 2.0000 (4170ms)
+      47) swap exactly 0.0000000000000010000 token0 for token1
+      ✔ swap exactly 0.0000000000000010000 token1 for token0 (4245ms)
+      48) swap token0 for exactly 0.0000000000000010000 token1
+      ✔ swap token1 for exactly 0.0000000000000010000 token0 (5246ms)
+      ✔ swap token1 for token0 to price 2.5000 (4456ms)
+      49) swap token0 for token1 to price 0.40000
+      50) swap token0 for token1 to price 2.5000
+      ✔ swap token1 for token0 to price 0.40000 (4432ms)
+
+
+Snapshot Summary
+ › 50 snapshots failed from 1 test suite. Inspect your code changes or re-run mocha with `--update` to update them to update them.
+
+  190 passing (1h)
+  50 failing
+
+  1) UniswapV3Pool swap tests
+       low fee, 1:1 price, 2e18 max range liquidity
+         swap token0 for token1 to price 2.5000:
+
+      swap error
+      + expected - actual
+
+       Object {
+         "poolBalance0": "2000000000000000000",
+         "poolBalance1": "2000000000000000000",
+         "poolPriceBefore": "1.0000",
+      -  "swapError": "cannot estimate gas; transaction may fail or may require manual gas limit [ See: https://links.ethers.org/v5-errors-UNPREDICTABLE_GAS_LIMIT ] (reason=\"failed to estimate gas: message execution failed: exit 33, revert reason: Error(SPL), vm error: message failed with backtrace:\\n00: f03248 (method 3844450837) -- contract reverted (33)\\n01: f03251 (method 3844450837) -- contract reverted (33)\\n (RetCode=33)\", method=\"estimateGas\", transaction={\"from\":\"0xF113C0c7741E1351A6263c7e8cF693494BCf58F7\",\"maxPriorityFeePerGas\":{\"type\":\"BigNumber\",\"hex\":\"0xb2d05e00\"},\"maxFeePerGas\":{\"type\":\"BigNumber\",\"hex\":\"0xb2d05f90\"},\"to\":\"0x3a25bac66C210DCF7930A338d666BcD21BF6f7BA\",\"data\":\"0x2ec20bf90000000000000000000000009cf37fbdf14cb1f7bcb673d87ed1d02029cf101b000000000000000000000000000000000000000194c583ada5b529204a2bc8300000000000000000000000000000000000000000000000000000000000000001\",\"type\":2,\"accessList\":null}, error={\"name\":\"ProviderError\",\"_stack\":\"ProviderError: HttpProviderError\\n    at HttpProvider.request (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/hardhat/src/internal/core/providers/http.ts:83:19)\\n    at LocalAccountsProvider.request (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/hardhat/src/internal/core/providers/accounts.ts:187:34)\\n    at runMicrotasks (<anonymous>)\\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)\\n    at async EthersProviderWrapper.send (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/@nomiclabs/hardhat-ethers/src/internal/ethers-provider-wrapper.ts:13:20)\",\"code\":1,\"_isProviderError\":true}, code=UNPREDICTABLE_GAS_LIMIT, version=providers/5.7.2)",
+      +  "swapError": "cannot estimate gas; transaction may fail or may require manual gas limit [ See: https://links.ethers.org/v5-errors-UNPREDICTABLE_GAS_LIMIT ] (reason=\"failed to estimate gas: message execution failed: exit 33, reason: message failed with backtrace:\\n00: f03264 (method 3844450837) -- contract reverted (33)\\n01: f03267 (method 3844450837) -- contract reverted (33)\\n (RetCode=33)\", method=\"estimateGas\", transaction={\"from\":\"0xF113C0c7741E1351A6263c7e8cF693494BCf58F7\",\"maxPriorityFeePerGas\":{\"type\":\"BigNumber\",\"hex\":\"0xb2d05e00\"},\"maxFeePerGas\":{\"type\":\"BigNumber\",\"hex\":\"0xb2d05f90\"},\"to\":\"0xBf1D40158FdCe600Fd11463636B04Ef6D386cB95\",\"data\":\"0x2ec20bf90000000000000000000000004688a3f650a088f1105273ec1d5aaa3c90cc09b7000000000000000000000000000000000000000194c583ada5b529204a2bc8300000000000000000000000000000000000000000000000000000000000000001\",\"type\":2,\"accessList\":null}, error={\"name\":\"ProviderError\",\"_stack\":\"ProviderError: HttpProviderError\\n    at HttpProvider.request (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/hardhat/src/internal/core/providers/http.ts:78:19)\\n    at LocalAccountsProvider.request (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/hardhat/src/internal/core/providers/accounts.ts:187:34)\\n    at runMicrotasks (<anonymous>)\\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)\\n    at async EthersProviderWrapper.send (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/@nomiclabs/hardhat-ethers/src/internal/ethers-provider-wrapper.ts:13:20)\",\"code\":1,\"_isProviderError\":true}, code=UNPREDICTABLE_GAS_LIMIT, version=providers/5.7.2)",
+         "tickBefore": 0,
+       }
+      
+      at SnapshotManager.assert (node_modules/mocha-chai-jest-snapshot/src/manager.ts:63:29)
+      at Proxy.<anonymous> (node_modules/mocha-chai-jest-snapshot/src/index.ts:81:20)
+      at Proxy.methodWrapper (node_modules/chai/lib/chai/utils/addMethod.js:57:25)
+      at Context.<anonymous> (test/UniswapV3Pool.swaps.spec.ts:523:19)
+      at runMicrotasks (<anonymous>)
+      at processTicksAndRejections (node:internal/process/task_queues:96:5)
+
+  2) UniswapV3Pool swap tests
+       low fee, 1:1 price, 2e18 max range liquidity
+         swap token1 for token0 to price 0.40000:
+
+      swap error
+      + expected - actual
+
+       Object {
+         "poolBalance0": "2000000000000000000",
+         "poolBalance1": "2000000000000000000",
+         "poolPriceBefore": "1.0000",
+      -  "swapError": "cannot estimate gas; transaction may fail or may require manual gas limit [ See: https://links.ethers.org/v5-errors-UNPREDICTABLE_GAS_LIMIT ] (reason=\"failed to estimate gas: message execution failed: exit 33, revert reason: Error(SPL), vm error: message failed with backtrace:\\n00: f03256 (method 3844450837) -- contract reverted (33)\\n01: f03259 (method 3844450837) -- contract reverted (33)\\n (RetCode=33)\", method=\"estimateGas\", transaction={\"from\":\"0xF113C0c7741E1351A6263c7e8cF693494BCf58F7\",\"maxPriorityFeePerGas\":{\"type\":\"BigNumber\",\"hex\":\"0xb2d05e00\"},\"maxFeePerGas\":{\"type\":\"BigNumber\",\"hex\":\"0xb2d05f90\"},\"to\":\"0x9b7FE9d6fc8489f349b2d4C2d232e01F1Be19132\",\"data\":\"0x9e77b805000000000000000000000000f23a7375468353c598f9f406eda0d1320917178c0000000000000000000000000000000000000000a1e89b12424876d9b744b6790000000000000000000000000000000000000000000000000000000000000001\",\"type\":2,\"accessList\":null}, error={\"name\":\"ProviderError\",\"_stack\":\"ProviderError: HttpProviderError\\n    at HttpProvider.request (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/hardhat/src/internal/core/providers/http.ts:83:19)\\n    at LocalAccountsProvider.request (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/hardhat/src/internal/core/providers/accounts.ts:187:34)\\n    at runMicrotasks (<anonymous>)\\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)\\n    at async EthersProviderWrapper.send (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/@nomiclabs/hardhat-ethers/src/internal/ethers-provider-wrapper.ts:13:20)\",\"code\":1,\"_isProviderError\":true}, code=UNPREDICTABLE_GAS_LIMIT, version=providers/5.7.2)",
+      +  "swapError": "cannot estimate gas; transaction may fail or may require manual gas limit [ See: https://links.ethers.org/v5-errors-UNPREDICTABLE_GAS_LIMIT ] (reason=\"failed to estimate gas: message execution failed: exit 33, reason: message failed with backtrace:\\n00: f03272 (method 3844450837) -- contract reverted (33)\\n01: f03275 (method 3844450837) -- contract reverted (33)\\n (RetCode=33)\", method=\"estimateGas\", transaction={\"from\":\"0xF113C0c7741E1351A6263c7e8cF693494BCf58F7\",\"maxPriorityFeePerGas\":{\"type\":\"BigNumber\",\"hex\":\"0xb2d05e00\"},\"maxFeePerGas\":{\"type\":\"BigNumber\",\"hex\":\"0xb2d05f90\"},\"to\":\"0x55738Af6cCA82f9a2fF12E77a2e098f5c43b4e1d\",\"data\":\"0x9e77b805000000000000000000000000ccc6a31addf531503d4886dbe61834c0cb6e05460000000000000000000000000000000000000000a1e89b12424876d9b744b6790000000000000000000000000000000000000000000000000000000000000001\",\"type\":2,\"accessList\":null}, error={\"name\":\"ProviderError\",\"_stack\":\"ProviderError: HttpProviderError\\n    at HttpProvider.request (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/hardhat/src/internal/core/providers/http.ts:78:19)\\n    at LocalAccountsProvider.request (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/hardhat/src/internal/core/providers/accounts.ts:187:34)\\n    at runMicrotasks (<anonymous>)\\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)\\n    at async EthersProviderWrapper.send (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/@nomiclabs/hardhat-ethers/src/internal/ethers-provider-wrapper.ts:13:20)\",\"code\":1,\"_isProviderError\":true}, code=UNPREDICTABLE_GAS_LIMIT, version=providers/5.7.2)",
+         "tickBefore": 0,
+       }
+      
+      at SnapshotManager.assert (node_modules/mocha-chai-jest-snapshot/src/manager.ts:63:29)
+      at Proxy.<anonymous> (node_modules/mocha-chai-jest-snapshot/src/index.ts:81:20)
+      at Proxy.methodWrapper (node_modules/chai/lib/chai/utils/addMethod.js:57:25)
+      at Context.<anonymous> (test/UniswapV3Pool.swaps.spec.ts:523:19)
+      at runMicrotasks (<anonymous>)
+      at processTicksAndRejections (node:internal/process/task_queues:96:5)
+
+  3) UniswapV3Pool swap tests
+       medium fee, 1:1 price, 2e18 max range liquidity
+         swap token0 for token1 to price 2.5000:
+
+      swap error
+      + expected - actual
+
+       Object {
+         "poolBalance0": "2000000000000000000",
+         "poolBalance1": "2000000000000000000",
+         "poolPriceBefore": "1.0000",
+      -  "swapError": "cannot estimate gas; transaction may fail or may require manual gas limit [ See: https://links.ethers.org/v5-errors-UNPREDICTABLE_GAS_LIMIT ] (reason=\"failed to estimate gas: message execution failed: exit 33, revert reason: Error(SPL), vm error: message failed with backtrace:\\n00: f03376 (method 3844450837) -- contract reverted (33)\\n01: f03379 (method 3844450837) -- contract reverted (33)\\n (RetCode=33)\", method=\"estimateGas\", transaction={\"from\":\"0xF113C0c7741E1351A6263c7e8cF693494BCf58F7\",\"maxPriorityFeePerGas\":{\"type\":\"BigNumber\",\"hex\":\"0xb2d05e00\"},\"maxFeePerGas\":{\"type\":\"BigNumber\",\"hex\":\"0xb2d05f90\"},\"to\":\"0x5F3a1103521F2CdEF3A5d1d5A59f84213751Cf2B\",\"data\":\"0x2ec20bf9000000000000000000000000d506873ed613ee22f1d5825618a52b05304849e3000000000000000000000000000000000000000194c583ada5b529204a2bc8300000000000000000000000000000000000000000000000000000000000000001\",\"type\":2,\"accessList\":null}, error={\"name\":\"ProviderError\",\"_stack\":\"ProviderError: HttpProviderError\\n    at HttpProvider.request (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/hardhat/src/internal/core/providers/http.ts:83:19)\\n    at LocalAccountsProvider.request (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/hardhat/src/internal/core/providers/accounts.ts:187:34)\\n    at runMicrotasks (<anonymous>)\\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)\\n    at async EthersProviderWrapper.send (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/@nomiclabs/hardhat-ethers/src/internal/ethers-provider-wrapper.ts:13:20)\",\"code\":1,\"_isProviderError\":true}, code=UNPREDICTABLE_GAS_LIMIT, version=providers/5.7.2)",
+      +  "swapError": "cannot estimate gas; transaction may fail or may require manual gas limit [ See: https://links.ethers.org/v5-errors-UNPREDICTABLE_GAS_LIMIT ] (reason=\"failed to estimate gas: message execution failed: exit 33, reason: message failed with backtrace:\\n00: f03392 (method 3844450837) -- contract reverted (33)\\n01: f03395 (method 3844450837) -- contract reverted (33)\\n (RetCode=33)\", method=\"estimateGas\", transaction={\"from\":\"0xF113C0c7741E1351A6263c7e8cF693494BCf58F7\",\"maxPriorityFeePerGas\":{\"type\":\"BigNumber\",\"hex\":\"0xb2d05e00\"},\"maxFeePerGas\":{\"type\":\"BigNumber\",\"hex\":\"0xb2d05f90\"},\"to\":\"0xcee99DD82962CE67Af7BcBce2B145F21e5a0bff3\",\"data\":\"0x2ec20bf900000000000000000000000035b9d5c978785ccf2a963f9fb56af6e4c5abcdc1000000000000000000000000000000000000000194c583ada5b529204a2bc8300000000000000000000000000000000000000000000000000000000000000001\",\"type\":2,\"accessList\":null}, error={\"name\":\"ProviderError\",\"_stack\":\"ProviderError: HttpProviderError\\n    at HttpProvider.request (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/hardhat/src/internal/core/providers/http.ts:78:19)\\n    at LocalAccountsProvider.request (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/hardhat/src/internal/core/providers/accounts.ts:187:34)\\n    at runMicrotasks (<anonymous>)\\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)\\n    at async EthersProviderWrapper.send (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/@nomiclabs/hardhat-ethers/src/internal/ethers-provider-wrapper.ts:13:20)\",\"code\":1,\"_isProviderError\":true}, code=UNPREDICTABLE_GAS_LIMIT, version=providers/5.7.2)",
+         "tickBefore": 0,
+       }
+      
+      at SnapshotManager.assert (node_modules/mocha-chai-jest-snapshot/src/manager.ts:63:29)
+      at Proxy.<anonymous> (node_modules/mocha-chai-jest-snapshot/src/index.ts:81:20)
+      at Proxy.methodWrapper (node_modules/chai/lib/chai/utils/addMethod.js:57:25)
+      at Context.<anonymous> (test/UniswapV3Pool.swaps.spec.ts:523:19)
+      at runMicrotasks (<anonymous>)
+      at processTicksAndRejections (node:internal/process/task_queues:96:5)
+
+  4) UniswapV3Pool swap tests
+       medium fee, 1:1 price, 2e18 max range liquidity
+         swap token1 for token0 to price 0.40000:
+
+      swap error
+      + expected - actual
+
+       Object {
+         "poolBalance0": "2000000000000000000",
+         "poolBalance1": "2000000000000000000",
+         "poolPriceBefore": "1.0000",
+      -  "swapError": "cannot estimate gas; transaction may fail or may require manual gas limit [ See: https://links.ethers.org/v5-errors-UNPREDICTABLE_GAS_LIMIT ] (reason=\"failed to estimate gas: message execution failed: exit 33, revert reason: Error(SPL), vm error: message failed with backtrace:\\n00: f03384 (method 3844450837) -- contract reverted (33)\\n01: f03387 (method 3844450837) -- contract reverted (33)\\n (RetCode=33)\", method=\"estimateGas\", transaction={\"from\":\"0xF113C0c7741E1351A6263c7e8cF693494BCf58F7\",\"maxPriorityFeePerGas\":{\"type\":\"BigNumber\",\"hex\":\"0xb2d05e00\"},\"maxFeePerGas\":{\"type\":\"BigNumber\",\"hex\":\"0xb2d05f90\"},\"to\":\"0x6346229620846FcA1d3F508fE8E9b579e37B6a86\",\"data\":\"0x9e77b8050000000000000000000000006ad6f94ba80535f3776ed75dd4d41e5ee01f39250000000000000000000000000000000000000000a1e89b12424876d9b744b6790000000000000000000000000000000000000000000000000000000000000001\",\"type\":2,\"accessList\":null}, error={\"name\":\"ProviderError\",\"_stack\":\"ProviderError: HttpProviderError\\n    at HttpProvider.request (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/hardhat/src/internal/core/providers/http.ts:83:19)\\n    at LocalAccountsProvider.request (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/hardhat/src/internal/core/providers/accounts.ts:187:34)\\n    at runMicrotasks (<anonymous>)\\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)\\n    at async EthersProviderWrapper.send (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/@nomiclabs/hardhat-ethers/src/internal/ethers-provider-wrapper.ts:13:20)\",\"code\":1,\"_isProviderError\":true}, code=UNPREDICTABLE_GAS_LIMIT, version=providers/5.7.2)",
+      +  "swapError": "cannot estimate gas; transaction may fail or may require manual gas limit [ See: https://links.ethers.org/v5-errors-UNPREDICTABLE_GAS_LIMIT ] (reason=\"failed to estimate gas: message execution failed: exit 33, reason: message failed with backtrace:\\n00: f03400 (method 3844450837) -- contract reverted (33)\\n01: f03403 (method 3844450837) -- contract reverted (33)\\n (RetCode=33)\", method=\"estimateGas\", transaction={\"from\":\"0xF113C0c7741E1351A6263c7e8cF693494BCf58F7\",\"maxPriorityFeePerGas\":{\"type\":\"BigNumber\",\"hex\":\"0xb2d05e00\"},\"maxFeePerGas\":{\"type\":\"BigNumber\",\"hex\":\"0xb2d05f90\"},\"to\":\"0x29e83370DdF9346F43954EdA25323a21D306d8d3\",\"data\":\"0x9e77b805000000000000000000000000a12319078bb92a4f981a4df1c311853fe7b9c1770000000000000000000000000000000000000000a1e89b12424876d9b744b6790000000000000000000000000000000000000000000000000000000000000001\",\"type\":2,\"accessList\":null}, error={\"name\":\"ProviderError\",\"_stack\":\"ProviderError: HttpProviderError\\n    at HttpProvider.request (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/hardhat/src/internal/core/providers/http.ts:78:19)\\n    at LocalAccountsProvider.request (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/hardhat/src/internal/core/providers/accounts.ts:187:34)\\n    at runMicrotasks (<anonymous>)\\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)\\n    at async EthersProviderWrapper.send (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/@nomiclabs/hardhat-ethers/src/internal/ethers-provider-wrapper.ts:13:20)\",\"code\":1,\"_isProviderError\":true}, code=UNPREDICTABLE_GAS_LIMIT, version=providers/5.7.2)",
+         "tickBefore": 0,
+       }
+      
+      at SnapshotManager.assert (node_modules/mocha-chai-jest-snapshot/src/manager.ts:63:29)
+      at Proxy.<anonymous> (node_modules/mocha-chai-jest-snapshot/src/index.ts:81:20)
+      at Proxy.methodWrapper (node_modules/chai/lib/chai/utils/addMethod.js:57:25)
+      at Context.<anonymous> (test/UniswapV3Pool.swaps.spec.ts:523:19)
+      at runMicrotasks (<anonymous>)
+      at processTicksAndRejections (node:internal/process/task_queues:96:5)
+
+  5) UniswapV3Pool swap tests
+       high fee, 1:1 price, 2e18 max range liquidity
+         swap token0 for token1 to price 2.5000:
+
+      swap error
+      + expected - actual
+
+       Object {
+         "poolBalance0": "2000000000000000000",
+         "poolBalance1": "2000000000000000000",
+         "poolPriceBefore": "1.0000",
+      -  "swapError": "cannot estimate gas; transaction may fail or may require manual gas limit [ See: https://links.ethers.org/v5-errors-UNPREDICTABLE_GAS_LIMIT ] (reason=\"failed to estimate gas: message execution failed: exit 33, revert reason: Error(SPL), vm error: message failed with backtrace:\\n00: f03504 (method 3844450837) -- contract reverted (33)\\n01: f03507 (method 3844450837) -- contract reverted (33)\\n (RetCode=33)\", method=\"estimateGas\", transaction={\"from\":\"0xF113C0c7741E1351A6263c7e8cF693494BCf58F7\",\"maxPriorityFeePerGas\":{\"type\":\"BigNumber\",\"hex\":\"0xb2d05e00\"},\"maxFeePerGas\":{\"type\":\"BigNumber\",\"hex\":\"0xb2d05f90\"},\"to\":\"0x6c80cb9680eD39B114C413e2D49cfD40A023d850\",\"data\":\"0x2ec20bf9000000000000000000000000aed0a3867afa78df1748f7c91477d1074fa8d3da000000000000000000000000000000000000000194c583ada5b529204a2bc8300000000000000000000000000000000000000000000000000000000000000001\",\"type\":2,\"accessList\":null}, error={\"name\":\"ProviderError\",\"_stack\":\"ProviderError: HttpProviderError\\n    at HttpProvider.request (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/hardhat/src/internal/core/providers/http.ts:83:19)\\n    at LocalAccountsProvider.request (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/hardhat/src/internal/core/providers/accounts.ts:187:34)\\n    at runMicrotasks (<anonymous>)\\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)\\n    at async EthersProviderWrapper.send (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/@nomiclabs/hardhat-ethers/src/internal/ethers-provider-wrapper.ts:13:20)\",\"code\":1,\"_isProviderError\":true}, code=UNPREDICTABLE_GAS_LIMIT, version=providers/5.7.2)",
+      +  "swapError": "cannot estimate gas; transaction may fail or may require manual gas limit [ See: https://links.ethers.org/v5-errors-UNPREDICTABLE_GAS_LIMIT ] (reason=\"failed to estimate gas: message execution failed: exit 33, reason: message failed with backtrace:\\n00: f03520 (method 3844450837) -- contract reverted (33)\\n01: f03523 (method 3844450837) -- contract reverted (33)\\n (RetCode=33)\", method=\"estimateGas\", transaction={\"from\":\"0xF113C0c7741E1351A6263c7e8cF693494BCf58F7\",\"maxPriorityFeePerGas\":{\"type\":\"BigNumber\",\"hex\":\"0xb2d05e00\"},\"maxFeePerGas\":{\"type\":\"BigNumber\",\"hex\":\"0xb2d05f90\"},\"to\":\"0x59039C48387e1EBf17191B38f2C8F2b9e2312890\",\"data\":\"0x2ec20bf90000000000000000000000003e35120f0256ed05a0a4f8d66040edceca841e99000000000000000000000000000000000000000194c583ada5b529204a2bc8300000000000000000000000000000000000000000000000000000000000000001\",\"type\":2,\"accessList\":null}, error={\"name\":\"ProviderError\",\"_stack\":\"ProviderError: HttpProviderError\\n    at HttpProvider.request (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/hardhat/src/internal/core/providers/http.ts:78:19)\\n    at LocalAccountsProvider.request (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/hardhat/src/internal/core/providers/accounts.ts:187:34)\\n    at runMicrotasks (<anonymous>)\\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)\\n    at async EthersProviderWrapper.send (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/@nomiclabs/hardhat-ethers/src/internal/ethers-provider-wrapper.ts:13:20)\",\"code\":1,\"_isProviderError\":true}, code=UNPREDICTABLE_GAS_LIMIT, version=providers/5.7.2)",
+         "tickBefore": 0,
+       }
+      
+      at SnapshotManager.assert (node_modules/mocha-chai-jest-snapshot/src/manager.ts:63:29)
+      at Proxy.<anonymous> (node_modules/mocha-chai-jest-snapshot/src/index.ts:81:20)
+      at Proxy.methodWrapper (node_modules/chai/lib/chai/utils/addMethod.js:57:25)
+      at Context.<anonymous> (test/UniswapV3Pool.swaps.spec.ts:523:19)
+      at runMicrotasks (<anonymous>)
+      at processTicksAndRejections (node:internal/process/task_queues:96:5)
+
+  6) UniswapV3Pool swap tests
+       high fee, 1:1 price, 2e18 max range liquidity
+         swap token1 for token0 to price 0.40000:
+
+      swap error
+      + expected - actual
+
+       Object {
+         "poolBalance0": "2000000000000000000",
+         "poolBalance1": "2000000000000000000",
+         "poolPriceBefore": "1.0000",
+      -  "swapError": "cannot estimate gas; transaction may fail or may require manual gas limit [ See: https://links.ethers.org/v5-errors-UNPREDICTABLE_GAS_LIMIT ] (reason=\"failed to estimate gas: message execution failed: exit 33, revert reason: Error(SPL), vm error: message failed with backtrace:\\n00: f03512 (method 3844450837) -- contract reverted (33)\\n01: f03515 (method 3844450837) -- contract reverted (33)\\n (RetCode=33)\", method=\"estimateGas\", transaction={\"from\":\"0xF113C0c7741E1351A6263c7e8cF693494BCf58F7\",\"maxPriorityFeePerGas\":{\"type\":\"BigNumber\",\"hex\":\"0xb2d05e00\"},\"maxFeePerGas\":{\"type\":\"BigNumber\",\"hex\":\"0xb2d05f90\"},\"to\":\"0xB9ce1a9b38867067eDB9e1E3E2e1Cf0Fa475cdD3\",\"data\":\"0x9e77b8050000000000000000000000006c41d87f9daa76fe2fd978ad6d505a3ce4602fd50000000000000000000000000000000000000000a1e89b12424876d9b744b6790000000000000000000000000000000000000000000000000000000000000001\",\"type\":2,\"accessList\":null}, error={\"name\":\"ProviderError\",\"_stack\":\"ProviderError: HttpProviderError\\n    at HttpProvider.request (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/hardhat/src/internal/core/providers/http.ts:83:19)\\n    at LocalAccountsProvider.request (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/hardhat/src/internal/core/providers/accounts.ts:187:34)\\n    at runMicrotasks (<anonymous>)\\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)\\n    at async EthersProviderWrapper.send (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/@nomiclabs/hardhat-ethers/src/internal/ethers-provider-wrapper.ts:13:20)\",\"code\":1,\"_isProviderError\":true}, code=UNPREDICTABLE_GAS_LIMIT, version=providers/5.7.2)",
+      +  "swapError": "cannot estimate gas; transaction may fail or may require manual gas limit [ See: https://links.ethers.org/v5-errors-UNPREDICTABLE_GAS_LIMIT ] (reason=\"failed to estimate gas: message execution failed: exit 33, reason: message failed with backtrace:\\n00: f03528 (method 3844450837) -- contract reverted (33)\\n01: f03531 (method 3844450837) -- contract reverted (33)\\n (RetCode=33)\", method=\"estimateGas\", transaction={\"from\":\"0xF113C0c7741E1351A6263c7e8cF693494BCf58F7\",\"maxPriorityFeePerGas\":{\"type\":\"BigNumber\",\"hex\":\"0xb2d05e00\"},\"maxFeePerGas\":{\"type\":\"BigNumber\",\"hex\":\"0xb2d05f90\"},\"to\":\"0x51F3472C80ec9a258499E2AAEE7683f0b50ba439\",\"data\":\"0x9e77b8050000000000000000000000008356fc8f419c3edecaef0088fdfdcd8cdfb1e9640000000000000000000000000000000000000000a1e89b12424876d9b744b6790000000000000000000000000000000000000000000000000000000000000001\",\"type\":2,\"accessList\":null}, error={\"name\":\"ProviderError\",\"_stack\":\"ProviderError: HttpProviderError\\n    at HttpProvider.request (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/hardhat/src/internal/core/providers/http.ts:78:19)\\n    at LocalAccountsProvider.request (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/hardhat/src/internal/core/providers/accounts.ts:187:34)\\n    at runMicrotasks (<anonymous>)\\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)\\n    at async EthersProviderWrapper.send (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/@nomiclabs/hardhat-ethers/src/internal/ethers-provider-wrapper.ts:13:20)\",\"code\":1,\"_isProviderError\":true}, code=UNPREDICTABLE_GAS_LIMIT, version=providers/5.7.2)",
+         "tickBefore": 0,
+       }
+      
+      at SnapshotManager.assert (node_modules/mocha-chai-jest-snapshot/src/manager.ts:63:29)
+      at Proxy.<anonymous> (node_modules/mocha-chai-jest-snapshot/src/index.ts:81:20)
+      at Proxy.methodWrapper (node_modules/chai/lib/chai/utils/addMethod.js:57:25)
+      at Context.<anonymous> (test/UniswapV3Pool.swaps.spec.ts:523:19)
+      at runMicrotasks (<anonymous>)
+      at processTicksAndRejections (node:internal/process/task_queues:96:5)
+
+  7) UniswapV3Pool swap tests
+       medium fee, 10:1 price, 2e18 max range liquidity
+         swap exactly 1.0000 token1 for token0 to price 2.0000:
+
+      swap error
+      + expected - actual
+
+       Object {
+         "poolBalance0": "632455532033675867",
+         "poolBalance1": "6324555320336758664",
+         "poolPriceBefore": "10.000",
+      -  "swapError": "cannot estimate gas; transaction may fail or may require manual gas limit [ See: https://links.ethers.org/v5-errors-UNPREDICTABLE_GAS_LIMIT ] (reason=\"failed to estimate gas: message execution failed: exit 33, revert reason: Error(SPL), vm error: message failed with backtrace:\\n00: f03560 (method 3844450837) -- contract reverted (33)\\n01: f03563 (method 3844450837) -- contract reverted (33)\\n (RetCode=33)\", method=\"estimateGas\", transaction={\"from\":\"0xF113C0c7741E1351A6263c7e8cF693494BCf58F7\",\"maxPriorityFeePerGas\":{\"type\":\"BigNumber\",\"hex\":\"0xb2d05e00\"},\"maxFeePerGas\":{\"type\":\"BigNumber\",\"hex\":\"0xb2d05f90\"},\"to\":\"0x0820Cd854A4bCac9aFd005b17C501f94df36Fe4e\",\"data\":\"0xe2be9109000000000000000000000000b2a0116131d4c2779b8d01f5f8eb28715c2d06d20000000000000000000000000000000000000000000000000de0b6b3a7640000000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000016a09e667f3bcc908b2fb1366\",\"type\":2,\"accessList\":null}, error={\"name\":\"ProviderError\",\"_stack\":\"ProviderError: HttpProviderError\\n    at HttpProvider.request (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/hardhat/src/internal/core/providers/http.ts:83:19)\\n    at LocalAccountsProvider.request (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/hardhat/src/internal/core/providers/accounts.ts:187:34)\\n    at runMicrotasks (<anonymous>)\\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)\\n    at async EthersProviderWrapper.send (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/@nomiclabs/hardhat-ethers/src/internal/ethers-provider-wrapper.ts:13:20)\",\"code\":1,\"_isProviderError\":true}, code=UNPREDICTABLE_GAS_LIMIT, version=providers/5.7.2)",
+      +  "swapError": "cannot estimate gas; transaction may fail or may require manual gas limit [ See: https://links.ethers.org/v5-errors-UNPREDICTABLE_GAS_LIMIT ] (reason=\"failed to estimate gas: message execution failed: exit 33, reason: message failed with backtrace:\\n00: f03576 (method 3844450837) -- contract reverted (33)\\n01: f03579 (method 3844450837) -- contract reverted (33)\\n (RetCode=33)\", method=\"estimateGas\", transaction={\"from\":\"0xF113C0c7741E1351A6263c7e8cF693494BCf58F7\",\"maxPriorityFeePerGas\":{\"type\":\"BigNumber\",\"hex\":\"0xb2d05e00\"},\"maxFeePerGas\":{\"type\":\"BigNumber\",\"hex\":\"0xb2d05f90\"},\"to\":\"0xFFcD9cF75F42A4b0E759147625A1A4242a885eAA\",\"data\":\"0xe2be91090000000000000000000000007834e8a6ecfc88f040a949e3018aa3d9bcded07e0000000000000000000000000000000000000000000000000de0b6b3a7640000000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000016a09e667f3bcc908b2fb1366\",\"type\":2,\"accessList\":null}, error={\"name\":\"ProviderError\",\"_stack\":\"ProviderError: HttpProviderError\\n    at HttpProvider.request (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/hardhat/src/internal/core/providers/http.ts:78:19)\\n    at LocalAccountsProvider.request (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/hardhat/src/internal/core/providers/accounts.ts:187:34)\\n    at runMicrotasks (<anonymous>)\\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)\\n    at async EthersProviderWrapper.send (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/@nomiclabs/hardhat-ethers/src/internal/ethers-provider-wrapper.ts:13:20)\",\"code\":1,\"_isProviderError\":true}, code=UNPREDICTABLE_GAS_LIMIT, version=providers/5.7.2)",
+         "tickBefore": 23027,
+       }
+      
+      at SnapshotManager.assert (node_modules/mocha-chai-jest-snapshot/src/manager.ts:63:29)
+      at Proxy.<anonymous> (node_modules/mocha-chai-jest-snapshot/src/index.ts:81:20)
+      at Proxy.methodWrapper (node_modules/chai/lib/chai/utils/addMethod.js:57:25)
+      at Context.<anonymous> (test/UniswapV3Pool.swaps.spec.ts:523:19)
+      at runMicrotasks (<anonymous>)
+      at processTicksAndRejections (node:internal/process/task_queues:96:5)
+
+  8) UniswapV3Pool swap tests
+       medium fee, 10:1 price, 2e18 max range liquidity
+         swap token1 for exactly 1.0000 token0 to price 2.0000:
+
+      swap error
+      + expected - actual
+
+       Object {
+         "poolBalance0": "632455532033675867",
+         "poolBalance1": "6324555320336758664",
+         "poolPriceBefore": "10.000",
+      -  "swapError": "cannot estimate gas; transaction may fail or may require manual gas limit [ See: https://links.ethers.org/v5-errors-UNPREDICTABLE_GAS_LIMIT ] (reason=\"failed to estimate gas: message execution failed: exit 33, revert reason: Error(SPL), vm error: message failed with backtrace:\\n00: f03576 (method 3844450837) -- contract reverted (33)\\n01: f03579 (method 3844450837) -- contract reverted (33)\\n (RetCode=33)\", method=\"estimateGas\", transaction={\"from\":\"0xF113C0c7741E1351A6263c7e8cF693494BCf58F7\",\"maxPriorityFeePerGas\":{\"type\":\"BigNumber\",\"hex\":\"0xb2d05e00\"},\"maxFeePerGas\":{\"type\":\"BigNumber\",\"hex\":\"0xb2d05f90\"},\"to\":\"0x106BF7f384BE36AAB6D856C33ae3522B7416A03b\",\"data\":\"0xf603482c0000000000000000000000002abfc4da01370e68cd8ae7ab3fcf60b4cfe689ff0000000000000000000000000000000000000000000000000de0b6b3a7640000000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000016a09e667f3bcc908b2fb1366\",\"type\":2,\"accessList\":null}, error={\"name\":\"ProviderError\",\"_stack\":\"ProviderError: HttpProviderError\\n    at HttpProvider.request (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/hardhat/src/internal/core/providers/http.ts:83:19)\\n    at LocalAccountsProvider.request (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/hardhat/src/internal/core/providers/accounts.ts:187:34)\\n    at runMicrotasks (<anonymous>)\\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)\\n    at async EthersProviderWrapper.send (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/@nomiclabs/hardhat-ethers/src/internal/ethers-provider-wrapper.ts:13:20)\",\"code\":1,\"_isProviderError\":true}, code=UNPREDICTABLE_GAS_LIMIT, version=providers/5.7.2)",
+      +  "swapError": "cannot estimate gas; transaction may fail or may require manual gas limit [ See: https://links.ethers.org/v5-errors-UNPREDICTABLE_GAS_LIMIT ] (reason=\"failed to estimate gas: message execution failed: exit 33, reason: message failed with backtrace:\\n00: f03592 (method 3844450837) -- contract reverted (33)\\n01: f03595 (method 3844450837) -- contract reverted (33)\\n (RetCode=33)\", method=\"estimateGas\", transaction={\"from\":\"0xF113C0c7741E1351A6263c7e8cF693494BCf58F7\",\"maxPriorityFeePerGas\":{\"type\":\"BigNumber\",\"hex\":\"0xb2d05e00\"},\"maxFeePerGas\":{\"type\":\"BigNumber\",\"hex\":\"0xb2d05f90\"},\"to\":\"0xF52B4c1f5E8d53FF2305b18e89AB9D6A8D0C7A10\",\"data\":\"0xf603482c000000000000000000000000f4fb7c61692554abfe78365f31fea03bf60d785e0000000000000000000000000000000000000000000000000de0b6b3a7640000000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000016a09e667f3bcc908b2fb1366\",\"type\":2,\"accessList\":null}, error={\"name\":\"ProviderError\",\"_stack\":\"ProviderError: HttpProviderError\\n    at HttpProvider.request (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/hardhat/src/internal/core/providers/http.ts:78:19)\\n    at LocalAccountsProvider.request (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/hardhat/src/internal/core/providers/accounts.ts:187:34)\\n    at runMicrotasks (<anonymous>)\\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)\\n    at async EthersProviderWrapper.send (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/@nomiclabs/hardhat-ethers/src/internal/ethers-provider-wrapper.ts:13:20)\",\"code\":1,\"_isProviderError\":true}, code=UNPREDICTABLE_GAS_LIMIT, version=providers/5.7.2)",
+         "tickBefore": 23027,
+       }
+      
+      at SnapshotManager.assert (node_modules/mocha-chai-jest-snapshot/src/manager.ts:63:29)
+      at Proxy.<anonymous> (node_modules/mocha-chai-jest-snapshot/src/index.ts:81:20)
+      at Proxy.methodWrapper (node_modules/chai/lib/chai/utils/addMethod.js:57:25)
+      at Context.<anonymous> (test/UniswapV3Pool.swaps.spec.ts:523:19)
+      at runMicrotasks (<anonymous>)
+      at processTicksAndRejections (node:internal/process/task_queues:96:5)
+
+  9) UniswapV3Pool swap tests
+       medium fee, 10:1 price, 2e18 max range liquidity
+         swap token1 for token0 to price 2.5000:
+
+      swap error
+      + expected - actual
+
+       Object {
+         "poolBalance0": "632455532033675867",
+         "poolBalance1": "6324555320336758664",
+         "poolPriceBefore": "10.000",
+      -  "swapError": "cannot estimate gas; transaction may fail or may require manual gas limit [ See: https://links.ethers.org/v5-errors-UNPREDICTABLE_GAS_LIMIT ] (reason=\"failed to estimate gas: message execution failed: exit 33, revert reason: Error(SPL), vm error: message failed with backtrace:\\n00: f03616 (method 3844450837) -- contract reverted (33)\\n01: f03619 (method 3844450837) -- contract reverted (33)\\n (RetCode=33)\", method=\"estimateGas\", transaction={\"from\":\"0xF113C0c7741E1351A6263c7e8cF693494BCf58F7\",\"maxPriorityFeePerGas\":{\"type\":\"BigNumber\",\"hex\":\"0xb2d05e00\"},\"maxFeePerGas\":{\"type\":\"BigNumber\",\"hex\":\"0xb2d05f90\"},\"to\":\"0xD5feCeDFa8175e519a6d0891995EaC989FfC6DAa\",\"data\":\"0x9e77b8050000000000000000000000000979c891bd2c521547c2452709ea86219dcdb8d0000000000000000000000000000000000000000194c583ada5b529204a2bc8300000000000000000000000000000000000000000000000000000000000000001\",\"type\":2,\"accessList\":null}, error={\"name\":\"ProviderError\",\"_stack\":\"ProviderError: HttpProviderError\\n    at HttpProvider.request (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/hardhat/src/internal/core/providers/http.ts:83:19)\\n    at LocalAccountsProvider.request (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/hardhat/src/internal/core/providers/accounts.ts:187:34)\\n    at runMicrotasks (<anonymous>)\\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)\\n    at async EthersProviderWrapper.send (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/@nomiclabs/hardhat-ethers/src/internal/ethers-provider-wrapper.ts:13:20)\",\"code\":1,\"_isProviderError\":true}, code=UNPREDICTABLE_GAS_LIMIT, version=providers/5.7.2)",
+      +  "swapError": "cannot estimate gas; transaction may fail or may require manual gas limit [ See: https://links.ethers.org/v5-errors-UNPREDICTABLE_GAS_LIMIT ] (reason=\"failed to estimate gas: message execution failed: exit 33, reason: message failed with backtrace:\\n00: f03632 (method 3844450837) -- contract reverted (33)\\n01: f03635 (method 3844450837) -- contract reverted (33)\\n (RetCode=33)\", method=\"estimateGas\", transaction={\"from\":\"0xF113C0c7741E1351A6263c7e8cF693494BCf58F7\",\"maxPriorityFeePerGas\":{\"type\":\"BigNumber\",\"hex\":\"0xb2d05e00\"},\"maxFeePerGas\":{\"type\":\"BigNumber\",\"hex\":\"0xb2d05f90\"},\"to\":\"0x3888f1d85E02CAC5d2546084D3C9a4B03A0e7c2a\",\"data\":\"0x9e77b8050000000000000000000000001e8ec77eb857f7074d398b9474b836e1f06f8f76000000000000000000000000000000000000000194c583ada5b529204a2bc8300000000000000000000000000000000000000000000000000000000000000001\",\"type\":2,\"accessList\":null}, error={\"name\":\"ProviderError\",\"_stack\":\"ProviderError: HttpProviderError\\n    at HttpProvider.request (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/hardhat/src/internal/core/providers/http.ts:78:19)\\n    at LocalAccountsProvider.request (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/hardhat/src/internal/core/providers/accounts.ts:187:34)\\n    at runMicrotasks (<anonymous>)\\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)\\n    at async EthersProviderWrapper.send (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/@nomiclabs/hardhat-ethers/src/internal/ethers-provider-wrapper.ts:13:20)\",\"code\":1,\"_isProviderError\":true}, code=UNPREDICTABLE_GAS_LIMIT, version=providers/5.7.2)",
+         "tickBefore": 23027,
+       }
+      
+      at SnapshotManager.assert (node_modules/mocha-chai-jest-snapshot/src/manager.ts:63:29)
+      at Proxy.<anonymous> (node_modules/mocha-chai-jest-snapshot/src/index.ts:81:20)
+      at Proxy.methodWrapper (node_modules/chai/lib/chai/utils/addMethod.js:57:25)
+      at Context.<anonymous> (test/UniswapV3Pool.swaps.spec.ts:523:19)
+      at runMicrotasks (<anonymous>)
+      at processTicksAndRejections (node:internal/process/task_queues:96:5)
+
+  10) UniswapV3Pool swap tests
+       medium fee, 10:1 price, 2e18 max range liquidity
+         swap token1 for token0 to price 0.40000:
+
+      swap error
+      + expected - actual
+
+       Object {
+         "poolBalance0": "632455532033675867",
+         "poolBalance1": "6324555320336758664",
+         "poolPriceBefore": "10.000",
+      -  "swapError": "cannot estimate gas; transaction may fail or may require manual gas limit [ See: https://links.ethers.org/v5-errors-UNPREDICTABLE_GAS_LIMIT ] (reason=\"failed to estimate gas: message execution failed: exit 33, revert reason: Error(SPL), vm error: message failed with backtrace:\\n00: f03640 (method 3844450837) -- contract reverted (33)\\n01: f03643 (method 3844450837) -- contract reverted (33)\\n (RetCode=33)\", method=\"estimateGas\", transaction={\"from\":\"0xF113C0c7741E1351A6263c7e8cF693494BCf58F7\",\"maxPriorityFeePerGas\":{\"type\":\"BigNumber\",\"hex\":\"0xb2d05e00\"},\"maxFeePerGas\":{\"type\":\"BigNumber\",\"hex\":\"0xb2d05f90\"},\"to\":\"0xfd2e77c82Ff17CAb6c02D2Cb4a691dc93F2EF2fB\",\"data\":\"0x9e77b805000000000000000000000000735aa682d2f1e07da44a5138b994870078e666630000000000000000000000000000000000000000a1e89b12424876d9b744b6790000000000000000000000000000000000000000000000000000000000000001\",\"type\":2,\"accessList\":null}, error={\"name\":\"ProviderError\",\"_stack\":\"ProviderError: HttpProviderError\\n    at HttpProvider.request (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/hardhat/src/internal/core/providers/http.ts:83:19)\\n    at LocalAccountsProvider.request (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/hardhat/src/internal/core/providers/accounts.ts:187:34)\\n    at runMicrotasks (<anonymous>)\\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)\\n    at async EthersProviderWrapper.send (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/@nomiclabs/hardhat-ethers/src/internal/ethers-provider-wrapper.ts:13:20)\",\"code\":1,\"_isProviderError\":true}, code=UNPREDICTABLE_GAS_LIMIT, version=providers/5.7.2)",
+      +  "swapError": "cannot estimate gas; transaction may fail or may require manual gas limit [ See: https://links.ethers.org/v5-errors-UNPREDICTABLE_GAS_LIMIT ] (reason=\"failed to estimate gas: message execution failed: exit 33, reason: message failed with backtrace:\\n00: f03656 (method 3844450837) -- contract reverted (33)\\n01: f03659 (method 3844450837) -- contract reverted (33)\\n (RetCode=33)\", method=\"estimateGas\", transaction={\"from\":\"0xF113C0c7741E1351A6263c7e8cF693494BCf58F7\",\"maxPriorityFeePerGas\":{\"type\":\"BigNumber\",\"hex\":\"0xb2d05e00\"},\"maxFeePerGas\":{\"type\":\"BigNumber\",\"hex\":\"0xb2d05f90\"},\"to\":\"0xA8Eeb121CeBe6b5309F42E12834da58E7F88653E\",\"data\":\"0x9e77b80500000000000000000000000056246cf3b22128eafaeea84e5ef1ad4f2a0170bd0000000000000000000000000000000000000000a1e89b12424876d9b744b6790000000000000000000000000000000000000000000000000000000000000001\",\"type\":2,\"accessList\":null}, error={\"name\":\"ProviderError\",\"_stack\":\"ProviderError: HttpProviderError\\n    at HttpProvider.request (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/hardhat/src/internal/core/providers/http.ts:78:19)\\n    at LocalAccountsProvider.request (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/hardhat/src/internal/core/providers/accounts.ts:187:34)\\n    at runMicrotasks (<anonymous>)\\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)\\n    at async EthersProviderWrapper.send (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/@nomiclabs/hardhat-ethers/src/internal/ethers-provider-wrapper.ts:13:20)\",\"code\":1,\"_isProviderError\":true}, code=UNPREDICTABLE_GAS_LIMIT, version=providers/5.7.2)",
+         "tickBefore": 23027,
+       }
+      
+      at SnapshotManager.assert (node_modules/mocha-chai-jest-snapshot/src/manager.ts:63:29)
+      at Proxy.<anonymous> (node_modules/mocha-chai-jest-snapshot/src/index.ts:81:20)
+      at Proxy.methodWrapper (node_modules/chai/lib/chai/utils/addMethod.js:57:25)
+      at Context.<anonymous> (test/UniswapV3Pool.swaps.spec.ts:523:19)
+      at runMicrotasks (<anonymous>)
+      at processTicksAndRejections (node:internal/process/task_queues:96:5)
+
+  11) UniswapV3Pool swap tests
+       medium fee, 1:10 price, 2e18 max range liquidity
+         swap exactly 1.0000 token0 for token1 to price 0.50000:
+
+      swap error
+      + expected - actual
+
+       Object {
+         "poolBalance0": "6324555320336758664",
+         "poolBalance1": "632455532033675867",
+         "poolPriceBefore": "0.10000",
+      -  "swapError": "cannot estimate gas; transaction may fail or may require manual gas limit [ See: https://links.ethers.org/v5-errors-UNPREDICTABLE_GAS_LIMIT ] (reason=\"failed to estimate gas: message execution failed: exit 33, revert reason: Error(SPL), vm error: message failed with backtrace:\\n00: f03680 (method 3844450837) -- contract reverted (33)\\n01: f03683 (method 3844450837) -- contract reverted (33)\\n (RetCode=33)\", method=\"estimateGas\", transaction={\"from\":\"0xF113C0c7741E1351A6263c7e8cF693494BCf58F7\",\"maxPriorityFeePerGas\":{\"type\":\"BigNumber\",\"hex\":\"0xb2d05e00\"},\"maxFeePerGas\":{\"type\":\"BigNumber\",\"hex\":\"0xb2d05f90\"},\"to\":\"0x66E2D3D0162cD9e919E89C1ec45D6cbd3516Ea94\",\"data\":\"0x6dfc0ddb0000000000000000000000008dc0bb9d2a664c10f8ebd5018f009565070ed8860000000000000000000000000000000000000000000000000de0b6b3a764000000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000b504f333f9de6484597d89b3\",\"type\":2,\"accessList\":null}, error={\"name\":\"ProviderError\",\"_stack\":\"ProviderError: HttpProviderError\\n    at HttpProvider.request (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/hardhat/src/internal/core/providers/http.ts:83:19)\\n    at LocalAccountsProvider.request (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/hardhat/src/internal/core/providers/accounts.ts:187:34)\\n    at runMicrotasks (<anonymous>)\\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)\\n    at async EthersProviderWrapper.send (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/@nomiclabs/hardhat-ethers/src/internal/ethers-provider-wrapper.ts:13:20)\",\"code\":1,\"_isProviderError\":true}, code=UNPREDICTABLE_GAS_LIMIT, version=providers/5.7.2)",
+      +  "swapError": "cannot estimate gas; transaction may fail or may require manual gas limit [ See: https://links.ethers.org/v5-errors-UNPREDICTABLE_GAS_LIMIT ] (reason=\"failed to estimate gas: message execution failed: exit 33, reason: message failed with backtrace:\\n00: f03696 (method 3844450837) -- contract reverted (33)\\n01: f03699 (method 3844450837) -- contract reverted (33)\\n (RetCode=33)\", method=\"estimateGas\", transaction={\"from\":\"0xF113C0c7741E1351A6263c7e8cF693494BCf58F7\",\"maxPriorityFeePerGas\":{\"type\":\"BigNumber\",\"hex\":\"0xb2d05e00\"},\"maxFeePerGas\":{\"type\":\"BigNumber\",\"hex\":\"0xb2d05f90\"},\"to\":\"0x2955BF798b9643062F73a9f95843BfD14b4601f6\",\"data\":\"0x6dfc0ddb00000000000000000000000035b8c45229819f3d38328b1946e562c7a21133360000000000000000000000000000000000000000000000000de0b6b3a764000000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000b504f333f9de6484597d89b3\",\"type\":2,\"accessList\":null}, error={\"name\":\"ProviderError\",\"_stack\":\"ProviderError: HttpProviderError\\n    at HttpProvider.request (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/hardhat/src/internal/core/providers/http.ts:78:19)\\n    at LocalAccountsProvider.request (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/hardhat/src/internal/core/providers/accounts.ts:187:34)\\n    at runMicrotasks (<anonymous>)\\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)\\n    at async EthersProviderWrapper.send (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/@nomiclabs/hardhat-ethers/src/internal/ethers-provider-wrapper.ts:13:20)\",\"code\":1,\"_isProviderError\":true}, code=UNPREDICTABLE_GAS_LIMIT, version=providers/5.7.2)",
+         "tickBefore": -23028,
+       }
+      
+      at SnapshotManager.assert (node_modules/mocha-chai-jest-snapshot/src/manager.ts:63:29)
+      at Proxy.<anonymous> (node_modules/mocha-chai-jest-snapshot/src/index.ts:81:20)
+      at Proxy.methodWrapper (node_modules/chai/lib/chai/utils/addMethod.js:57:25)
+      at Context.<anonymous> (test/UniswapV3Pool.swaps.spec.ts:523:19)
+      at runMicrotasks (<anonymous>)
+      at processTicksAndRejections (node:internal/process/task_queues:96:5)
+
+  12) UniswapV3Pool swap tests
+       medium fee, 1:10 price, 2e18 max range liquidity
+         swap token0 for exactly 1.0000 token1 to price 0.50000:
+
+      swap error
+      + expected - actual
+
+       Object {
+         "poolBalance0": "6324555320336758664",
+         "poolBalance1": "632455532033675867",
+         "poolPriceBefore": "0.10000",
+      -  "swapError": "cannot estimate gas; transaction may fail or may require manual gas limit [ See: https://links.ethers.org/v5-errors-UNPREDICTABLE_GAS_LIMIT ] (reason=\"failed to estimate gas: message execution failed: exit 33, revert reason: Error(SPL), vm error: message failed with backtrace:\\n00: f03696 (method 3844450837) -- contract reverted (33)\\n01: f03699 (method 3844450837) -- contract reverted (33)\\n (RetCode=33)\", method=\"estimateGas\", transaction={\"from\":\"0xF113C0c7741E1351A6263c7e8cF693494BCf58F7\",\"maxPriorityFeePerGas\":{\"type\":\"BigNumber\",\"hex\":\"0xb2d05e00\"},\"maxFeePerGas\":{\"type\":\"BigNumber\",\"hex\":\"0xb2d05f90\"},\"to\":\"0xc70086B2B12c38Ad3C2A3Da79062dB177BC63B39\",\"data\":\"0xbac7bf78000000000000000000000000ab3f449c6b9483eb0cc1f24b571502a8f5c835230000000000000000000000000000000000000000000000000de0b6b3a764000000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000b504f333f9de6484597d89b3\",\"type\":2,\"accessList\":null}, error={\"name\":\"ProviderError\",\"_stack\":\"ProviderError: HttpProviderError\\n    at HttpProvider.request (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/hardhat/src/internal/core/providers/http.ts:83:19)\\n    at LocalAccountsProvider.request (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/hardhat/src/internal/core/providers/accounts.ts:187:34)\\n    at runMicrotasks (<anonymous>)\\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)\\n    at async EthersProviderWrapper.send (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/@nomiclabs/hardhat-ethers/src/internal/ethers-provider-wrapper.ts:13:20)\",\"code\":1,\"_isProviderError\":true}, code=UNPREDICTABLE_GAS_LIMIT, version=providers/5.7.2)",
+      +  "swapError": "cannot estimate gas; transaction may fail or may require manual gas limit [ See: https://links.ethers.org/v5-errors-UNPREDICTABLE_GAS_LIMIT ] (reason=\"failed to estimate gas: message execution failed: exit 33, reason: message failed with backtrace:\\n00: f03712 (method 3844450837) -- contract reverted (33)\\n01: f03715 (method 3844450837) -- contract reverted (33)\\n (RetCode=33)\", method=\"estimateGas\", transaction={\"from\":\"0xF113C0c7741E1351A6263c7e8cF693494BCf58F7\",\"maxPriorityFeePerGas\":{\"type\":\"BigNumber\",\"hex\":\"0xb2d05e00\"},\"maxFeePerGas\":{\"type\":\"BigNumber\",\"hex\":\"0xb2d05f90\"},\"to\":\"0x5694Fa758DDB735Ceb34aF050d41490B3B2332Bb\",\"data\":\"0xbac7bf78000000000000000000000000f6ae6865f9dce10effb86f292ace0cac2a44f8690000000000000000000000000000000000000000000000000de0b6b3a764000000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000b504f333f9de6484597d89b3\",\"type\":2,\"accessList\":null}, error={\"name\":\"ProviderError\",\"_stack\":\"ProviderError: HttpProviderError\\n    at HttpProvider.request (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/hardhat/src/internal/core/providers/http.ts:78:19)\\n    at LocalAccountsProvider.request (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/hardhat/src/internal/core/providers/accounts.ts:187:34)\\n    at runMicrotasks (<anonymous>)\\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)\\n    at async EthersProviderWrapper.send (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/@nomiclabs/hardhat-ethers/src/internal/ethers-provider-wrapper.ts:13:20)\",\"code\":1,\"_isProviderError\":true}, code=UNPREDICTABLE_GAS_LIMIT, version=providers/5.7.2)",
+         "tickBefore": -23028,
+       }
+      
+      at SnapshotManager.assert (node_modules/mocha-chai-jest-snapshot/src/manager.ts:63:29)
+      at Proxy.<anonymous> (node_modules/mocha-chai-jest-snapshot/src/index.ts:81:20)
+      at Proxy.methodWrapper (node_modules/chai/lib/chai/utils/addMethod.js:57:25)
+      at Context.<anonymous> (test/UniswapV3Pool.swaps.spec.ts:523:19)
+      at runMicrotasks (<anonymous>)
+      at processTicksAndRejections (node:internal/process/task_queues:96:5)
+
+  13) UniswapV3Pool swap tests
+       medium fee, 1:10 price, 2e18 max range liquidity
+         swap token0 for token1 to price 0.40000:
+
+      swap error
+      + expected - actual
+
+       Object {
+         "poolBalance0": "6324555320336758664",
+         "poolBalance1": "632455532033675867",
+         "poolPriceBefore": "0.10000",
+      -  "swapError": "cannot estimate gas; transaction may fail or may require manual gas limit [ See: https://links.ethers.org/v5-errors-UNPREDICTABLE_GAS_LIMIT ] (reason=\"failed to estimate gas: message execution failed: exit 33, revert reason: Error(SPL), vm error: message failed with backtrace:\\n00: f03752 (method 3844450837) -- contract reverted (33)\\n01: f03755 (method 3844450837) -- contract reverted (33)\\n (RetCode=33)\", method=\"estimateGas\", transaction={\"from\":\"0xF113C0c7741E1351A6263c7e8cF693494BCf58F7\",\"maxPriorityFeePerGas\":{\"type\":\"BigNumber\",\"hex\":\"0xb2d05e00\"},\"maxFeePerGas\":{\"type\":\"BigNumber\",\"hex\":\"0xb2d05f90\"},\"to\":\"0x33c408C98205D0139D26d51a2735315A4b974399\",\"data\":\"0x2ec20bf9000000000000000000000000664d066fc8ca056789d64d203912c5f09443a0840000000000000000000000000000000000000000a1e89b12424876d9b744b6790000000000000000000000000000000000000000000000000000000000000001\",\"type\":2,\"accessList\":null}, error={\"name\":\"ProviderError\",\"_stack\":\"ProviderError: HttpProviderError\\n    at HttpProvider.request (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/hardhat/src/internal/core/providers/http.ts:83:19)\\n    at LocalAccountsProvider.request (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/hardhat/src/internal/core/providers/accounts.ts:187:34)\\n    at runMicrotasks (<anonymous>)\\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)\\n    at async EthersProviderWrapper.send (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/@nomiclabs/hardhat-ethers/src/internal/ethers-provider-wrapper.ts:13:20)\",\"code\":1,\"_isProviderError\":true}, code=UNPREDICTABLE_GAS_LIMIT, version=providers/5.7.2)",
+      +  "swapError": "cannot estimate gas; transaction may fail or may require manual gas limit [ See: https://links.ethers.org/v5-errors-UNPREDICTABLE_GAS_LIMIT ] (reason=\"failed to estimate gas: message execution failed: exit 33, reason: message failed with backtrace:\\n00: f03768 (method 3844450837) -- contract reverted (33)\\n01: f03771 (method 3844450837) -- contract reverted (33)\\n (RetCode=33)\", method=\"estimateGas\", transaction={\"from\":\"0xF113C0c7741E1351A6263c7e8cF693494BCf58F7\",\"maxPriorityFeePerGas\":{\"type\":\"BigNumber\",\"hex\":\"0xb2d05e00\"},\"maxFeePerGas\":{\"type\":\"BigNumber\",\"hex\":\"0xb2d05f90\"},\"to\":\"0xc85Adc66BA3A01b6EC2E34be466712C5a63650Ee\",\"data\":\"0x2ec20bf9000000000000000000000000d022925a89863348267fcf8522bf1e3e857b7c9d0000000000000000000000000000000000000000a1e89b12424876d9b744b6790000000000000000000000000000000000000000000000000000000000000001\",\"type\":2,\"accessList\":null}, error={\"name\":\"ProviderError\",\"_stack\":\"ProviderError: HttpProviderError\\n    at HttpProvider.request (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/hardhat/src/internal/core/providers/http.ts:78:19)\\n    at LocalAccountsProvider.request (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/hardhat/src/internal/core/providers/accounts.ts:187:34)\\n    at runMicrotasks (<anonymous>)\\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)\\n    at async EthersProviderWrapper.send (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/@nomiclabs/hardhat-ethers/src/internal/ethers-provider-wrapper.ts:13:20)\",\"code\":1,\"_isProviderError\":true}, code=UNPREDICTABLE_GAS_LIMIT, version=providers/5.7.2)",
+         "tickBefore": -23028,
+       }
+      
+      at SnapshotManager.assert (node_modules/mocha-chai-jest-snapshot/src/manager.ts:63:29)
+      at Proxy.<anonymous> (node_modules/mocha-chai-jest-snapshot/src/index.ts:81:20)
+      at Proxy.methodWrapper (node_modules/chai/lib/chai/utils/addMethod.js:57:25)
+      at Context.<anonymous> (test/UniswapV3Pool.swaps.spec.ts:523:19)
+      at runMicrotasks (<anonymous>)
+      at processTicksAndRejections (node:internal/process/task_queues:96:5)
+
+  14) UniswapV3Pool swap tests
+       medium fee, 1:10 price, 2e18 max range liquidity
+         swap token0 for token1 to price 2.5000:
+
+      swap error
+      + expected - actual
+
+       Object {
+         "poolBalance0": "6324555320336758664",
+         "poolBalance1": "632455532033675867",
+         "poolPriceBefore": "0.10000",
+      -  "swapError": "cannot estimate gas; transaction may fail or may require manual gas limit [ See: https://links.ethers.org/v5-errors-UNPREDICTABLE_GAS_LIMIT ] (reason=\"failed to estimate gas: message execution failed: exit 33, revert reason: Error(SPL), vm error: message failed with backtrace:\\n00: f03760 (method 3844450837) -- contract reverted (33)\\n01: f03763 (method 3844450837) -- contract reverted (33)\\n (RetCode=33)\", method=\"estimateGas\", transaction={\"from\":\"0xF113C0c7741E1351A6263c7e8cF693494BCf58F7\",\"maxPriorityFeePerGas\":{\"type\":\"BigNumber\",\"hex\":\"0xb2d05e00\"},\"maxFeePerGas\":{\"type\":\"BigNumber\",\"hex\":\"0xb2d05f90\"},\"to\":\"0x982C3F0Df8bfC85177b1328795b1e34D78D83D47\",\"data\":\"0x2ec20bf9000000000000000000000000c658c8ff28895e5156a5abdc0d49a5a095e1875e000000000000000000000000000000000000000194c583ada5b529204a2bc8300000000000000000000000000000000000000000000000000000000000000001\",\"type\":2,\"accessList\":null}, error={\"name\":\"ProviderError\",\"_stack\":\"ProviderError: HttpProviderError\\n    at HttpProvider.request (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/hardhat/src/internal/core/providers/http.ts:83:19)\\n    at LocalAccountsProvider.request (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/hardhat/src/internal/core/providers/accounts.ts:187:34)\\n    at runMicrotasks (<anonymous>)\\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)\\n    at async EthersProviderWrapper.send (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/@nomiclabs/hardhat-ethers/src/internal/ethers-provider-wrapper.ts:13:20)\",\"code\":1,\"_isProviderError\":true}, code=UNPREDICTABLE_GAS_LIMIT, version=providers/5.7.2)",
+      +  "swapError": "cannot estimate gas; transaction may fail or may require manual gas limit [ See: https://links.ethers.org/v5-errors-UNPREDICTABLE_GAS_LIMIT ] (reason=\"failed to estimate gas: message execution failed: exit 33, reason: message failed with backtrace:\\n00: f03776 (method 3844450837) -- contract reverted (33)\\n01: f03779 (method 3844450837) -- contract reverted (33)\\n (RetCode=33)\", method=\"estimateGas\", transaction={\"from\":\"0xF113C0c7741E1351A6263c7e8cF693494BCf58F7\",\"maxPriorityFeePerGas\":{\"type\":\"BigNumber\",\"hex\":\"0xb2d05e00\"},\"maxFeePerGas\":{\"type\":\"BigNumber\",\"hex\":\"0xb2d05f90\"},\"to\":\"0x86318aD503E231C4fe7d92083A10E21B1a7Df34c\",\"data\":\"0x2ec20bf900000000000000000000000019cc23296b49f99808e3b909afa2974a0e159a22000000000000000000000000000000000000000194c583ada5b529204a2bc8300000000000000000000000000000000000000000000000000000000000000001\",\"type\":2,\"accessList\":null}, error={\"name\":\"ProviderError\",\"_stack\":\"ProviderError: HttpProviderError\\n    at HttpProvider.request (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/hardhat/src/internal/core/providers/http.ts:78:19)\\n    at LocalAccountsProvider.request (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/hardhat/src/internal/core/providers/accounts.ts:187:34)\\n    at runMicrotasks (<anonymous>)\\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)\\n    at async EthersProviderWrapper.send (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/@nomiclabs/hardhat-ethers/src/internal/ethers-provider-wrapper.ts:13:20)\",\"code\":1,\"_isProviderError\":true}, code=UNPREDICTABLE_GAS_LIMIT, version=providers/5.7.2)",
+         "tickBefore": -23028,
+       }
+      
+      at SnapshotManager.assert (node_modules/mocha-chai-jest-snapshot/src/manager.ts:63:29)
+      at Proxy.<anonymous> (node_modules/mocha-chai-jest-snapshot/src/index.ts:81:20)
+      at Proxy.methodWrapper (node_modules/chai/lib/chai/utils/addMethod.js:57:25)
+      at Context.<anonymous> (test/UniswapV3Pool.swaps.spec.ts:523:19)
+      at runMicrotasks (<anonymous>)
+      at processTicksAndRejections (node:internal/process/task_queues:96:5)
+
+  15) UniswapV3Pool swap tests
+       medium fee, 1:1 price, 0 liquidity, all liquidity around current price
+         swap token0 for token1 to price 2.5000:
+
+      swap error
+      + expected - actual
+
+       Object {
+         "poolBalance0": "1994009290088178439",
+         "poolBalance1": "1994009290088178439",
+         "poolPriceBefore": "1.0000",
+      -  "swapError": "cannot estimate gas; transaction may fail or may require manual gas limit [ See: https://links.ethers.org/v5-errors-UNPREDICTABLE_GAS_LIMIT ] (reason=\"failed to estimate gas: message execution failed: exit 33, revert reason: Error(SPL), vm error: message failed with backtrace:\\n00: f03888 (method 3844450837) -- contract reverted (33)\\n01: f03891 (method 3844450837) -- contract reverted (33)\\n (RetCode=33)\", method=\"estimateGas\", transaction={\"from\":\"0xF113C0c7741E1351A6263c7e8cF693494BCf58F7\",\"maxPriorityFeePerGas\":{\"type\":\"BigNumber\",\"hex\":\"0xb2d05e00\"},\"maxFeePerGas\":{\"type\":\"BigNumber\",\"hex\":\"0xb2d05f90\"},\"to\":\"0xC58E4132d47e6e5B26aDEB984Cd16846281CC3b0\",\"data\":\"0x2ec20bf9000000000000000000000000608a9cd5da46e44a2f2fc4e8f9e90189fbeb00d4000000000000000000000000000000000000000194c583ada5b529204a2bc8300000000000000000000000000000000000000000000000000000000000000001\",\"type\":2,\"accessList\":null}, error={\"name\":\"ProviderError\",\"_stack\":\"ProviderError: HttpProviderError\\n    at HttpProvider.request (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/hardhat/src/internal/core/providers/http.ts:83:19)\\n    at LocalAccountsProvider.request (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/hardhat/src/internal/core/providers/accounts.ts:187:34)\\n    at runMicrotasks (<anonymous>)\\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)\\n    at async EthersProviderWrapper.send (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/@nomiclabs/hardhat-ethers/src/internal/ethers-provider-wrapper.ts:13:20)\",\"code\":1,\"_isProviderError\":true}, code=UNPREDICTABLE_GAS_LIMIT, version=providers/5.7.2)",
+      +  "swapError": "cannot estimate gas; transaction may fail or may require manual gas limit [ See: https://links.ethers.org/v5-errors-UNPREDICTABLE_GAS_LIMIT ] (reason=\"failed to estimate gas: message execution failed: exit 33, reason: message failed with backtrace:\\n00: f03904 (method 3844450837) -- contract reverted (33)\\n01: f03907 (method 3844450837) -- contract reverted (33)\\n (RetCode=33)\", method=\"estimateGas\", transaction={\"from\":\"0xF113C0c7741E1351A6263c7e8cF693494BCf58F7\",\"maxPriorityFeePerGas\":{\"type\":\"BigNumber\",\"hex\":\"0xb2d05e00\"},\"maxFeePerGas\":{\"type\":\"BigNumber\",\"hex\":\"0xb2d05f90\"},\"to\":\"0x9b6973d410A731704A1c7Bd736197fDa735e6Af9\",\"data\":\"0x2ec20bf9000000000000000000000000a3dcf9d42837c2b09fa59044b7eb674806743528000000000000000000000000000000000000000194c583ada5b529204a2bc8300000000000000000000000000000000000000000000000000000000000000001\",\"type\":2,\"accessList\":null}, error={\"name\":\"ProviderError\",\"_stack\":\"ProviderError: HttpProviderError\\n    at HttpProvider.request (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/hardhat/src/internal/core/providers/http.ts:78:19)\\n    at LocalAccountsProvider.request (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/hardhat/src/internal/core/providers/accounts.ts:187:34)\\n    at runMicrotasks (<anonymous>)\\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)\\n    at async EthersProviderWrapper.send (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/@nomiclabs/hardhat-ethers/src/internal/ethers-provider-wrapper.ts:13:20)\",\"code\":1,\"_isProviderError\":true}, code=UNPREDICTABLE_GAS_LIMIT, version=providers/5.7.2)",
+         "tickBefore": 0,
+       }
+      
+      at SnapshotManager.assert (node_modules/mocha-chai-jest-snapshot/src/manager.ts:63:29)
+      at Proxy.<anonymous> (node_modules/mocha-chai-jest-snapshot/src/index.ts:81:20)
+      at Proxy.methodWrapper (node_modules/chai/lib/chai/utils/addMethod.js:57:25)
+      at Context.<anonymous> (test/UniswapV3Pool.swaps.spec.ts:523:19)
+      at runMicrotasks (<anonymous>)
+      at processTicksAndRejections (node:internal/process/task_queues:96:5)
+
+  16) UniswapV3Pool swap tests
+       medium fee, 1:1 price, 0 liquidity, all liquidity around current price
+         swap token1 for token0 to price 0.40000:
+
+      swap error
+      + expected - actual
+
+       Object {
+         "poolBalance0": "1994009290088178439",
+         "poolBalance1": "1994009290088178439",
+         "poolPriceBefore": "1.0000",
+      -  "swapError": "cannot estimate gas; transaction may fail or may require manual gas limit [ See: https://links.ethers.org/v5-errors-UNPREDICTABLE_GAS_LIMIT ] (reason=\"failed to estimate gas: message execution failed: exit 33, revert reason: Error(SPL), vm error: message failed with backtrace:\\n00: f03896 (method 3844450837) -- contract reverted (33)\\n01: f03899 (method 3844450837) -- contract reverted (33)\\n (RetCode=33)\", method=\"estimateGas\", transaction={\"from\":\"0xF113C0c7741E1351A6263c7e8cF693494BCf58F7\",\"maxPriorityFeePerGas\":{\"type\":\"BigNumber\",\"hex\":\"0xb2d05e00\"},\"maxFeePerGas\":{\"type\":\"BigNumber\",\"hex\":\"0xb2d05f90\"},\"to\":\"0x77eD4899af6A96af5652Ac0E03bC56da4698aDC1\",\"data\":\"0x9e77b8050000000000000000000000007a49ddd9e406db878152b882dafd8987b18941c30000000000000000000000000000000000000000a1e89b12424876d9b744b6790000000000000000000000000000000000000000000000000000000000000001\",\"type\":2,\"accessList\":null}, error={\"name\":\"ProviderError\",\"_stack\":\"ProviderError: HttpProviderError\\n    at HttpProvider.request (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/hardhat/src/internal/core/providers/http.ts:83:19)\\n    at LocalAccountsProvider.request (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/hardhat/src/internal/core/providers/accounts.ts:187:34)\\n    at runMicrotasks (<anonymous>)\\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)\\n    at async EthersProviderWrapper.send (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/@nomiclabs/hardhat-ethers/src/internal/ethers-provider-wrapper.ts:13:20)\",\"code\":1,\"_isProviderError\":true}, code=UNPREDICTABLE_GAS_LIMIT, version=providers/5.7.2)",
+      +  "swapError": "cannot estimate gas; transaction may fail or may require manual gas limit [ See: https://links.ethers.org/v5-errors-UNPREDICTABLE_GAS_LIMIT ] (reason=\"failed to estimate gas: message execution failed: exit 33, reason: message failed with backtrace:\\n00: f03912 (method 3844450837) -- contract reverted (33)\\n01: f03915 (method 3844450837) -- contract reverted (33)\\n (RetCode=33)\", method=\"estimateGas\", transaction={\"from\":\"0xF113C0c7741E1351A6263c7e8cF693494BCf58F7\",\"maxPriorityFeePerGas\":{\"type\":\"BigNumber\",\"hex\":\"0xb2d05e00\"},\"maxFeePerGas\":{\"type\":\"BigNumber\",\"hex\":\"0xb2d05f90\"},\"to\":\"0x32c1693b1aC05294DA982965E8B42AE6f31e5713\",\"data\":\"0x9e77b805000000000000000000000000bef385f5313a2a76e362273d0787b83852c7be2c0000000000000000000000000000000000000000a1e89b12424876d9b744b6790000000000000000000000000000000000000000000000000000000000000001\",\"type\":2,\"accessList\":null}, error={\"name\":\"ProviderError\",\"_stack\":\"ProviderError: HttpProviderError\\n    at HttpProvider.request (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/hardhat/src/internal/core/providers/http.ts:78:19)\\n    at LocalAccountsProvider.request (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/hardhat/src/internal/core/providers/accounts.ts:187:34)\\n    at runMicrotasks (<anonymous>)\\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)\\n    at async EthersProviderWrapper.send (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/@nomiclabs/hardhat-ethers/src/internal/ethers-provider-wrapper.ts:13:20)\",\"code\":1,\"_isProviderError\":true}, code=UNPREDICTABLE_GAS_LIMIT, version=providers/5.7.2)",
+         "tickBefore": 0,
+       }
+      
+      at SnapshotManager.assert (node_modules/mocha-chai-jest-snapshot/src/manager.ts:63:29)
+      at Proxy.<anonymous> (node_modules/mocha-chai-jest-snapshot/src/index.ts:81:20)
+      at Proxy.methodWrapper (node_modules/chai/lib/chai/utils/addMethod.js:57:25)
+      at Context.<anonymous> (test/UniswapV3Pool.swaps.spec.ts:523:19)
+      at runMicrotasks (<anonymous>)
+      at processTicksAndRejections (node:internal/process/task_queues:96:5)
+
+  17) UniswapV3Pool swap tests
+       medium fee, 1:1 price, additional liquidity around current price
+         swap token0 for token1 to price 2.5000:
+
+      swap error
+      + expected - actual
+
+       Object {
+         "poolBalance0": "3994009290088178439",
+         "poolBalance1": "3994009290088178439",
+         "poolPriceBefore": "1.0000",
+      -  "swapError": "cannot estimate gas; transaction may fail or may require manual gas limit [ See: https://links.ethers.org/v5-errors-UNPREDICTABLE_GAS_LIMIT ] (reason=\"failed to estimate gas: message execution failed: exit 33, revert reason: Error(SPL), vm error: message failed with backtrace:\\n00: f04016 (method 3844450837) -- contract reverted (33)\\n01: f04019 (method 3844450837) -- contract reverted (33)\\n (RetCode=33)\", method=\"estimateGas\", transaction={\"from\":\"0xF113C0c7741E1351A6263c7e8cF693494BCf58F7\",\"maxPriorityFeePerGas\":{\"type\":\"BigNumber\",\"hex\":\"0xb2d05e00\"},\"maxFeePerGas\":{\"type\":\"BigNumber\",\"hex\":\"0xb2d05f90\"},\"to\":\"0x2b7ADef6b80fBd75A1bd600146801Afe1d97Ad38\",\"data\":\"0x2ec20bf9000000000000000000000000632ee7788fa57b3c8fefc62b709586167021e935000000000000000000000000000000000000000194c583ada5b529204a2bc8300000000000000000000000000000000000000000000000000000000000000001\",\"type\":2,\"accessList\":null}, error={\"name\":\"ProviderError\",\"_stack\":\"ProviderError: HttpProviderError\\n    at HttpProvider.request (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/hardhat/src/internal/core/providers/http.ts:83:19)\\n    at LocalAccountsProvider.request (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/hardhat/src/internal/core/providers/accounts.ts:187:34)\\n    at runMicrotasks (<anonymous>)\\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)\\n    at async EthersProviderWrapper.send (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/@nomiclabs/hardhat-ethers/src/internal/ethers-provider-wrapper.ts:13:20)\",\"code\":1,\"_isProviderError\":true}, code=UNPREDICTABLE_GAS_LIMIT, version=providers/5.7.2)",
+      +  "swapError": "cannot estimate gas; transaction may fail or may require manual gas limit [ See: https://links.ethers.org/v5-errors-UNPREDICTABLE_GAS_LIMIT ] (reason=\"failed to estimate gas: message execution failed: exit 33, reason: message failed with backtrace:\\n00: f04032 (method 3844450837) -- contract reverted (33)\\n01: f04035 (method 3844450837) -- contract reverted (33)\\n (RetCode=33)\", method=\"estimateGas\", transaction={\"from\":\"0xF113C0c7741E1351A6263c7e8cF693494BCf58F7\",\"maxPriorityFeePerGas\":{\"type\":\"BigNumber\",\"hex\":\"0xb2d05e00\"},\"maxFeePerGas\":{\"type\":\"BigNumber\",\"hex\":\"0xb2d05f90\"},\"to\":\"0xE0d0ed3EB1ee4AfEC91C2Fc90fb6086BB7CA89d1\",\"data\":\"0x2ec20bf90000000000000000000000005dd9f5e0bc584932088e977e8710481c30539db4000000000000000000000000000000000000000194c583ada5b529204a2bc8300000000000000000000000000000000000000000000000000000000000000001\",\"type\":2,\"accessList\":null}, error={\"name\":\"ProviderError\",\"_stack\":\"ProviderError: HttpProviderError\\n    at HttpProvider.request (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/hardhat/src/internal/core/providers/http.ts:78:19)\\n    at LocalAccountsProvider.request (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/hardhat/src/internal/core/providers/accounts.ts:187:34)\\n    at runMicrotasks (<anonymous>)\\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)\\n    at async EthersProviderWrapper.send (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/@nomiclabs/hardhat-ethers/src/internal/ethers-provider-wrapper.ts:13:20)\",\"code\":1,\"_isProviderError\":true}, code=UNPREDICTABLE_GAS_LIMIT, version=providers/5.7.2)",
+         "tickBefore": 0,
+       }
+      
+      at SnapshotManager.assert (node_modules/mocha-chai-jest-snapshot/src/manager.ts:63:29)
+      at Proxy.<anonymous> (node_modules/mocha-chai-jest-snapshot/src/index.ts:81:20)
+      at Proxy.methodWrapper (node_modules/chai/lib/chai/utils/addMethod.js:57:25)
+      at Context.<anonymous> (test/UniswapV3Pool.swaps.spec.ts:523:19)
+      at runMicrotasks (<anonymous>)
+      at processTicksAndRejections (node:internal/process/task_queues:96:5)
+
+  18) UniswapV3Pool swap tests
+       medium fee, 1:1 price, additional liquidity around current price
+         swap token1 for token0 to price 0.40000:
+
+      swap error
+      + expected - actual
+
+       Object {
+         "poolBalance0": "3994009290088178439",
+         "poolBalance1": "3994009290088178439",
+         "poolPriceBefore": "1.0000",
+      -  "swapError": "cannot estimate gas; transaction may fail or may require manual gas limit [ See: https://links.ethers.org/v5-errors-UNPREDICTABLE_GAS_LIMIT ] (reason=\"failed to estimate gas: message execution failed: exit 33, revert reason: Error(SPL), vm error: message failed with backtrace:\\n00: f04024 (method 3844450837) -- contract reverted (33)\\n01: f04027 (method 3844450837) -- contract reverted (33)\\n (RetCode=33)\", method=\"estimateGas\", transaction={\"from\":\"0xF113C0c7741E1351A6263c7e8cF693494BCf58F7\",\"maxPriorityFeePerGas\":{\"type\":\"BigNumber\",\"hex\":\"0xb2d05e00\"},\"maxFeePerGas\":{\"type\":\"BigNumber\",\"hex\":\"0xb2d05f90\"},\"to\":\"0xfbcF63809Bd504dbeA0ce66F11ada5b227E30A1f\",\"data\":\"0x9e77b8050000000000000000000000008617d5ff8c62d3abc328fab2e69bc3586ecdd1070000000000000000000000000000000000000000a1e89b12424876d9b744b6790000000000000000000000000000000000000000000000000000000000000001\",\"type\":2,\"accessList\":null}, error={\"name\":\"ProviderError\",\"_stack\":\"ProviderError: HttpProviderError\\n    at HttpProvider.request (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/hardhat/src/internal/core/providers/http.ts:83:19)\\n    at LocalAccountsProvider.request (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/hardhat/src/internal/core/providers/accounts.ts:187:34)\\n    at runMicrotasks (<anonymous>)\\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)\\n    at async EthersProviderWrapper.send (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/@nomiclabs/hardhat-ethers/src/internal/ethers-provider-wrapper.ts:13:20)\",\"code\":1,\"_isProviderError\":true}, code=UNPREDICTABLE_GAS_LIMIT, version=providers/5.7.2)",
+      +  "swapError": "cannot estimate gas; transaction may fail or may require manual gas limit [ See: https://links.ethers.org/v5-errors-UNPREDICTABLE_GAS_LIMIT ] (reason=\"failed to estimate gas: message execution failed: exit 33, reason: message failed with backtrace:\\n00: f04040 (method 3844450837) -- contract reverted (33)\\n01: f04043 (method 3844450837) -- contract reverted (33)\\n (RetCode=33)\", method=\"estimateGas\", transaction={\"from\":\"0xF113C0c7741E1351A6263c7e8cF693494BCf58F7\",\"maxPriorityFeePerGas\":{\"type\":\"BigNumber\",\"hex\":\"0xb2d05e00\"},\"maxFeePerGas\":{\"type\":\"BigNumber\",\"hex\":\"0xb2d05f90\"},\"to\":\"0x096b5281A314dDf22353ca4F5188D60418a9cb7a\",\"data\":\"0x9e77b8050000000000000000000000007b07fcec89b6da1f7d2668cd7df42c3662b9547b0000000000000000000000000000000000000000a1e89b12424876d9b744b6790000000000000000000000000000000000000000000000000000000000000001\",\"type\":2,\"accessList\":null}, error={\"name\":\"ProviderError\",\"_stack\":\"ProviderError: HttpProviderError\\n    at HttpProvider.request (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/hardhat/src/internal/core/providers/http.ts:78:19)\\n    at LocalAccountsProvider.request (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/hardhat/src/internal/core/providers/accounts.ts:187:34)\\n    at runMicrotasks (<anonymous>)\\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)\\n    at async EthersProviderWrapper.send (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/@nomiclabs/hardhat-ethers/src/internal/ethers-provider-wrapper.ts:13:20)\",\"code\":1,\"_isProviderError\":true}, code=UNPREDICTABLE_GAS_LIMIT, version=providers/5.7.2)",
+         "tickBefore": 0,
+       }
+      
+      at SnapshotManager.assert (node_modules/mocha-chai-jest-snapshot/src/manager.ts:63:29)
+      at Proxy.<anonymous> (node_modules/mocha-chai-jest-snapshot/src/index.ts:81:20)
+      at Proxy.methodWrapper (node_modules/chai/lib/chai/utils/addMethod.js:57:25)
+      at Context.<anonymous> (test/UniswapV3Pool.swaps.spec.ts:523:19)
+      at runMicrotasks (<anonymous>)
+      at processTicksAndRejections (node:internal/process/task_queues:96:5)
+
+  19) UniswapV3Pool swap tests
+       low fee, large liquidity around current price (stable swap)
+         swap token0 for token1 to price 2.5000:
+
+      swap error
+      + expected - actual
+
+       Object {
+         "poolBalance0": "999700069986003",
+         "poolBalance1": "999700069986003",
+         "poolPriceBefore": "1.0000",
+      -  "swapError": "cannot estimate gas; transaction may fail or may require manual gas limit [ See: https://links.ethers.org/v5-errors-UNPREDICTABLE_GAS_LIMIT ] (reason=\"failed to estimate gas: message execution failed: exit 33, revert reason: Error(SPL), vm error: message failed with backtrace:\\n00: f04144 (method 3844450837) -- contract reverted (33)\\n01: f04147 (method 3844450837) -- contract reverted (33)\\n (RetCode=33)\", method=\"estimateGas\", transaction={\"from\":\"0xF113C0c7741E1351A6263c7e8cF693494BCf58F7\",\"maxPriorityFeePerGas\":{\"type\":\"BigNumber\",\"hex\":\"0xb2d05e00\"},\"maxFeePerGas\":{\"type\":\"BigNumber\",\"hex\":\"0xb2d05f90\"},\"to\":\"0xB532d820a1Bc3e88c1143B6716a413BaAbD5672F\",\"data\":\"0x2ec20bf900000000000000000000000057f359810d399da7a846c41dbaf3832d6d0126ad000000000000000000000000000000000000000194c583ada5b529204a2bc8300000000000000000000000000000000000000000000000000000000000000001\",\"type\":2,\"accessList\":null}, error={\"name\":\"ProviderError\",\"_stack\":\"ProviderError: HttpProviderError\\n    at HttpProvider.request (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/hardhat/src/internal/core/providers/http.ts:83:19)\\n    at LocalAccountsProvider.request (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/hardhat/src/internal/core/providers/accounts.ts:187:34)\\n    at runMicrotasks (<anonymous>)\\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)\\n    at async EthersProviderWrapper.send (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/@nomiclabs/hardhat-ethers/src/internal/ethers-provider-wrapper.ts:13:20)\",\"code\":1,\"_isProviderError\":true}, code=UNPREDICTABLE_GAS_LIMIT, version=providers/5.7.2)",
+      +  "swapError": "cannot estimate gas; transaction may fail or may require manual gas limit [ See: https://links.ethers.org/v5-errors-UNPREDICTABLE_GAS_LIMIT ] (reason=\"failed to estimate gas: message execution failed: exit 33, reason: message failed with backtrace:\\n00: f04160 (method 3844450837) -- contract reverted (33)\\n01: f04163 (method 3844450837) -- contract reverted (33)\\n (RetCode=33)\", method=\"estimateGas\", transaction={\"from\":\"0xF113C0c7741E1351A6263c7e8cF693494BCf58F7\",\"maxPriorityFeePerGas\":{\"type\":\"BigNumber\",\"hex\":\"0xb2d05e00\"},\"maxFeePerGas\":{\"type\":\"BigNumber\",\"hex\":\"0xb2d05f90\"},\"to\":\"0x9aEA6f1173898cd98E29819957E8EB93fEe71ADA\",\"data\":\"0x2ec20bf9000000000000000000000000907dcddb5345d8f4ec87c6438006a4c8636f2ef4000000000000000000000000000000000000000194c583ada5b529204a2bc8300000000000000000000000000000000000000000000000000000000000000001\",\"type\":2,\"accessList\":null}, error={\"name\":\"ProviderError\",\"_stack\":\"ProviderError: HttpProviderError\\n    at HttpProvider.request (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/hardhat/src/internal/core/providers/http.ts:78:19)\\n    at LocalAccountsProvider.request (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/hardhat/src/internal/core/providers/accounts.ts:187:34)\\n    at runMicrotasks (<anonymous>)\\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)\\n    at async EthersProviderWrapper.send (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/@nomiclabs/hardhat-ethers/src/internal/ethers-provider-wrapper.ts:13:20)\",\"code\":1,\"_isProviderError\":true}, code=UNPREDICTABLE_GAS_LIMIT, version=providers/5.7.2)",
+         "tickBefore": 0,
+       }
+      
+      at SnapshotManager.assert (node_modules/mocha-chai-jest-snapshot/src/manager.ts:63:29)
+      at Proxy.<anonymous> (node_modules/mocha-chai-jest-snapshot/src/index.ts:81:20)
+      at Proxy.methodWrapper (node_modules/chai/lib/chai/utils/addMethod.js:57:25)
+      at Context.<anonymous> (test/UniswapV3Pool.swaps.spec.ts:523:19)
+      at runMicrotasks (<anonymous>)
+      at processTicksAndRejections (node:internal/process/task_queues:96:5)
+
+  20) UniswapV3Pool swap tests
+       low fee, large liquidity around current price (stable swap)
+         swap token1 for token0 to price 0.40000:
+
+      swap error
+      + expected - actual
+
+       Object {
+         "poolBalance0": "999700069986003",
+         "poolBalance1": "999700069986003",
+         "poolPriceBefore": "1.0000",
+      -  "swapError": "cannot estimate gas; transaction may fail or may require manual gas limit [ See: https://links.ethers.org/v5-errors-UNPREDICTABLE_GAS_LIMIT ] (reason=\"failed to estimate gas: message execution failed: exit 33, revert reason: Error(SPL), vm error: message failed with backtrace:\\n00: f04152 (method 3844450837) -- contract reverted (33)\\n01: f04155 (method 3844450837) -- contract reverted (33)\\n (RetCode=33)\", method=\"estimateGas\", transaction={\"from\":\"0xF113C0c7741E1351A6263c7e8cF693494BCf58F7\",\"maxPriorityFeePerGas\":{\"type\":\"BigNumber\",\"hex\":\"0xb2d05e00\"},\"maxFeePerGas\":{\"type\":\"BigNumber\",\"hex\":\"0xb2d05f90\"},\"to\":\"0xFe2334C7994B92bCbebFc7cACbDb85E1EDF4D70d\",\"data\":\"0x9e77b8050000000000000000000000007b5896bed88de77708af76ee6fdb907d6957541a0000000000000000000000000000000000000000a1e89b12424876d9b744b6790000000000000000000000000000000000000000000000000000000000000001\",\"type\":2,\"accessList\":null}, error={\"name\":\"ProviderError\",\"_stack\":\"ProviderError: HttpProviderError\\n    at HttpProvider.request (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/hardhat/src/internal/core/providers/http.ts:83:19)\\n    at LocalAccountsProvider.request (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/hardhat/src/internal/core/providers/accounts.ts:187:34)\\n    at runMicrotasks (<anonymous>)\\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)\\n    at async EthersProviderWrapper.send (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/@nomiclabs/hardhat-ethers/src/internal/ethers-provider-wrapper.ts:13:20)\",\"code\":1,\"_isProviderError\":true}, code=UNPREDICTABLE_GAS_LIMIT, version=providers/5.7.2)",
+      +  "swapError": "cannot estimate gas; transaction may fail or may require manual gas limit [ See: https://links.ethers.org/v5-errors-UNPREDICTABLE_GAS_LIMIT ] (reason=\"failed to estimate gas: message execution failed: exit 33, reason: message failed with backtrace:\\n00: f04168 (method 3844450837) -- contract reverted (33)\\n01: f04171 (method 3844450837) -- contract reverted (33)\\n (RetCode=33)\", method=\"estimateGas\", transaction={\"from\":\"0xF113C0c7741E1351A6263c7e8cF693494BCf58F7\",\"maxPriorityFeePerGas\":{\"type\":\"BigNumber\",\"hex\":\"0xb2d05e00\"},\"maxFeePerGas\":{\"type\":\"BigNumber\",\"hex\":\"0xb2d05f90\"},\"to\":\"0xdD8e8adE0f5f8D0fe05b4100764E2fE6bb671F35\",\"data\":\"0x9e77b8050000000000000000000000008b5c46df864b02992c30ce0c571d19f73d14d8b90000000000000000000000000000000000000000a1e89b12424876d9b744b6790000000000000000000000000000000000000000000000000000000000000001\",\"type\":2,\"accessList\":null}, error={\"name\":\"ProviderError\",\"_stack\":\"ProviderError: HttpProviderError\\n    at HttpProvider.request (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/hardhat/src/internal/core/providers/http.ts:78:19)\\n    at LocalAccountsProvider.request (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/hardhat/src/internal/core/providers/accounts.ts:187:34)\\n    at runMicrotasks (<anonymous>)\\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)\\n    at async EthersProviderWrapper.send (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/@nomiclabs/hardhat-ethers/src/internal/ethers-provider-wrapper.ts:13:20)\",\"code\":1,\"_isProviderError\":true}, code=UNPREDICTABLE_GAS_LIMIT, version=providers/5.7.2)",
+         "tickBefore": 0,
+       }
+      
+      at SnapshotManager.assert (node_modules/mocha-chai-jest-snapshot/src/manager.ts:63:29)
+      at Proxy.<anonymous> (node_modules/mocha-chai-jest-snapshot/src/index.ts:81:20)
+      at Proxy.methodWrapper (node_modules/chai/lib/chai/utils/addMethod.js:57:25)
+      at Context.<anonymous> (test/UniswapV3Pool.swaps.spec.ts:523:19)
+      at runMicrotasks (<anonymous>)
+      at processTicksAndRejections (node:internal/process/task_queues:96:5)
+
+  21) UniswapV3Pool swap tests
+       medium fee, token0 liquidity only
+         swap token0 for token1 to price 2.5000:
+
+      swap error
+      + expected - actual
+
+       Object {
+         "poolBalance0": "1995041008271423675",
+         "poolBalance1": "0",
+         "poolPriceBefore": "1.0000",
+      -  "swapError": "cannot estimate gas; transaction may fail or may require manual gas limit [ See: https://links.ethers.org/v5-errors-UNPREDICTABLE_GAS_LIMIT ] (reason=\"failed to estimate gas: message execution failed: exit 33, revert reason: Error(SPL), vm error: message failed with backtrace:\\n00: f04272 (method 3844450837) -- contract reverted (33)\\n01: f04275 (method 3844450837) -- contract reverted (33)\\n (RetCode=33)\", method=\"estimateGas\", transaction={\"from\":\"0xF113C0c7741E1351A6263c7e8cF693494BCf58F7\",\"maxPriorityFeePerGas\":{\"type\":\"BigNumber\",\"hex\":\"0xb2d05e00\"},\"maxFeePerGas\":{\"type\":\"BigNumber\",\"hex\":\"0xb2d05f90\"},\"to\":\"0xDb26125717B186089dFbFf519f7Cb7e1217b0CCD\",\"data\":\"0x2ec20bf9000000000000000000000000adab634a5c2c76e0a719658de80aa7208719fffa000000000000000000000000000000000000000194c583ada5b529204a2bc8300000000000000000000000000000000000000000000000000000000000000001\",\"type\":2,\"accessList\":null}, error={\"name\":\"ProviderError\",\"_stack\":\"ProviderError: HttpProviderError\\n    at HttpProvider.request (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/hardhat/src/internal/core/providers/http.ts:83:19)\\n    at LocalAccountsProvider.request (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/hardhat/src/internal/core/providers/accounts.ts:187:34)\\n    at runMicrotasks (<anonymous>)\\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)\\n    at async EthersProviderWrapper.send (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/@nomiclabs/hardhat-ethers/src/internal/ethers-provider-wrapper.ts:13:20)\",\"code\":1,\"_isProviderError\":true}, code=UNPREDICTABLE_GAS_LIMIT, version=providers/5.7.2)",
+      +  "swapError": "cannot estimate gas; transaction may fail or may require manual gas limit [ See: https://links.ethers.org/v5-errors-UNPREDICTABLE_GAS_LIMIT ] (reason=\"failed to estimate gas: message execution failed: exit 33, reason: message failed with backtrace:\\n00: f04288 (method 3844450837) -- contract reverted (33)\\n01: f04291 (method 3844450837) -- contract reverted (33)\\n (RetCode=33)\", method=\"estimateGas\", transaction={\"from\":\"0xF113C0c7741E1351A6263c7e8cF693494BCf58F7\",\"maxPriorityFeePerGas\":{\"type\":\"BigNumber\",\"hex\":\"0xb2d05e00\"},\"maxFeePerGas\":{\"type\":\"BigNumber\",\"hex\":\"0xb2d05f90\"},\"to\":\"0x8d3957C554479161CAb085696E931fC0D82D2EF2\",\"data\":\"0x2ec20bf9000000000000000000000000babca07321ebee1502216e40f2d19f0eaab373d0000000000000000000000000000000000000000194c583ada5b529204a2bc8300000000000000000000000000000000000000000000000000000000000000001\",\"type\":2,\"accessList\":null}, error={\"name\":\"ProviderError\",\"_stack\":\"ProviderError: HttpProviderError\\n    at HttpProvider.request (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/hardhat/src/internal/core/providers/http.ts:78:19)\\n    at LocalAccountsProvider.request (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/hardhat/src/internal/core/providers/accounts.ts:187:34)\\n    at runMicrotasks (<anonymous>)\\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)\\n    at async EthersProviderWrapper.send (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/@nomiclabs/hardhat-ethers/src/internal/ethers-provider-wrapper.ts:13:20)\",\"code\":1,\"_isProviderError\":true}, code=UNPREDICTABLE_GAS_LIMIT, version=providers/5.7.2)",
+         "tickBefore": 0,
+       }
+      
+      at SnapshotManager.assert (node_modules/mocha-chai-jest-snapshot/src/manager.ts:63:29)
+      at Proxy.<anonymous> (node_modules/mocha-chai-jest-snapshot/src/index.ts:81:20)
+      at Proxy.methodWrapper (node_modules/chai/lib/chai/utils/addMethod.js:57:25)
+      at Context.<anonymous> (test/UniswapV3Pool.swaps.spec.ts:523:19)
+      at runMicrotasks (<anonymous>)
+      at processTicksAndRejections (node:internal/process/task_queues:96:5)
+
+  22) UniswapV3Pool swap tests
+       medium fee, token0 liquidity only
+         swap token1 for token0 to price 0.40000:
+
+      swap error
+      + expected - actual
+
+       Object {
+         "poolBalance0": "1995041008271423675",
+         "poolBalance1": "0",
+         "poolPriceBefore": "1.0000",
+      -  "swapError": "cannot estimate gas; transaction may fail or may require manual gas limit [ See: https://links.ethers.org/v5-errors-UNPREDICTABLE_GAS_LIMIT ] (reason=\"failed to estimate gas: message execution failed: exit 33, revert reason: Error(SPL), vm error: message failed with backtrace:\\n00: f04280 (method 3844450837) -- contract reverted (33)\\n01: f04283 (method 3844450837) -- contract reverted (33)\\n (RetCode=33)\", method=\"estimateGas\", transaction={\"from\":\"0xF113C0c7741E1351A6263c7e8cF693494BCf58F7\",\"maxPriorityFeePerGas\":{\"type\":\"BigNumber\",\"hex\":\"0xb2d05e00\"},\"maxFeePerGas\":{\"type\":\"BigNumber\",\"hex\":\"0xb2d05f90\"},\"to\":\"0xAb7a311B643BacdB97764731D2c6ECc12ecADB3A\",\"data\":\"0x9e77b805000000000000000000000000fc6623e463f744982472f5f71caa6bbb90517e4f0000000000000000000000000000000000000000a1e89b12424876d9b744b6790000000000000000000000000000000000000000000000000000000000000001\",\"type\":2,\"accessList\":null}, error={\"name\":\"ProviderError\",\"_stack\":\"ProviderError: HttpProviderError\\n    at HttpProvider.request (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/hardhat/src/internal/core/providers/http.ts:83:19)\\n    at LocalAccountsProvider.request (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/hardhat/src/internal/core/providers/accounts.ts:187:34)\\n    at runMicrotasks (<anonymous>)\\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)\\n    at async EthersProviderWrapper.send (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/@nomiclabs/hardhat-ethers/src/internal/ethers-provider-wrapper.ts:13:20)\",\"code\":1,\"_isProviderError\":true}, code=UNPREDICTABLE_GAS_LIMIT, version=providers/5.7.2)",
+      +  "swapError": "cannot estimate gas; transaction may fail or may require manual gas limit [ See: https://links.ethers.org/v5-errors-UNPREDICTABLE_GAS_LIMIT ] (reason=\"failed to estimate gas: message execution failed: exit 33, reason: message failed with backtrace:\\n00: f04296 (method 3844450837) -- contract reverted (33)\\n01: f04299 (method 3844450837) -- contract reverted (33)\\n (RetCode=33)\", method=\"estimateGas\", transaction={\"from\":\"0xF113C0c7741E1351A6263c7e8cF693494BCf58F7\",\"maxPriorityFeePerGas\":{\"type\":\"BigNumber\",\"hex\":\"0xb2d05e00\"},\"maxFeePerGas\":{\"type\":\"BigNumber\",\"hex\":\"0xb2d05f90\"},\"to\":\"0x59DFbC39757A82D67Ea69c5eEE25D18Ec0224623\",\"data\":\"0x9e77b8050000000000000000000000005317c9a26fa9c7857fade6c8fd8a97a2a1cc1aa60000000000000000000000000000000000000000a1e89b12424876d9b744b6790000000000000000000000000000000000000000000000000000000000000001\",\"type\":2,\"accessList\":null}, error={\"name\":\"ProviderError\",\"_stack\":\"ProviderError: HttpProviderError\\n    at HttpProvider.request (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/hardhat/src/internal/core/providers/http.ts:78:19)\\n    at LocalAccountsProvider.request (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/hardhat/src/internal/core/providers/accounts.ts:187:34)\\n    at runMicrotasks (<anonymous>)\\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)\\n    at async EthersProviderWrapper.send (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/@nomiclabs/hardhat-ethers/src/internal/ethers-provider-wrapper.ts:13:20)\",\"code\":1,\"_isProviderError\":true}, code=UNPREDICTABLE_GAS_LIMIT, version=providers/5.7.2)",
+         "tickBefore": 0,
+       }
+      
+      at SnapshotManager.assert (node_modules/mocha-chai-jest-snapshot/src/manager.ts:63:29)
+   

@@ -1,0 +1,74 @@
+
+
+  LiquidityMath
+    #addDelta
+      ✔ 1 + 0 (4084ms)
+      ✔ 1 + -1 (4108ms)
+      ✔ 1 + 1 (4051ms)
+      1) 2**128-15 + 15 overflows
+      2) 0 + -1 underflows
+      3) 3 + -4 underflows
+      4) gas add
+      5) gas sub
+
+
+Snapshot Summary
+ › 2 snapshots failed from 1 test suite. Inspect your code changes or re-run mocha with `--update` to update them to update them.
+
+  3 passing (33s)
+  5 failing
+
+  1) LiquidityMath
+       #addDelta
+         2**128-15 + 15 overflows:
+     AssertionError: Expected transaction to be reverted with LA, but other exception was thrown: Error: missing revert data in call exception; Transaction reverted without a reason string [ See: https://links.ethers.org/v5-errors-CALL_EXCEPTION ] (data="0x", transaction={"from":"0xF113C0c7741E1351A6263c7e8cF693494BCf58F7","to":"0x68C9D104cb1D106d8FB6A8b6FC18989E1F5f7346","data":"0x402d44fb00000000000000000000000000000000fffffffffffffffffffffffffffffff1000000000000000000000000000000000000000000000000000000000000000f","accessList":null}, error={"name":"ProviderError","_stack":"ProviderError: HttpProviderError\n    at HttpProvider.request (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/hardhat/src/internal/core/providers/http.ts:83:19)\n    at LocalAccountsProvider.request (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/hardhat/src/internal/core/providers/accounts.ts:187:34)\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)\n    at async EthersProviderWrapper.send (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/@nomiclabs/hardhat-ethers/src/internal/ethers-provider-wrapper.ts:13:20)","code":1,"_isProviderError":true}, code=CALL_EXCEPTION, version=providers/5.7.2)
+  
+
+  2) LiquidityMath
+       #addDelta
+         0 + -1 underflows:
+     AssertionError: Expected transaction to be reverted with LS, but other exception was thrown: Error: missing revert data in call exception; Transaction reverted without a reason string [ See: https://links.ethers.org/v5-errors-CALL_EXCEPTION ] (data="0x", transaction={"from":"0xF113C0c7741E1351A6263c7e8cF693494BCf58F7","to":"0x3F9f696b9aC2f2989c3dE48e91066d20AaDF16e4","data":"0x402d44fb0000000000000000000000000000000000000000000000000000000000000000ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff","accessList":null}, error={"name":"ProviderError","_stack":"ProviderError: HttpProviderError\n    at HttpProvider.request (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/hardhat/src/internal/core/providers/http.ts:83:19)\n    at LocalAccountsProvider.request (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/hardhat/src/internal/core/providers/accounts.ts:187:34)\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)\n    at async EthersProviderWrapper.send (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/@nomiclabs/hardhat-ethers/src/internal/ethers-provider-wrapper.ts:13:20)","code":1,"_isProviderError":true}, code=CALL_EXCEPTION, version=providers/5.7.2)
+  
+
+  3) LiquidityMath
+       #addDelta
+         3 + -4 underflows:
+     AssertionError: Expected transaction to be reverted with LS, but other exception was thrown: Error: missing revert data in call exception; Transaction reverted without a reason string [ See: https://links.ethers.org/v5-errors-CALL_EXCEPTION ] (data="0x", transaction={"from":"0xF113C0c7741E1351A6263c7e8cF693494BCf58F7","to":"0x37D6DF42d80FEAC22F98F439590970D0019eB0EA","data":"0x402d44fb0000000000000000000000000000000000000000000000000000000000000003fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffc","accessList":null}, error={"name":"ProviderError","_stack":"ProviderError: HttpProviderError\n    at HttpProvider.request (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/hardhat/src/internal/core/providers/http.ts:83:19)\n    at LocalAccountsProvider.request (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/hardhat/src/internal/core/providers/accounts.ts:187:34)\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)\n    at async EthersProviderWrapper.send (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/@nomiclabs/hardhat-ethers/src/internal/ethers-provider-wrapper.ts:13:20)","code":1,"_isProviderError":true}, code=CALL_EXCEPTION, version=providers/5.7.2)
+  
+
+  4) LiquidityMath
+       #addDelta
+         gas add:
+
+      AssertionError: Snapshot name: `LiquidityMath #addDelta gas add 1`: expected '46920' to equal '44784'
+      + expected - actual
+
+      -46920
+      +44784
+      
+      at SnapshotManager.assert (node_modules/mocha-chai-jest-snapshot/src/manager.ts:63:29)
+      at Proxy.<anonymous> (node_modules/mocha-chai-jest-snapshot/src/index.ts:81:20)
+      at Proxy.methodWrapper (node_modules/chai/lib/chai/utils/addMethod.js:57:25)
+      at snapshotGasCost (test/shared/snapshotGasCost.ts:25:33)
+      at processTicksAndRejections (node:internal/process/task_queues:96:5)
+      at async Context.<anonymous> (test/LiquidityMath.spec.ts:40:7)
+
+  5) LiquidityMath
+       #addDelta
+         gas sub:
+
+      AssertionError: Snapshot name: `LiquidityMath #addDelta gas sub 1`: expected '48508' to equal '46536'
+      + expected - actual
+
+      -48508
+      +46536
+      
+      at SnapshotManager.assert (node_modules/mocha-chai-jest-snapshot/src/manager.ts:63:29)
+      at Proxy.<anonymous> (node_modules/mocha-chai-jest-snapshot/src/index.ts:81:20)
+      at Proxy.methodWrapper (node_modules/chai/lib/chai/utils/addMethod.js:57:25)
+      at snapshotGasCost (test/shared/snapshotGasCost.ts:25:33)
+      at processTicksAndRejections (node:internal/process/task_queues:96:5)
+      at async Context.<anonymous> (test/LiquidityMath.spec.ts:43:7)
+
+
+

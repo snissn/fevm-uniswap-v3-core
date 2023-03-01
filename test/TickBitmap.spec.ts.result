@@ -1,0 +1,215 @@
+
+
+  TickBitmap
+    #isInitialized
+      ✔ is false at first
+      ✔ is flipped by #flipTick (4144ms)
+      ✔ is flipped back by #flipTick (4164ms)
+      ✔ is not changed by another flip to a different tick (4094ms)
+      ✔ is not changed by another flip to a different tick on another word (4118ms)
+    #flipTick
+      ✔ flips only the specified tick (8297ms)
+      ✔ reverts only itself (4263ms)
+      1) gas cost of flipping first tick in word to initialized
+      2) gas cost of flipping second tick in word to initialized
+      3) gas cost of flipping a tick that results in deleting a word
+    #nextInitializedTickWithinOneWord
+      lte = false
+        ✔ returns tick to right if at initialized tick
+        ✔ returns tick to right if at initialized tick
+        ✔ returns the tick directly to the right
+        ✔ returns the tick directly to the right
+        ✔ returns the next words initialized tick if on the right boundary
+        ✔ returns the next words initialized tick if on the right boundary
+        ✔ returns the next initialized tick from the next word (4305ms)
+        ✔ does not exceed boundary
+        ✔ skips entire word
+        ✔ skips half word
+        4) gas cost on boundary
+        5) gas cost just below boundary
+        6) gas cost for entire word
+      lte = true
+        ✔ returns same tick if initialized
+        ✔ returns tick directly to the left of input tick if not initialized
+        ✔ will not exceed the word boundary
+        ✔ at the word boundary
+        ✔ word boundary less 1 (next initialized tick in next word)
+        ✔ word boundary
+        ✔ entire empty word
+        ✔ halfway through empty word
+        ✔ boundary is initialized (4080ms)
+        7) gas cost on boundary
+        8) gas cost just below boundary
+        9) gas cost for entire word
+
+
+Snapshot Summary
+ › 9 snapshots failed from 1 test suite. Inspect your code changes or re-run mocha with `--update` to update them to update them.
+
+  26 passing (19m)
+  9 failing
+
+  1) TickBitmap
+       #flipTick
+         gas cost of flipping first tick in word to initialized:
+
+      AssertionError: Snapshot name: `TickBitmap #flipTick gas cost of flipping first tick in word to initialized 1`: expected '4803092' to equal '2993757'
+      + expected - actual
+
+      -4803092
+      +2993757
+      
+      at SnapshotManager.assert (node_modules/mocha-chai-jest-snapshot/src/manager.ts:63:29)
+      at Proxy.<anonymous> (node_modules/mocha-chai-jest-snapshot/src/index.ts:81:20)
+      at Proxy.methodWrapper (node_modules/chai/lib/chai/utils/addMethod.js:57:25)
+      at snapshotGasCost (test/shared/snapshotGasCost.ts:23:39)
+      at async Context.<anonymous> (test/TickBitmap.spec.ts:82:7)
+
+  2) TickBitmap
+       #flipTick
+         gas cost of flipping second tick in word to initialized:
+
+      AssertionError: Snapshot name: `TickBitmap #flipTick gas cost of flipping second tick in word to initialized 1`: expected '4826323' to equal '3017213'
+      + expected - actual
+
+      -4826323
+      +3017213
+      
+      at SnapshotManager.assert (node_modules/mocha-chai-jest-snapshot/src/manager.ts:63:29)
+      at Proxy.<anonymous> (node_modules/mocha-chai-jest-snapshot/src/index.ts:81:20)
+      at Proxy.methodWrapper (node_modules/chai/lib/chai/utils/addMethod.js:57:25)
+      at snapshotGasCost (test/shared/snapshotGasCost.ts:23:39)
+      at async Context.<anonymous> (test/TickBitmap.spec.ts:86:7)
+
+  3) TickBitmap
+       #flipTick
+         gas cost of flipping a tick that results in deleting a word:
+
+      AssertionError: Snapshot name: `TickBitmap #flipTick gas cost of flipping a tick that results in deleting a word 1`: expected '4650527' to equal '2931185'
+      + expected - actual
+
+      -4650527
+      +2931185
+      
+      at SnapshotManager.assert (node_modules/mocha-chai-jest-snapshot/src/manager.ts:63:29)
+      at Proxy.<anonymous> (node_modules/mocha-chai-jest-snapshot/src/index.ts:81:20)
+      at Proxy.methodWrapper (node_modules/chai/lib/chai/utils/addMethod.js:57:25)
+      at snapshotGasCost (test/shared/snapshotGasCost.ts:23:39)
+      at async Context.<anonymous> (test/TickBitmap.spec.ts:90:7)
+
+  4) TickBitmap
+       #nextInitializedTickWithinOneWord
+         lte = false
+           gas cost on boundary:
+
+      AssertionError: Snapshot name: `TickBitmap #nextInitializedTickWithinOneWord lte = false gas cost on boundary 1`: expected '400853' to equal '396256'
+      + expected - actual
+
+      -400853
+      +396256
+      
+      at SnapshotManager.assert (node_modules/mocha-chai-jest-snapshot/src/manager.ts:63:29)
+      at Proxy.<anonymous> (node_modules/mocha-chai-jest-snapshot/src/index.ts:81:20)
+      at Proxy.methodWrapper (node_modules/chai/lib/chai/utils/addMethod.js:57:25)
+      at snapshotGasCost (test/shared/snapshotGasCost.ts:25:33)
+      at runMicrotasks (<anonymous>)
+      at processTicksAndRejections (node:internal/process/task_queues:96:5)
+      at async Context.<anonymous> (test/TickBitmap.spec.ts:157:9)
+
+  5) TickBitmap
+       #nextInitializedTickWithinOneWord
+         lte = false
+           gas cost just below boundary:
+
+      AssertionError: Snapshot name: `TickBitmap #nextInitializedTickWithinOneWord lte = false gas cost just below boundary 1`: expected '403085' to equal '398524'
+      + expected - actual
+
+      -403085
+      +398524
+      
+      at SnapshotManager.assert (node_modules/mocha-chai-jest-snapshot/src/manager.ts:63:29)
+      at Proxy.<anonymous> (node_modules/mocha-chai-jest-snapshot/src/index.ts:81:20)
+      at Proxy.methodWrapper (node_modules/chai/lib/chai/utils/addMethod.js:57:25)
+      at snapshotGasCost (test/shared/snapshotGasCost.ts:25:33)
+      at runMicrotasks (<anonymous>)
+      at processTicksAndRejections (node:internal/process/task_queues:96:5)
+      at async Context.<anonymous> (test/TickBitmap.spec.ts:160:9)
+
+  6) TickBitmap
+       #nextInitializedTickWithinOneWord
+         lte = false
+           gas cost for entire word:
+
+      AssertionError: Snapshot name: `TickBitmap #nextInitializedTickWithinOneWord lte = false gas cost for entire word 1`: expected '146753' to equal '142148'
+      + expected - actual
+
+      -146753
+      +142148
+      
+      at SnapshotManager.assert (node_modules/mocha-chai-jest-snapshot/src/manager.ts:63:29)
+      at Proxy.<anonymous> (node_modules/mocha-chai-jest-snapshot/src/index.ts:81:20)
+      at Proxy.methodWrapper (node_modules/chai/lib/chai/utils/addMethod.js:57:25)
+      at snapshotGasCost (test/shared/snapshotGasCost.ts:25:33)
+      at runMicrotasks (<anonymous>)
+      at processTicksAndRejections (node:internal/process/task_queues:96:5)
+      at async Context.<anonymous> (test/TickBitmap.spec.ts:163:9)
+
+  7) TickBitmap
+       #nextInitializedTickWithinOneWord
+         lte = true
+           gas cost on boundary:
+
+      AssertionError: Snapshot name: `TickBitmap #nextInitializedTickWithinOneWord lte = true gas cost on boundary 1`: expected '394713' to equal '390068'
+      + expected - actual
+
+      -394713
+      +390068
+      
+      at SnapshotManager.assert (node_modules/mocha-chai-jest-snapshot/src/manager.ts:63:29)
+      at Proxy.<anonymous> (node_modules/mocha-chai-jest-snapshot/src/index.ts:81:20)
+      at Proxy.methodWrapper (node_modules/chai/lib/chai/utils/addMethod.js:57:25)
+      at snapshotGasCost (test/shared/snapshotGasCost.ts:25:33)
+      at runMicrotasks (<anonymous>)
+      at processTicksAndRejections (node:internal/process/task_queues:96:5)
+      at async Context.<anonymous> (test/TickBitmap.spec.ts:225:9)
+
+  8) TickBitmap
+       #nextInitializedTickWithinOneWord
+         lte = true
+           gas cost just below boundary:
+
+      AssertionError: Snapshot name: `TickBitmap #nextInitializedTickWithinOneWord lte = true gas cost just below boundary 1`: expected '458124' to equal '446932'
+      + expected - actual
+
+      -458124
+      +446932
+      
+      at SnapshotManager.assert (node_modules/mocha-chai-jest-snapshot/src/manager.ts:63:29)
+      at Proxy.<anonymous> (node_modules/mocha-chai-jest-snapshot/src/index.ts:81:20)
+      at Proxy.methodWrapper (node_modules/chai/lib/chai/utils/addMethod.js:57:25)
+      at snapshotGasCost (test/shared/snapshotGasCost.ts:25:33)
+      at runMicrotasks (<anonymous>)
+      at processTicksAndRejections (node:internal/process/task_queues:96:5)
+      at async Context.<anonymous> (test/TickBitmap.spec.ts:228:9)
+
+  9) TickBitmap
+       #nextInitializedTickWithinOneWord
+         lte = true
+           gas cost for entire word:
+
+      AssertionError: Snapshot name: `TickBitmap #nextInitializedTickWithinOneWord lte = true gas cost for entire word 1`: expected '140225' to equal '135572'
+      + expected - actual
+
+      -140225
+      +135572
+      
+      at SnapshotManager.assert (node_modules/mocha-chai-jest-snapshot/src/manager.ts:63:29)
+      at Proxy.<anonymous> (node_modules/mocha-chai-jest-snapshot/src/index.ts:81:20)
+      at Proxy.methodWrapper (node_modules/chai/lib/chai/utils/addMethod.js:57:25)
+      at snapshotGasCost (test/shared/snapshotGasCost.ts:25:33)
+      at runMicrotasks (<anonymous>)
+      at processTicksAndRejections (node:internal/process/task_queues:96:5)
+      at async Context.<anonymous> (test/TickBitmap.spec.ts:231:9)
+
+
+

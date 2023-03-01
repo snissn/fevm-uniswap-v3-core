@@ -1,0 +1,30 @@
+
+
+  FullMath
+    - check a bunch of random inputs against JS implementation
+    #mulDiv
+      ✔ reverts if denominator is 0 (4082ms)
+      ✔ reverts if denominator is 0 and numerator overflows
+      ✔ reverts if output overflows uint256
+      ✔ reverts if output overflows uint256
+      ✔ reverts on overflow with all max inputs
+      ✔ all max inputs
+      ✔ accurate without phantom overflow
+      ✔ accurate with phantom overflow
+      ✔ accurate with phantom overflow and repeating decimal
+    #mulDivRoundingUp
+      ✔ reverts if denominator is 0
+      ✔ reverts if denominator is 0 and numerator overflows
+      ✔ reverts if output overflows uint256
+      ✔ reverts on overflow with all max inputs
+      ✔ reverts if mulDiv overflows 256 bits after rounding up
+      ✔ reverts if mulDiv overflows 256 bits after rounding up case 2
+      ✔ all max inputs
+      ✔ accurate without phantom overflow
+      ✔ accurate with phantom overflow
+      ✔ accurate with phantom overflow and repeating decimal
+
+
+  19 passing (5s)
+  1 pending
+

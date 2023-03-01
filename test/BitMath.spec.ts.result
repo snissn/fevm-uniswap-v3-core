@@ -1,0 +1,164 @@
+
+
+  BitMath
+    #mostSignificantBit
+      ✔ 0 (4072ms)
+      ✔ 1 (4061ms)
+      ✔ 2 (4059ms)
+      1) all powers of 2
+      ✔ uint256(-1) (4046ms)
+      2) gas cost of smaller number
+      3) gas cost of max uint128
+      4) gas cost of max uint256
+    #leastSignificantBit
+      ✔ 0 (4065ms)
+      ✔ 1 (4058ms)
+      ✔ 2 (4058ms)
+      5) all powers of 2
+      ✔ uint256(-1) (4067ms)
+      6) gas cost of smaller number
+      7) gas cost of max uint128
+      8) gas cost of max uint256
+
+
+Snapshot Summary
+ › 6 snapshots failed from 1 test suite. Inspect your code changes or re-run mocha with `--update` to update them to update them.
+
+  8 passing (1m)
+  8 failing
+
+  1) BitMath
+       #mostSignificantBit
+         all powers of 2:
+     Error: missing revert data in call exception; Transaction reverted without a reason string [ See: https://links.ethers.org/v5-errors-CALL_EXCEPTION ] (data="0x", transaction={"from":"0xF113C0c7741E1351A6263c7e8cF693494BCf58F7","to":"0xF82deA3978ec571f1c6BfEfC517e20A5f38ce5ed","data":"0xe6bcbc650000000000000000000000000000000000000000000000080000000000000000","accessList":null}, error={"errno":-54,"code":"ECONNRESET","syscall":"connect","address":"127.0.0.1","port":62677}, code=CALL_EXCEPTION, version=providers/5.7.2)
+      at Logger.makeError (node_modules/@ethersproject/providers/node_modules/@ethersproject/logger/src.ts/index.ts:269:28)
+      at Logger.throwError (node_modules/@ethersproject/providers/node_modules/@ethersproject/logger/src.ts/index.ts:281:20)
+      at checkError (node_modules/@ethersproject/providers/src.ts/json-rpc-provider.ts:66:16)
+      at EthersProviderWrapper.<anonymous> (node_modules/@ethersproject/providers/src.ts/json-rpc-provider.ts:642:20)
+      at step (node_modules/@ethersproject/providers/lib/json-rpc-provider.js:48:23)
+      at Object.throw (node_modules/@ethersproject/providers/lib/json-rpc-provider.js:29:53)
+      at rejected (node_modules/@ethersproject/providers/lib/json-rpc-provider.js:21:65)
+      at processTicksAndRejections (node:internal/process/task_queues:96:5)
+
+  2) BitMath
+       #mostSignificantBit
+         gas cost of smaller number:
+
+      AssertionError: Snapshot name: `BitMath #mostSignificantBit gas cost of smaller number 1`: expected '69534' to equal '63188'
+      + expected - actual
+
+      -69534
+      +63188
+      
+      at SnapshotManager.assert (node_modules/mocha-chai-jest-snapshot/src/manager.ts:63:29)
+      at Proxy.<anonymous> (node_modules/mocha-chai-jest-snapshot/src/index.ts:81:20)
+      at Proxy.methodWrapper (node_modules/chai/lib/chai/utils/addMethod.js:57:25)
+      at snapshotGasCost (test/shared/snapshotGasCost.ts:25:33)
+      at runMicrotasks (<anonymous>)
+      at processTicksAndRejections (node:internal/process/task_queues:96:5)
+      at async Context.<anonymous> (test/BitMath.spec.ts:41:7)
+
+  3) BitMath
+       #mostSignificantBit
+         gas cost of max uint128:
+
+      AssertionError: Snapshot name: `BitMath #mostSignificantBit gas cost of max uint128 1`: expected '89886' to equal '82332'
+      + expected - actual
+
+      -89886
+      +82332
+      
+      at SnapshotManager.assert (node_modules/mocha-chai-jest-snapshot/src/manager.ts:63:29)
+      at Proxy.<anonymous> (node_modules/mocha-chai-jest-snapshot/src/index.ts:81:20)
+      at Proxy.methodWrapper (node_modules/chai/lib/chai/utils/addMethod.js:57:25)
+      at snapshotGasCost (test/shared/snapshotGasCost.ts:25:33)
+      at runMicrotasks (<anonymous>)
+      at processTicksAndRejections (node:internal/process/task_queues:96:5)
+      at async Context.<anonymous> (test/BitMath.spec.ts:44:7)
+
+  4) BitMath
+       #mostSignificantBit
+         gas cost of max uint256:
+
+      AssertionError: Snapshot name: `BitMath #mostSignificantBit gas cost of max uint256 1`: expected '94502' to equal '86696'
+      + expected - actual
+
+      -94502
+      +86696
+      
+      at SnapshotManager.assert (node_modules/mocha-chai-jest-snapshot/src/manager.ts:63:29)
+      at Proxy.<anonymous> (node_modules/mocha-chai-jest-snapshot/src/index.ts:81:20)
+      at Proxy.methodWrapper (node_modules/chai/lib/chai/utils/addMethod.js:57:25)
+      at snapshotGasCost (test/shared/snapshotGasCost.ts:25:33)
+      at runMicrotasks (<anonymous>)
+      at processTicksAndRejections (node:internal/process/task_queues:96:5)
+      at async Context.<anonymous> (test/BitMath.spec.ts:47:7)
+
+  5) BitMath
+       #leastSignificantBit
+         all powers of 2:
+     Error: missing revert data in call exception; Transaction reverted without a reason string [ See: https://links.ethers.org/v5-errors-CALL_EXCEPTION ] (data="0x", transaction={"from":"0xF113C0c7741E1351A6263c7e8cF693494BCf58F7","to":"0x7000e2f1B1252A1FbEcB7eb013c563ed5f1bf599","data":"0xd230d23f0000000000000000000000000000000040000000000000000000000000000000","accessList":null}, error={"errno":-54,"code":"ECONNRESET","syscall":"read"}, code=CALL_EXCEPTION, version=providers/5.7.2)
+      at Logger.makeError (node_modules/@ethersproject/providers/node_modules/@ethersproject/logger/src.ts/index.ts:269:28)
+      at Logger.throwError (node_modules/@ethersproject/providers/node_modules/@ethersproject/logger/src.ts/index.ts:281:20)
+      at checkError (node_modules/@ethersproject/providers/src.ts/json-rpc-provider.ts:66:16)
+      at EthersProviderWrapper.<anonymous> (node_modules/@ethersproject/providers/src.ts/json-rpc-provider.ts:642:20)
+      at step (node_modules/@ethersproject/providers/lib/json-rpc-provider.js:48:23)
+      at Object.throw (node_modules/@ethersproject/providers/lib/json-rpc-provider.js:29:53)
+      at rejected (node_modules/@ethersproject/providers/lib/json-rpc-provider.js:21:65)
+
+  6) BitMath
+       #leastSignificantBit
+         gas cost of smaller number:
+
+      AssertionError: Snapshot name: `BitMath #leastSignificantBit gas cost of smaller number 1`: expected '82558' to equal '81524'
+      + expected - actual
+
+      -82558
+      +81524
+      
+      at SnapshotManager.assert (node_modules/mocha-chai-jest-snapshot/src/manager.ts:63:29)
+      at Proxy.<anonymous> (node_modules/mocha-chai-jest-snapshot/src/index.ts:81:20)
+      at Proxy.methodWrapper (node_modules/chai/lib/chai/utils/addMethod.js:57:25)
+      at snapshotGasCost (test/shared/snapshotGasCost.ts:25:33)
+      at runMicrotasks (<anonymous>)
+      at processTicksAndRejections (node:internal/process/task_queues:96:5)
+      at async Context.<anonymous> (test/BitMath.spec.ts:72:7)
+
+  7) BitMath
+       #leastSignificantBit
+         gas cost of max uint128:
+
+      AssertionError: Snapshot name: `BitMath #leastSignificantBit gas cost of max uint128 1`: expected '80742' to equal '80056'
+      + expected - actual
+
+      -80742
+      +80056
+      
+      at SnapshotManager.assert (node_modules/mocha-chai-jest-snapshot/src/manager.ts:63:29)
+      at Proxy.<anonymous> (node_modules/mocha-chai-jest-snapshot/src/index.ts:81:20)
+      at Proxy.methodWrapper (node_modules/chai/lib/chai/utils/addMethod.js:57:25)
+      at snapshotGasCost (test/shared/snapshotGasCost.ts:25:33)
+      at runMicrotasks (<anonymous>)
+      at processTicksAndRejections (node:internal/process/task_queues:96:5)
+      at async Context.<anonymous> (test/BitMath.spec.ts:75:7)
+
+  8) BitMath
+       #leastSignificantBit
+         gas cost of max uint256:
+
+      AssertionError: Snapshot name: `BitMath #leastSignificantBit gas cost of max uint256 1`: expected '80598' to equal '79928'
+      + expected - actual
+
+      -80598
+      +79928
+      
+      at SnapshotManager.assert (node_modules/mocha-chai-jest-snapshot/src/manager.ts:63:29)
+      at Proxy.<anonymous> (node_modules/mocha-chai-jest-snapshot/src/index.ts:81:20)
+      at Proxy.methodWrapper (node_modules/chai/lib/chai/utils/addMethod.js:57:25)
+      at snapshotGasCost (test/shared/snapshotGasCost.ts:25:33)
+      at runMicrotasks (<anonymous>)
+      at processTicksAndRejections (node:internal/process/task_queues:96:5)
+      at async Context.<anonymous> (test/BitMath.spec.ts:78:7)
+
+
+

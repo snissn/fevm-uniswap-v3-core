@@ -1,0 +1,81 @@
+
+
+  UniswapV3Pool arbitrage tests
+    protocol fee = 0;
+      passive liquidity of 0.010000
+        exact input of 10e18 token0 with starting price of 1.0 and true price of 0.98
+          ✔ not sandwiched (4174ms)
+          ✔ sandwiched with swap to execution price then mint max liquidity/target/burn max liquidity (20815ms)
+          ✔ backrun to true price after swap only (8311ms)
+        exact input of 10e18 token0 with starting price of 1.0 and true price of 1.01
+          ✔ not sandwiched (4179ms)
+          ✔ sandwiched with swap to execution price then mint max liquidity/target/burn max liquidity (20727ms)
+          ✔ backrun to true price after swap only (8363ms)
+      passive liquidity of 1.0000
+        exact input of 10e18 token0 with starting price of 1.0 and true price of 0.98
+          ✔ not sandwiched (4147ms)
+          ✔ sandwiched with swap to execution price then mint max liquidity/target/burn max liquidity (20737ms)
+          ✔ backrun to true price after swap only (8257ms)
+        exact input of 10e18 token0 with starting price of 1.0 and true price of 1.01
+          ✔ not sandwiched (4145ms)
+          ✔ sandwiched with swap to execution price then mint max liquidity/target/burn max liquidity (20789ms)
+          ✔ backrun to true price after swap only (8261ms)
+      passive liquidity of 10.000
+        exact input of 10e18 token0 with starting price of 1.0 and true price of 0.98
+          ✔ not sandwiched (4165ms)
+          ✔ sandwiched with swap to execution price then mint max liquidity/target/burn max liquidity (20641ms)
+          ✔ backrun to true price after swap only (8278ms)
+        exact input of 10e18 token0 with starting price of 1.0 and true price of 1.01
+          ✔ not sandwiched (4150ms)
+          ✔ sandwiched with swap to execution price then mint max liquidity/target/burn max liquidity (20654ms)
+          ✔ backrun to true price after swap only (8273ms)
+      passive liquidity of 100.00
+        exact input of 10e18 token0 with starting price of 1.0 and true price of 0.98
+          ✔ not sandwiched (4149ms)
+          ✔ sandwiched with swap to execution price then mint max liquidity/target/burn max liquidity (20753ms)
+          ✔ backrun to true price after swap only (8290ms)
+        exact input of 10e18 token0 with starting price of 1.0 and true price of 1.01
+          ✔ not sandwiched (4138ms)
+          ✔ sandwiched with swap to execution price then mint max liquidity/target/burn max liquidity (20702ms)
+          ✔ backrun to true price after swap only (8237ms)
+    protocol fee = 6;
+      passive liquidity of 0.010000
+        exact input of 10e18 token0 with starting price of 1.0 and true price of 0.98
+          ✔ not sandwiched (4159ms)
+          ✔ sandwiched with swap to execution price then mint max liquidity/target/burn max liquidity (20766ms)
+          ✔ backrun to true price after swap only (8286ms)
+        exact input of 10e18 token0 with starting price of 1.0 and true price of 1.01
+          ✔ not sandwiched (4168ms)
+          ✔ sandwiched with swap to execution price then mint max liquidity/target/burn max liquidity (20775ms)
+          ✔ backrun to true price after swap only (8297ms)
+      passive liquidity of 1.0000
+        exact input of 10e18 token0 with starting price of 1.0 and true price of 0.98
+          ✔ not sandwiched (4161ms)
+          ✔ sandwiched with swap to execution price then mint max liquidity/target/burn max liquidity (20662ms)
+          ✔ backrun to true price after swap only (8305ms)
+        exact input of 10e18 token0 with starting price of 1.0 and true price of 1.01
+          ✔ not sandwiched (4160ms)
+          ✔ sandwiched with swap to execution price then mint max liquidity/target/burn max liquidity (20617ms)
+          ✔ backrun to true price after swap only (8276ms)
+      passive liquidity of 10.000
+        exact input of 10e18 token0 with starting price of 1.0 and true price of 0.98
+          ✔ not sandwiched (4151ms)
+          ✔ sandwiched with swap to execution price then mint max liquidity/target/burn max liquidity (20670ms)
+          ✔ backrun to true price after swap only (8233ms)
+        exact input of 10e18 token0 with starting price of 1.0 and true price of 1.01
+          ✔ not sandwiched (4154ms)
+          ✔ sandwiched with swap to execution price then mint max liquidity/target/burn max liquidity (20749ms)
+          ✔ backrun to true price after swap only (8268ms)
+      passive liquidity of 100.00
+        exact input of 10e18 token0 with starting price of 1.0 and true price of 0.98
+          ✔ not sandwiched (4193ms)
+          ✔ sandwiched with swap to execution price then mint max liquidity/target/burn max liquidity (20756ms)
+          ✔ backrun to true price after swap only (8255ms)
+        exact input of 10e18 token0 with starting price of 1.0 and true price of 1.01
+          ✔ not sandwiched (4165ms)
+          ✔ sandwiched with swap to execution price then mint max liquidity/target/burn max liquidity (20759ms)
+          ✔ backrun to true price after swap only (8255ms)
+
+
+  48 passing (21m)
+

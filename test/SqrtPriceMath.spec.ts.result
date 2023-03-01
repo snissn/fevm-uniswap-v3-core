@@ -1,0 +1,195 @@
+
+
+  SqrtPriceMath
+    #getNextSqrtPriceFromInput
+      ✔ fails if price is zero (4115ms)
+      ✔ fails if liquidity is zero
+      ✔ fails if input amount overflows the price
+      ✔ any input amount cannot underflow the price
+      ✔ returns input price if amount in is zero and zeroForOne = true
+      ✔ returns input price if amount in is zero and zeroForOne = false
+      ✔ returns the minimum price for max inputs
+      ✔ input amount of 0.1 token1
+      ✔ input amount of 0.1 token0
+      ✔ amountIn > type(uint96).max and zeroForOne = true
+      ✔ can return 1 with enough amountIn and zeroForOne = true
+      1) zeroForOne = true gas
+      2) zeroForOne = false gas
+    #getNextSqrtPriceFromOutput
+      ✔ fails if price is zero
+      ✔ fails if liquidity is zero
+      ✔ fails if output amount is exactly the virtual reserves of token0
+      ✔ fails if output amount is greater than virtual reserves of token0
+      ✔ fails if output amount is greater than virtual reserves of token1
+      ✔ fails if output amount is exactly the virtual reserves of token1
+      ✔ succeeds if output amount is just less than the virtual reserves of token1
+      ✔ puzzling echidna test
+      ✔ returns input price if amount in is zero and zeroForOne = true
+      ✔ returns input price if amount in is zero and zeroForOne = false
+      ✔ output amount of 0.1 token1
+      ✔ output amount of 0.1 token1
+      ✔ reverts if amountOut is impossible in zero for one direction
+      ✔ reverts if amountOut is impossible in one for zero direction
+      3) zeroForOne = true gas
+      4) zeroForOne = false gas
+    #getAmount0Delta
+      ✔ returns 0 if liquidity is 0
+      ✔ returns 0 if prices are equal
+      ✔ returns 0.1 amount1 for price of 1 to 1.21
+      ✔ works for prices that overflow
+      5) gas cost for amount0 where roundUp = true
+      6) gas cost for amount0 where roundUp = true
+    #getAmount1Delta
+      ✔ returns 0 if liquidity is 0
+      ✔ returns 0 if prices are equal
+      ✔ returns 0.1 amount1 for price of 1 to 1.21
+      7) gas cost for amount0 where roundUp = true
+      8) gas cost for amount0 where roundUp = false
+    swap computation
+      ✔ sqrtP * sqrtQ overflows
+
+
+Snapshot Summary
+ › 8 snapshots failed from 1 test suite. Inspect your code changes or re-run mocha with `--update` to update them to update them.
+
+  33 passing (5s)
+  8 failing
+
+  1) SqrtPriceMath
+       #getNextSqrtPriceFromInput
+         zeroForOne = true gas:
+
+      AssertionError: Snapshot name: `SqrtPriceMath #getNextSqrtPriceFromInput zeroForOne = true gas 1`: expected '259615' to equal '252120'
+      + expected - actual
+
+      -259615
+      +252120
+      
+      at SnapshotManager.assert (node_modules/mocha-chai-jest-snapshot/src/manager.ts:63:29)
+      at Proxy.<anonymous> (node_modules/mocha-chai-jest-snapshot/src/index.ts:81:20)
+      at Proxy.methodWrapper (node_modules/chai/lib/chai/utils/addMethod.js:57:25)
+      at snapshotGasCost (test/shared/snapshotGasCost.ts:25:33)
+      at processTicksAndRejections (node:internal/process/task_queues:96:5)
+      at async Context.<anonymous> (test/SqrtPriceMath.spec.ts:101:7)
+
+  2) SqrtPriceMath
+       #getNextSqrtPriceFromInput
+         zeroForOne = false gas:
+
+      AssertionError: Snapshot name: `SqrtPriceMath #getNextSqrtPriceFromInput zeroForOne = false gas 1`: expected '128796' to equal '125576'
+      + expected - actual
+
+      -128796
+      +125576
+      
+      at SnapshotManager.assert (node_modules/mocha-chai-jest-snapshot/src/manager.ts:63:29)
+      at Proxy.<anonymous> (node_modules/mocha-chai-jest-snapshot/src/index.ts:81:20)
+      at Proxy.methodWrapper (node_modules/chai/lib/chai/utils/addMethod.js:57:25)
+      at snapshotGasCost (test/shared/snapshotGasCost.ts:25:33)
+      at processTicksAndRejections (node:internal/process/task_queues:96:5)
+      at async Context.<anonymous> (test/SqrtPriceMath.spec.ts:112:7)
+
+  3) SqrtPriceMath
+       #getNextSqrtPriceFromOutput
+         zeroForOne = true gas:
+
+      AssertionError: Snapshot name: `SqrtPriceMath #getNextSqrtPriceFromOutput zeroForOne = true gas 1`: expected '130128' to equal '126740'
+      + expected - actual
+
+      -130128
+      +126740
+      
+      at SnapshotManager.assert (node_modules/mocha-chai-jest-snapshot/src/manager.ts:63:29)
+      at Proxy.<anonymous> (node_modules/mocha-chai-jest-snapshot/src/index.ts:81:20)
+      at Proxy.methodWrapper (node_modules/chai/lib/chai/utils/addMethod.js:57:25)
+      at snapshotGasCost (test/shared/snapshotGasCost.ts:25:33)
+      at processTicksAndRejections (node:internal/process/task_queues:96:5)
+      at async Context.<anonymous> (test/SqrtPriceMath.spec.ts:219:7)
+
+  4) SqrtPriceMath
+       #getNextSqrtPriceFromOutput
+         zeroForOne = false gas:
+
+      AssertionError: Snapshot name: `SqrtPriceMath #getNextSqrtPriceFromOutput zeroForOne = false gas 1`: expected '277399' to equal '269792'
+      + expected - actual
+
+      -277399
+      +269792
+      
+      at SnapshotManager.assert (node_modules/mocha-chai-jest-snapshot/src/manager.ts:63:29)
+      at Proxy.<anonymous> (node_modules/mocha-chai-jest-snapshot/src/index.ts:81:20)
+      at Proxy.methodWrapper (node_modules/chai/lib/chai/utils/addMethod.js:57:25)
+      at snapshotGasCost (test/shared/snapshotGasCost.ts:25:33)
+      at processTicksAndRejections (node:internal/process/task_queues:96:5)
+      at async Context.<anonymous> (test/SqrtPriceMath.spec.ts:230:7)
+
+  5) SqrtPriceMath
+       #getAmount0Delta
+         gas cost for amount0 where roundUp = true:
+
+      AssertionError: Snapshot name: `SqrtPriceMath #getAmount0Delta gas cost for amount0 where roundUp = true 1`: expected '263523' to equal '257512'
+      + expected - actual
+
+      -263523
+      +257512
+      
+      at SnapshotManager.assert (node_modules/mocha-chai-jest-snapshot/src/manager.ts:63:29)
+      at Proxy.<anonymous> (node_modules/mocha-chai-jest-snapshot/src/index.ts:81:20)
+      at Proxy.methodWrapper (node_modules/chai/lib/chai/utils/addMethod.js:57:25)
+      at snapshotGasCost (test/shared/snapshotGasCost.ts:25:33)
+      at processTicksAndRejections (node:internal/process/task_queues:96:5)
+      at async Context.<anonymous> (test/SqrtPriceMath.spec.ts:289:7)
+
+  6) SqrtPriceMath
+       #getAmount0Delta
+         gas cost for amount0 where roundUp = true:
+
+      AssertionError: Snapshot name: `SqrtPriceMath #getAmount0Delta gas cost for amount0 where roundUp = true 2`: expected '171679' to equal '167460'
+      + expected - actual
+
+      -171679
+      +167460
+      
+      at SnapshotManager.assert (node_modules/mocha-chai-jest-snapshot/src/manager.ts:63:29)
+      at Proxy.<anonymous> (node_modules/mocha-chai-jest-snapshot/src/index.ts:81:20)
+      at Proxy.methodWrapper (node_modules/chai/lib/chai/utils/addMethod.js:57:25)
+      at snapshotGasCost (test/shared/snapshotGasCost.ts:25:33)
+      at processTicksAndRejections (node:internal/process/task_queues:96:5)
+      at async Context.<anonymous> (test/SqrtPriceMath.spec.ts:300:7)
+
+  7) SqrtPriceMath
+       #getAmount1Delta
+         gas cost for amount0 where roundUp = true:
+
+      AssertionError: Snapshot name: `SqrtPriceMath #getAmount1Delta gas cost for amount0 where roundUp = true 1`: expected '263523' to equal '257512'
+      + expected - actual
+
+      -263523
+      +257512
+      
+      at SnapshotManager.assert (node_modules/mocha-chai-jest-snapshot/src/manager.ts:63:29)
+      at Proxy.<anonymous> (node_modules/mocha-chai-jest-snapshot/src/index.ts:81:20)
+      at Proxy.methodWrapper (node_modules/chai/lib/chai/utils/addMethod.js:57:25)
+      at snapshotGasCost (test/shared/snapshotGasCost.ts:25:33)
+      at processTicksAndRejections (node:internal/process/task_queues:96:5)
+      at async Context.<anonymous> (test/SqrtPriceMath.spec.ts:343:7)
+
+  8) SqrtPriceMath
+       #getAmount1Delta
+         gas cost for amount0 where roundUp = false:
+
+      AssertionError: Snapshot name: `SqrtPriceMath #getAmount1Delta gas cost for amount0 where roundUp = false 1`: expected '171679' to equal '167460'
+      + expected - actual
+
+      -171679
+      +167460
+      
+      at SnapshotManager.assert (node_modules/mocha-chai-jest-snapshot/src/manager.ts:63:29)
+      at Proxy.<anonymous> (node_modules/mocha-chai-jest-snapshot/src/index.ts:81:20)
+      at Proxy.methodWrapper (node_modules/chai/lib/chai/utils/addMethod.js:57:25)
+      at snapshotGasCost (test/shared/snapshotGasCost.ts:25:33)
+      at processTicksAndRejections (node:internal/process/task_queues:96:5)
+      at async Context.<anonymous> (test/SqrtPriceMath.spec.ts:354:7)
+
+
+

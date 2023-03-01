@@ -1,0 +1,56 @@
+
+
+  UniswapV3Factory
+    ✔ owner is deployer
+    ✔ factory bytecode size
+    ✔ pool bytecode size (4163ms)
+    ✔ initial enabled fee amounts (48ms)
+    #createPool
+      ✔ succeeds for low fee pool (4278ms)
+      ✔ succeeds for medium fee pool (4267ms)
+      ✔ succeeds for high fee pool (4213ms)
+      ✔ succeeds if tokens are passed in reverse (4275ms)
+      ✔ fails if token a == token b (51ms)
+      ✔ fails if token a is 0 or token b is 0 (69ms)
+      ✔ fails if fee amount is not enabled
+      1) gas
+    #setOwner
+      ✔ fails if caller is not owner (50ms)
+      ✔ updates owner (4113ms)
+      ✔ emits event (4098ms)
+      ✔ cannot be called by original owner (57ms)
+    #enableFeeAmount
+      ✔ fails if caller is not owner
+      ✔ fails if fee is too great
+      ✔ fails if tick spacing is too small
+      ✔ fails if tick spacing is too large (41ms)
+      ✔ fails if already initialized (72ms)
+      ✔ sets the fee amount in the mapping (4110ms)
+      ✔ emits an event (4069ms)
+      ✔ enables pool creation (8361ms)
+
+
+Snapshot Summary
+ › 1 snapshot failed from 1 test suite. Inspect your code changes or re-run mocha with `--update` to update them to update them.
+
+  23 passing (2m)
+  1 failing
+
+  1) UniswapV3Factory
+       #createPool
+         gas:
+
+      AssertionError: Snapshot name: `UniswapV3Factory #createPool gas 1`: expected '121124364' to equal '63027849'
+      + expected - actual
+
+      -121124364
+      +63027849
+      
+      at SnapshotManager.assert (node_modules/mocha-chai-jest-snapshot/src/manager.ts:63:29)
+      at Proxy.<anonymous> (node_modules/mocha-chai-jest-snapshot/src/index.ts:81:20)
+      at Proxy.methodWrapper (node_modules/chai/lib/chai/utils/addMethod.js:57:25)
+      at snapshotGasCost (test/shared/snapshotGasCost.ts:23:39)
+      at async Context.<anonymous> (test/UniswapV3Factory.spec.ts:128:7)
+
+
+
