@@ -1716,7 +1716,7 @@ describe('UniswapV3Pool', () => {
     })
     it('does not account for time increase above range', async () => {
       await pool.advanceTime(5)
-      await swapToHigherPrice(encodePriceSqrt(2, 1), wallet.address)
+      await (await swapToHigherPrice(encodePriceSqrt(2, 1), wallet.address)).wait()
       await pool.advanceTime(7)
       const { secondsPerLiquidityInsideX128, tickCumulativeInside, secondsInside } =
         await pool.snapshotCumulativesInside(tickLower, tickUpper)
@@ -1726,7 +1726,7 @@ describe('UniswapV3Pool', () => {
     })
     it('does not account for time increase below range', async () => {
       await pool.advanceTime(5)
-      await swapToLowerPrice(encodePriceSqrt(1, 2), wallet.address)
+      await (await swapToLowerPrice(encodePriceSqrt(1, 2), wallet.address)).wait()
       await pool.advanceTime(7)
       const { secondsPerLiquidityInsideX128, tickCumulativeInside, secondsInside } =
         await pool.snapshotCumulativesInside(tickLower, tickUpper)
@@ -1763,7 +1763,7 @@ describe('UniswapV3Pool', () => {
       await pool.advanceTime(5)
       await mint(wallet.address, tickUpper, getMaxTick(tickSpacing), 15)
       await swapToHigherPrice(encodePriceSqrt(2, 1), wallet.address)
-      await pool.advanceTime(8)
+      await (await pool.advanceTime(8)).wait()
       const { secondsPerLiquidityInsideX128, tickCumulativeInside, secondsInside } =
         await pool.snapshotCumulativesInside(tickUpper, getMaxTick(tickSpacing))
       expect(secondsPerLiquidityInsideX128).to.eq(BigNumber.from(8).shl(128).div(15))
@@ -1775,7 +1775,7 @@ describe('UniswapV3Pool', () => {
     it('overlapping liquidity is aggregated', async () => {
       await mint(wallet.address, tickLower, getMaxTick(tickSpacing), 15)
       await pool.advanceTime(5)
-      await swapToHigherPrice(encodePriceSqrt(2, 1), wallet.address)
+      await (await swapToHigherPrice(encodePriceSqrt(2, 1), wallet.address)).wait()
       await pool.advanceTime(8)
       const { secondsPerLiquidityInsideX128, tickCumulativeInside, secondsInside } =
         await pool.snapshotCumulativesInside(tickLower, tickUpper)
@@ -1814,7 +1814,7 @@ describe('UniswapV3Pool', () => {
     it('up to max uint 128', async () => {
       await pool.initialize(encodePriceSqrt(1, 1))
       await mint(wallet.address, minTick, maxTick, 1)
-      await flash(0, 0, wallet.address, MaxUint128, MaxUint128)
+      await (await flash(0, 0, wallet.address, MaxUint128, MaxUint128)).wait()
 
       const [feeGrowthGlobal0X128, feeGrowthGlobal1X128] = await Promise.all([
         pool.feeGrowthGlobal0X128(),
@@ -1823,7 +1823,7 @@ describe('UniswapV3Pool', () => {
       // all 1s in first 128 bits
       expect(feeGrowthGlobal0X128).to.eq(MaxUint128.shl(128))
       expect(feeGrowthGlobal1X128).to.eq(MaxUint128.shl(128))
-      await pool.burn(minTick, maxTick, 0)
+      await (await pool.burn(minTick, maxTick, 0)).wait()
       const { amount0, amount1 } = await pool.callStatic.collect(
         wallet.address,
         minTick,
