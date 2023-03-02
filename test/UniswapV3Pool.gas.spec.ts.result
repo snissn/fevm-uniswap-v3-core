@@ -30,16 +30,13 @@
        fee is on
          "before each" hook: load the fixture for "first swap in block with no tick movement":
 
-      AssertionError: Expected "79228162514264337593543950336" to be equal 79228558654086561835532822693
+      AssertionError: expected -8090 to equal +0
       + expected - actual
 
-       {
-      -  "_hex": "0x01000053e2c8652237c04228a5"
-      +  "_hex": "0x01000000000000000000000000"
-         "_isBigNumber": true
-       }
+      --8090
+      +0
       
-      at gasTestFixture (test/UniswapV3Pool.gas.spec.ts:69:54)
+      at gasTestFixture (test/UniswapV3Pool.gas.spec.ts:68:46)
       at runMicrotasks (<anonymous>)
       at processTicksAndRejections (node:internal/process/task_queues:96:5)
       at async Context.<anonymous> (test/UniswapV3Pool.gas.spec.ts:81:81)
