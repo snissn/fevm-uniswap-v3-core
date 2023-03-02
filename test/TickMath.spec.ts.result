@@ -2,9 +2,9 @@
 
   TickMath
     #getSqrtRatioAtTick
-      ✔ throws for too low (4081ms)
+      ✔ throws for too low (4108ms)
       ✔ throws for too low
-      ✔ min tick
+      ✔ min tick (64ms)
       ✔ min tick +1
       ✔ max tick - 1
       ✔ min tick ratio is less than js implementation
@@ -13,115 +13,115 @@
       tick -50
         ✔ is at most off by 1/100th of a bips
         ✔ result
-        1) gas
+        ✔ gas
       tick 50
         ✔ is at most off by 1/100th of a bips
         ✔ result
-        2) gas
+        ✔ gas (55ms)
       tick -100
         ✔ is at most off by 1/100th of a bips
         ✔ result
-        3) gas
+        ✔ gas
       tick 100
         ✔ is at most off by 1/100th of a bips
         ✔ result
-        4) gas
+        ✔ gas
       tick -250
         ✔ is at most off by 1/100th of a bips
         ✔ result
-        5) gas
+        ✔ gas
       tick 250
         ✔ is at most off by 1/100th of a bips
         ✔ result
-        6) gas
+        ✔ gas
       tick -500
         ✔ is at most off by 1/100th of a bips
         ✔ result
-        7) gas
+        ✔ gas
       tick 500
         ✔ is at most off by 1/100th of a bips
         ✔ result
-        8) gas
+        ✔ gas
       tick -1000
         ✔ is at most off by 1/100th of a bips
         ✔ result
-        9) gas
+        ✔ gas
       tick 1000
-        ✔ is at most off by 1/100th of a bips
+        ✔ is at most off by 1/100th of a bips (41ms)
         ✔ result
-        10) gas
+        ✔ gas
       tick -2500
         ✔ is at most off by 1/100th of a bips
         ✔ result
-        11) gas
+        ✔ gas
       tick 2500
         ✔ is at most off by 1/100th of a bips
         ✔ result
-        12) gas
+        ✔ gas
       tick -3000
         ✔ is at most off by 1/100th of a bips
         ✔ result
-        13) gas
+        ✔ gas
       tick 3000
         ✔ is at most off by 1/100th of a bips
         ✔ result
-        14) gas
+        ✔ gas
       tick -4000
         ✔ is at most off by 1/100th of a bips
         ✔ result
-        15) gas
+        ✔ gas
       tick 4000
         ✔ is at most off by 1/100th of a bips
         ✔ result
-        16) gas
+        ✔ gas
       tick -5000
         ✔ is at most off by 1/100th of a bips
         ✔ result
-        17) gas
+        ✔ gas
       tick 5000
         ✔ is at most off by 1/100th of a bips
         ✔ result
-        18) gas
+        ✔ gas
       tick -50000
         ✔ is at most off by 1/100th of a bips
         ✔ result
-        19) gas
+        ✔ gas
       tick 50000
         ✔ is at most off by 1/100th of a bips
         ✔ result
-        20) gas
+        ✔ gas
       tick -150000
         ✔ is at most off by 1/100th of a bips
         ✔ result
-        21) gas
+        ✔ gas
       tick 150000
         ✔ is at most off by 1/100th of a bips
         ✔ result
-        22) gas
+        ✔ gas
       tick -250000
         ✔ is at most off by 1/100th of a bips
         ✔ result
-        23) gas
+        ✔ gas
       tick 250000
         ✔ is at most off by 1/100th of a bips
         ✔ result
-        24) gas
+        ✔ gas
       tick -500000
         ✔ is at most off by 1/100th of a bips
         ✔ result
-        25) gas
+        ✔ gas
       tick 500000
         ✔ is at most off by 1/100th of a bips
         ✔ result
-        26) gas
+        ✔ gas
       tick -738203
         ✔ is at most off by 1/100th of a bips
         ✔ result
-        27) gas
+        ✔ gas
       tick 738203
         ✔ is at most off by 1/100th of a bips
         ✔ result
-        28) gas
+        ✔ gas
     #MIN_SQRT_RATIO
       ✔ equals #getSqrtRatioAtTick(MIN_TICK)
     #MAX_SQRT_RATIO
@@ -137,830 +137,68 @@
         ✔ is at most off by 1
         ✔ ratio is between the tick and tick+1
         ✔ result
-        29) gas
+        ✔ gas
       ratio 79228162514264337593543950336000000
         ✔ is at most off by 1
         ✔ ratio is between the tick and tick+1
         ✔ result
-        30) gas
+        ✔ gas
       ratio 79228162514264337593543950336000
         ✔ is at most off by 1
         ✔ ratio is between the tick and tick+1
         ✔ result
-        31) gas
+        ✔ gas
       ratio 9903520314283042199192993792
         ✔ is at most off by 1
         ✔ ratio is between the tick and tick+1
         ✔ result
-        32) gas
+        ✔ gas
       ratio 28011385487393069959365969113
         ✔ is at most off by 1
         ✔ ratio is between the tick and tick+1
         ✔ result
-        33) gas
+        ✔ gas
       ratio 56022770974786139918731938227
         ✔ is at most off by 1
         ✔ ratio is between the tick and tick+1
         ✔ result
-        34) gas
+        ✔ gas
       ratio 79228162514264337593543950336
         ✔ is at most off by 1
         ✔ ratio is between the tick and tick+1
         ✔ result
-        35) gas
+        ✔ gas
       ratio 112045541949572279837463876454
         ✔ is at most off by 1
         ✔ ratio is between the tick and tick+1
         ✔ result
-        36) gas
+        ✔ gas
       ratio 224091083899144559674927752909
         ✔ is at most off by 1
         ✔ ratio is between the tick and tick+1
         ✔ result
-        37) gas
+        ✔ gas
       ratio 633825300114114700748351602688
         ✔ is at most off by 1
         ✔ ratio is between the tick and tick+1
         ✔ result
-        38) gas
+        ✔ gas
       ratio 79228162514264337593543950
         ✔ is at most off by 1
-        ✔ ratio is between the tick and tick+1
+        ✔ ratio is between the tick and tick+1 (45ms)
         ✔ result
-        39) gas
+        ✔ gas
       ratio 79228162514264337593543
         ✔ is at most off by 1
         ✔ ratio is between the tick and tick+1
         ✔ result
-        40) gas
+        ✔ gas
       ratio 1461446703485210103287273052203988822378723970341
         ✔ is at most off by 1
         ✔ ratio is between the tick and tick+1
         ✔ result
-        41) gas
+        ✔ gas
 
 
-Snapshot Summary
- › 41 snapshots failed from 1 test suite. Inspect your code changes or re-run mocha with `--update` to update them to update them.
-
-  111 passing (6s)
-  41 failing
-
-  1) TickMath
-       #getSqrtRatioAtTick
-         tick -50
-           gas:
-
-      AssertionError: Snapshot name: `TickMath #getSqrtRatioAtTick tick -50 gas 1`: expected '167696' to equal '161152'
-      + expected - actual
-
-      -167696
-      +161152
-      
-      at SnapshotManager.assert (node_modules/mocha-chai-jest-snapshot/src/manager.ts:63:29)
-      at Proxy.<anonymous> (node_modules/mocha-chai-jest-snapshot/src/index.ts:81:20)
-      at Proxy.methodWrapper (node_modules/chai/lib/chai/utils/addMethod.js:57:25)
-      at snapshotGasCost (test/shared/snapshotGasCost.ts:25:33)
-      at processTicksAndRejections (node:internal/process/task_queues:96:5)
-      at async Context.<anonymous> (test/TickMath.spec.ts:71:13)
-
-  2) TickMath
-       #getSqrtRatioAtTick
-         tick 50
-           gas:
-
-      AssertionError: Snapshot name: `TickMath #getSqrtRatioAtTick tick 50 gas 1`: expected '203576' to equal '197040'
-      + expected - actual
-
-      -203576
-      +197040
-      
-      at SnapshotManager.assert (node_modules/mocha-chai-jest-snapshot/src/manager.ts:63:29)
-      at Proxy.<anonymous> (node_modules/mocha-chai-jest-snapshot/src/index.ts:81:20)
-      at Proxy.methodWrapper (node_modules/chai/lib/chai/utils/addMethod.js:57:25)
-      at snapshotGasCost (test/shared/snapshotGasCost.ts:25:33)
-      at processTicksAndRejections (node:internal/process/task_queues:96:5)
-      at async Context.<anonymous> (test/TickMath.spec.ts:71:13)
-
-  3) TickMath
-       #getSqrtRatioAtTick
-         tick -100
-           gas:
-
-      AssertionError: Snapshot name: `TickMath #getSqrtRatioAtTick tick -100 gas 1`: expected '167872' to equal '161328'
-      + expected - actual
-
-      -167872
-      +161328
-      
-      at SnapshotManager.assert (node_modules/mocha-chai-jest-snapshot/src/manager.ts:63:29)
-      at Proxy.<anonymous> (node_modules/mocha-chai-jest-snapshot/src/index.ts:81:20)
-      at Proxy.methodWrapper (node_modules/chai/lib/chai/utils/addMethod.js:57:25)
-      at snapshotGasCost (test/shared/snapshotGasCost.ts:25:33)
-      at processTicksAndRejections (node:internal/process/task_queues:96:5)
-      at async Context.<anonymous> (test/TickMath.spec.ts:71:13)
-
-  4) TickMath
-       #getSqrtRatioAtTick
-         tick 100
-           gas:
-
-      AssertionError: Snapshot name: `TickMath #getSqrtRatioAtTick tick 100 gas 1`: expected '205648' to equal '199112'
-      + expected - actual
-
-      -205648
-      +199112
-      
-      at SnapshotManager.assert (node_modules/mocha-chai-jest-snapshot/src/manager.ts:63:29)
-      at Proxy.<anonymous> (node_modules/mocha-chai-jest-snapshot/src/index.ts:81:20)
-      at Proxy.methodWrapper (node_modules/chai/lib/chai/utils/addMethod.js:57:25)
-      at snapshotGasCost (test/shared/snapshotGasCost.ts:25:33)
-      at processTicksAndRejections (node:internal/process/task_queues:96:5)
-      at async Context.<anonymous> (test/TickMath.spec.ts:71:13)
-
-  5) TickMath
-       #getSqrtRatioAtTick
-         tick -250
-           gas:
-
-      AssertionError: Snapshot name: `TickMath #getSqrtRatioAtTick tick -250 gas 1`: expected '188120' to equal '178568'
-      + expected - actual
-
-      -188120
-      +178568
-      
-      at SnapshotManager.assert (node_modules/mocha-chai-jest-snapshot/src/manager.ts:63:29)
-      at Proxy.<anonymous> (node_modules/mocha-chai-jest-snapshot/src/index.ts:81:20)
-      at Proxy.methodWrapper (node_modules/chai/lib/chai/utils/addMethod.js:57:25)
-      at snapshotGasCost (test/shared/snapshotGasCost.ts:25:33)
-      at processTicksAndRejections (node:internal/process/task_queues:96:5)
-      at async Context.<anonymous> (test/TickMath.spec.ts:71:13)
-
-  6) TickMath
-       #getSqrtRatioAtTick
-         tick 250
-           gas:
-
-      AssertionError: Snapshot name: `TickMath #getSqrtRatioAtTick tick 250 gas 1`: expected '225460' to equal '215916'
-      + expected - actual
-
-      -225460
-      +215916
-      
-      at SnapshotManager.assert (node_modules/mocha-chai-jest-snapshot/src/manager.ts:63:29)
-      at Proxy.<anonymous> (node_modules/mocha-chai-jest-snapshot/src/index.ts:81:20)
-      at Proxy.methodWrapper (node_modules/chai/lib/chai/utils/addMethod.js:57:25)
-      at snapshotGasCost (test/shared/snapshotGasCost.ts:25:33)
-      at processTicksAndRejections (node:internal/process/task_queues:96:5)
-      at async Context.<anonymous> (test/TickMath.spec.ts:71:13)
-
-  7) TickMath
-       #getSqrtRatioAtTick
-         tick -500
-           gas:
-
-      AssertionError: Snapshot name: `TickMath #getSqrtRatioAtTick tick -500 gas 1`: expected '188124' to equal '178572'
-      + expected - actual
-
-      -188124
-      +178572
-      
-      at SnapshotManager.assert (node_modules/mocha-chai-jest-snapshot/src/manager.ts:63:29)
-      at Proxy.<anonymous> (node_modules/mocha-chai-jest-snapshot/src/index.ts:81:20)
-      at Proxy.methodWrapper (node_modules/chai/lib/chai/utils/addMethod.js:57:25)
-      at snapshotGasCost (test/shared/snapshotGasCost.ts:25:33)
-      at processTicksAndRejections (node:internal/process/task_queues:96:5)
-      at async Context.<anonymous> (test/TickMath.spec.ts:71:13)
-
-  8) TickMath
-       #getSqrtRatioAtTick
-         tick 500
-           gas:
-
-      AssertionError: Snapshot name: `TickMath #getSqrtRatioAtTick tick 500 gas 1`: expected '226584' to equal '217040'
-      + expected - actual
-
-      -226584
-      +217040
-      
-      at SnapshotManager.assert (node_modules/mocha-chai-jest-snapshot/src/manager.ts:63:29)
-      at Proxy.<anonymous> (node_modules/mocha-chai-jest-snapshot/src/index.ts:81:20)
-      at Proxy.methodWrapper (node_modules/chai/lib/chai/utils/addMethod.js:57:25)
-      at snapshotGasCost (test/shared/snapshotGasCost.ts:25:33)
-      at processTicksAndRejections (node:internal/process/task_queues:96:5)
-      at async Context.<anonymous> (test/TickMath.spec.ts:71:13)
-
-  9) TickMath
-       #getSqrtRatioAtTick
-         tick -1000
-           gas:
-
-      AssertionError: Snapshot name: `TickMath #getSqrtRatioAtTick tick -1000 gas 1`: expected '188236' to equal '178684'
-      + expected - actual
-
-      -188236
-      +178684
-      
-      at SnapshotManager.assert (node_modules/mocha-chai-jest-snapshot/src/manager.ts:63:29)
-      at Proxy.<anonymous> (node_modules/mocha-chai-jest-snapshot/src/index.ts:81:20)
-      at Proxy.methodWrapper (node_modules/chai/lib/chai/utils/addMethod.js:57:25)
-      at snapshotGasCost (test/shared/snapshotGasCost.ts:25:33)
-      at processTicksAndRejections (node:internal/process/task_queues:96:5)
-      at async Context.<anonymous> (test/TickMath.spec.ts:71:13)
-
-  10) TickMath
-       #getSqrtRatioAtTick
-         tick 1000
-           gas:
-
-      AssertionError: Snapshot name: `TickMath #getSqrtRatioAtTick tick 1000 gas 1`: expected '227048' to equal '217504'
-      + expected - actual
-
-      -227048
-      +217504
-      
-      at SnapshotManager.assert (node_modules/mocha-chai-jest-snapshot/src/manager.ts:63:29)
-      at Proxy.<anonymous> (node_modules/mocha-chai-jest-snapshot/src/index.ts:81:20)
-      at Proxy.methodWrapper (node_modules/chai/lib/chai/utils/addMethod.js:57:25)
-      at snapshotGasCost (test/shared/snapshotGasCost.ts:25:33)
-      at processTicksAndRejections (node:internal/process/task_queues:96:5)
-      at async Context.<anonymous> (test/TickMath.spec.ts:71:13)
-
-  11) TickMath
-       #getSqrtRatioAtTick
-         tick -2500
-           gas:
-
-      AssertionError: Snapshot name: `TickMath #getSqrtRatioAtTick tick -2500 gas 1`: expected '181109' to equal '172560'
-      + expected - actual
-
-      -181109
-      +172560
-      
-      at SnapshotManager.assert (node_modules/mocha-chai-jest-snapshot/src/manager.ts:63:29)
-      at Proxy.<anonymous> (node_modules/mocha-chai-jest-snapshot/src/index.ts:81:20)
-      at Proxy.methodWrapper (node_modules/chai/lib/chai/utils/addMethod.js:57:25)
-      at snapshotGasCost (test/shared/snapshotGasCost.ts:25:33)
-      at processTicksAndRejections (node:internal/process/task_queues:96:5)
-      at async Context.<anonymous> (test/TickMath.spec.ts:71:13)
-
-  12) TickMath
-       #getSqrtRatioAtTick
-         tick 2500
-           gas:
-
-      AssertionError: Snapshot name: `TickMath #getSqrtRatioAtTick tick 2500 gas 1`: expected '219153' to equal '210612'
-      + expected - actual
-
-      -219153
-      +210612
-      
-      at SnapshotManager.assert (node_modules/mocha-chai-jest-snapshot/src/manager.ts:63:29)
-      at Proxy.<anonymous> (node_modules/mocha-chai-jest-snapshot/src/index.ts:81:20)
-      at Proxy.methodWrapper (node_modules/chai/lib/chai/utils/addMethod.js:57:25)
-      at snapshotGasCost (test/shared/snapshotGasCost.ts:25:33)
-      at processTicksAndRejections (node:internal/process/task_queues:96:5)
-      at async Context.<anonymous> (test/TickMath.spec.ts:71:13)
-
-  13) TickMath
-       #getSqrtRatioAtTick
-         tick -3000
-           gas:
-
-      AssertionError: Snapshot name: `TickMath #getSqrtRatioAtTick tick -3000 gas 1`: expected '194642' to equal '184088'
-      + expected - actual
-
-      -194642
-      +184088
-      
-      at SnapshotManager.assert (node_modules/mocha-chai-jest-snapshot/src/manager.ts:63:29)
-      at Proxy.<anonymous> (node_modules/mocha-chai-jest-snapshot/src/index.ts:81:20)
-      at Proxy.methodWrapper (node_modules/chai/lib/chai/utils/addMethod.js:57:25)
-      at snapshotGasCost (test/shared/snapshotGasCost.ts:25:33)
-      at processTicksAndRejections (node:internal/process/task_queues:96:5)
-      at async Context.<anonymous> (test/TickMath.spec.ts:71:13)
-
-  14) TickMath
-       #getSqrtRatioAtTick
-         tick 3000
-           gas:
-
-      AssertionError: Snapshot name: `TickMath #getSqrtRatioAtTick tick 3000 gas 1`: expected '233582' to equal '223036'
-      + expected - actual
-
-      -233582
-      +223036
-      
-      at SnapshotManager.assert (node_modules/mocha-chai-jest-snapshot/src/manager.ts:63:29)
-      at Proxy.<anonymous> (node_modules/mocha-chai-jest-snapshot/src/index.ts:81:20)
-      at Proxy.methodWrapper (node_modules/chai/lib/chai/utils/addMethod.js:57:25)
-      at snapshotGasCost (test/shared/snapshotGasCost.ts:25:33)
-      at processTicksAndRejections (node:internal/process/task_queues:96:5)
-      at async Context.<anonymous> (test/TickMath.spec.ts:71:13)
-
-  15) TickMath
-       #getSqrtRatioAtTick
-         tick -4000
-           gas:
-
-      AssertionError: Snapshot name: `TickMath #getSqrtRatioAtTick tick -4000 gas 1`: expected '188176' to equal '178624'
-      + expected - actual
-
-      -188176
-      +178624
-      
-      at SnapshotManager.assert (node_modules/mocha-chai-jest-snapshot/src/manager.ts:63:29)
-      at Proxy.<anonymous> (node_modules/mocha-chai-jest-snapshot/src/index.ts:81:20)
-      at Proxy.methodWrapper (node_modules/chai/lib/chai/utils/addMethod.js:57:25)
-      at snapshotGasCost (test/shared/snapshotGasCost.ts:25:33)
-      at processTicksAndRejections (node:internal/process/task_queues:96:5)
-      at async Context.<anonymous> (test/TickMath.spec.ts:71:13)
-
-  16) TickMath
-       #getSqrtRatioAtTick
-         tick 4000
-           gas:
-
-      AssertionError: Snapshot name: `TickMath #getSqrtRatioAtTick tick 4000 gas 1`: expected '227584' to equal '218040'
-      + expected - actual
-
-      -227584
-      +218040
-      
-      at SnapshotManager.assert (node_modules/mocha-chai-jest-snapshot/src/manager.ts:63:29)
-      at Proxy.<anonymous> (node_modules/mocha-chai-jest-snapshot/src/index.ts:81:20)
-      at Proxy.methodWrapper (node_modules/chai/lib/chai/utils/addMethod.js:57:25)
-      at snapshotGasCost (test/shared/snapshotGasCost.ts:25:33)
-      at processTicksAndRejections (node:internal/process/task_queues:96:5)
-      at async Context.<anonymous> (test/TickMath.spec.ts:71:13)
-
-  17) TickMath
-       #getSqrtRatioAtTick
-         tick -5000
-           gas:
-
-      AssertionError: Snapshot name: `TickMath #getSqrtRatioAtTick tick -5000 gas 1`: expected '181177' to equal '172628'
-      + expected - actual
-
-      -181177
-      +172628
-      
-      at SnapshotManager.assert (node_modules/mocha-chai-jest-snapshot/src/manager.ts:63:29)
-      at Proxy.<anonymous> (node_modules/mocha-chai-jest-snapshot/src/index.ts:81:20)
-      at Proxy.methodWrapper (node_modules/chai/lib/chai/utils/addMethod.js:57:25)
-      at snapshotGasCost (test/shared/snapshotGasCost.ts:25:33)
-      at processTicksAndRejections (node:internal/process/task_queues:96:5)
-      at async Context.<anonymous> (test/TickMath.spec.ts:71:13)
-
-  18) TickMath
-       #getSqrtRatioAtTick
-         tick 5000
-           gas:
-
-      AssertionError: Snapshot name: `TickMath #getSqrtRatioAtTick tick 5000 gas 1`: expected '219273' to equal '210732'
-      + expected - actual
-
-      -219273
-      +210732
-      
-      at SnapshotManager.assert (node_modules/mocha-chai-jest-snapshot/src/manager.ts:63:29)
-      at Proxy.<anonymous> (node_modules/mocha-chai-jest-snapshot/src/index.ts:81:20)
-      at Proxy.methodWrapper (node_modules/chai/lib/chai/utils/addMethod.js:57:25)
-      at snapshotGasCost (test/shared/snapshotGasCost.ts:25:33)
-      at processTicksAndRejections (node:internal/process/task_queues:96:5)
-      at async Context.<anonymous> (test/TickMath.spec.ts:71:13)
-
-  19) TickMath
-       #getSqrtRatioAtTick
-         tick -50000
-           gas:
-
-      AssertionError: Snapshot name: `TickMath #getSqrtRatioAtTick tick -50000 gas 1`: expected '187712' to equal '178160'
-      + expected - actual
-
-      -187712
-      +178160
-      
-      at SnapshotManager.assert (node_modules/mocha-chai-jest-snapshot/src/manager.ts:63:29)
-      at Proxy.<anonymous> (node_modules/mocha-chai-jest-snapshot/src/index.ts:81:20)
-      at Proxy.methodWrapper (node_modules/chai/lib/chai/utils/addMethod.js:57:25)
-      at snapshotGasCost (test/shared/snapshotGasCost.ts:25:33)
-      at processTicksAndRejections (node:internal/process/task_queues:96:5)
-      at async Context.<anonymous> (test/TickMath.spec.ts:71:13)
-
-  20) TickMath
-       #getSqrtRatioAtTick
-         tick 50000
-           gas:
-
-      AssertionError: Snapshot name: `TickMath #getSqrtRatioAtTick tick 50000 gas 1`: expected '227624' to equal '218196'
-      + expected - actual
-
-      -227624
-      +218196
-      
-      at SnapshotManager.assert (node_modules/mocha-chai-jest-snapshot/src/manager.ts:63:29)
-      at Proxy.<anonymous> (node_modules/mocha-chai-jest-snapshot/src/index.ts:81:20)
-      at Proxy.methodWrapper (node_modules/chai/lib/chai/utils/addMethod.js:57:25)
-      at snapshotGasCost (test/shared/snapshotGasCost.ts:25:33)
-      at processTicksAndRejections (node:internal/process/task_queues:96:5)
-      at async Context.<anonymous> (test/TickMath.spec.ts:71:13)
-
-  21) TickMath
-       #getSqrtRatioAtTick
-         tick -150000
-           gas:
-
-      AssertionError: Snapshot name: `TickMath #getSqrtRatioAtTick tick -150000 gas 1`: expected '201292' to equal '189776'
-      + expected - actual
-
-      -201292
-      +189776
-      
-      at SnapshotManager.assert (node_modules/mocha-chai-jest-snapshot/src/manager.ts:63:29)
-      at Proxy.<anonymous> (node_modules/mocha-chai-jest-snapshot/src/index.ts:81:20)
-      at Proxy.methodWrapper (node_modules/chai/lib/chai/utils/addMethod.js:57:25)
-      at snapshotGasCost (test/shared/snapshotGasCost.ts:25:33)
-      at processTicksAndRejections (node:internal/process/task_queues:96:5)
-      at async Context.<anonymous> (test/TickMath.spec.ts:71:13)
-
-  22) TickMath
-       #getSqrtRatioAtTick
-         tick 150000
-           gas:
-
-      AssertionError: Snapshot name: `TickMath #getSqrtRatioAtTick tick 150000 gas 1`: expected '243556' to equal '232164'
-      + expected - actual
-
-      -243556
-      +232164
-      
-      at SnapshotManager.assert (node_modules/mocha-chai-jest-snapshot/src/manager.ts:63:29)
-      at Proxy.<anonymous> (node_modules/mocha-chai-jest-snapshot/src/index.ts:81:20)
-      at Proxy.methodWrapper (node_modules/chai/lib/chai/utils/addMethod.js:57:25)
-      at snapshotGasCost (test/shared/snapshotGasCost.ts:25:33)
-      at processTicksAndRejections (node:internal/process/task_queues:96:5)
-      at async Context.<anonymous> (test/TickMath.spec.ts:71:13)
-
-  23) TickMath
-       #getSqrtRatioAtTick
-         tick -250000
-           gas:
-
-      AssertionError: Snapshot name: `TickMath #getSqrtRatioAtTick tick -250000 gas 1`: expected '194702' to equal '184188'
-      + expected - actual
-
-      -194702
-      +184188
-      
-      at SnapshotManager.assert (node_modules/mocha-chai-jest-snapshot/src/manager.ts:63:29)
-      at Proxy.<anonymous> (node_modules/mocha-chai-jest-snapshot/src/index.ts:81:20)
-      at Proxy.methodWrapper (node_modules/chai/lib/chai/utils/addMethod.js:57:25)
-      at snapshotGasCost (test/shared/snapshotGasCost.ts:25:33)
-      at processTicksAndRejections (node:internal/process/task_queues:96:5)
-      at async Context.<anonymous> (test/TickMath.spec.ts:71:13)
-
-  24) TickMath
-       #getSqrtRatioAtTick
-         tick 250000
-           gas:
-
-      AssertionError: Snapshot name: `TickMath #getSqrtRatioAtTick tick 250000 gas 1`: expected '240438' to equal '230048'
-      + expected - actual
-
-      -240438
-      +230048
-      
-      at SnapshotManager.assert (node_modules/mocha-chai-jest-snapshot/src/manager.ts:63:29)
-      at Proxy.<anonymous> (node_modules/mocha-chai-jest-snapshot/src/index.ts:81:20)
-      at Proxy.methodWrapper (node_modules/chai/lib/chai/utils/addMethod.js:57:25)
-      at snapshotGasCost (test/shared/snapshotGasCost.ts:25:33)
-      at runMicrotasks (<anonymous>)
-      at processTicksAndRejections (node:internal/process/task_queues:96:5)
-      at async Context.<anonymous> (test/TickMath.spec.ts:71:13)
-
-  25) TickMath
-       #getSqrtRatioAtTick
-         tick -500000
-           gas:
-
-      AssertionError: Snapshot name: `TickMath #getSqrtRatioAtTick tick -500000 gas 1`: expected '194773' to equal '184256'
-      + expected - actual
-
-      -194773
-      +184256
-      
-      at SnapshotManager.assert (node_modules/mocha-chai-jest-snapshot/src/manager.ts:63:29)
-      at Proxy.<anonymous> (node_modules/mocha-chai-jest-snapshot/src/index.ts:81:20)
-      at Proxy.methodWrapper (node_modules/chai/lib/chai/utils/addMethod.js:57:25)
-      at snapshotGasCost (test/shared/snapshotGasCost.ts:25:33)
-      at runMicrotasks (<anonymous>)
-      at processTicksAndRejections (node:internal/process/task_queues:96:5)
-      at async Context.<anonymous> (test/TickMath.spec.ts:71:13)
-
-  26) TickMath
-       #getSqrtRatioAtTick
-         tick 500000
-           gas:
-
-      AssertionError: Snapshot name: `TickMath #getSqrtRatioAtTick tick 500000 gas 1`: expected '243797' to equal '233404'
-      + expected - actual
-
-      -243797
-      +233404
-      
-      at SnapshotManager.assert (node_modules/mocha-chai-jest-snapshot/src/manager.ts:63:29)
-      at Proxy.<anonymous> (node_modules/mocha-chai-jest-snapshot/src/index.ts:81:20)
-      at Proxy.methodWrapper (node_modules/chai/lib/chai/utils/addMethod.js:57:25)
-      at snapshotGasCost (test/shared/snapshotGasCost.ts:25:33)
-      at runMicrotasks (<anonymous>)
-      at processTicksAndRejections (node:internal/process/task_queues:96:5)
-      at async Context.<anonymous> (test/TickMath.spec.ts:71:13)
-
-  27) TickMath
-       #getSqrtRatioAtTick
-         tick -738203
-           gas:
-
-      AssertionError: Snapshot name: `TickMath #getSqrtRatioAtTick tick -738203 gas 1`: expected '211447' to equal '197836'
-      + expected - actual
-
-      -211447
-      +197836
-      
-      at SnapshotManager.assert (node_modules/mocha-chai-jest-snapshot/src/manager.ts:63:29)
-      at Proxy.<anonymous> (node_modules/mocha-chai-jest-snapshot/src/index.ts:81:20)
-      at Proxy.methodWrapper (node_modules/chai/lib/chai/utils/addMethod.js:57:25)
-      at snapshotGasCost (test/shared/snapshotGasCost.ts:25:33)
-      at runMicrotasks (<anonymous>)
-      at processTicksAndRejections (node:internal/process/task_queues:96:5)
-      at async Context.<anonymous> (test/TickMath.spec.ts:71:13)
-
-  28) TickMath
-       #getSqrtRatioAtTick
-         tick 738203
-           gas:
-
-      AssertionError: Snapshot name: `TickMath #getSqrtRatioAtTick tick 738203 gas 1`: expected '266963' to equal '253476'
-      + expected - actual
-
-      -266963
-      +253476
-      
-      at SnapshotManager.assert (node_modules/mocha-chai-jest-snapshot/src/manager.ts:63:29)
-      at Proxy.<anonymous> (node_modules/mocha-chai-jest-snapshot/src/index.ts:81:20)
-      at Proxy.methodWrapper (node_modules/chai/lib/chai/utils/addMethod.js:57:25)
-      at snapshotGasCost (test/shared/snapshotGasCost.ts:25:33)
-      at runMicrotasks (<anonymous>)
-      at processTicksAndRejections (node:internal/process/task_queues:96:5)
-      at async Context.<anonymous> (test/TickMath.spec.ts:71:13)
-
-  29) TickMath
-       #getTickAtSqrtRatio
-         ratio 4295128739
-           gas:
-
-      AssertionError: Snapshot name: `TickMath #getTickAtSqrtRatio ratio 4295128739 gas 1`: expected '616468' to equal '570308'
-      + expected - actual
-
-      -616468
-      +570308
-      
-      at SnapshotManager.assert (node_modules/mocha-chai-jest-snapshot/src/manager.ts:63:29)
-      at Proxy.<anonymous> (node_modules/mocha-chai-jest-snapshot/src/index.ts:81:20)
-      at Proxy.methodWrapper (node_modules/chai/lib/chai/utils/addMethod.js:57:25)
-      at snapshotGasCost (test/shared/snapshotGasCost.ts:25:33)
-      at runMicrotasks (<anonymous>)
-      at processTicksAndRejections (node:internal/process/task_queues:96:5)
-      at async Context.<anonymous> (test/TickMath.spec.ts:149:11)
-
-  30) TickMath
-       #getTickAtSqrtRatio
-         ratio 79228162514264337593543950336000000
-           gas:
-
-      AssertionError: Snapshot name: `TickMath #getTickAtSqrtRatio ratio 79228162514264337593543950336000000 gas 1`: expected '662803' to equal '617260'
-      + expected - actual
-
-      -662803
-      +617260
-      
-      at SnapshotManager.assert (node_modules/mocha-chai-jest-snapshot/src/manager.ts:63:29)
-      at Proxy.<anonymous> (node_modules/mocha-chai-jest-snapshot/src/index.ts:81:20)
-      at Proxy.methodWrapper (node_modules/chai/lib/chai/utils/addMethod.js:57:25)
-      at snapshotGasCost (test/shared/snapshotGasCost.ts:25:33)
-      at runMicrotasks (<anonymous>)
-      at processTicksAndRejections (node:internal/process/task_queues:96:5)
-      at async Context.<anonymous> (test/TickMath.spec.ts:149:11)
-
-  31) TickMath
-       #getTickAtSqrtRatio
-         ratio 79228162514264337593543950336000
-           gas:
-
-      AssertionError: Snapshot name: `TickMath #getTickAtSqrtRatio ratio 79228162514264337593543950336000 gas 1`: expected '661179' to equal '615996'
-      + expected - actual
-
-      -661179
-      +615996
-      
-      at SnapshotManager.assert (node_modules/mocha-chai-jest-snapshot/src/manager.ts:63:29)
-      at Proxy.<anonymous> (node_modules/mocha-chai-jest-snapshot/src/index.ts:81:20)
-      at Proxy.methodWrapper (node_modules/chai/lib/chai/utils/addMethod.js:57:25)
-      at snapshotGasCost (test/shared/snapshotGasCost.ts:25:33)
-      at runMicrotasks (<anonymous>)
-      at processTicksAndRejections (node:internal/process/task_queues:96:5)
-      at async Context.<anonymous> (test/TickMath.spec.ts:149:11)
-
-  32) TickMath
-       #getTickAtSqrtRatio
-         ratio 9903520314283042199192993792
-           gas:
-
-      AssertionError: Snapshot name: `TickMath #getTickAtSqrtRatio ratio 9903520314283042199192993792 gas 1`: expected '417280' to equal '385176'
-      + expected - actual
-
-      -417280
-      +385176
-      
-      at SnapshotManager.assert (node_modules/mocha-chai-jest-snapshot/src/manager.ts:63:29)
-      at Proxy.<anonymous> (node_modules/mocha-chai-jest-snapshot/src/index.ts:81:20)
-      at Proxy.methodWrapper (node_modules/chai/lib/chai/utils/addMethod.js:57:25)
-      at snapshotGasCost (test/shared/snapshotGasCost.ts:25:33)
-      at runMicrotasks (<anonymous>)
-      at processTicksAndRejections (node:internal/process/task_queues:96:5)
-      at async Context.<anonymous> (test/TickMath.spec.ts:149:11)
-
-  33) TickMath
-       #getTickAtSqrtRatio
-         ratio 28011385487393069959365969113
-           gas:
-
-      AssertionError: Snapshot name: `TickMath #getTickAtSqrtRatio ratio 28011385487393069959365969113 gas 1`: expected '609499' to equal '564956'
-      + expected - actual
-
-      -609499
-      +564956
-      
-      at SnapshotManager.assert (node_modules/mocha-chai-jest-snapshot/src/manager.ts:63:29)
-      at Proxy.<anonymous> (node_modules/mocha-chai-jest-snapshot/src/index.ts:81:20)
-      at Proxy.methodWrapper (node_modules/chai/lib/chai/utils/addMethod.js:57:25)
-      at snapshotGasCost (test/shared/snapshotGasCost.ts:25:33)
-      at runMicrotasks (<anonymous>)
-      at processTicksAndRejections (node:internal/process/task_queues:96:5)
-      at async Context.<anonymous> (test/TickMath.spec.ts:149:11)
-
-  34) TickMath
-       #getTickAtSqrtRatio
-         ratio 56022770974786139918731938227
-           gas:
-
-      AssertionError: Snapshot name: `TickMath #getTickAtSqrtRatio ratio 56022770974786139918731938227 gas 1`: expected '602252' to equal '558712'
-      + expected - actual
-
-      -602252
-      +558712
-      
-      at SnapshotManager.assert (node_modules/mocha-chai-jest-snapshot/src/manager.ts:63:29)
-      at Proxy.<anonymous> (node_modules/mocha-chai-jest-snapshot/src/index.ts:81:20)
-      at Proxy.methodWrapper (node_modules/chai/lib/chai/utils/addMethod.js:57:25)
-      at snapshotGasCost (test/shared/snapshotGasCost.ts:25:33)
-      at runMicrotasks (<anonymous>)
-      at processTicksAndRejections (node:internal/process/task_queues:96:5)
-      at async Context.<anonymous> (test/TickMath.spec.ts:149:11)
-
-  35) TickMath
-       #getTickAtSqrtRatio
-         ratio 79228162514264337593543950336
-           gas:
-
-      AssertionError: Snapshot name: `TickMath #getTickAtSqrtRatio ratio 79228162514264337593543950336 gas 1`: expected '549130' to equal '513804'
-      + expected - actual
-
-      -549130
-      +513804
-      
-      at SnapshotManager.assert (node_modules/mocha-chai-jest-snapshot/src/manager.ts:63:29)
-      at Proxy.<anonymous> (node_modules/mocha-chai-jest-snapshot/src/index.ts:81:20)
-      at Proxy.methodWrapper (node_modules/chai/lib/chai/utils/addMethod.js:57:25)
-      at snapshotGasCost (test/shared/snapshotGasCost.ts:25:33)
-      at runMicrotasks (<anonymous>)
-      at processTicksAndRejections (node:internal/process/task_queues:96:5)
-      at async Context.<anonymous> (test/TickMath.spec.ts:149:11)
-
-  36) TickMath
-       #getTickAtSqrtRatio
-         ratio 112045541949572279837463876454
-           gas:
-
-      AssertionError: Snapshot name: `TickMath #getTickAtSqrtRatio ratio 112045541949572279837463876454 gas 1`: expected '632356' to equal '590296'
-      + expected - actual
-
-      -632356
-      +590296
-      
-      at SnapshotManager.assert (node_modules/mocha-chai-jest-snapshot/src/manager.ts:63:29)
-      at Proxy.<anonymous> (node_modules/mocha-chai-jest-snapshot/src/index.ts:81:20)
-      at Proxy.methodWrapper (node_modules/chai/lib/chai/utils/addMethod.js:57:25)
-      at snapshotGasCost (test/shared/snapshotGasCost.ts:25:33)
-      at runMicrotasks (<anonymous>)
-      at processTicksAndRejections (node:internal/process/task_queues:96:5)
-      at async Context.<anonymous> (test/TickMath.spec.ts:149:11)
-
-  37) TickMath
-       #getTickAtSqrtRatio
-         ratio 224091083899144559674927752909
-           gas:
-
-      AssertionError: Snapshot name: `TickMath #getTickAtSqrtRatio ratio 224091083899144559674927752909 gas 1`: expected '640866' to equal '597680'
-      + expected - actual
-
-      -640866
-      +597680
-      
-      at SnapshotManager.assert (node_modules/mocha-chai-jest-snapshot/src/manager.ts:63:29)
-      at Proxy.<anonymous> (node_modules/mocha-chai-jest-snapshot/src/index.ts:81:20)
-      at Proxy.methodWrapper (node_modules/chai/lib/chai/utils/addMethod.js:57:25)
-      at snapshotGasCost (test/shared/snapshotGasCost.ts:25:33)
-      at runMicrotasks (<anonymous>)
-      at processTicksAndRejections (node:internal/process/task_queues:96:5)
-      at async Context.<anonymous> (test/TickMath.spec.ts:149:11)
-
-  38) TickMath
-       #getTickAtSqrtRatio
-         ratio 633825300114114700748351602688
-           gas:
-
-      AssertionError: Snapshot name: `TickMath #getTickAtSqrtRatio ratio 633825300114114700748351602688 gas 1`: expected '646289' to equal '602864'
-      + expected - actual
-
-      -646289
-      +602864
-      
-      at SnapshotManager.assert (node_modules/mocha-chai-jest-snapshot/src/manager.ts:63:29)
-      at Proxy.<anonymous> (node_modules/mocha-chai-jest-snapshot/src/index.ts:81:20)
-      at Proxy.methodWrapper (node_modules/chai/lib/chai/utils/addMethod.js:57:25)
-      at snapshotGasCost (test/shared/snapshotGasCost.ts:25:33)
-      at runMicrotasks (<anonymous>)
-      at processTicksAndRejections (node:internal/process/task_queues:96:5)
-      at async Context.<anonymous> (test/TickMath.spec.ts:149:11)
-
-  39) TickMath
-       #getTickAtSqrtRatio
-         ratio 79228162514264337593543950
-           gas:
-
-      AssertionError: Snapshot name: `TickMath #getTickAtSqrtRatio ratio 79228162514264337593543950 gas 1`: expected '619931' to equal '573832'
-      + expected - actual
-
-      -619931
-      +573832
-      
-      at SnapshotManager.assert (node_modules/mocha-chai-jest-snapshot/src/manager.ts:63:29)
-      at Proxy.<anonymous> (node_modules/mocha-chai-jest-snapshot/src/index.ts:81:20)
-      at Proxy.methodWrapper (node_modules/chai/lib/chai/utils/addMethod.js:57:25)
-      at snapshotGasCost (test/shared/snapshotGasCost.ts:25:33)
-      at runMicrotasks (<anonymous>)
-      at processTicksAndRejections (node:internal/process/task_queues:96:5)
-      at async Context.<anonymous> (test/TickMath.spec.ts:149:11)
-
-  40) TickMath
-       #getTickAtSqrtRatio
-         ratio 79228162514264337593543
-           gas:
-
-      AssertionError: Snapshot name: `TickMath #getTickAtSqrtRatio ratio 79228162514264337593543 gas 1`: expected '619411' to equal '573524'
-      + expected - actual
-
-      -619411
-      +573524
-      
-      at SnapshotManager.assert (node_modules/mocha-chai-jest-snapshot/src/manager.ts:63:29)
-      at Proxy.<anonymous> (node_modules/mocha-chai-jest-snapshot/src/index.ts:81:20)
-      at Proxy.methodWrapper (node_modules/chai/lib/chai/utils/addMethod.js:57:25)
-      at snapshotGasCost (test/shared/snapshotGasCost.ts:25:33)
-      at runMicrotasks (<anonymous>)
-      at processTicksAndRejections (node:internal/process/task_queues:96:5)
-      at async Context.<anonymous> (test/TickMath.spec.ts:149:11)
-
-  41) TickMath
-       #getTickAtSqrtRatio
-         ratio 1461446703485210103287273052203988822378723970341
-           gas:
-
-      AssertionError: Snapshot name: `TickMath #getTickAtSqrtRatio ratio 1461446703485210103287273052203988822378723970341 gas 1`: expected '683520' to equal '635992'
-      + expected - actual
-
-      -683520
-      +635992
-      
-      at SnapshotManager.assert (node_modules/mocha-chai-jest-snapshot/src/manager.ts:63:29)
-      at Proxy.<anonymous> (node_modules/mocha-chai-jest-snapshot/src/index.ts:81:20)
-      at Proxy.methodWrapper (node_modules/chai/lib/chai/utils/addMethod.js:57:25)
-      at snapshotGasCost (test/shared/snapshotGasCost.ts:25:33)
-      at runMicrotasks (<anonymous>)
-      at processTicksAndRejections (node:internal/process/task_queues:96:5)
-      at async Context.<anonymous> (test/TickMath.spec.ts:149:11)
-
-
+  152 passing (7s)
 

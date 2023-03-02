@@ -1,34 +1,12 @@
 
 
   NoDelegateCall
-    1) runtime overhead
-    ✔ proxy can call the method without the modifier (4096ms)
-    ✔ proxy cannot call the method with the modifier (4071ms)
-    ✔ can call the method that calls into a private method with the modifier (4059ms)
-    ✔ proxy cannot call the method that calls a private method with the modifier (4054ms)
+    ✔ runtime overhead (46ms)
+    ✔ proxy can call the method without the modifier (4072ms)
+    ✔ proxy cannot call the method with the modifier (4069ms)
+    ✔ can call the method that calls into a private method with the modifier (4082ms)
+    ✔ proxy cannot call the method that calls a private method with the modifier (4059ms)
 
 
-Snapshot Summary
- › 1 snapshot failed from 1 test suite. Inspect your code changes or re-run mocha with `--update` to update them to update them.
-
-  4 passing (21s)
-  1 failing
-
-  1) NoDelegateCall
-       runtime overhead:
-
-      AssertionError: Snapshot name: `NoDelegateCall runtime overhead 1`: expected '11249' to equal '9576'
-      + expected - actual
-
-      -11249
-      +9576
-      
-      at SnapshotManager.assert (node_modules/mocha-chai-jest-snapshot/src/manager.ts:63:29)
-      at Proxy.<anonymous> (node_modules/mocha-chai-jest-snapshot/src/index.ts:81:20)
-      at Proxy.methodWrapper (node_modules/chai/lib/chai/utils/addMethod.js:57:25)
-      at snapshotGasCost (test/shared/snapshotGasCost.ts:25:33)
-      at processTicksAndRejections (node:internal/process/task_queues:96:5)
-      at async Context.<anonymous> (test/NoDelegateCall.spec.ts:46:5)
-
-
+  5 passing (25s)
 

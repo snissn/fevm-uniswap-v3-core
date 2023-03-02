@@ -10,4 +10,22 @@ exports[`Oracle #grow gas for growing by 10 slots when index == cardinality - 1 
 
 exports[`Oracle #initialize gas 1`] = `6600666`;
 
+exports[`Oracle #observe initialized with 5 observations with starting time of 5 gas between oldest and oldest + 1 1`] = `2888490`;
+
+exports[`Oracle #observe initialized with 5 observations with starting time of 5 gas latest equal 1`] = `1113465`;
+
 exports[`Oracle #observe initialized with 5 observations with starting time of 5 gas latest transform 1`] = `1070622`;
+
+exports[`Oracle #observe initialized with 5 observations with starting time of 5 gas middle 1`] = `2936442`;
+
+exports[`Oracle #observe initialized with 5 observations with starting time of 5 gas oldest 1`] = `2811248`;
+
+exports[`Oracle #observe initialized with 5 observations with starting time of 4294967291 gas between oldest and oldest + 1 1`] = `2888490`;
+
+exports[`Oracle #observe initialized with 5 observations with starting time of 4294967291 gas latest equal 1`] = `1113465`;
+
+exports[`Oracle #observe initialized with 5 observations with starting time of 4294967291 gas latest transform 1`] = `1113465`;
+
+exports[`Oracle #observe initialized with 5 observations with starting time of 4294967291 gas middle 1`] = `2936442`;
+
+exports[`Oracle #observe initialized with 5 observations with starting time of 4294967291 gas oldest 1`] = `2811248`;
