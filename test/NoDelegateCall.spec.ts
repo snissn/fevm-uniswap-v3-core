@@ -1,7 +1,6 @@
 import { Wallet } from 'ethers'
 import { ethers, waffle } from 'hardhat'
 import { NoDelegateCallTest } from '../typechain/NoDelegateCallTest'
-import { deploy2 } from './shared/deploy2'
 import { expect } from './shared/expect'
 import snapshotGasCost from './shared/snapshotGasCost'
 
@@ -32,14 +31,14 @@ describe('NoDelegateCall', () => {
   beforeEach('deploy test contracts', async () => {
     // ;({ noDelegateCallTest: base, proxy } = await loadFixture(noDelegateCallFixture))
     const noDelegateCallTestFactory = await ethers.getContractFactory('NoDelegateCallTest')
-    base = (await deploy2(noDelegateCallTestFactory)) as NoDelegateCallTest;
+    base = (await noDelegateCallTestFactory.deploy()) as NoDelegateCallTest;
 
     const minimalProxyFactory = new ethers.ContractFactory(
       noDelegateCallTestFactory.interface,
       `3d602d80600a3d3981f3363d3d373d3d3d363d73${base.address.slice(2)}5af43d82803e903d91602b57fd5bf3`,
       wallet
     )
-    proxy = (await deploy2(minimalProxyFactory)) as NoDelegateCallTest
+    proxy = (await minimalProxyFactory.deploy()) as NoDelegateCallTest
   })
 
   it('runtime overhead', async () => {

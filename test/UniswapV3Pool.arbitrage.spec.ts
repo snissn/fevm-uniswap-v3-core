@@ -4,7 +4,6 @@ import { ethers, waffle } from 'hardhat'
 import { MockTimeUniswapV3Pool } from '../typechain/MockTimeUniswapV3Pool'
 import { TickMathTest } from '../typechain/TickMathTest'
 import { UniswapV3PoolSwapTest } from '../typechain/UniswapV3PoolSwapTest'
-import { deploy2, type2 } from './shared/deploy2'
 import { expect } from './shared/expect'
 
 import { poolFixture } from './shared/fixtures'
@@ -80,8 +79,8 @@ describe('UniswapV3Pool arbitrage tests', () => {
 
             const pool = await fix.createPool(feeAmount, tickSpacing)
 
-            await fix.token0.transfer(arbitrageur.address, BigNumber.from(2).pow(254), await type2())
-            await fix.token1.transfer(arbitrageur.address, BigNumber.from(2).pow(254), await type2())
+            await fix.token0.transfer(arbitrageur.address, BigNumber.from(2).pow(254))
+            await fix.token1.transfer(arbitrageur.address, BigNumber.from(2).pow(254))
 
             const { swapExact0For1, swapToHigherPrice, swapToLowerPrice, swapExact1For0, mint } =
               await createPoolFunctions({
@@ -92,16 +91,16 @@ describe('UniswapV3Pool arbitrage tests', () => {
               })
 
             const testerFactory = await ethers.getContractFactory('UniswapV3PoolSwapTest')
-            const tester = (await deploy2(testerFactory)) as UniswapV3PoolSwapTest
+            const tester = (await testerFactory.deploy()) as UniswapV3PoolSwapTest
 
             const tickMathFactory = await ethers.getContractFactory('TickMathTest')
-            const tickMath = (await deploy2(tickMathFactory)) as TickMathTest
+            const tickMath = (await tickMathFactory.deploy()) as TickMathTest
 
-            await fix.token0.approve(tester.address, MaxUint256, await type2())
-            await fix.token1.approve(tester.address, MaxUint256, await type2())
+            await fix.token0.approve(tester.address, MaxUint256)
+            await fix.token1.approve(tester.address, MaxUint256)
 
-            await pool.initialize(startingPrice, await type2())
-            if (feeProtocol != 0) await (await pool.setFeeProtocol(feeProtocol, feeProtocol, await type2())).wait()
+            await pool.initialize(startingPrice)
+            if (feeProtocol != 0) await (await pool.setFeeProtocol(feeProtocol, feeProtocol)).wait()
             await (await mint(wallet.address, minTick, maxTick, passiveLiquidity)).wait()
             expect((await pool.slot0()).tick).to.eq(startingTick)
             expect((await pool.slot0()).sqrtPriceX96).to.eq(startingPrice)
@@ -246,7 +245,7 @@ describe('UniswapV3Pool arbitrage tests', () => {
                   tickUpper,
                   getMaxLiquidityPerTick(tickSpacing)
                 )
-                await (await pool.burn(tickLower, tickUpper, getMaxLiquidityPerTick(tickSpacing), await type2())).wait()
+                await (await pool.burn(tickLower, tickUpper, getMaxLiquidityPerTick(tickSpacing))).wait()
                 arbBalance0 = arbBalance0.add(amount0Burn)
                 arbBalance1 = arbBalance1.add(amount1Burn)
 

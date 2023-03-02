@@ -1,7 +1,6 @@
 import { BigNumber, constants } from 'ethers'
 import { ethers } from 'hardhat'
 import { SqrtPriceMathTest } from '../typechain/SqrtPriceMathTest'
-import { deploy2 } from './shared/deploy2'
 
 import { expect } from './shared/expect'
 import snapshotGasCost from './shared/snapshotGasCost'
@@ -15,7 +14,7 @@ describe('SqrtPriceMath', () => {
   let sqrtPriceMath: SqrtPriceMathTest
   before(async () => {
     const sqrtPriceMathTestFactory = await ethers.getContractFactory('SqrtPriceMathTest')
-    sqrtPriceMath = (await deploy2(sqrtPriceMathTestFactory)) as SqrtPriceMathTest
+    sqrtPriceMath = (await sqrtPriceMathTestFactory.deploy()) as SqrtPriceMathTest
   })
 
   describe('#getNextSqrtPriceFromInput', () => {

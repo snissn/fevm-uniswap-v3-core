@@ -2,7 +2,6 @@ import { ethers } from 'hardhat'
 import { FullMathTest } from '../typechain/FullMathTest'
 import { expect } from './shared/expect'
 import { Decimal } from 'decimal.js'
-import { deploy2 } from './shared/deploy2'
 
 const {
   BigNumber,
@@ -16,7 +15,7 @@ describe('FullMath', () => {
   let fullMath: FullMathTest
   before('deploy FullMathTest', async () => {      
     const factory = await ethers.getContractFactory('FullMathTest')
-    fullMath = (await deploy2(factory)) as FullMathTest
+    fullMath = (await factory.deploy()) as FullMathTest
   })
 
   describe('#mulDiv', () => {

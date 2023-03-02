@@ -5,7 +5,6 @@ import { expect } from './shared/expect'
 import snapshotGasCost from './shared/snapshotGasCost'
 import { encodePriceSqrt, MIN_SQRT_RATIO, MAX_SQRT_RATIO } from './shared/utilities'
 import Decimal from 'decimal.js'
-import { deploy2 } from './shared/deploy2'
 
 const MIN_TICK = -887272
 const MAX_TICK = 887272
@@ -17,7 +16,7 @@ describe('TickMath', () => {
 
   before('deploy TickMathTest', async () => {
     const factory = await ethers.getContractFactory('TickMathTest')
-    tickMath = (await deploy2(factory)) as TickMathTest
+    tickMath = (await factory.deploy()) as TickMathTest
   })
 
   describe('#getSqrtRatioAtTick', () => {

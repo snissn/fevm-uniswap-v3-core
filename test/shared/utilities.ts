@@ -4,7 +4,6 @@ import { TestUniswapV3Callee } from '../../typechain/TestUniswapV3Callee'
 import { TestUniswapV3Router } from '../../typechain/TestUniswapV3Router'
 import { MockTimeUniswapV3Pool } from '../../typechain/MockTimeUniswapV3Pool'
 import { TestERC20 } from '../../typechain/TestERC20'
-import { type2 } from './deploy2'
 
 export const MaxUint128 = BigNumber.from(2).pow(128).sub(1)
 
@@ -123,11 +122,11 @@ export function createPoolFunctions({
   ): Promise<ContractTransaction> {
     const method = inputToken === token0 ? swapTarget.swapToLowerSqrtPrice : swapTarget.swapToHigherSqrtPrice
 
-    await inputToken.approve(swapTarget.address, constants.MaxUint256, await type2())
+    await inputToken.approve(swapTarget.address, constants.MaxUint256)
 
     const toAddress = typeof to === 'string' ? to : to.address
 
-    return method(pool.address, targetPrice, toAddress, await type2())
+    return method(pool.address, targetPrice, toAddress)
   }
 
   async function swap(
@@ -154,11 +153,11 @@ export function createPoolFunctions({
         sqrtPriceLimitX96 = MAX_SQRT_RATIO.sub(1)
       }
     }
-    await inputToken.approve(swapTarget.address, constants.MaxUint256, await type2())
+    await inputToken.approve(swapTarget.address, constants.MaxUint256)
 
     const toAddress = typeof to === 'string' ? to : to.address
 
-    return method(pool.address, exactInput ? amountIn : amountOut, toAddress, sqrtPriceLimitX96, await type2())
+    return method(pool.address, exactInput ? amountIn : amountOut, toAddress, sqrtPriceLimitX96)
   }
 
   const swapToLowerPrice: SwapToPriceFunction = (sqrtPriceX96, to) => {
@@ -186,9 +185,9 @@ export function createPoolFunctions({
   }
 
   const mint: MintFunction = async (recipient, tickLower, tickUpper, liquidity) => {
-    await token0.approve(swapTarget.address, constants.MaxUint256, await type2())
-    await token1.approve(swapTarget.address, constants.MaxUint256, await type2())
-    return swapTarget.mint(pool.address, recipient, tickLower, tickUpper, liquidity, await type2())
+    await token0.approve(swapTarget.address, constants.MaxUint256)
+    await token1.approve(swapTarget.address, constants.MaxUint256)
+    return swapTarget.mint(pool.address, recipient, tickLower, tickUpper, liquidity)
   }
 
   const flash: FlashFunction = async (amount0, amount1, to, pay0?: BigNumberish, pay1?: BigNumberish) => {
@@ -207,7 +206,7 @@ export function createPoolFunctions({
         .div(1e6)
         .add(amount1)
     }
-    return swapTarget.flash(pool.address, typeof to === 'string' ? to : to.address, amount0, amount1, pay0, pay1, await type2())
+    return swapTarget.flash(pool.address, typeof to === 'string' ? to : to.address, amount0, amount1, pay0, pay1)
   }
 
   return {
@@ -240,16 +239,16 @@ export function createMultiPoolFunctions({
 }): MultiPoolFunctions {
   async function swapForExact0Multi(amountOut: BigNumberish, to: Wallet | string): Promise<ContractTransaction> {
     const method = swapTarget.swapForExact0Multi
-    await inputToken.approve(swapTarget.address, constants.MaxUint256, await type2())
+    await inputToken.approve(swapTarget.address, constants.MaxUint256)
     const toAddress = typeof to === 'string' ? to : to.address
-    return method(toAddress, poolInput.address, poolOutput.address, amountOut, await type2())
+    return method(toAddress, poolInput.address, poolOutput.address, amountOut)
   }
 
   async function swapForExact1Multi(amountOut: BigNumberish, to: Wallet | string): Promise<ContractTransaction> {
     const method = swapTarget.swapForExact1Multi
-    await inputToken.approve(swapTarget.address, constants.MaxUint256, await type2())
+    await inputToken.approve(swapTarget.address, constants.MaxUint256)
     const toAddress = typeof to === 'string' ? to : to.address
-    return method(toAddress, poolInput.address, poolOutput.address, amountOut, await type2())
+    return method(toAddress, poolInput.address, poolOutput.address, amountOut)
   }
 
   return {

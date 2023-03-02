@@ -9,3 +9,5 @@ exports[`Oracle #grow gas for growing by 10 slots when index != cardinality - 1 
 exports[`Oracle #grow gas for growing by 10 slots when index == cardinality - 1 1`] = `13243745`;
 
 exports[`Oracle #initialize gas 1`] = `6600666`;
+
+exports[`Oracle #observe initialized with 5 observations with starting time of 5 gas latest transform 1`] = `1070622`;
