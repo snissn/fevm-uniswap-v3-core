@@ -1,11 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Oracle #grow gas for growing by 1 slot when index != cardinality - 1 1`] = `5155935`;
+exports[`Oracle #grow gas for growing by 1 slot when index != cardinality - 1 1`] = `7773774`;
 
-exports[`Oracle #grow gas for growing by 1 slot when index == cardinality - 1 1`] = `4887839`;
+exports[`Oracle #grow gas for growing by 1 slot when index == cardinality - 1 1`] = `7482122`;
 
-exports[`Oracle #grow gas for growing by 10 slots when index != cardinality - 1 1`] = `9187667`;
+exports[`Oracle #grow gas for growing by 10 slots when index != cardinality - 1 1`] = `13541937`;
 
-exports[`Oracle #grow gas for growing by 10 slots when index == cardinality - 1 1`] = `8912990`;
+exports[`Oracle #grow gas for growing by 10 slots when index == cardinality - 1 1`] = `13243745`;
 
-exports[`Oracle #initialize gas 1`] = `4331943`;
+exports[`Oracle #initialize gas 1`] = `6600666`;
