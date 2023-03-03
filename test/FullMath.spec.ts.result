@@ -3,7 +3,7 @@
   FullMath
     - check a bunch of random inputs against JS implementation
     #mulDiv
-      ✔ reverts if denominator is 0 (4099ms)
+      ✔ reverts if denominator is 0
       ✔ reverts if denominator is 0 and numerator overflows
       ✔ reverts if output overflows uint256
       ✔ reverts if output overflows uint256

@@ -2,23 +2,23 @@
 
   BitMath
     #mostSignificantBit
-      ✔ 0 (4155ms)
-      ✔ 1 (4090ms)
-      ✔ 2 (4048ms)
+      ✔ 0
+      ✔ 1
+      ✔ 2
       1) all powers of 2
-      ✔ uint256(-1) (4057ms)
-      ✔ gas cost of smaller number (4051ms)
-      ✔ gas cost of max uint128 (4047ms)
-      ✔ gas cost of max uint256 (4034ms)
+      ✔ uint256(-1)
+      ✔ gas cost of smaller number
+      ✔ gas cost of max uint128
+      ✔ gas cost of max uint256
     #leastSignificantBit
-      ✔ 0 (4039ms)
-      ✔ 1 (4029ms)
-      ✔ 2 (4028ms)
+      ✔ 0
+      ✔ 1
+      ✔ 2
       2) all powers of 2
-      ✔ uint256(-1) (4046ms)
-      ✔ gas cost of smaller number (4047ms)
-      ✔ gas cost of max uint128 (4038ms)
-      ✔ gas cost of max uint256 (4036ms)
+      ✔ uint256(-1)
+      ✔ gas cost of smaller number
+      ✔ gas cost of max uint128
+      ✔ gas cost of max uint256
 
 
   14 passing (1m)

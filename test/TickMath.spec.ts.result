@@ -2,9 +2,9 @@
 
   TickMath
     #getSqrtRatioAtTick
-      ✔ throws for too low (4108ms)
       ✔ throws for too low
-      ✔ min tick (64ms)
+      ✔ throws for too low
+      ✔ min tick
       ✔ min tick +1
       ✔ max tick - 1
       ✔ min tick ratio is less than js implementation
@@ -17,7 +17,7 @@
       tick 50
         ✔ is at most off by 1/100th of a bips
         ✔ result
-        ✔ gas (55ms)
+        ✔ gas
       tick -100
         ✔ is at most off by 1/100th of a bips
         ✔ result
@@ -47,7 +47,7 @@
         ✔ result
         ✔ gas
       tick 1000
-        ✔ is at most off by 1/100th of a bips (41ms)
+        ✔ is at most off by 1/100th of a bips
         ✔ result
         ✔ gas
       tick -2500
@@ -185,7 +185,7 @@
         ✔ gas
       ratio 79228162514264337593543950
         ✔ is at most off by 1
-        ✔ ratio is between the tick and tick+1 (45ms)
+        ✔ ratio is between the tick and tick+1
         ✔ result
         ✔ gas
       ratio 79228162514264337593543

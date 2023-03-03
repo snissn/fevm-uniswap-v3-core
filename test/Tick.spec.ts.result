@@ -2,36 +2,36 @@
 
   Tick
     #tickSpacingToMaxLiquidityPerTick
-      ✔ returns the correct value for low fee (4128ms)
-      ✔ returns the correct value for medium fee (4064ms)
-      ✔ returns the correct value for high fee (4045ms)
-      ✔ returns the correct value for entire range (4075ms)
-      ✔ returns the correct value for 2302 (4044ms)
+      ✔ returns the correct value for low fee
+      ✔ returns the correct value for medium fee
+      ✔ returns the correct value for high fee
+      ✔ returns the correct value for entire range
+      ✔ returns the correct value for 2302
     #getFeeGrowthInside
-      ✔ returns all for two uninitialized ticks if tick is inside (4089ms)
-      ✔ returns 0 for two uninitialized ticks if tick is above (4063ms)
-      ✔ returns 0 for two uninitialized ticks if tick is below (4069ms)
-      ✔ subtracts upper tick if below (8165ms)
-      ✔ subtracts lower tick if above (8137ms)
-      ✔ subtracts upper and lower tick if inside (12228ms)
-      ✔ works correctly with overflow on inside tick (12237ms)
+      ✔ returns all for two uninitialized ticks if tick is inside
+      ✔ returns 0 for two uninitialized ticks if tick is above
+      ✔ returns 0 for two uninitialized ticks if tick is below
+      ✔ subtracts upper tick if below
+      ✔ subtracts lower tick if above
+      ✔ subtracts upper and lower tick if inside
+      ✔ works correctly with overflow on inside tick
     #update
-      ✔ flips from zero to nonzero (4063ms)
-      ✔ does not flip from nonzero to greater nonzero (8151ms)
-      ✔ flips from nonzero to zero (8307ms)
-      ✔ does not flip from nonzero to lesser nonzero (8129ms)
-      ✔ does not flip from nonzero to lesser nonzero (8108ms)
-      ✔ reverts if total liquidity gross is greater than max (8158ms)
-      ✔ nets the liquidity based on upper flag (8209ms)
-      ✔ reverts on overflow liquidity gross (8135ms)
-      ✔ assumes all growth happens below ticks lte current tick (4119ms)
-      ✔ does not set any growth fields if tick is already initialized (8271ms)
-      ✔ does not set any growth fields for ticks gt current tick (8149ms)
+      ✔ flips from zero to nonzero
+      ✔ does not flip from nonzero to greater nonzero
+      ✔ flips from nonzero to zero
+      ✔ does not flip from nonzero to lesser nonzero
+      ✔ does not flip from nonzero to lesser nonzero
+      ✔ reverts if total liquidity gross is greater than max
+      ✔ nets the liquidity based on upper flag
+      ✔ reverts on overflow liquidity gross
+      ✔ assumes all growth happens below ticks lte current tick
+      ✔ does not set any growth fields if tick is already initialized
+      ✔ does not set any growth fields for ticks gt current tick
     #clear
-      ✔ deletes all the data in the tick (8173ms)
+      ✔ deletes all the data in the tick
     #cross
-      ✔ flips the growth variables (8191ms)
-      ✔ two flips are no op (12219ms)
+      ✔ flips the growth variables
+      ✔ two flips are no op
 
 
   26 passing (3m)

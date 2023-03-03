@@ -1,9 +1,9 @@
 
 
   UniswapV3Pool
-    ✔ constructor initializes immutables (89ms)
+    ✔ constructor initializes immutables
     multi-swaps
-      ✔ multi-swap (4277ms)
+      ✔ multi-swap
 
 
   2 passing (40s)

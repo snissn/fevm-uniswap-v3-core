@@ -2,26 +2,26 @@
 
   TickBitmap
     #isInitialized
-      ✔ is false at first (39ms)
-      ✔ is flipped by #flipTick (4127ms)
-      ✔ is flipped back by #flipTick (4146ms)
-      ✔ is not changed by another flip to a different tick (4101ms)
-      ✔ is not changed by another flip to a different tick on another word (4124ms)
+      ✔ is false at first
+      ✔ is flipped by #flipTick
+      ✔ is flipped back by #flipTick
+      ✔ is not changed by another flip to a different tick
+      ✔ is not changed by another flip to a different tick on another word
     #flipTick
-      ✔ flips only the specified tick (8338ms)
-      ✔ reverts only itself (4234ms)
+      ✔ flips only the specified tick
+      ✔ reverts only itself
       1) gas cost of flipping first tick in word to initialized
       2) gas cost of flipping second tick in word to initialized
       3) gas cost of flipping a tick that results in deleting a word
     #nextInitializedTickWithinOneWord
       lte = false
-        ✔ returns tick to right if at initialized tick (39ms)
+        ✔ returns tick to right if at initialized tick
         ✔ returns tick to right if at initialized tick
         ✔ returns the tick directly to the right
         ✔ returns the tick directly to the right
         ✔ returns the next words initialized tick if on the right boundary
         ✔ returns the next words initialized tick if on the right boundary
-        ✔ returns the next initialized tick from the next word (4106ms)
+        ✔ returns the next initialized tick from the next word
         ✔ does not exceed boundary
         ✔ skips entire word
         ✔ skips half word
@@ -37,7 +37,7 @@
         ✔ word boundary
         ✔ entire empty word
         ✔ halfway through empty word
-        ✔ boundary is initialized (4095ms)
+        ✔ boundary is initialized
         ✔ gas cost on boundary
         ✔ gas cost just below boundary
         ✔ gas cost for entire word

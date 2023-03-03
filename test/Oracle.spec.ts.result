@@ -2,17 +2,17 @@
 
   Oracle
     #initialize
-      ✔ index is 0 (4120ms)
-      ✔ cardinality is 1 (8121ms)
-      ✔ cardinality next is 1 (8158ms)
-      ✔ sets first slot timestamp only (8144ms)
+      ✔ index is 0
+      ✔ cardinality is 1
+      ✔ cardinality next is 1
+      ✔ sets first slot timestamp only
       1) gas
     #grow
-      ✔ increases the cardinality next for the first call (4130ms)
-      ✔ does not touch the first slot (4142ms)
-      ✔ is no op if oracle is already gte that size (8244ms)
-      ✔ adds data to all the slots (4116ms)
-      ✔ grow after wrap (8240ms)
+      ✔ increases the cardinality next for the first call
+      ✔ does not touch the first slot
+      ✔ is no op if oracle is already gte that size
+      ✔ adds data to all the slots
+      ✔ grow after wrap
       2) gas for growing by 1 slot when index == cardinality - 1
       3) gas for growing by 10 slots when index == cardinality - 1
       4) gas for growing by 1 slot when index != cardinality - 1
@@ -26,11 +26,11 @@
       11) accumulates liquidity
     #observe
       before initialization
-        ✔ fails before initialize (4062ms)
+        ✔ fails before initialize
         12) fails if an older observation does not exist
         13) does not fail across overflow boundary
-        ✔ interpolates correctly at max liquidity (8232ms)
-        ✔ interpolates correctly at min liquidity (8244ms)
+        ✔ interpolates correctly at max liquidity
+        ✔ interpolates correctly at min liquidity
         14) interpolates the same as 0 liquidity for 1 liquidity
         15) interpolates correctly across uint32 seconds boundaries
         16) single observation at current time
@@ -51,7 +51,7 @@
         31) gas for single observation at current time
         32) gas for single observation at current time counterfactually computed
       initialized with 5 observations with starting time of 5
-        ✔ index, cardinality, cardinality next (39ms)
+        ✔ index, cardinality, cardinality next
         ✔ latest observation same time as latest
         33) latest observation 5 seconds after latest
         34) current observation 5 seconds after latest
@@ -68,7 +68,7 @@
         ✔ gas between oldest and oldest + 1
         ✔ gas middle
       initialized with 5 observations with starting time of 4294967291
-        ✔ index, cardinality, cardinality next (51ms)
+        ✔ index, cardinality, cardinality next
         ✔ latest observation same time as latest
         41) latest observation 5 seconds after latest
         42) current observation 5 seconds after latest
@@ -80,7 +80,7 @@
         46) fetch many values
         47) gas all of last 20 seconds
         ✔ gas latest equal
-        ✔ gas latest transform (54ms)
+        ✔ gas latest transform
         ✔ gas oldest
         ✔ gas between oldest and oldest + 1
         ✔ gas middle

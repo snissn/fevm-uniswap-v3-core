@@ -555,8 +555,8 @@ describe('UniswapV3Pool', () => {
       // some activity that would make the ticks non-zero
       await (await pool.advanceTime(10)).wait()
       await (await mint(other.address, minTick, maxTick, expandTo18Decimals(1))).wait()
-      await swapExact0For1(expandTo18Decimals(1), wallet.address)
-      await swapExact1For0(expandTo18Decimals(1), wallet.address)
+      await (await swapExact0For1(expandTo18Decimals(1), wallet.address)).wait()
+      await (await swapExact1For0(expandTo18Decimals(1), wallet.address)).wait()
       await (await pool.connect(other).burn(minTick, maxTick, expandTo18Decimals(1))).wait()
       const { liquidity, tokensOwed0, tokensOwed1, feeGrowthInside0LastX128, feeGrowthInside1LastX128 } =
         await pool.positions(getPositionKey(other.address, minTick, maxTick))
@@ -1596,7 +1596,7 @@ describe('UniswapV3Pool', () => {
       })
       it('is no op if target is already exceeded', async () => {
         await pool.increaseObservationCardinalityNext(5)
-        await pool.increaseObservationCardinalityNext(3)
+        await (await pool.increaseObservationCardinalityNext(3)).wait()
         const { observationCardinality, observationIndex, observationCardinalityNext } = await pool.slot0()
         expect(observationCardinality).to.eq(1)
         expect(observationIndex).to.eq(0)
@@ -1707,7 +1707,7 @@ describe('UniswapV3Pool', () => {
       expect(secondsInside).to.eq(0)
     })
     it('increases by expected amount when time elapses in the range', async () => {
-      await (await pool.advanceTime(5)).wait
+      await (await pool.advanceTime(5)).wait()
       const { secondsPerLiquidityInsideX128, tickCumulativeInside, secondsInside } =
         await pool.snapshotCumulativesInside(tickLower, tickUpper)
       expect(secondsPerLiquidityInsideX128).to.eq(BigNumber.from(5).shl(128).div(10))
@@ -1901,17 +1901,17 @@ describe('UniswapV3Pool', () => {
     })
 
     it('two positions 1 wei of fees apart overflows exactly once', async () => {
-      await pool.initialize(encodePriceSqrt(1, 1))
+      await (await pool.initialize(encodePriceSqrt(1, 1))).wait()
       await mint(wallet.address, minTick, maxTick, 1)
       await flash(0, 0, wallet.address, 1, 0)
       await mint(other.address, minTick, maxTick, 1)
       await flash(0, 0, wallet.address, MaxUint128, 0)
-      await flash(0, 0, wallet.address, MaxUint128, 0)
+      await (await flash(0, 0, wallet.address, MaxUint128, 0)).wait()
       const feeGrowthGlobal0X128 = await pool.feeGrowthGlobal0X128()
       expect(feeGrowthGlobal0X128).to.eq(0)
       await flash(0, 0, wallet.address, 2, 0)
-      await pool.burn(minTick, maxTick, 0)
-      await pool.connect(other).burn(minTick, maxTick, 0)
+      await (await pool.burn(minTick, maxTick, 0)).wait()
+      await (await pool.connect(other).burn(minTick, maxTick, 0)).wait()
       let { amount0 } = await pool.callStatic.collect(wallet.address, minTick, maxTick, MaxUint128, MaxUint128)
       expect(amount0, 'amount0 of wallet').to.eq(1)
       ;({ amount0 } = await pool

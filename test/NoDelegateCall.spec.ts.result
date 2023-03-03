@@ -1,11 +1,11 @@
 
 
   NoDelegateCall
-    ✔ runtime overhead (46ms)
-    ✔ proxy can call the method without the modifier (4072ms)
-    ✔ proxy cannot call the method with the modifier (4069ms)
-    ✔ can call the method that calls into a private method with the modifier (4082ms)
-    ✔ proxy cannot call the method that calls a private method with the modifier (4059ms)
+    ✔ runtime overhead
+    ✔ proxy can call the method without the modifier
+    ✔ proxy cannot call the method with the modifier
+    ✔ can call the method that calls into a private method with the modifier
+    ✔ proxy cannot call the method that calls a private method with the modifier
 
 
   5 passing (25s)

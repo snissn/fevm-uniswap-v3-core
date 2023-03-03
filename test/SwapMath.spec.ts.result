@@ -2,7 +2,7 @@
 
   SwapMath
     #computeSwapStep
-      ✔ exact amount in that gets capped at price target in one for zero (4121ms)
+      ✔ exact amount in that gets capped at price target in one for zero
       ✔ exact amount out that gets capped at price target in one for zero
       ✔ exact amount in that is fully spent in one for zero
       ✔ exact amount out that is fully received in one for zero

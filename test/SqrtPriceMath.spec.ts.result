@@ -2,7 +2,7 @@
 
   SqrtPriceMath
     #getNextSqrtPriceFromInput
-      ✔ fails if price is zero (4097ms)
+      ✔ fails if price is zero
       ✔ fails if liquidity is zero
       ✔ fails if input amount overflows the price
       ✔ any input amount cannot underflow the price

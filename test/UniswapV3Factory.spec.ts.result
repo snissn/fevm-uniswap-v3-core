@@ -1,33 +1,33 @@
 
 
   UniswapV3Factory
-    ✔ owner is deployer (46ms)
+    ✔ owner is deployer
     ✔ factory bytecode size
-    ✔ pool bytecode size (4226ms)
-    ✔ initial enabled fee amounts (67ms)
+    ✔ pool bytecode size
+    ✔ initial enabled fee amounts
     #createPool
-      ✔ succeeds for low fee pool (4266ms)
-      ✔ succeeds for medium fee pool (4281ms)
-      ✔ succeeds for high fee pool (4217ms)
-      ✔ succeeds if tokens are passed in reverse (4209ms)
+      ✔ succeeds for low fee pool
+      ✔ succeeds for medium fee pool
+      ✔ succeeds for high fee pool
+      ✔ succeeds if tokens are passed in reverse
       ✔ fails if token a == token b
-      ✔ fails if token a is 0 or token b is 0 (47ms)
+      ✔ fails if token a is 0 or token b is 0
       ✔ fails if fee amount is not enabled
       1) gas
     #setOwner
       ✔ fails if caller is not owner
-      ✔ updates owner (4124ms)
-      ✔ emits event (4087ms)
-      ✔ cannot be called by original owner (86ms)
+      ✔ updates owner
+      ✔ emits event
+      ✔ cannot be called by original owner
     #enableFeeAmount
       ✔ fails if caller is not owner
       ✔ fails if fee is too great
       ✔ fails if tick spacing is too small
       ✔ fails if tick spacing is too large
-      ✔ fails if already initialized (69ms)
-      ✔ sets the fee amount in the mapping (4137ms)
-      ✔ emits an event (4115ms)
-      ✔ enables pool creation (8374ms)
+      ✔ fails if already initialized
+      ✔ sets the fee amount in the mapping
+      ✔ emits an event
+      ✔ enables pool creation
 
 
 Snapshot Summary
