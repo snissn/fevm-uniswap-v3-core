@@ -812,7 +812,7 @@ describe('UniswapV3Pool', () => {
           expect(kAfter).to.be.eq(expandTo18Decimals(3))
 
           // swap toward the left (just enough for the tick transition function to trigger)
-          await swapExact0For1(1, wallet.address)
+          await (await swapExact0For1(1, wallet.address)).wait()
           const { tick } = await pool.slot0()
           expect(tick).to.be.eq(-1)
 
@@ -934,7 +934,7 @@ describe('UniswapV3Pool', () => {
 
       // poke positions
       await pool.burn(minTick, maxTick, 0)
-      await pool.burn(minTick + tickSpacing, maxTick - tickSpacing, 0)
+      await (await pool.burn(minTick + tickSpacing, maxTick - tickSpacing, 0)).wait()
 
       const { tokensOwed0: tokensOwed0Position0 } = await pool.positions(
         getPositionKey(wallet.address, minTick, maxTick)
@@ -978,7 +978,7 @@ describe('UniswapV3Pool', () => {
 
       it('works well after the cap binds', async () => {
         await pool.setFeeGrowthGlobal0X128(constants.MaxUint256)
-        await pool.burn(minTick, maxTick, 0)
+        await (await pool.burn(minTick, maxTick, 0)).wait()
 
         const { tokensOwed0, tokensOwed1 } = await pool.positions(getPositionKey(wallet.address, minTick, maxTick))
 
@@ -1051,7 +1051,7 @@ describe('UniswapV3Pool', () => {
     })
 
     it('can be changed by the owner', async () => {
-      await pool.setFeeProtocol(6, 6)
+      await (await pool.setFeeProtocol(6, 6)).wait()
       expect((await pool.slot0()).feeProtocol).to.eq(102)
     })
 
@@ -1073,7 +1073,7 @@ describe('UniswapV3Pool', () => {
       zeroForOne: boolean
       poke: boolean
     }) {
-      await (zeroForOne ? swapExact0For1(amount, wallet.address) : swapExact1For0(amount, wallet.address))
+      await (zeroForOne ? (await swapExact0For1(amount, wallet.address)).wait() : (await swapExact1For0(amount, wallet.address)).wait())
 
       if (poke) await (await pool.burn(minTick, maxTick, 0)).wait()
 
@@ -1446,7 +1446,7 @@ describe('UniswapV3Pool', () => {
           await expect(flash(1001, 2002, other.address)).to.emit(swapTarget, 'FlashCallback').withArgs(4, 7)
         })
         it('increases the fee growth by the expected amount', async () => {
-          await flash(1001, 2002, other.address)
+          await (await flash(1001, 2002, other.address)).wait()
           expect(await pool.feeGrowthGlobal0X128()).to.eq(
             BigNumber.from(4).mul(BigNumber.from(2).pow(128)).div(expandTo18Decimals(2))
           )
@@ -1508,7 +1508,7 @@ describe('UniswapV3Pool', () => {
         })
 
         it('increases the fee growth by the expected amount', async () => {
-          await flash(2002, 4004, other.address)
+          await (await flash(2002, 4004, other.address)).wait()
 
           const { token0: token0ProtocolFees, token1: token1ProtocolFees } = await pool.protocolFees()
           expect(token0ProtocolFees).to.eq(1)
@@ -1574,7 +1574,7 @@ describe('UniswapV3Pool', () => {
       await expect(pool.increaseObservationCardinalityNext(2)).to.be.reverted
     })
     describe('after initialization', () => {
-      beforeEach('initialize the pool', async () => pool.initialize(encodePriceSqrt(1, 1)))
+      beforeEach('initialize the pool', async () => (await pool.initialize(encodePriceSqrt(1, 1))).wait())
       it('oracle starting state after initialization', async () => {
         const { observationCardinality, observationIndex, observationCardinalityNext } = await pool.slot0()
         expect(observationCardinality).to.eq(1)
@@ -1588,7 +1588,7 @@ describe('UniswapV3Pool', () => {
         expect(blockTimestamp).to.eq(TEST_POOL_START_TIME)
       })
       it('increases observation cardinality next', async () => {
-        await pool.increaseObservationCardinalityNext(2)
+        await (await pool.increaseObservationCardinalityNext(2)).wait()
         const { observationCardinality, observationIndex, observationCardinalityNext } = await pool.slot0()
         expect(observationCardinality).to.eq(1)
         expect(observationIndex).to.eq(0)

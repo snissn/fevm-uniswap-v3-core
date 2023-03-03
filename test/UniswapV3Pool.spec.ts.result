@@ -1,352 +1,252 @@
 
 
   UniswapV3Pool
-    ✔ constructor initializes immutables (50ms)
-    ✔ tick transition cannot run twice if zero for one swap ends at fractional price just below tick (29157ms)
+    ✔ constructor initializes immutables (77ms)
+    ✔ tick transition cannot run twice if zero for one swap ends at fractional price just below tick (29636ms)
     #initialize
-      ✔ fails if already initialized (84ms)
+      ✔ fails if already initialized (98ms)
       ✔ fails if starting price is too low
       ✔ fails if starting price is too high
-      ✔ can be initialized at MIN_SQRT_RATIO (4105ms)
-      ✔ can be initialized at MAX_SQRT_RATIO - 1 (4115ms)
-      ✔ sets initial variables (4108ms)
-      ✔ initializes the first observations slot (4108ms)
-      ✔ emits a Initialized event with the input tick (4100ms)
+      ✔ can be initialized at MIN_SQRT_RATIO (4192ms)
+      ✔ can be initialized at MAX_SQRT_RATIO - 1 (4129ms)
+      ✔ sets initial variables (4158ms)
+      ✔ initializes the first observations slot (4192ms)
+      ✔ emits a Initialized event with the input tick (4088ms)
     #increaseObservationCardinalityNext
       ✔ can only be called after initialize
-      ✔ emits an event including both old and new (8165ms)
-      ✔ does not emit an event for no op call (8214ms)
-      ✔ does not change cardinality next if less than current (12303ms)
-      ✔ increases cardinality and cardinality next first time (8236ms)
+      ✔ emits an event including both old and new (8222ms)
+      ✔ does not emit an event for no op call (8429ms)
+      ✔ does not change cardinality next if less than current (12413ms)
+      ✔ increases cardinality and cardinality next first time (8332ms)
     #mint
-      ✔ fails if not initialized (178ms)
+      ✔ fails if not initialized (255ms)
       after initialization
-        ✔ protocol fees accumulate as expected during swap (4476ms)
-        ✔ positions are protected before protocol fee is turned on (455ms)
-        ✔ poke is not allowed on uninitialized position (12738ms)
+        ✔ protocol fees accumulate as expected during swap (4736ms)
+        ✔ positions are protected before protocol fee is turned on (622ms)
+        ✔ poke is not allowed on uninitialized position (13509ms)
         failure cases
-          ✔ fails if tickLower greater than tickUpper (86ms)
-          ✔ fails if tickLower less than min tick (199ms)
-          ✔ fails if tickUpper greater than max tick (90ms)
-          ✔ fails if amount exceeds the max (175ms)
-          ✔ fails if total amount at tick exceeds the max (587ms)
-          ✔ fails if amount is 0 (95ms)
+          ✔ fails if tickLower greater than tickUpper (4275ms)
+          ✔ fails if tickLower less than min tick (145ms)
+          ✔ fails if tickUpper greater than max tick (285ms)
+          ✔ fails if amount exceeds the max (340ms)
+          ✔ fails if total amount at tick exceeds the max (717ms)
+          ✔ fails if amount is 0 (113ms)
         success cases
           ✔ initial balances
           ✔ initial tick
           above current price
-            ✔ transfers token0 only (4193ms)
-            ✔ max tick with max leverage (4188ms)
-            ✔ works for max tick (4168ms)
-            ✔ removing works (4181ms)
-            ✔ adds liquidity to liquidityGross (12572ms)
-            ✔ removes liquidity from liquidityGross (4392ms)
-            ✔ clears tick lower if last position is removed (4193ms)
-            ✔ clears tick upper if last position is removed (4187ms)
-            ✔ only clears the tick that is not used at all (4325ms)
-            ✔ does not write an observation (4166ms)
+            ✔ transfers token0 only (4267ms)
+            ✔ max tick with max leverage (4218ms)
+            ✔ works for max tick (4271ms)
+            ✔ removing works (4303ms)
+            ✔ adds liquidity to liquidityGross (13052ms)
+            ✔ removes liquidity from liquidityGross (4404ms)
+            ✔ clears tick lower if last position is removed (4283ms)
+            ✔ clears tick upper if last position is removed (4280ms)
+            ✔ only clears the tick that is not used at all (4564ms)
+            ✔ does not write an observation (8521ms)
           including current price
-            ✔ price within range: transfers current price of both tokens (4184ms)
-            ✔ initializes lower tick (4199ms)
-            ✔ initializes upper tick (4165ms)
-            ✔ works for min/max tick (4213ms)
-            ✔ removing works (8271ms)
-            ✔ writes an observation (8269ms)
+            ✔ price within range: transfers current price of both tokens (4266ms)
+            ✔ initializes lower tick (4283ms)
+            ✔ initializes upper tick (4245ms)
+            ✔ works for min/max tick (4241ms)
+            ✔ removing works (8434ms)
+            ✔ writes an observation (8408ms)
           below current price
-            ✔ transfers token1 only (4230ms)
-            ✔ min tick with max leverage (4174ms)
-            ✔ works for min tick (4224ms)
-            ✔ removing works (4225ms)
-            ✔ does not write an observation (4278ms)
+            ✔ transfers token1 only (4245ms)
+            ✔ min tick with max leverage (4249ms)
+            ✔ works for min tick (4207ms)
+            ✔ removing works (4288ms)
+            ✔ does not write an observation (4546ms)
     #burn
-      ✔ does not clear the position fee growth snapshot if no more liquidity (12541ms)
-      ✔ clears the tick if its the last position using it (8434ms)
-      ✔ clears only the lower tick if upper is still used (8652ms)
-      ✔ clears only the upper tick if lower is still used (8670ms)
+      1) does not clear the position fee growth snapshot if no more liquidity
+      ✔ clears the tick if its the last position using it (8644ms)
+      ✔ clears only the lower tick if upper is still used (9320ms)
+      ✔ clears only the upper tick if lower is still used (8933ms)
     #observe
-      ✔ current tick accumulator increases by tick over time (4111ms)
-      ✔ current tick accumulator after single swap (4227ms)
-      ✔ current tick accumulator after two swaps (16463ms)
+      ✔ current tick accumulator increases by tick over time (4130ms)
+      ✔ current tick accumulator after single swap (4298ms)
+      ✔ current tick accumulator after two swaps (16859ms)
     miscellaneous mint tests
-      ✔ mint to the right of the current price (4189ms)
-      ✔ mint to the left of the current price (4202ms)
-      ✔ mint within the current price (4188ms)
-      ✔ cannot remove more than the entire position (4762ms)
-      ✔ collect fees within the current price after swap (8446ms)
+      ✔ mint to the right of the current price (4468ms)
+      ✔ mint to the left of the current price (4330ms)
+      ✔ mint within the current price (4505ms)
+      ✔ cannot remove more than the entire position (4468ms)
+      ✔ collect fees within the current price after swap (9495ms)
     post-initialize at medium fee
       k (implicit)
         ✔ returns 0 before initialization
         post initialized
-          ✔ returns initial liquidity
-          ✔ returns in supply in range (4193ms)
-          ✔ excludes supply at tick above current tick (101ms)
-          ✔ excludes supply at tick below current tick (96ms)
-          1) updates correctly when exiting range
-          ✔ updates correctly when entering range (8307ms)
+          ✔ returns initial liquidity (39ms)
+          ✔ returns in supply in range (4248ms)
+          ✔ excludes supply at tick above current tick (146ms)
+          ✔ excludes supply at tick below current tick (770ms)
+          ✔ updates correctly when exiting range (8711ms)
+          ✔ updates correctly when entering range (8636ms)
     limit orders
-      ✔ limit selling 0 for 1 at tick 0 thru 1 (12397ms)
-      ✔ limit selling 1 for 0 at tick 0 thru -1 (12429ms)
+      ✔ limit selling 0 for 1 at tick 0 thru 1 (17286ms)
+      ✔ limit selling 1 for 0 at tick 0 thru -1 (12675ms)
       fee is on
-        ✔ limit selling 0 for 1 at tick 0 thru 1 (12395ms)
-        ✔ limit selling 1 for 0 at tick 0 thru -1 (12376ms)
+        ✔ limit selling 0 for 1 at tick 0 thru 1 (12683ms)
+        ✔ limit selling 1 for 0 at tick 0 thru -1 (12932ms)
     #collect
-      2) works with multiple LPs
+      ✔ works with multiple LPs (5611ms)
       works across large increases
-        ✔ works just before the cap binds (4146ms)
-        ✔ works just after the cap binds (4155ms)
-        3) works well after the cap binds
+        ✔ works just before the cap binds (4212ms)
+        ✔ works just after the cap binds (4260ms)
+        ✔ works well after the cap binds (4292ms)
       works across overflow boundaries
-        ✔ token0 (4209ms)
-        ✔ token1 (4270ms)
-        ✔ token0 and token1 (4340ms)
+        ✔ token0 (4287ms)
+        ✔ token1 (4322ms)
+        ✔ token0 and token1 (4497ms)
     #feeProtocol
       ✔ is initially set to 0
-      4) can be changed by the owner
-      ✔ cannot be changed out of bounds
-      ✔ cannot be changed by addresses that are not owner
-      ✔ position owner gets full fees when protocol fee is off (4208ms)
-      ✔ swap fees accumulate as expected (0 for 1) (12598ms)
-      ✔ swap fees accumulate as expected (1 for 0) (16595ms)
-      ✔ position owner gets partial fees when protocol fee is on (4246ms)
-      ✔ fees collected by lp after two swaps should be double one swap (8363ms)
-      ✔ fees collected after two swaps with fee turned on in middle are fees from last swap (not confiscatory) (4336ms)
-      5) fees collected by lp after two swaps with intermediate withdrawal
+      ✔ can be changed by the owner (4178ms)
+      ✔ cannot be changed out of bounds (64ms)
+      2) cannot be changed by addresses that are not owner
+      ✔ position owner gets full fees when protocol fee is off (8409ms)
+      ✔ swap fees accumulate as expected (0 for 1) (25052ms)
+      ✔ swap fees accumulate as expected (1 for 0) (29314ms)
+      ✔ position owner gets partial fees when protocol fee is on (8433ms)
+      ✔ fees collected by lp after two swaps should be double one swap (20708ms)
+      ✔ fees collected after two swaps with fee turned on in middle are fees from last swap (not confiscatory) (12573ms)
+      ✔ fees collected by lp after two swaps with intermediate withdrawal (20985ms)
       #collectProtocol
-        ✔ returns 0 if no fees (54ms)
-        ✔ can collect fees (8370ms)
-        ✔ fees collected can differ between token0 and token1 (4340ms)
+        ✔ returns 0 if no fees (91ms)
+        ✔ can collect fees (12468ms)
+        ✔ fees collected can differ between token0 and token1 (12647ms)
     #tickSpacing
       tickSpacing = 12
         post initialize
-          ✔ mint can only be called for multiples of 12 (238ms)
-          ✔ mint can be called with multiples of 12 (317ms)
-          ✔ swapping across gaps works in 1 for 0 direction (4562ms)
-          ✔ swapping across gaps works in 0 for 1 direction (4563ms)
+          ✔ mint can only be called for multiples of 12 (1485ms)
+          ✔ mint can be called with multiples of 12 (1048ms)
+          ✔ swapping across gaps works in 1 for 0 direction (5260ms)
+          ✔ swapping across gaps works in 0 for 1 direction (4842ms)
     #flash
-      ✔ fails if not initialized (95ms)
-      ✔ fails if no liquidity (182ms)
+      ✔ fails if not initialized (178ms)
+      ✔ fails if no liquidity (196ms)
       after liquidity added
         fee off
-          ✔ emits an event (4140ms)
-          ✔ transfers the amount0 to the recipient (4151ms)
-          ✔ transfers the amount1 to the recipient (4191ms)
-          ✔ can flash only token0 (4131ms)
-          ✔ can flash only token1 (4143ms)
-          ✔ can flash entire token balance (4156ms)
-          ✔ no-op if both amounts are 0 (4102ms)
-          ✔ fails if flash amount is greater than token balance (63ms)
-          ✔ calls the flash callback on the sender with correct fee amounts (4132ms)
-          6) increases the fee growth by the expected amount
-          ✔ fails if original balance not returned in either token (67ms)
-          ✔ fails if underpays either token (65ms)
-          ✔ allows donating token0 (4104ms)
-          ✔ allows donating token1 (4111ms)
-          ✔ allows donating token0 and token1 together (4119ms)
+          ✔ emits an event (4236ms)
+          ✔ transfers the amount0 to the recipient (4193ms)
+          ✔ transfers the amount1 to the recipient (4147ms)
+          ✔ can flash only token0 (4163ms)
+          ✔ can flash only token1 (4396ms)
+          ✔ can flash entire token balance (4283ms)
+          ✔ no-op if both amounts are 0 (4262ms)
+          ✔ fails if flash amount is greater than token balance (89ms)
+          ✔ calls the flash callback on the sender with correct fee amounts (4231ms)
+          ✔ increases the fee growth by the expected amount (4213ms)
+          ✔ fails if original balance not returned in either token (70ms)
+          ✔ fails if underpays either token (104ms)
+          ✔ allows donating token0 (4230ms)
+          ✔ allows donating token1 (4191ms)
+          ✔ allows donating token0 and token1 together (4332ms)
         fee on
-          ✔ emits an event (4104ms)
-          7) increases the fee growth by the expected amount
-          ✔ allows donating token0 (4149ms)
-          ✔ allows donating token1 (4124ms)
-          ✔ allows donating token0 and token1 together (4155ms)
+          ✔ emits an event (4213ms)
+          ✔ increases the fee growth by the expected amount (4183ms)
+          ✔ allows donating token0 (4147ms)
+          ✔ allows donating token1 (4154ms)
+          ✔ allows donating token0 and token1 together (4147ms)
     #increaseObservationCardinalityNext
       ✔ cannot be called before initialization
       after initialization
-        8) oracle starting state after initialization
-        9) increases observation cardinality next
-        10) is no op if target is already exceeded
+        ✔ oracle starting state after initialization
+        ✔ increases observation cardinality next (4186ms)
+        3) is no op if target is already exceeded
     #setFeeProtocol
-      ✔ can only be called by factory owner
-      ✔ fails if fee is lt 4 or gt 10 (90ms)
-      ✔ succeeds for fee of 4 (47ms)
-      ✔ succeeds for fee of 10 (44ms)
-      ✔ sets protocol fee (4075ms)
-      ✔ can change protocol fee (4148ms)
-      ✔ can turn off protocol fee (4126ms)
-      ✔ emits an event when turned on (4084ms)
-      ✔ emits an event when turned off (4123ms)
-      ✔ emits an event when changed (4122ms)
-      ✔ emits an event when unchanged (4252ms)
+      4) can only be called by factory owner
+      ✔ fails if fee is lt 4 or gt 10 (186ms)
+      ✔ succeeds for fee of 4 (55ms)
+      ✔ succeeds for fee of 10
+      ✔ sets protocol fee (4202ms)
+      ✔ can change protocol fee (4213ms)
+      ✔ can turn off protocol fee (4246ms)
+      ✔ emits an event when turned on (4125ms)
+      ✔ emits an event when turned off (4529ms)
+      ✔ emits an event when changed (4295ms)
+      ✔ emits an event when unchanged (4214ms)
     #lock
-      ✔ cannot reenter from swap callback (4125ms)
+      ✔ cannot reenter from swap callback (4241ms)
     #snapshotCumulativesInside
-      ✔ throws if ticks are in reverse order
+      ✔ throws if ticks are in reverse order (81ms)
       ✔ throws if ticks are the same
       ✔ throws if tick lower is too low
       ✔ throws if tick upper is too high
       ✔ throws if tick lower is not initialized
-      ✔ throws if tick upper is not initialized
-      ✔ is zero immediately after initialize
-      11) increases by expected amount when time elapses in the range
-      12) does not account for time increase above range
-      13) does not account for time increase below range
-      ✔ time increase below range is not counted (4452ms)
-      ✔ time increase above range is not counted (4315ms)
-      14) positions minted after time spent
-      15) overlapping liquidity is aggregated
-      16) relative behavior of snapshots
+      ✔ throws if tick upper is not initialized (67ms)
+      ✔ is zero immediately after initialize (41ms)
+      5) increases by expected amount when time elapses in the range
+      ✔ does not account for time increase above range (4579ms)
+      ✔ does not account for time increase below range (4753ms)
+      ✔ time increase below range is not counted (4577ms)
+      ✔ time increase above range is not counted (4732ms)
+      ✔ positions minted after time spent (4635ms)
+      ✔ overlapping liquidity is aggregated (9564ms)
+      6) relative behavior of snapshots
     fees overflow scenarios
-      17) up to max uint 128
-      ✔ overflow max uint 128 (431ms)
-      ✔ overflow max uint 128 after poke burns fees owed to 0 (510ms)
-      ✔ two positions at the same snapshot (5767ms)
-      18) two positions 1 wei of fees apart overflows exactly once
+      ✔ up to max uint 128 (9096ms)
+      ✔ overflow max uint 128 (1062ms)
+      ✔ overflow max uint 128 after poke burns fees owed to 0 (5689ms)
+      7) two positions at the same snapshot
+      8) two positions 1 wei of fees apart overflows exactly once
     swap underpayment tests
-      19) underpay zero for one and exact in
-      ✔ pay in the wrong token zero for one and exact in (4089ms)
-      ✔ overpay zero for one and exact in (56ms)
-      20) underpay zero for one and exact out
-      21) pay in the wrong token zero for one and exact out
-      ✔ overpay zero for one and exact out (4096ms)
-      22) underpay one for zero and exact in
-      23) pay in the wrong token one for zero and exact in
-      ✔ overpay one for zero and exact in (67ms)
-      ✔ underpay one for zero and exact out (4083ms)
-      ✔ pay in the wrong token one for zero and exact out (4083ms)
-      ✔ overpay one for zero and exact out (4109ms)
+      9) underpay zero for one and exact in
+      10) pay in the wrong token zero for one and exact in
+      ✔ overpay zero for one and exact in (75ms)
+      ✔ underpay zero for one and exact out (278ms)
+      11) pay in the wrong token zero for one and exact out
+      ✔ overpay zero for one and exact out (99ms)
+      12) underpay one for zero and exact in
+      13) pay in the wrong token one for zero and exact in
+      ✔ overpay one for zero and exact in (81ms)
+      14) underpay one for zero and exact out
+      15) pay in the wrong token one for zero and exact out
+      ✔ overpay one for zero and exact out (172ms)
 
 
-  143 passing (46m)
-  23 failing
+  151 passing (52m)
+  15 failing
 
   1) UniswapV3Pool
-       post-initialize at medium fee
-         k (implicit)
-           post initialized
-             updates correctly when exiting range:
-
-      AssertionError: expected +0 to equal -1
-      + expected - actual
-
-      -0
-      +-1
-      
-      at Context.<anonymous> (test/UniswapV3Pool.spec.ts:817:30)
+       #burn
+         does not clear the position fee growth snapshot if no more liquidity:
+     failed to estimate gas: CallWithGas failed: call raw get actor: resolution lookup failed (f410ffyiqh6iw5kc5zi34zufspvzggylrwrulmrrp3ni): resolve address f410ffyiqh6iw5kc5zi34zufspvzggylrwrulmrrp3ni: actor not found
+  ProviderError: HttpProviderError
+      at HttpProvider.request (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/hardhat/src/internal/core/providers/http.ts:83:19)
+      at LocalAccountsProvider.request (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/hardhat/src/internal/core/providers/accounts.ts:187:34)
       at runMicrotasks (<anonymous>)
       at processTicksAndRejections (node:internal/process/task_queues:96:5)
+      at async EthersProviderWrapper.send (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/@nomiclabs/hardhat-ethers/src/internal/ethers-provider-wrapper.ts:13:20)
 
   2) UniswapV3Pool
-       #collect
-         works with multiple LPs:
-     AssertionError: Expected "0" to be equal 166666666666667
-      at Context.<anonymous> (test/UniswapV3Pool.spec.ts:946:42)
-      at runMicrotasks (<anonymous>)
-      at processTicksAndRejections (node:internal/process/task_queues:96:5)
+       #feeProtocol
+         cannot be changed by addresses that are not owner:
+     AssertionError: Expected transaction to be reverted, but other exception was thrown: ProviderError: failed to estimate gas: CallWithGas failed: call raw get actor: resolution lookup failed (f410ffyiqh6iw5kc5zi34zufspvzggylrwrulmrrp3ni): resolve address f410ffyiqh6iw5kc5zi34zufspvzggylrwrulmrrp3ni: actor not found
+  
 
   3) UniswapV3Pool
-       #collect
-         works across large increases
-           works well after the cap binds:
-
-      AssertionError: Expected "0" to be equal 340282366920938463463374607431768211455
-      + expected - actual
-
-       {
-      -  "_hex": "0xffffffffffffffffffffffffffffffff"
-      +  "_hex": "0x00"
-         "_isBigNumber": true
-       }
-      
-      at Context.<anonymous> (test/UniswapV3Pool.spec.ts:985:35)
-      at runMicrotasks (<anonymous>)
-      at processTicksAndRejections (node:internal/process/task_queues:96:5)
-
-  4) UniswapV3Pool
-       #feeProtocol
-         can be changed by the owner:
-
-      AssertionError: expected +0 to equal 102
-      + expected - actual
-
-      -0
-      +102
-      
-      at Context.<anonymous> (test/UniswapV3Pool.spec.ts:1055:51)
-      at runMicrotasks (<anonymous>)
-      at processTicksAndRejections (node:internal/process/task_queues:96:5)
-
-  5) UniswapV3Pool
-       #feeProtocol
-         fees collected by lp after two swaps with intermediate withdrawal:
-     AssertionError: Expected "416666666666666" to be equal 0
-      at Context.<anonymous> (test/UniswapV3Pool.spec.ts:1274:33)
-      at runMicrotasks (<anonymous>)
-      at processTicksAndRejections (node:internal/process/task_queues:96:5)
-
-  6) UniswapV3Pool
-       #flash
-         after liquidity added
-           fee off
-             increases the fee growth by the expected amount:
-
-      AssertionError: Expected "0" to be equal 680564733841876926926
-      + expected - actual
-
-       {
-      -  "_hex": "0x24e4bba3a4875741ce"
-      +  "_hex": "0x00"
-         "_isBigNumber": true
-       }
-      
-      at Context.<anonymous> (test/UniswapV3Pool.spec.ts:1450:56)
-      at runMicrotasks (<anonymous>)
-      at processTicksAndRejections (node:internal/process/task_queues:96:5)
-
-  7) UniswapV3Pool
-       #flash
-         after liquidity added
-           fee on
-             increases the fee growth by the expected amount:
-     AssertionError: Expected "0" to be equal 1
-      at Context.<anonymous> (test/UniswapV3Pool.spec.ts:1514:41)
-      at runMicrotasks (<anonymous>)
-      at processTicksAndRejections (node:internal/process/task_queues:96:5)
-
-  8) UniswapV3Pool
-       #increaseObservationCardinalityNext
-         after initialization
-           oracle starting state after initialization:
-
-      AssertionError: expected +0 to equal 1
-      + expected - actual
-
-      -0
-      +1
-      
-      at Context.<anonymous> (test/UniswapV3Pool.spec.ts:1580:43)
-      at runMicrotasks (<anonymous>)
-      at processTicksAndRejections (node:internal/process/task_queues:96:5)
-
-  9) UniswapV3Pool
-       #increaseObservationCardinalityNext
-         after initialization
-           increases observation cardinality next:
-
-      AssertionError: expected +0 to equal 1
-      + expected - actual
-
-      -0
-      +1
-      
-      at Context.<anonymous> (test/UniswapV3Pool.spec.ts:1593:43)
-      at runMicrotasks (<anonymous>)
-      at processTicksAndRejections (node:internal/process/task_queues:96:5)
-
-  10) UniswapV3Pool
        #increaseObservationCardinalityNext
          after initialization
            is no op if target is already exceeded:
 
-      AssertionError: expected +0 to equal 1
+      AssertionError: expected 1 to equal 5
       + expected - actual
 
-      -0
-      +1
+      -1
+      +5
       
-      at Context.<anonymous> (test/UniswapV3Pool.spec.ts:1601:43)
+      at Context.<anonymous> (test/UniswapV3Pool.spec.ts:1603:47)
       at runMicrotasks (<anonymous>)
       at processTicksAndRejections (node:internal/process/task_queues:96:5)
 
-  11) UniswapV3Pool
+  4) UniswapV3Pool
+       #setFeeProtocol
+         can only be called by factory owner:
+     AssertionError: Expected transaction to be reverted, but other exception was thrown: ProviderError: failed to estimate gas: CallWithGas failed: call raw get actor: resolution lookup failed (f410ffyiqh6iw5kc5zi34zufspvzggylrwrulmrrp3ni): resolve address f410ffyiqh6iw5kc5zi34zufspvzggylrwrulmrrp3ni: actor not found
+  
+
+  5) UniswapV3Pool
        #snapshotCumulativesInside
          increases by expected amount when time elapses in the range:
 
@@ -363,75 +263,10 @@
       at runMicrotasks (<anonymous>)
       at processTicksAndRejections (node:internal/process/task_queues:96:5)
 
-  12) UniswapV3Pool
-       #snapshotCumulativesInside
-         does not account for time increase above range:
-
-      AssertionError: Expected "0" to be equal 170141183460469231731687303715884105728
-      + expected - actual
-
-       {
-      -  "_hex": "0x80000000000000000000000000000000"
-      +  "_hex": "0x00"
-         "_isBigNumber": true
-       }
-      
-      at Context.<anonymous> (test/UniswapV3Pool.spec.ts:1723:48)
-      at runMicrotasks (<anonymous>)
-      at processTicksAndRejections (node:internal/process/task_queues:96:5)
-
-  13) UniswapV3Pool
-       #snapshotCumulativesInside
-         does not account for time increase below range:
-
-      AssertionError: Expected "0" to be equal 170141183460469231731687303715884105728
-      + expected - actual
-
-       {
-      -  "_hex": "0x80000000000000000000000000000000"
-      +  "_hex": "0x00"
-         "_isBigNumber": true
-       }
-      
-      at Context.<anonymous> (test/UniswapV3Pool.spec.ts:1733:48)
-      at runMicrotasks (<anonymous>)
-      at processTicksAndRejections (node:internal/process/task_queues:96:5)
-
-  14) UniswapV3Pool
-       #snapshotCumulativesInside
-         positions minted after time spent:
-     Error: missing revert data in call exception; Transaction reverted without a reason string [ See: https://links.ethers.org/v5-errors-CALL_EXCEPTION ] (data="0x", transaction={"from":"0xF113C0c7741E1351A6263c7e8cF693494BCf58F7","to":"0x359060cbdb926F6D1f286eC8a71A86E3B4E9df4E","data":"0xa38807f2000000000000000000000000000000000000000000000000000000000000003c00000000000000000000000000000000000000000000000000000000000d89b4","accessList":null}, error={"name":"ProviderError","_stack":"ProviderError: HttpProviderError\n    at HttpProvider.request (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/hardhat/src/internal/core/providers/http.ts:83:19)\n    at LocalAccountsProvider.request (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/hardhat/src/internal/core/providers/accounts.ts:187:34)\n    at runMicrotasks (<anonymous>)\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)\n    at async EthersProviderWrapper.send (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/@nomiclabs/hardhat-ethers/src/internal/ethers-provider-wrapper.ts:13:20)","code":1,"_isProviderError":true}, code=CALL_EXCEPTION, version=providers/5.7.2)
-      at Logger.makeError (node_modules/@ethersproject/providers/node_modules/@ethersproject/logger/src.ts/index.ts:269:28)
-      at Logger.throwError (node_modules/@ethersproject/providers/node_modules/@ethersproject/logger/src.ts/index.ts:281:20)
-      at checkError (node_modules/@ethersproject/providers/src.ts/json-rpc-provider.ts:66:16)
-      at EthersProviderWrapper.<anonymous> (node_modules/@ethersproject/providers/src.ts/json-rpc-provider.ts:642:20)
-      at step (node_modules/@ethersproject/providers/lib/json-rpc-provider.js:48:23)
-      at Object.throw (node_modules/@ethersproject/providers/lib/json-rpc-provider.js:29:53)
-      at rejected (node_modules/@ethersproject/providers/lib/json-rpc-provider.js:21:65)
-      at runMicrotasks (<anonymous>)
-      at processTicksAndRejections (node:internal/process/task_queues:96:5)
-
-  15) UniswapV3Pool
-       #snapshotCumulativesInside
-         overlapping liquidity is aggregated:
-
-      AssertionError: Expected "0" to be equal 68056473384187692692674921486353642291
-      + expected - actual
-
-       {
-      -  "_hex": "0x33333333333333333333333333333333"
-      +  "_hex": "0x00"
-         "_isBigNumber": true
-       }
-      
-      at Context.<anonymous> (test/UniswapV3Pool.spec.ts:1782:48)
-      at runMicrotasks (<anonymous>)
-      at processTicksAndRejections (node:internal/process/task_queues:96:5)
-
-  16) UniswapV3Pool
+  6) UniswapV3Pool
        #snapshotCumulativesInside
          relative behavior of snapshots:
-     Error: missing revert data in call exception; Transaction reverted without a reason string [ See: https://links.ethers.org/v5-errors-CALL_EXCEPTION ] (data="0x", transaction={"from":"0xF113C0c7741E1351A6263c7e8cF693494BCf58F7","to":"0xe872c985aef9404de04bB3F8aaf1e1C93A8Ce763","data":"0xa38807f2fffffffffffffffffffffffffffffffffffffffffffffffffffffffffff2764cffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffc4","accessList":null}, error={"name":"ProviderError","_stack":"ProviderError: HttpProviderError\n    at HttpProvider.request (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/hardhat/src/internal/core/providers/http.ts:83:19)\n    at LocalAccountsProvider.request (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/hardhat/src/internal/core/providers/accounts.ts:187:34)\n    at runMicrotasks (<anonymous>)\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)\n    at async EthersProviderWrapper.send (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/@nomiclabs/hardhat-ethers/src/internal/ethers-provider-wrapper.ts:13:20)","code":1,"_isProviderError":true}, code=CALL_EXCEPTION, version=providers/5.7.2)
+     Error: missing revert data in call exception; Transaction reverted without a reason string [ See: https://links.ethers.org/v5-errors-CALL_EXCEPTION ] (data="0x", transaction={"from":"0xF113C0c7741E1351A6263c7e8cF693494BCf58F7","to":"0x551bc8fc01B7ee707a725e44e1d1E64e81A835F3","data":"0xa38807f2fffffffffffffffffffffffffffffffffffffffffffffffffffffffffff2764cffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffc4","accessList":null}, error={"name":"ProviderError","_stack":"ProviderError: HttpProviderError\n    at HttpProvider.request (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/hardhat/src/internal/core/providers/http.ts:83:19)\n    at LocalAccountsProvider.request (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/hardhat/src/internal/core/providers/accounts.ts:187:34)\n    at runMicrotasks (<anonymous>)\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)\n    at async EthersProviderWrapper.send (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/@nomiclabs/hardhat-ethers/src/internal/ethers-provider-wrapper.ts:13:20)","code":1,"_isProviderError":true}, code=CALL_EXCEPTION, version=providers/5.7.2)
       at Logger.makeError (node_modules/@ethersproject/providers/node_modules/@ethersproject/logger/src.ts/index.ts:269:28)
       at Logger.throwError (node_modules/@ethersproject/providers/node_modules/@ethersproject/logger/src.ts/index.ts:281:20)
       at checkError (node_modules/@ethersproject/providers/src.ts/json-rpc-provider.ts:66:16)
@@ -442,73 +277,85 @@
       at runMicrotasks (<anonymous>)
       at processTicksAndRejections (node:internal/process/task_queues:96:5)
 
-  17) UniswapV3Pool
+  7) UniswapV3Pool
        fees overflow scenarios
-         up to max uint 128:
-
-      AssertionError: Expected "0" to be equal 115792089237316195423570985008687907852929702298719625575994209400481361428480
-      + expected - actual
-
-       {
-      -  "_hex": "0xffffffffffffffffffffffffffffffff00000000000000000000000000000000"
-      +  "_hex": "0x00"
-         "_isBigNumber": true
-       }
-      
-      at Context.<anonymous> (test/UniswapV3Pool.spec.ts:1824:39)
+         two positions at the same snapshot:
+     failed to estimate gas: CallWithGas failed: call raw get actor: resolution lookup failed (f410ffyiqh6iw5kc5zi34zufspvzggylrwrulmrrp3ni): resolve address f410ffyiqh6iw5kc5zi34zufspvzggylrwrulmrrp3ni: actor not found
+  ProviderError: HttpProviderError
+      at HttpProvider.request (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/hardhat/src/internal/core/providers/http.ts:83:19)
+      at LocalAccountsProvider.request (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/hardhat/src/internal/core/providers/accounts.ts:187:34)
       at runMicrotasks (<anonymous>)
       at processTicksAndRejections (node:internal/process/task_queues:96:5)
+      at async EthersProviderWrapper.send (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/@nomiclabs/hardhat-ethers/src/internal/ethers-provider-wrapper.ts:13:20)
 
-  18) UniswapV3Pool
+  8) UniswapV3Pool
        fees overflow scenarios
          two positions 1 wei of fees apart overflows exactly once:
-     AssertionError: amount0 of wallet: Expected "0" to be equal 1
-      at Context.<anonymous> (test/UniswapV3Pool.spec.ts:1916:47)
+     AssertionError: Expected "340282366920938463463374607431768211456" to be equal 0
+      at Context.<anonymous> (test/UniswapV3Pool.spec.ts:1911:39)
       at runMicrotasks (<anonymous>)
       at processTicksAndRejections (node:internal/process/task_queues:96:5)
 
-  19) UniswapV3Pool
+  9) UniswapV3Pool
        swap underpayment tests
          underpay zero for one and exact in:
      AssertionError: Expected transaction to be reverted with IIA, but other exception was thrown: ProviderError: failed to estimate gas: message execution failed: exit 33, reason: message failed with backtrace:
-00: f03254 (method 3844450837) -- contract reverted (33)
-01: f03253 (method 3844450837) -- contract reverted (33)
+00: f03118 (method 3844450837) -- contract reverted (33)
+01: f03117 (method 3844450837) -- contract reverted (33)
  (RetCode=33)
   
 
-  20) UniswapV3Pool
+  10) UniswapV3Pool
        swap underpayment tests
-         underpay zero for one and exact out:
+         pay in the wrong token zero for one and exact in:
      AssertionError: Expected transaction to be reverted with IIA, but other exception was thrown: ProviderError: failed to estimate gas: message execution failed: exit 33, reason: message failed with backtrace:
-00: f03281 (method 3844450837) -- contract reverted (33)
-01: f03280 (method 3844450837) -- contract reverted (33)
+00: f03127 (method 3844450837) -- contract reverted (33)
+01: f03126 (method 3844450837) -- contract reverted (33)
  (RetCode=33)
   
 
-  21) UniswapV3Pool
+  11) UniswapV3Pool
        swap underpayment tests
          pay in the wrong token zero for one and exact out:
      AssertionError: Expected transaction to be reverted with IIA, but other exception was thrown: ProviderError: failed to estimate gas: message execution failed: exit 33, reason: message failed with backtrace:
-00: f03290 (method 3844450837) -- contract reverted (33)
-01: f03289 (method 3844450837) -- contract reverted (33)
+00: f03154 (method 3844450837) -- contract reverted (33)
+01: f03153 (method 3844450837) -- contract reverted (33)
  (RetCode=33)
   
 
-  22) UniswapV3Pool
+  12) UniswapV3Pool
        swap underpayment tests
          underpay one for zero and exact in:
      AssertionError: Expected transaction to be reverted with IIA, but other exception was thrown: ProviderError: failed to estimate gas: message execution failed: exit 33, reason: message failed with backtrace:
-00: f03308 (method 3844450837) -- contract reverted (33)
-01: f03307 (method 3844450837) -- contract reverted (33)
+00: f03172 (method 3844450837) -- contract reverted (33)
+01: f03171 (method 3844450837) -- contract reverted (33)
  (RetCode=33)
   
 
-  23) UniswapV3Pool
+  13) UniswapV3Pool
        swap underpayment tests
          pay in the wrong token one for zero and exact in:
      AssertionError: Expected transaction to be reverted with IIA, but other exception was thrown: ProviderError: failed to estimate gas: message execution failed: exit 33, reason: message failed with backtrace:
-00: f03317 (method 3844450837) -- contract reverted (33)
-01: f03316 (method 3844450837) -- contract reverted (33)
+00: f03181 (method 3844450837) -- contract reverted (33)
+01: f03180 (method 3844450837) -- contract reverted (33)
+ (RetCode=33)
+  
+
+  14) UniswapV3Pool
+       swap underpayment tests
+         underpay one for zero and exact out:
+     AssertionError: Expected transaction to be reverted with IIA, but other exception was thrown: ProviderError: failed to estimate gas: message execution failed: exit 33, reason: message failed with backtrace:
+00: f03199 (method 3844450837) -- contract reverted (33)
+01: f03198 (method 3844450837) -- contract reverted (33)
+ (RetCode=33)
+  
+
+  15) UniswapV3Pool
+       swap underpayment tests
+         pay in the wrong token one for zero and exact out:
+     AssertionError: Expected transaction to be reverted with IIA, but other exception was thrown: ProviderError: failed to estimate gas: message execution failed: exit 33, reason: message failed with backtrace:
+00: f03208 (method 3844450837) -- contract reverted (33)
+01: f03207 (method 3844450837) -- contract reverted (33)
  (RetCode=33)
   
 
