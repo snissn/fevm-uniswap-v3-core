@@ -1,173 +1,173 @@
 
 
   UniswapV3Pool
-    ✔ constructor initializes immutables (97ms)
-    ✔ tick transition cannot run twice if zero for one swap ends at fractional price just below tick (30779ms)
+    ✔ constructor initializes immutables
+    ✔ tick transition cannot run twice if zero for one swap ends at fractional price just below tick
     #initialize
-      ✔ fails if already initialized (143ms)
-      ✔ fails if starting price is too low (39ms)
-      ✔ fails if starting price is too high (66ms)
-      ✔ can be initialized at MIN_SQRT_RATIO (4195ms)
-      ✔ can be initialized at MAX_SQRT_RATIO - 1 (4175ms)
-      ✔ sets initial variables (4162ms)
-      ✔ initializes the first observations slot (4240ms)
-      ✔ emits a Initialized event with the input tick (4103ms)
+      ✔ fails if already initialized
+      ✔ fails if starting price is too low
+      ✔ fails if starting price is too high
+      ✔ can be initialized at MIN_SQRT_RATIO
+      ✔ can be initialized at MAX_SQRT_RATIO - 1
+      ✔ sets initial variables
+      ✔ initializes the first observations slot
+      ✔ emits a Initialized event with the input tick
     #increaseObservationCardinalityNext
       ✔ can only be called after initialize
-      ✔ emits an event including both old and new (8678ms)
-      ✔ does not emit an event for no op call (8552ms)
-      ✔ does not change cardinality next if less than current (12694ms)
-      ✔ increases cardinality and cardinality next first time (8989ms)
+      ✔ emits an event including both old and new
+      ✔ does not emit an event for no op call
+      ✔ does not change cardinality next if less than current
+      ✔ increases cardinality and cardinality next first time
     #mint
-      ✔ fails if not initialized (861ms)
+      ✔ fails if not initialized
       after initialization
-        ✔ protocol fees accumulate as expected during swap (6357ms)
-        ✔ positions are protected before protocol fee is turned on (5590ms)
-        ✔ poke is not allowed on uninitialized position (15936ms)
+        ✔ protocol fees accumulate as expected during swap
+        ✔ positions are protected before protocol fee is turned on
+        ✔ poke is not allowed on uninitialized position
         failure cases
-          ✔ fails if tickLower greater than tickUpper (138ms)
-          ✔ fails if tickLower less than min tick (609ms)
-          ✔ fails if tickUpper greater than max tick (357ms)
-          ✔ fails if amount exceeds the max (338ms)
-          ✔ fails if total amount at tick exceeds the max (1254ms)
-          ✔ fails if amount is 0 (1336ms)
+          ✔ fails if tickLower greater than tickUpper
+          ✔ fails if tickLower less than min tick
+          ✔ fails if tickUpper greater than max tick
+          ✔ fails if amount exceeds the max
+          ✔ fails if total amount at tick exceeds the max
+          ✔ fails if amount is 0
         success cases
-          ✔ initial balances (52ms)
+          ✔ initial balances
           ✔ initial tick
           above current price
-            ✔ transfers token0 only (4321ms)
-            ✔ max tick with max leverage (4446ms)
-            ✔ works for max tick (4515ms)
-            ✔ removing works (4715ms)
-            ✔ adds liquidity to liquidityGross (13278ms)
-            ✔ removes liquidity from liquidityGross (4719ms)
-            ✔ clears tick lower if last position is removed (4311ms)
-            ✔ clears tick upper if last position is removed (4466ms)
-            ✔ only clears the tick that is not used at all (9306ms)
-            ✔ does not write an observation (4256ms)
+            ✔ transfers token0 only
+            ✔ max tick with max leverage
+            ✔ works for max tick
+            ✔ removing works
+            ✔ adds liquidity to liquidityGross
+            ✔ removes liquidity from liquidityGross
+            ✔ clears tick lower if last position is removed
+            ✔ clears tick upper if last position is removed
+            ✔ only clears the tick that is not used at all
+            ✔ does not write an observation
           including current price
-            ✔ price within range: transfers current price of both tokens (4525ms)
-            ✔ initializes lower tick (5220ms)
-            ✔ initializes upper tick (4581ms)
-            ✔ works for min/max tick (6443ms)
-            ✔ removing works (9146ms)
-            ✔ writes an observation (8871ms)
+            ✔ price within range: transfers current price of both tokens
+            ✔ initializes lower tick
+            ✔ initializes upper tick
+            ✔ works for min/max tick
+            ✔ removing works
+            ✔ writes an observation
           below current price
-            ✔ transfers token1 only (5705ms)
-            ✔ min tick with max leverage (4348ms)
-            ✔ works for min tick (4279ms)
-            ✔ removing works (4213ms)
-            ✔ does not write an observation (8273ms)
+            ✔ transfers token1 only
+            ✔ min tick with max leverage
+            ✔ works for min tick
+            ✔ removing works
+            ✔ does not write an observation
     #burn
-      ✔ does not clear the position fee growth snapshot if no more liquidity (20667ms)
-      ✔ clears the tick if its the last position using it (8453ms)
-      ✔ clears only the lower tick if upper is still used (8613ms)
-      ✔ clears only the upper tick if lower is still used (8671ms)
+      ✔ does not clear the position fee growth snapshot if no more liquidity
+      ✔ clears the tick if its the last position using it
+      ✔ clears only the lower tick if upper is still used
+      ✔ clears only the upper tick if lower is still used
     #observe
-      ✔ current tick accumulator increases by tick over time (4096ms)
-      ✔ current tick accumulator after single swap (4171ms)
-      ✔ current tick accumulator after two swaps (16451ms)
+      ✔ current tick accumulator increases by tick over time
+      ✔ current tick accumulator after single swap
+      ✔ current tick accumulator after two swaps
     miscellaneous mint tests
-      ✔ mint to the right of the current price (4173ms)
-      ✔ mint to the left of the current price (4241ms)
-      ✔ mint within the current price (4191ms)
-      ✔ cannot remove more than the entire position (4203ms)
-      ✔ collect fees within the current price after swap (8458ms)
+      ✔ mint to the right of the current price
+      ✔ mint to the left of the current price
+      ✔ mint within the current price
+      ✔ cannot remove more than the entire position
+      ✔ collect fees within the current price after swap
     post-initialize at medium fee
       k (implicit)
         ✔ returns 0 before initialization
         post initialized
           ✔ returns initial liquidity
-          ✔ returns in supply in range (4167ms)
-          ✔ excludes supply at tick above current tick (120ms)
-          ✔ excludes supply at tick below current tick (130ms)
-          ✔ updates correctly when exiting range (8320ms)
-          ✔ updates correctly when entering range (8359ms)
+          ✔ returns in supply in range
+          ✔ excludes supply at tick above current tick
+          ✔ excludes supply at tick below current tick
+          ✔ updates correctly when exiting range
+          ✔ updates correctly when entering range
     limit orders
-      ✔ limit selling 0 for 1 at tick 0 thru 1 (16553ms)
-      ✔ limit selling 1 for 0 at tick 0 thru -1 (13574ms)
+      ✔ limit selling 0 for 1 at tick 0 thru 1
+      ✔ limit selling 1 for 0 at tick 0 thru -1
       fee is on
-        ✔ limit selling 0 for 1 at tick 0 thru 1 (12373ms)
-        ✔ limit selling 1 for 0 at tick 0 thru -1 (12884ms)
+        ✔ limit selling 0 for 1 at tick 0 thru 1
+        ✔ limit selling 1 for 0 at tick 0 thru -1
     #collect
-      ✔ works with multiple LPs (4688ms)
+      ✔ works with multiple LPs
       works across large increases
-        ✔ works just before the cap binds (4242ms)
-        ✔ works just after the cap binds (4146ms)
-        ✔ works well after the cap binds (4155ms)
+        ✔ works just before the cap binds
+        ✔ works just after the cap binds
+        ✔ works well after the cap binds
       works across overflow boundaries
-        ✔ token0 (4319ms)
-        ✔ token1 (4225ms)
-        ✔ token0 and token1 (4313ms)
+        ✔ token0
+        ✔ token1
+        ✔ token0 and token1
     #feeProtocol
       ✔ is initially set to 0
-      ✔ can be changed by the owner (4076ms)
+      ✔ can be changed by the owner
       ✔ cannot be changed out of bounds
       ✔ cannot be changed by addresses that are not owner
-      ✔ position owner gets full fees when protocol fee is off (1781371ms)
-      ✔ swap fees accumulate as expected (0 for 1) (25201ms)
-      ✔ swap fees accumulate as expected (1 for 0) (24891ms)
-      ✔ position owner gets partial fees when protocol fee is on (8252ms)
-      ✔ fees collected by lp after two swaps should be double one swap (16475ms)
-      ✔ fees collected after two swaps with fee turned on in middle are fees from last swap (not confiscatory) (12432ms)
-      ✔ fees collected by lp after two swaps with intermediate withdrawal (24851ms)
+      ✔ position owner gets full fees when protocol fee is off
+      ✔ swap fees accumulate as expected (0 for 1)
+      ✔ swap fees accumulate as expected (1 for 0)
+      ✔ position owner gets partial fees when protocol fee is on
+      ✔ fees collected by lp after two swaps should be double one swap
+      ✔ fees collected after two swaps with fee turned on in middle are fees from last swap (not confiscatory)
+      ✔ fees collected by lp after two swaps with intermediate withdrawal
       #collectProtocol
-        ✔ returns 0 if no fees (168ms)
-        ✔ can collect fees (12396ms)
-        ✔ fees collected can differ between token0 and token1 (12654ms)
+        ✔ returns 0 if no fees
+        ✔ can collect fees
+        ✔ fees collected can differ between token0 and token1
     #tickSpacing
       tickSpacing = 12
         post initialize
-          ✔ mint can only be called for multiples of 12 (190ms)
-          ✔ mint can be called with multiples of 12 (280ms)
-          ✔ swapping across gaps works in 1 for 0 direction (4473ms)
-          ✔ swapping across gaps works in 0 for 1 direction (4539ms)
+          ✔ mint can only be called for multiples of 12
+          ✔ mint can be called with multiples of 12
+          ✔ swapping across gaps works in 1 for 0 direction
+          ✔ swapping across gaps works in 0 for 1 direction
     #flash
-      ✔ fails if not initialized (85ms)
-      ✔ fails if no liquidity (121ms)
+      ✔ fails if not initialized
+      ✔ fails if no liquidity
       after liquidity added
         fee off
-          ✔ emits an event (4136ms)
-          ✔ transfers the amount0 to the recipient (4109ms)
-          ✔ transfers the amount1 to the recipient (4126ms)
-          ✔ can flash only token0 (4114ms)
-          ✔ can flash only token1 (4096ms)
-          ✔ can flash entire token balance (4177ms)
-          ✔ no-op if both amounts are 0 (4446ms)
-          ✔ fails if flash amount is greater than token balance (45ms)
-          ✔ calls the flash callback on the sender with correct fee amounts (4152ms)
-          ✔ increases the fee growth by the expected amount (4154ms)
-          ✔ fails if original balance not returned in either token (51ms)
-          ✔ fails if underpays either token (74ms)
-          ✔ allows donating token0 (4090ms)
-          ✔ allows donating token1 (4196ms)
-          ✔ allows donating token0 and token1 together (4118ms)
+          ✔ emits an event
+          ✔ transfers the amount0 to the recipient
+          ✔ transfers the amount1 to the recipient
+          ✔ can flash only token0
+          ✔ can flash only token1
+          ✔ can flash entire token balance
+          ✔ no-op if both amounts are 0
+          ✔ fails if flash amount is greater than token balance
+          ✔ calls the flash callback on the sender with correct fee amounts
+          ✔ increases the fee growth by the expected amount
+          ✔ fails if original balance not returned in either token
+          ✔ fails if underpays either token
+          ✔ allows donating token0
+          ✔ allows donating token1
+          ✔ allows donating token0 and token1 together
         fee on
-          ✔ emits an event (4108ms)
-          ✔ increases the fee growth by the expected amount (4148ms)
-          ✔ allows donating token0 (4139ms)
-          ✔ allows donating token1 (4119ms)
-          ✔ allows donating token0 and token1 together (4109ms)
+          ✔ emits an event
+          ✔ increases the fee growth by the expected amount
+          ✔ allows donating token0
+          ✔ allows donating token1
+          ✔ allows donating token0 and token1 together
     #increaseObservationCardinalityNext
       ✔ cannot be called before initialization
       after initialization
         ✔ oracle starting state after initialization
-        ✔ increases observation cardinality next (4110ms)
-        ✔ is no op if target is already exceeded (4161ms)
+        ✔ increases observation cardinality next
+        ✔ is no op if target is already exceeded
     #setFeeProtocol
       ✔ can only be called by factory owner
-      ✔ fails if fee is lt 4 or gt 10 (84ms)
+      ✔ fails if fee is lt 4 or gt 10
       ✔ succeeds for fee of 4
       ✔ succeeds for fee of 10
-      ✔ sets protocol fee (4103ms)
-      ✔ can change protocol fee (4137ms)
-      ✔ can turn off protocol fee (4106ms)
-      ✔ emits an event when turned on (4062ms)
-      ✔ emits an event when turned off (4114ms)
-      ✔ emits an event when changed (4120ms)
-      ✔ emits an event when unchanged (4141ms)
+      ✔ sets protocol fee
+      ✔ can change protocol fee
+      ✔ can turn off protocol fee
+      ✔ emits an event when turned on
+      ✔ emits an event when turned off
+      ✔ emits an event when changed
+      ✔ emits an event when unchanged
     #lock
-      ✔ cannot reenter from swap callback (4156ms)
+      ✔ cannot reenter from swap callback
     #snapshotCumulativesInside
       ✔ throws if ticks are in reverse order
       ✔ throws if ticks are the same
@@ -176,33 +176,33 @@
       ✔ throws if tick lower is not initialized
       ✔ throws if tick upper is not initialized
       ✔ is zero immediately after initialize
-      ✔ increases by expected amount when time elapses in the range (4125ms)
-      ✔ does not account for time increase above range (4270ms)
-      ✔ does not account for time increase below range (4312ms)
-      ✔ time increase below range is not counted (4477ms)
-      ✔ time increase above range is not counted (4383ms)
-      ✔ positions minted after time spent (4549ms)
-      ✔ overlapping liquidity is aggregated (4433ms)
+      ✔ increases by expected amount when time elapses in the range
+      ✔ does not account for time increase above range
+      ✔ does not account for time increase below range
+      ✔ time increase below range is not counted
+      ✔ time increase above range is not counted
+      ✔ positions minted after time spent
+      ✔ overlapping liquidity is aggregated
       1) relative behavior of snapshots
     fees overflow scenarios
-      ✔ up to max uint 128 (8431ms)
-      ✔ overflow max uint 128 (680ms)
-      ✔ overflow max uint 128 after poke burns fees owed to 0 (496ms)
+      ✔ up to max uint 128
+      ✔ overflow max uint 128
+      ✔ overflow max uint 128 after poke burns fees owed to 0
       2) two positions at the same snapshot
-      ✔ two positions 1 wei of fees apart overflows exactly once (17037ms)
+      ✔ two positions 1 wei of fees apart overflows exactly once
     swap underpayment tests
       3) underpay zero for one and exact in
-      ✔ pay in the wrong token zero for one and exact in (4068ms)
-      ✔ overpay zero for one and exact in (4136ms)
+      ✔ pay in the wrong token zero for one and exact in
+      ✔ overpay zero for one and exact in
       4) underpay zero for one and exact out
-      ✔ pay in the wrong token zero for one and exact out (4076ms)
-      ✔ overpay zero for one and exact out (70ms)
+      ✔ pay in the wrong token zero for one and exact out
+      ✔ overpay zero for one and exact out
       5) underpay one for zero and exact in
-      ✔ pay in the wrong token one for zero and exact in (4053ms)
-      ✔ overpay one for zero and exact in (4103ms)
-      ✔ underpay one for zero and exact out (56ms)
-      ✔ pay in the wrong token one for zero and exact out (4070ms)
-      ✔ overpay one for zero and exact out (4226ms)
+      ✔ pay in the wrong token one for zero and exact in
+      ✔ overpay one for zero and exact in
+      ✔ underpay one for zero and exact out
+      ✔ pay in the wrong token one for zero and exact out
+      ✔ overpay one for zero and exact out
 
 
   161 passing (2h)

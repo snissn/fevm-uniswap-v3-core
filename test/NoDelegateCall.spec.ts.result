@@ -8,5 +8,5 @@
     ✔ proxy cannot call the method that calls a private method with the modifier
 
 
-  5 passing (22s)
+  5 passing
 
