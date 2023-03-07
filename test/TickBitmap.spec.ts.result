@@ -10,9 +10,9 @@
     #flipTick
       ✔ flips only the specified tick
       ✔ reverts only itself
-      1) gas cost of flipping first tick in word to initialized
-      2) gas cost of flipping second tick in word to initialized
-      3) gas cost of flipping a tick that results in deleting a word
+      ✔ gas cost of flipping first tick in word to initialized
+      ✔ gas cost of flipping second tick in word to initialized
+      ✔ gas cost of flipping a tick that results in deleting a word
     #nextInitializedTickWithinOneWord
       lte = false
         ✔ returns tick to right if at initialized tick
@@ -43,59 +43,5 @@
         ✔ gas cost for entire word
 
 
-Snapshot Summary
- › 3 snapshots failed from 1 test suite. Inspect your code changes or re-run mocha with `--update` to update them to update them.
-
-  32 passing (19m)
-  3 failing
-
-  1) TickBitmap
-       #flipTick
-         gas cost of flipping first tick in word to initialized:
-
-      AssertionError: Snapshot name: `TickBitmap #flipTick gas cost of flipping first tick in word to initialized 1`: expected '4792692' to equal '4803092'
-      + expected - actual
-
-      -4792692
-      +4803092
-      
-      at SnapshotManager.assert (node_modules/mocha-chai-jest-snapshot/src/manager.ts:63:29)
-      at Proxy.<anonymous> (node_modules/mocha-chai-jest-snapshot/src/index.ts:81:20)
-      at Proxy.methodWrapper (node_modules/chai/lib/chai/utils/addMethod.js:57:25)
-      at snapshotGasCost (test/shared/snapshotGasCost.ts:23:39)
-      at async Context.<anonymous> (test/TickBitmap.spec.ts:81:7)
-
-  2) TickBitmap
-       #flipTick
-         gas cost of flipping second tick in word to initialized:
-
-      AssertionError: Snapshot name: `TickBitmap #flipTick gas cost of flipping second tick in word to initialized 1`: expected '4815923' to equal '4826323'
-      + expected - actual
-
-      -4815923
-      +4826323
-      
-      at SnapshotManager.assert (node_modules/mocha-chai-jest-snapshot/src/manager.ts:63:29)
-      at Proxy.<anonymous> (node_modules/mocha-chai-jest-snapshot/src/index.ts:81:20)
-      at Proxy.methodWrapper (node_modules/chai/lib/chai/utils/addMethod.js:57:25)
-      at snapshotGasCost (test/shared/snapshotGasCost.ts:23:39)
-      at async Context.<anonymous> (test/TickBitmap.spec.ts:85:7)
-
-  3) TickBitmap
-       #flipTick
-         gas cost of flipping a tick that results in deleting a word:
-
-      AssertionError: Snapshot name: `TickBitmap #flipTick gas cost of flipping a tick that results in deleting a word 1`: expected '4640127' to equal '4650527'
-      + expected - actual
-
-      -4640127
-      +4650527
-      
-      at SnapshotManager.assert (node_modules/mocha-chai-jest-snapshot/src/manager.ts:63:29)
-      at Proxy.<anonymous> (node_modules/mocha-chai-jest-snapshot/src/index.ts:81:20)
-      at Proxy.methodWrapper (node_modules/chai/lib/chai/utils/addMethod.js:57:25)
-      at snapshotGasCost (test/shared/snapshotGasCost.ts:23:39)
-      at async Context.<anonymous> (test/TickBitmap.spec.ts:89:7)
-
-
+  35 passing (19m)
 

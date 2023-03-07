@@ -5,7 +5,7 @@
       ✔ 0
       ✔ 1
       ✔ 2
-      1) all powers of 2
+      ✔ all powers of 2
       ✔ uint256(-1)
       ✔ gas cost of smaller number
       ✔ gas cost of max uint128
@@ -14,42 +14,12 @@
       ✔ 0
       ✔ 1
       ✔ 2
-      2) all powers of 2
+      ✔ all powers of 2
       ✔ uint256(-1)
       ✔ gas cost of smaller number
       ✔ gas cost of max uint128
       ✔ gas cost of max uint256
 
 
-  14 passing (1m)
-  2 failing
-
-  1) BitMath
-       #mostSignificantBit
-         all powers of 2:
-     Error: missing revert data in call exception; Transaction reverted without a reason string [ See: https://links.ethers.org/v5-errors-CALL_EXCEPTION ] (data="0x", transaction={"from":"0xF113C0c7741E1351A6263c7e8cF693494BCf58F7","to":"0x811Fa06C74B207fB628fF07BD1B3eaCe8253b3Ae","data":"0xe6bcbc650000000000000000000000000000000000000000000001000000000000000000","accessList":null}, error={"errno":-54,"code":"ECONNRESET","syscall":"connect","address":"127.0.0.1","port":59003}, code=CALL_EXCEPTION, version=providers/5.7.2)
-      at Logger.makeError (node_modules/@ethersproject/providers/node_modules/@ethersproject/logger/src.ts/index.ts:269:28)
-      at Logger.throwError (node_modules/@ethersproject/providers/node_modules/@ethersproject/logger/src.ts/index.ts:281:20)
-      at checkError (node_modules/@ethersproject/providers/src.ts/json-rpc-provider.ts:66:16)
-      at EthersProviderWrapper.<anonymous> (node_modules/@ethersproject/providers/src.ts/json-rpc-provider.ts:642:20)
-      at step (node_modules/@ethersproject/providers/lib/json-rpc-provider.js:48:23)
-      at Object.throw (node_modules/@ethersproject/providers/lib/json-rpc-provider.js:29:53)
-      at rejected (node_modules/@ethersproject/providers/lib/json-rpc-provider.js:21:65)
-      at processTicksAndRejections (node:internal/process/task_queues:96:5)
-
-  2) BitMath
-       #leastSignificantBit
-         all powers of 2:
-     Error: missing revert data in call exception; Transaction reverted without a reason string [ See: https://links.ethers.org/v5-errors-CALL_EXCEPTION ] (data="0x", transaction={"from":"0xF113C0c7741E1351A6263c7e8cF693494BCf58F7","to":"0x542c88749E6f55E32EDd97a65d174e5101E4beA7","data":"0xd230d23f0000000000000000000000000000000000000000000000000100000000000000","accessList":null}, error={"errno":-54,"code":"ECONNRESET","syscall":"connect","address":"127.0.0.1","port":59003}, code=CALL_EXCEPTION, version=providers/5.7.2)
-      at Logger.makeError (node_modules/@ethersproject/providers/node_modules/@ethersproject/logger/src.ts/index.ts:269:28)
-      at Logger.throwError (node_modules/@ethersproject/providers/node_modules/@ethersproject/logger/src.ts/index.ts:281:20)
-      at checkError (node_modules/@ethersproject/providers/src.ts/json-rpc-provider.ts:66:16)
-      at EthersProviderWrapper.<anonymous> (node_modules/@ethersproject/providers/src.ts/json-rpc-provider.ts:642:20)
-      at step (node_modules/@ethersproject/providers/lib/json-rpc-provider.js:48:23)
-      at Object.throw (node_modules/@ethersproject/providers/lib/json-rpc-provider.js:29:53)
-      at rejected (node_modules/@ethersproject/providers/lib/json-rpc-provider.js:21:65)
-      at runMicrotasks (<anonymous>)
-      at processTicksAndRejections (node:internal/process/task_queues:96:5)
-
-
+  16 passing (1m)
 
