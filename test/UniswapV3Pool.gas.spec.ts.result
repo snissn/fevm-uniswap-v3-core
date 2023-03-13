@@ -3,46 +3,120 @@
   UniswapV3Pool gas tests
     fee is off
       #swapExact0For1
-        1) "before each" hook: load the fixture for "first swap in block with no tick movement"
+        ✔ first swap in block with no tick movement (4210ms)
+        ✔ first swap in block moves tick, no initialized crossings (4182ms)
+        ✔ second swap in block with no tick movement (8359ms)
+        ✔ second swap in block moves tick, no initialized crossings (4499ms)
+        ✔ first swap in block, large swap, no initialized crossings (4146ms)
+        ✔ first swap in block, large swap crossing several initialized ticks (4577ms)
+        ✔ first swap in block, large swap crossing a single initialized tick (4266ms)
+        ✔ second swap in block, large swap crossing several initialized ticks (4615ms)
+        ✔ second swap in block, large swap crossing a single initialized tick (4415ms)
+        ✔ large swap crossing several initialized ticks after some time passes (4608ms)
+        ✔ large swap crossing several initialized ticks second time after some time passes (4860ms)
+      #mint
+        around current price
+          ✔ new position mint first in range (4180ms)
+          ✔ add to position existing (4365ms)
+          ✔ second position in same range (4310ms)
+          ✔ add to position after some time passes (4463ms)
+        below current price
+          ✔ new position mint first in range (4132ms)
+          ✔ add to position existing (4264ms)
+          ✔ second position in same range (4415ms)
+          ✔ add to position after some time passes (4313ms)
+        above current price
+          ✔ new position mint first in range (4239ms)
+          ✔ add to position existing (4276ms)
+          ✔ second position in same range (4319ms)
+          ✔ add to position after some time passes (4339ms)
+      #burn
+        around current price
+          ✔ burn when only position using ticks (4116ms)
+          ✔ partial position burn (4107ms)
+          ✔ entire position burn but other positions are using the ticks (4259ms)
+          ✔ burn entire position after some time passes (4145ms)
+        below current price
+          ✔ burn when only position using ticks (4080ms)
+          ✔ partial position burn (4138ms)
+          ✔ entire position burn but other positions are using the ticks (4355ms)
+          ✔ burn entire position after some time passes (4147ms)
+        above current price
+          ✔ burn when only position using ticks (4102ms)
+          ✔ partial position burn (4078ms)
+          ✔ entire position burn but other positions are using the ticks (4260ms)
+          ✔ burn entire position after some time passes (4143ms)
+      #poke
+        ✔ best case (4496ms)
+      #collect
+        ✔ close to worst case (4402ms)
+      #increaseObservationCardinalityNext
+        ✔ grow by 1 slot (4117ms)
+        ✔ no op (4069ms)
+      #snapshotCumulativesInside
+        ✔ tick inside
+        ✔ tick above (250ms)
+        ✔ tick below (239ms)
     fee is on
       #swapExact0For1
-        2) "before each" hook: load the fixture for "first swap in block with no tick movement"
+        ✔ first swap in block with no tick movement (4124ms)
+        ✔ first swap in block moves tick, no initialized crossings (4143ms)
+        ✔ second swap in block with no tick movement (8323ms)
+        ✔ second swap in block moves tick, no initialized crossings (4246ms)
+        ✔ first swap in block, large swap, no initialized crossings (4138ms)
+        ✔ first swap in block, large swap crossing several initialized ticks (4416ms)
+        ✔ first swap in block, large swap crossing a single initialized tick (4240ms)
+        ✔ second swap in block, large swap crossing several initialized ticks (4647ms)
+        ✔ second swap in block, large swap crossing a single initialized tick (4417ms)
+        ✔ large swap crossing several initialized ticks after some time passes (4571ms)
+        ✔ large swap crossing several initialized ticks second time after some time passes (4805ms)
+      #mint
+        around current price
+          ✔ new position mint first in range (4156ms)
+          ✔ add to position existing (4314ms)
+          ✔ second position in same range (4334ms)
+          ✔ add to position after some time passes (4419ms)
+        below current price
+          ✔ new position mint first in range (4171ms)
+          ✔ add to position existing (4257ms)
+          ✔ second position in same range (4303ms)
+          ✔ add to position after some time passes (4343ms)
+        above current price
+          ✔ new position mint first in range (4166ms)
+          ✔ add to position existing (4272ms)
+          ✔ second position in same range (4229ms)
+          ✔ add to position after some time passes (4324ms)
+      #burn
+        around current price
+          ✔ burn when only position using ticks (4113ms)
+          ✔ partial position burn (4095ms)
+          ✔ entire position burn but other positions are using the ticks (4260ms)
+          ✔ burn entire position after some time passes (4191ms)
+        below current price
+          ✔ burn when only position using ticks (4087ms)
+          ✔ partial position burn (4130ms)
+          ✔ entire position burn but other positions are using the ticks (4244ms)
+          ✔ burn entire position after some time passes (4151ms)
+        above current price
+          ✔ burn when only position using ticks (4132ms)
+          ✔ partial position burn (4090ms)
+          ✔ entire position burn but other positions are using the ticks (4200ms)
+          ✔ burn entire position after some time passes (4143ms)
+      #poke
+        ✔ best case (4542ms)
+      #collect
+        ✔ close to worst case (4391ms)
+      #increaseObservationCardinalityNext
+        ✔ grow by 1 slot (4080ms)
+        ✔ no op (4093ms)
+      #snapshotCumulativesInside
+        ✔ tick inside
+        ✔ tick above (238ms)
+        ✔ tick below (232ms)
 
 
-  0 passing
-  2 failing
+Snapshot Summary
+ › 30 snapshots updated from 1 test suite.
 
-  1) UniswapV3Pool gas tests
-       fee is off
-         "before each" hook: load the fixture for "first swap in block with no tick movement":
-
-      AssertionError: expected -8090 to equal +0
-      + expected - actual
-
-      --8090
-      +0
-      
-      at gasTestFixture (test/UniswapV3Pool.gas.spec.ts:68:46)
-      at processTicksAndRejections (node:internal/process/task_queues:96:5)
-      at async Context.<anonymous> (test/UniswapV3Pool.gas.spec.ts:81:81)
-
-  2) UniswapV3Pool gas tests
-       fee is on
-         "before each" hook: load the fixture for "first swap in block with no tick movement":
-
-      AssertionError: Expected "52871646656165724119815782674" to be equal 79228558654086561835532822693
-      + expected - actual
-
-       {
-      -  "_hex": "0x01000053e2c8652237c04228a5"
-      +  "_hex": "0xaad666ac6002bbc01b558112"
-         "_isBigNumber": true
-       }
-      
-      at gasTestFixture (test/UniswapV3Pool.gas.spec.ts:69:54)
-      at runMicrotasks (<anonymous>)
-      at processTicksAndRejections (node:internal/process/task_queues:96:5)
-      at async Context.<anonymous> (test/UniswapV3Pool.gas.spec.ts:81:81)
-
-
+  84 passing (42m)
 
