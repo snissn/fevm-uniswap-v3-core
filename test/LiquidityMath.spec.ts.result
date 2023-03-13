@@ -2,36 +2,15 @@
 
   LiquidityMath
     #addDelta
-      ✔ 1 + 0
-      ✔ 1 + -1
-      ✔ 1 + 1
-      1) 2**128-15 + 15 overflows
-      2) 0 + -1 underflows
-      3) 3 + -4 underflows
-      ✔ gas add
-      ✔ gas sub
+      ✔ 1 + 0 (51ms)
+      ✔ 1 + -1 (4112ms)
+      ✔ 1 + 1 (4052ms)
+      ✔ 2**128-15 + 15 overflows (4058ms)
+      ✔ 0 + -1 underflows (4064ms)
+      ✔ 3 + -4 underflows (4049ms)
+      ✔ gas add (4059ms)
+      ✔ gas sub (4072ms)
 
 
-  5 passing (33s)
-  3 failing
-
-  1) LiquidityMath
-       #addDelta
-         2**128-15 + 15 overflows:
-     AssertionError: Expected transaction to be reverted with LA, but other exception was thrown: Error: missing revert data in call exception; Transaction reverted without a reason string [ See: https://links.ethers.org/v5-errors-CALL_EXCEPTION ] (data="0x", transaction={"from":"0xF113C0c7741E1351A6263c7e8cF693494BCf58F7","to":"0x843732c3A5a755DFa9fFFB9b94d4416a6bfE04b9","data":"0x402d44fb00000000000000000000000000000000fffffffffffffffffffffffffffffff1000000000000000000000000000000000000000000000000000000000000000f","accessList":null}, error={"name":"ProviderError","_stack":"ProviderError: HttpProviderError\n    at HttpProvider.request (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/hardhat/src/internal/core/providers/http.ts:83:19)\n    at LocalAccountsProvider.request (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/hardhat/src/internal/core/providers/accounts.ts:187:34)\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)\n    at async EthersProviderWrapper.send (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/@nomiclabs/hardhat-ethers/src/internal/ethers-provider-wrapper.ts:13:20)","code":1,"_isProviderError":true}, code=CALL_EXCEPTION, version=providers/5.7.2)
-  
-
-  2) LiquidityMath
-       #addDelta
-         0 + -1 underflows:
-     AssertionError: Expected transaction to be reverted with LS, but other exception was thrown: Error: missing revert data in call exception; Transaction reverted without a reason string [ See: https://links.ethers.org/v5-errors-CALL_EXCEPTION ] (data="0x", transaction={"from":"0xF113C0c7741E1351A6263c7e8cF693494BCf58F7","to":"0xfc26C3DD5FDE47D355fa78B00ED46a301C2C4609","data":"0x402d44fb0000000000000000000000000000000000000000000000000000000000000000ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff","accessList":null}, error={"name":"ProviderError","_stack":"ProviderError: HttpProviderError\n    at HttpProvider.request (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/hardhat/src/internal/core/providers/http.ts:83:19)\n    at LocalAccountsProvider.request (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/hardhat/src/internal/core/providers/accounts.ts:187:34)\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)\n    at async EthersProviderWrapper.send (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/@nomiclabs/hardhat-ethers/src/internal/ethers-provider-wrapper.ts:13:20)","code":1,"_isProviderError":true}, code=CALL_EXCEPTION, version=providers/5.7.2)
-  
-
-  3) LiquidityMath
-       #addDelta
-         3 + -4 underflows:
-     AssertionError: Expected transaction to be reverted with LS, but other exception was thrown: Error: missing revert data in call exception; Transaction reverted without a reason string [ See: https://links.ethers.org/v5-errors-CALL_EXCEPTION ] (data="0x", transaction={"from":"0xF113C0c7741E1351A6263c7e8cF693494BCf58F7","to":"0xEbB1325acaCB039dA5985508c59Cd2FE7e3FAfdf","data":"0x402d44fb0000000000000000000000000000000000000000000000000000000000000003fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffc","accessList":null}, error={"name":"ProviderError","_stack":"ProviderError: HttpProviderError\n    at HttpProvider.request (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/hardhat/src/internal/core/providers/http.ts:83:19)\n    at LocalAccountsProvider.request (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/hardhat/src/internal/core/providers/accounts.ts:187:34)\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)\n    at async EthersProviderWrapper.send (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/@nomiclabs/hardhat-ethers/src/internal/ethers-provider-wrapper.ts:13:20)","code":1,"_isProviderError":true}, code=CALL_EXCEPTION, version=providers/5.7.2)
-  
-
-
+  8 passing (34s)
 

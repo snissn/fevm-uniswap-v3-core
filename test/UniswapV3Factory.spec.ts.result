@@ -33,18 +33,18 @@
 Snapshot Summary
  › 1 snapshot failed from 1 test suite. Inspect your code changes or re-run mocha with `--update` to update them to update them.
 
-  23 passing (3m)
+  23 passing (2m)
   1 failing
 
   1) UniswapV3Factory
        #createPool
          gas:
 
-      AssertionError: Snapshot name: `UniswapV3Factory #createPool gas 1`: expected '122749008' to equal '120530174'
+      AssertionError: Snapshot name: `UniswapV3Factory #createPool gas 1`: expected '120967422' to equal '122713950'
       + expected - actual
 
-      -122749008
-      +120530174
+      -120967422
+      +122713950
       
       at SnapshotManager.assert (node_modules/mocha-chai-jest-snapshot/src/manager.ts:63:29)
       at Proxy.<anonymous> (node_modules/mocha-chai-jest-snapshot/src/index.ts:81:20)
