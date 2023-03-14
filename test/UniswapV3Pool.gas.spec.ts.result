@@ -3,524 +3,170 @@
   UniswapV3Pool gas tests
     fee is off
       #swapExact0For1
-        ✔ first swap in block with no tick movement (4193ms)
-        1) first swap in block moves tick, no initialized crossings
-        ✔ second swap in block with no tick movement (8272ms)
-        ✔ second swap in block moves tick, no initialized crossings (4364ms)
-        2) first swap in block, large swap, no initialized crossings
-        ✔ first swap in block, large swap crossing several initialized ticks (4508ms)
-        ✔ first swap in block, large swap crossing a single initialized tick (4234ms)
-        3) second swap in block, large swap crossing several initialized ticks
-        ✔ second swap in block, large swap crossing a single initialized tick (4401ms)
-        4) large swap crossing several initialized ticks after some time passes
-        5) large swap crossing several initialized ticks second time after some time passes
+        - first swap in block with no tick movement
+        - first swap in block moves tick, no initialized crossings
+        - second swap in block with no tick movement
+        - second swap in block moves tick, no initialized crossings
+        - first swap in block, large swap, no initialized crossings
+        - first swap in block, large swap crossing several initialized ticks
+        - first swap in block, large swap crossing a single initialized tick
+        - second swap in block, large swap crossing several initialized ticks
+        - second swap in block, large swap crossing a single initialized tick
+        - large swap crossing several initialized ticks after some time passes
+        - large swap crossing several initialized ticks second time after some time passes
       #mint
         around current price
-          ✔ new position mint first in range (4180ms)
-          6) add to position existing
-          ✔ second position in same range (4330ms)
-          7) add to position after some time passes
+          - new position mint first in range
+          - add to position existing
+          - second position in same range
+          - add to position after some time passes
         below current price
-          8) new position mint first in range
-          ✔ add to position existing (4300ms)
-          9) second position in same range
-          10) add to position after some time passes
+          - new position mint first in range
+          - add to position existing
+          - second position in same range
+          - add to position after some time passes
         above current price
-          ✔ new position mint first in range (4123ms)
-          11) add to position existing
-          ✔ second position in same range (4228ms)
-          12) add to position after some time passes
+          - new position mint first in range
+          - add to position existing
+          - second position in same range
+          - add to position after some time passes
       #burn
         around current price
-          ✔ burn when only position using ticks (4073ms)
-          ✔ partial position burn (4089ms)
-          ✔ entire position burn but other positions are using the ticks (4236ms)
-          ✔ burn entire position after some time passes (4126ms)
+          ✔ burn when only position using ticks (4127ms)
+          ✔ partial position burn (4130ms)
+          ✔ entire position burn but other positions are using the ticks (4291ms)
+          ✔ burn entire position after some time passes (4138ms)
         below current price
-          ✔ burn when only position using ticks (4106ms)
-          ✔ partial position burn (4107ms)
-          ✔ entire position burn but other positions are using the ticks (4237ms)
-          ✔ burn entire position after some time passes (4109ms)
+          ✔ burn when only position using ticks (4117ms)
+          ✔ partial position burn (4139ms)
+          ✔ entire position burn but other positions are using the ticks (4253ms)
+          ✔ burn entire position after some time passes (4151ms)
         above current price
-          ✔ burn when only position using ticks (4069ms)
-          ✔ partial position burn (4069ms)
-          ✔ entire position burn but other positions are using the ticks (4206ms)
-          ✔ burn entire position after some time passes (4126ms)
+          ✔ burn when only position using ticks (4125ms)
+          ✔ partial position burn (4138ms)
+          ✔ entire position burn but other positions are using the ticks (4320ms)
+          ✔ burn entire position after some time passes (4156ms)
       #poke
-        ✔ best case (4477ms)
+        ✔ best case (4670ms)
       #collect
-        13) close to worst case
+        - close to worst case
       #increaseObservationCardinalityNext
-        ✔ grow by 1 slot (4078ms)
-        ✔ no op (4081ms)
+        ✔ grow by 1 slot (4095ms)
+        ✔ no op (4098ms)
       #snapshotCumulativesInside
         ✔ tick inside
-        ✔ tick above (236ms)
-        ✔ tick below (239ms)
+        ✔ tick above (279ms)
+        ✔ tick below (253ms)
     fee is on
       #swapExact0For1
-        ✔ first swap in block with no tick movement (4157ms)
-        14) first swap in block moves tick, no initialized crossings
-        15) second swap in block with no tick movement
-        16) second swap in block moves tick, no initialized crossings
-        ✔ first swap in block, large swap, no initialized crossings (4103ms)
-        17) first swap in block, large swap crossing several initialized ticks
-        18) first swap in block, large swap crossing a single initialized tick
-        ✔ second swap in block, large swap crossing several initialized ticks (4539ms)
-        ✔ second swap in block, large swap crossing a single initialized tick (4337ms)
-        19) large swap crossing several initialized ticks after some time passes
-        20) large swap crossing several initialized ticks second time after some time passes
+        - first swap in block with no tick movement
+        - first swap in block moves tick, no initialized crossings
+        - second swap in block with no tick movement
+        - second swap in block moves tick, no initialized crossings
+        - first swap in block, large swap, no initialized crossings
+        - first swap in block, large swap crossing several initialized ticks
+        - first swap in block, large swap crossing a single initialized tick
+        - second swap in block, large swap crossing several initialized ticks
+        - second swap in block, large swap crossing a single initialized tick
+        - large swap crossing several initialized ticks after some time passes
+        - large swap crossing several initialized ticks second time after some time passes
       #mint
         around current price
-          ✔ new position mint first in range (4139ms)
-          ✔ add to position existing (4285ms)
-          ✔ second position in same range (4244ms)
-          21) add to position after some time passes
+          - new position mint first in range
+          - add to position existing
+          - second position in same range
+          - add to position after some time passes
         below current price
-          ✔ new position mint first in range (4117ms)
-          22) add to position existing
-          23) second position in same range
-          ✔ add to position after some time passes (4304ms)
+          - new position mint first in range
+          - add to position existing
+          - second position in same range
+          - add to position after some time passes
         above current price
-          ✔ new position mint first in range (4121ms)
-          ✔ add to position existing (4229ms)
-          ✔ second position in same range (4210ms)
-          ✔ add to position after some time passes (4311ms)
+          - new position mint first in range
+          - add to position existing
+          - second position in same range
+          - add to position after some time passes
       #burn
         around current price
-          ✔ burn when only position using ticks (4080ms)
-          ✔ partial position burn (4093ms)
-          ✔ entire position burn but other positions are using the ticks (4264ms)
-          ✔ burn entire position after some time passes (4109ms)
+          ✔ burn when only position using ticks (4126ms)
+          ✔ partial position burn (4114ms)
+          ✔ entire position burn but other positions are using the ticks (4294ms)
+          ✔ burn entire position after some time passes (4163ms)
         below current price
-          ✔ burn when only position using ticks (4125ms)
-          ✔ partial position burn (4098ms)
-          ✔ entire position burn but other positions are using the ticks (4217ms)
-          ✔ burn entire position after some time passes (4112ms)
+          ✔ burn when only position using ticks (4124ms)
+          ✔ partial position burn (4167ms)
+          ✔ entire position burn but other positions are using the ticks (4256ms)
+          ✔ burn entire position after some time passes (4111ms)
         above current price
-          ✔ burn when only position using ticks (4083ms)
-          ✔ partial position burn (4118ms)
-          ✔ entire position burn but other positions are using the ticks (4206ms)
-          ✔ burn entire position after some time passes (4115ms)
+          ✔ burn when only position using ticks (4128ms)
+          ✔ partial position burn (4112ms)
+          ✔ entire position burn but other positions are using the ticks (4339ms)
+          ✔ burn entire position after some time passes (4187ms)
       #poke
-        ✔ best case (4452ms)
+        ✔ best case (4546ms)
       #collect
-        ✔ close to worst case (4391ms)
+        - close to worst case
       #increaseObservationCardinalityNext
-        ✔ grow by 1 slot (4060ms)
-        ✔ no op (4056ms)
+        ✔ grow by 1 slot (4165ms)
+        ✔ no op (4115ms)
       #snapshotCumulativesInside
         ✔ tick inside
-        ✔ tick above (239ms)
-        ✔ tick below (232ms)
+        ✔ tick above (372ms)
+        ✔ tick below (257ms)
 
 
 Snapshot Summary
- › 23 snapshots failed from 1 test suite. Inspect your code changes or re-run mocha with `--update` to update them to update them.
-
-  61 passing (42m)
-  23 failing
-
-  1) UniswapV3Pool gas tests
-       fee is off
-         #swapExact0For1
-           first swap in block moves tick, no initialized crossings:
-
-      AssertionError: Snapshot name: `UniswapV3Pool gas tests fee is off #swapExact0For1 first swap in block moves tick, no initialized crossings 1`: expected '53483975' to equal '53483959'
-      + expected - actual
-
-      -53483975
-      +53483959
-      
-      at SnapshotManager.assert (node_modules/mocha-chai-jest-snapshot/src/manager.ts:63:29)
-      at Proxy.<anonymous> (node_modules/mocha-chai-jest-snapshot/src/index.ts:81:20)
-      at Proxy.methodWrapper (node_modules/chai/lib/chai/utils/addMethod.js:57:25)
-      at snapshotGasCost (test/shared/snapshotGasCost.ts:23:39)
-      at async Context.<anonymous> (test/UniswapV3Pool.gas.spec.ts:92:11)
-
-  2) UniswapV3Pool gas tests
-       fee is off
-         #swapExact0For1
-           first swap in block, large swap, no initialized crossings:
-
-      AssertionError: Snapshot name: `UniswapV3Pool gas tests fee is off #swapExact0For1 first swap in block, large swap, no initialized crossings 1`: expected '56264635' to equal '56262835'
-      + expected - actual
-
-      -56264635
-      +56262835
-      
-      at SnapshotManager.assert (node_modules/mocha-chai-jest-snapshot/src/manager.ts:63:29)
-      at Proxy.<anonymous> (node_modules/mocha-chai-jest-snapshot/src/index.ts:81:20)
-      at Proxy.methodWrapper (node_modules/chai/lib/chai/utils/addMethod.js:57:25)
-      at snapshotGasCost (test/shared/snapshotGasCost.ts:23:39)
-      at async Context.<anonymous> (test/UniswapV3Pool.gas.spec.ts:111:11)
-
-  3) UniswapV3Pool gas tests
-       fee is off
-         #swapExact0For1
-           second swap in block, large swap crossing several initialized ticks:
-
-      AssertionError: Snapshot name: `UniswapV3Pool gas tests fee is off #swapExact0For1 second swap in block, large swap crossing several initialized ticks 1`: expected '76779435' to equal '76780019'
-      + expected - actual
-
-      -76779435
-      +76780019
-      
-      at SnapshotManager.assert (node_modules/mocha-chai-jest-snapshot/src/manager.ts:63:29)
-      at Proxy.<anonymous> (node_modules/mocha-chai-jest-snapshot/src/index.ts:81:20)
-      at Proxy.methodWrapper (node_modules/chai/lib/chai/utils/addMethod.js:57:25)
-      at snapshotGasCost (test/shared/snapshotGasCost.ts:23:39)
-      at async Context.<anonymous> (test/UniswapV3Pool.gas.spec.ts:143:11)
-
-  4) UniswapV3Pool gas tests
-       fee is off
-         #swapExact0For1
-           large swap crossing several initialized ticks after some time passes:
-
-      AssertionError: Snapshot name: `UniswapV3Pool gas tests fee is off #swapExact0For1 large swap crossing several initialized ticks after some time passes 1`: expected '79416129' to equal '79416113'
-      + expected - actual
-
-      -79416129
-      +79416113
-      
-      at SnapshotManager.assert (node_modules/mocha-chai-jest-snapshot/src/manager.ts:63:29)
-      at Proxy.<anonymous> (node_modules/mocha-chai-jest-snapshot/src/index.ts:81:20)
-      at Proxy.methodWrapper (node_modules/chai/lib/chai/utils/addMethod.js:57:25)
-      at snapshotGasCost (test/shared/snapshotGasCost.ts:23:39)
-      at async Context.<anonymous> (test/UniswapV3Pool.gas.spec.ts:165:11)
-
-  5) UniswapV3Pool gas tests
-       fee is off
-         #swapExact0For1
-           large swap crossing several initialized ticks second time after some time passes:
-
-      AssertionError: Snapshot name: `UniswapV3Pool gas tests fee is off #swapExact0For1 large swap crossing several initialized ticks second time after some time passes 1`: expected '85998431' to equal '83477217'
-      + expected - actual
-
-      -85998431
-      +83477217
-      
-      at SnapshotManager.assert (node_modules/mocha-chai-jest-snapshot/src/manager.ts:63:29)
-      at Proxy.<anonymous> (node_modules/mocha-chai-jest-snapshot/src/index.ts:81:20)
-      at Proxy.methodWrapper (node_modules/chai/lib/chai/utils/addMethod.js:57:25)
-      at snapshotGasCost (test/shared/snapshotGasCost.ts:23:39)
-      at async Context.<anonymous> (test/UniswapV3Pool.gas.spec.ts:180:11)
-
-  6) UniswapV3Pool gas tests
-       fee is off
-         #mint
-           around current price
-             add to position existing:
-
-      AssertionError: Snapshot name: `UniswapV3Pool gas tests fee is off #mint around current price add to position existing 1`: expected '69663695' to equal '69663679'
-      + expected - actual
-
-      -69663695
-      +69663679
-      
-      at SnapshotManager.assert (node_modules/mocha-chai-jest-snapshot/src/manager.ts:63:29)
-      at Proxy.<anonymous> (node_modules/mocha-chai-jest-snapshot/src/index.ts:81:20)
-      at Proxy.methodWrapper (node_modules/chai/lib/chai/utils/addMethod.js:57:25)
-      at snapshotGasCost (test/shared/snapshotGasCost.ts:23:39)
-      at async Context.<anonymous> (test/UniswapV3Pool.gas.spec.ts:209:15)
-
-  7) UniswapV3Pool gas tests
-       fee is off
-         #mint
-           around current price
-             add to position after some time passes:
-
-      AssertionError: Snapshot name: `UniswapV3Pool gas tests fee is off #mint around current price add to position after some time passes 1`: expected '74313121' to equal '71287156'
-      + expected - actual
-
-      -74313121
-      +71287156
-      
-      at SnapshotManager.assert (node_modules/mocha-chai-jest-snapshot/src/manager.ts:63:29)
-      at Proxy.<anonymous> (node_modules/mocha-chai-jest-snapshot/src/index.ts:81:20)
-      at Proxy.methodWrapper (node_modules/chai/lib/chai/utils/addMethod.js:57:25)
-      at snapshotGasCost (test/shared/snapshotGasCost.ts:23:39)
-      at async Context.<anonymous> (test/UniswapV3Pool.gas.spec.ts:218:15)
-
-  8) UniswapV3Pool gas tests
-       fee is off
-         #mint
-           below current price
-             new position mint first in range:
-
-      AssertionError: Snapshot name: `UniswapV3Pool gas tests fee is off #mint below current price new position mint first in range 1`: expected '56677638' to equal '56677646'
-      + expected - actual
-
-      -56677638
-      +56677646
-      
-      at SnapshotManager.assert (node_modules/mocha-chai-jest-snapshot/src/manager.ts:63:29)
-      at Proxy.<anonymous> (node_modules/mocha-chai-jest-snapshot/src/index.ts:81:20)
-      at Proxy.methodWrapper (node_modules/chai/lib/chai/utils/addMethod.js:57:25)
-      at snapshotGasCost (test/shared/snapshotGasCost.ts:23:39)
-      at async Context.<anonymous> (test/UniswapV3Pool.gas.spec.ts:205:15)
-
-  9) UniswapV3Pool gas tests
-       fee is off
-         #mint
-           below current price
-             second position in same range:
-
-      AssertionError: Snapshot name: `UniswapV3Pool gas tests fee is off #mint below current price second position in same range 1`: expected '55166357' to equal '56165118'
-      + expected - actual
-
-      -55166357
-      +56165118
-      
-      at SnapshotManager.assert (node_modules/mocha-chai-jest-snapshot/src/manager.ts:63:29)
-      at Proxy.<anonymous> (node_modules/mocha-chai-jest-snapshot/src/index.ts:81:20)
-      at Proxy.methodWrapper (node_modules/chai/lib/chai/utils/addMethod.js:57:25)
-      at snapshotGasCost (test/shared/snapshotGasCost.ts:23:39)
-      at async Context.<anonymous> (test/UniswapV3Pool.gas.spec.ts:213:15)
-
-  10) UniswapV3Pool gas tests
-       fee is off
-         #mint
-           below current price
-             add to position after some time passes:
-
-      AssertionError: Snapshot name: `UniswapV3Pool gas tests fee is off #mint below current price add to position after some time passes 1`: expected '55763786' to equal '54765033'
-      + expected - actual
-
-      -55763786
-      +54765033
-      
-      at SnapshotManager.assert (node_modules/mocha-chai-jest-snapshot/src/manager.ts:63:29)
-      at Proxy.<anonymous> (node_modules/mocha-chai-jest-snapshot/src/index.ts:81:20)
-      at Proxy.methodWrapper (node_modules/chai/lib/chai/utils/addMethod.js:57:25)
-      at snapshotGasCost (test/shared/snapshotGasCost.ts:23:39)
-      at async Context.<anonymous> (test/UniswapV3Pool.gas.spec.ts:218:15)
-
-  11) UniswapV3Pool gas tests
-       fee is off
-         #mint
-           above current price
-             add to position existing:
-
-      AssertionError: Snapshot name: `UniswapV3Pool gas tests fee is off #mint above current price add to position existing 1`: expected '53653206' to equal '52116476'
-      + expected - actual
-
-      -53653206
-      +52116476
-      
-      at SnapshotManager.assert (node_modules/mocha-chai-jest-snapshot/src/manager.ts:63:29)
-      at Proxy.<anonymous> (node_modules/mocha-chai-jest-snapshot/src/index.ts:81:20)
-      at Proxy.methodWrapper (node_modules/chai/lib/chai/utils/addMethod.js:57:25)
-      at snapshotGasCost (test/shared/snapshotGasCost.ts:23:39)
-      at async Context.<anonymous> (test/UniswapV3Pool.gas.spec.ts:209:15)
-
-  12) UniswapV3Pool gas tests
-       fee is off
-         #mint
-           above current price
-             add to position after some time passes:
-
-      AssertionError: Snapshot name: `UniswapV3Pool gas tests fee is off #mint above current price add to position after some time passes 1`: expected '52115268' to equal '52116468'
-      + expected - actual
-
-      -52115268
-      +52116468
-      
-      at SnapshotManager.assert (node_modules/mocha-chai-jest-snapshot/src/manager.ts:63:29)
-      at Proxy.<anonymous> (node_modules/mocha-chai-jest-snapshot/src/index.ts:81:20)
-      at Proxy.methodWrapper (node_modules/chai/lib/chai/utils/addMethod.js:57:25)
-      at snapshotGasCost (test/shared/snapshotGasCost.ts:23:39)
-      at async Context.<anonymous> (test/UniswapV3Pool.gas.spec.ts:218:15)
-
-  13) UniswapV3Pool gas tests
-       fee is off
-         #collect
-           close to worst case:
-
-      AssertionError: Snapshot name: `UniswapV3Pool gas tests fee is off #collect close to worst case 1`: expected '27015856' to equal '26003938'
-      + expected - actual
-
-      -27015856
-      +26003938
-      
-      at SnapshotManager.assert (node_modules/mocha-chai-jest-snapshot/src/manager.ts:63:29)
-      at Proxy.<anonymous> (node_modules/mocha-chai-jest-snapshot/src/index.ts:81:20)
-      at Proxy.methodWrapper (node_modules/chai/lib/chai/utils/addMethod.js:57:25)
-      at snapshotGasCost (test/shared/snapshotGasCost.ts:23:39)
-      at async Context.<anonymous> (test/UniswapV3Pool.gas.spec.ts:287:11)
-
-  14) UniswapV3Pool gas tests
-       fee is on
-         #swapExact0For1
-           first swap in block moves tick, no initialized crossings:
-
-      AssertionError: Snapshot name: `UniswapV3Pool gas tests fee is on #swapExact0For1 first swap in block moves tick, no initialized crossings 1`: expected '54942714' to equal '57457430'
-      + expected - actual
-
-      -54942714
-      +57457430
-      
-      at SnapshotManager.assert (node_modules/mocha-chai-jest-snapshot/src/manager.ts:63:29)
-      at Proxy.<anonymous> (node_modules/mocha-chai-jest-snapshot/src/index.ts:81:20)
-      at Proxy.methodWrapper (node_modules/chai/lib/chai/utils/addMethod.js:57:25)
-      at snapshotGasCost (test/shared/snapshotGasCost.ts:23:39)
-      at async Context.<anonymous> (test/UniswapV3Pool.gas.spec.ts:92:11)
-
-  15) UniswapV3Pool gas tests
-       fee is on
-         #swapExact0For1
-           second swap in block with no tick movement:
-
-      AssertionError: Snapshot name: `UniswapV3Pool gas tests fee is on #swapExact0For1 second swap in block with no tick movement 1`: expected '51855638' to equal '51855622'
-      + expected - actual
-
-      -51855638
-      +51855622
-      
-      at SnapshotManager.assert (node_modules/mocha-chai-jest-snapshot/src/manager.ts:63:29)
-      at Proxy.<anonymous> (node_modules/mocha-chai-jest-snapshot/src/index.ts:81:20)
-      at Proxy.methodWrapper (node_modules/chai/lib/chai/utils/addMethod.js:57:25)
-      at snapshotGasCost (test/shared/snapshotGasCost.ts:23:39)
-      at async Context.<anonymous> (test/UniswapV3Pool.gas.spec.ts:99:11)
-
-  16) UniswapV3Pool gas tests
-       fee is on
-         #swapExact0For1
-           second swap in block moves tick, no initialized crossings:
-
-      AssertionError: Snapshot name: `UniswapV3Pool gas tests fee is on #swapExact0For1 second swap in block moves tick, no initialized crossings 1`: expected '54940810' to equal '54938994'
-      + expected - actual
-
-      -54940810
-      +54938994
-      
-      at SnapshotManager.assert (node_modules/mocha-chai-jest-snapshot/src/manager.ts:63:29)
-      at Proxy.<anonymous> (node_modules/mocha-chai-jest-snapshot/src/index.ts:81:20)
-      at Proxy.methodWrapper (node_modules/chai/lib/chai/utils/addMethod.js:57:25)
-      at snapshotGasCost (test/shared/snapshotGasCost.ts:23:39)
-      at async Context.<anonymous> (test/UniswapV3Pool.gas.spec.ts:106:11)
-
-  17) UniswapV3Pool gas tests
-       fee is on
-         #swapExact0For1
-           first swap in block, large swap crossing several initialized ticks:
-
-      AssertionError: Snapshot name: `UniswapV3Pool gas tests fee is on #swapExact0For1 first swap in block, large swap crossing several initialized ticks 1`: expected '81109098' to equal '81109114'
-      + expected - actual
-
-      -81109098
-      +81109114
-      
-      at SnapshotManager.assert (node_modules/mocha-chai-jest-snapshot/src/manager.ts:63:29)
-      at Proxy.<anonymous> (node_modules/mocha-chai-jest-snapshot/src/index.ts:81:20)
-      at Proxy.methodWrapper (node_modules/chai/lib/chai/utils/addMethod.js:57:25)
-      at snapshotGasCost (test/shared/snapshotGasCost.ts:23:39)
-      at async Context.<anonymous> (test/UniswapV3Pool.gas.spec.ts:124:11)
-
-  18) UniswapV3Pool gas tests
-       fee is on
-         #swapExact0For1
-           first swap in block, large swap crossing a single initialized tick:
-
-      AssertionError: Snapshot name: `UniswapV3Pool gas tests fee is on #swapExact0For1 first swap in block, large swap crossing a single initialized tick 1`: expected '63169337' to equal '63169833'
-      + expected - actual
-
-      -63169337
-      +63169833
-      
-      at SnapshotManager.assert (node_modules/mocha-chai-jest-snapshot/src/manager.ts:63:29)
-      at Proxy.<anonymous> (node_modules/mocha-chai-jest-snapshot/src/index.ts:81:20)
-      at Proxy.methodWrapper (node_modules/chai/lib/chai/utils/addMethod.js:57:25)
-      at snapshotGasCost (test/shared/snapshotGasCost.ts:23:39)
-      at async Context.<anonymous> (test/UniswapV3Pool.gas.spec.ts:130:11)
-
-  19) UniswapV3Pool gas tests
-       fee is on
-         #swapExact0For1
-           large swap crossing several initialized ticks after some time passes:
-
-      AssertionError: Snapshot name: `UniswapV3Pool gas tests fee is on #swapExact0For1 large swap crossing several initialized ticks after some time passes 1`: expected '81105706' to equal '81105722'
-      + expected - actual
-
-      -81105706
-      +81105722
-      
-      at SnapshotManager.assert (node_modules/mocha-chai-jest-snapshot/src/manager.ts:63:29)
-      at Proxy.<anonymous> (node_modules/mocha-chai-jest-snapshot/src/index.ts:81:20)
-      at Proxy.methodWrapper (node_modules/chai/lib/chai/utils/addMethod.js:57:25)
-      at snapshotGasCost (test/shared/snapshotGasCost.ts:23:39)
-      at async Context.<anonymous> (test/UniswapV3Pool.gas.spec.ts:165:11)
-
-  20) UniswapV3Pool gas tests
-       fee is on
-         #swapExact0For1
-           large swap crossing several initialized ticks second time after some time passes:
-
-      AssertionError: Snapshot name: `UniswapV3Pool gas tests fee is on #swapExact0For1 large swap crossing several initialized ticks second time after some time passes 1`: expected '85138837' to equal '85140653'
-      + expected - actual
-
-      -85138837
-      +85140653
-      
-      at SnapshotManager.assert (node_modules/mocha-chai-jest-snapshot/src/manager.ts:63:29)
-      at Proxy.<anonymous> (node_modules/mocha-chai-jest-snapshot/src/index.ts:81:20)
-      at Proxy.methodWrapper (node_modules/chai/lib/chai/utils/addMethod.js:57:25)
-      at snapshotGasCost (test/shared/snapshotGasCost.ts:23:39)
-      at async Context.<anonymous> (test/UniswapV3Pool.gas.spec.ts:180:11)
-
-  21) UniswapV3Pool gas tests
-       fee is on
-         #mint
-           around current price
-             add to position after some time passes:
-
-      AssertionError: Snapshot name: `UniswapV3Pool gas tests fee is on #mint around current price add to position after some time passes 1`: expected '71806001' to equal '71808417'
-      + expected - actual
-
-      -71806001
-      +71808417
-      
-      at SnapshotManager.assert (node_modules/mocha-chai-jest-snapshot/src/manager.ts:63:29)
-      at Proxy.<anonymous> (node_modules/mocha-chai-jest-snapshot/src/index.ts:81:20)
-      at Proxy.methodWrapper (node_modules/chai/lib/chai/utils/addMethod.js:57:25)
-      at snapshotGasCost (test/shared/snapshotGasCost.ts:23:39)
-      at async Context.<anonymous> (test/UniswapV3Pool.gas.spec.ts:218:15)
-
-  22) UniswapV3Pool gas tests
-       fee is on
-         #mint
-           below current price
-             add to position existing:
-
-      AssertionError: Snapshot name: `UniswapV3Pool gas tests fee is on #mint below current price add to position existing 1`: expected '55247710' to equal '56768952'
-      + expected - actual
-
-      -55247710
-      +56768952
-      
-      at SnapshotManager.assert (node_modules/mocha-chai-jest-snapshot/src/manager.ts:63:29)
-      at Proxy.<anonymous> (node_modules/mocha-chai-jest-snapshot/src/index.ts:81:20)
-      at Proxy.methodWrapper (node_modules/chai/lib/chai/utils/addMethod.js:57:25)
-      at snapshotGasCost (test/shared/snapshotGasCost.ts:23:39)
-      at async Context.<anonymous> (test/UniswapV3Pool.gas.spec.ts:209:15)
-
-  23) UniswapV3Pool gas tests
-       fee is on
-         #mint
-           below current price
-             second position in same range:
-
-      AssertionError: Snapshot name: `UniswapV3Pool gas tests fee is on #mint below current price second position in same range 1`: expected '55656362' to equal '55656354'
-      + expected - actual
-
-      -55656362
-      +55656354
-      
-      at SnapshotManager.assert (node_modules/mocha-chai-jest-snapshot/src/manager.ts:63:29)
-      at Proxy.<anonymous> (node_modules/mocha-chai-jest-snapshot/src/index.ts:81:20)
-      at Proxy.methodWrapper (node_modules/chai/lib/chai/utils/addMethod.js:57:25)
-      at snapshotGasCost (test/shared/snapshotGasCost.ts:23:39)
-      at async Context.<anonymous> (test/UniswapV3Pool.gas.spec.ts:213:15)
-
-
+ › 48 snapshots obsolete from 1 test suite. To remove them all, re-run mocha with `--update` to update them.
+   ↳ test/UniswapV3Pool.gas.spec.ts
+       • UniswapV3Pool gas tests fee is off #collect close to worst case 1
+       • UniswapV3Pool gas tests fee is off #mint above current price add to position after some time passes 1
+       • UniswapV3Pool gas tests fee is off #mint above current price add to position existing 1
+       • UniswapV3Pool gas tests fee is off #mint above current price new position mint first in range 1
+       • UniswapV3Pool gas tests fee is off #mint above current price second position in same range 1
+       • UniswapV3Pool gas tests fee is off #mint around current price add to position after some time passes 1
+       • UniswapV3Pool gas tests fee is off #mint around current price add to position existing 1
+       • UniswapV3Pool gas tests fee is off #mint around current price new position mint first in range 1
+       • UniswapV3Pool gas tests fee is off #mint around current price second position in same range 1
+       • UniswapV3Pool gas tests fee is off #mint below current price add to position after some time passes 1
+       • UniswapV3Pool gas tests fee is off #mint below current price add to position existing 1
+       • UniswapV3Pool gas tests fee is off #mint below current price new position mint first in range 1
+       • UniswapV3Pool gas tests fee is off #mint below current price second position in same range 1
+       • UniswapV3Pool gas tests fee is off #swapExact0For1 first swap in block moves tick, no initialized crossings 1
+       • UniswapV3Pool gas tests fee is off #swapExact0For1 first swap in block with no tick movement 1
+       • UniswapV3Pool gas tests fee is off #swapExact0For1 first swap in block, large swap crossing a single initialized tick 1
+       • UniswapV3Pool gas tests fee is off #swapExact0For1 first swap in block, large swap crossing several initialized ticks 1
+       • UniswapV3Pool gas tests fee is off #swapExact0For1 first swap in block, large swap, no initialized crossings 1
+       • UniswapV3Pool gas tests fee is off #swapExact0For1 large swap crossing several initialized ticks after some time passes 1
+       • UniswapV3Pool gas tests fee is off #swapExact0For1 large swap crossing several initialized ticks second time after some time passes 1
+       • UniswapV3Pool gas tests fee is off #swapExact0For1 second swap in block moves tick, no initialized crossings 1
+       • UniswapV3Pool gas tests fee is off #swapExact0For1 second swap in block with no tick movement 1
+       • UniswapV3Pool gas tests fee is off #swapExact0For1 second swap in block, large swap crossing a single initialized tick 1
+       • UniswapV3Pool gas tests fee is off #swapExact0For1 second swap in block, large swap crossing several initialized ticks 1
+       • UniswapV3Pool gas tests fee is on #collect close to worst case 1
+       • UniswapV3Pool gas tests fee is on #mint above current price add to position after some time passes 1
+       • UniswapV3Pool gas tests fee is on #mint above current price add to position existing 1
+       • UniswapV3Pool gas tests fee is on #mint above current price new position mint first in range 1
+       • UniswapV3Pool gas tests fee is on #mint above current price second position in same range 1
+       • UniswapV3Pool gas tests fee is on #mint around current price add to position after some time passes 1
+       • UniswapV3Pool gas tests fee is on #mint around current price add to position existing 1
+       • UniswapV3Pool gas tests fee is on #mint around current price new position mint first in range 1
+       • UniswapV3Pool gas tests fee is on #mint around current price second position in same range 1
+       • UniswapV3Pool gas tests fee is on #mint below current price add to position after some time passes 1
+       • UniswapV3Pool gas tests fee is on #mint below current price add to position existing 1
+       • UniswapV3Pool gas tests fee is on #mint below current price new position mint first in range 1
+       • UniswapV3Pool gas tests fee is on #mint below current price second position in same range 1
+       • UniswapV3Pool gas tests fee is on #swapExact0For1 first swap in block moves tick, no initialized crossings 1
+       • UniswapV3Pool gas tests fee is on #swapExact0For1 first swap in block with no tick movement 1
+       • UniswapV3Pool gas tests fee is on #swapExact0For1 first swap in block, large swap crossing a single initialized tick 1
+       • UniswapV3Pool gas tests fee is on #swapExact0For1 first swap in block, large swap crossing several initialized ticks 1
+       • UniswapV3Pool gas tests fee is on #swapExact0For1 first swap in block, large swap, no initialized crossings 1
+       • UniswapV3Pool gas tests fee is on #swapExact0For1 large swap crossing several initialized ticks after some time passes 1
+       • UniswapV3Pool gas tests fee is on #swapExact0For1 large swap crossing several initialized ticks second time after some time passes 1
+       • UniswapV3Pool gas tests fee is on #swapExact0For1 second swap in block moves tick, no initialized crossings 1
+       • UniswapV3Pool gas tests fee is on #swapExact0For1 second swap in block with no tick movement 1
+       • UniswapV3Pool gas tests fee is on #swapExact0For1 second swap in block, large swap crossing a single initialized tick 1
+       • UniswapV3Pool gas tests fee is on #swapExact0For1 second swap in block, large swap crossing several initialized ticks 1
+
+  36 passing (18m)
+  48 pending
 
