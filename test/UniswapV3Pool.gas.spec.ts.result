@@ -32,31 +32,31 @@
           - add to position after some time passes
       #burn
         around current price
-          ✔ burn when only position using ticks (4127ms)
-          ✔ partial position burn (4130ms)
-          ✔ entire position burn but other positions are using the ticks (4291ms)
-          ✔ burn entire position after some time passes (4138ms)
+          ✔ burn when only position using ticks
+          ✔ partial position burn
+          ✔ entire position burn but other positions are using the ticks
+          ✔ burn entire position after some time passes
         below current price
-          ✔ burn when only position using ticks (4117ms)
-          ✔ partial position burn (4139ms)
-          ✔ entire position burn but other positions are using the ticks (4253ms)
-          ✔ burn entire position after some time passes (4151ms)
+          ✔ burn when only position using ticks
+          ✔ partial position burn
+          ✔ entire position burn but other positions are using the ticks
+          ✔ burn entire position after some time passes
         above current price
-          ✔ burn when only position using ticks (4125ms)
-          ✔ partial position burn (4138ms)
-          ✔ entire position burn but other positions are using the ticks (4320ms)
-          ✔ burn entire position after some time passes (4156ms)
+          ✔ burn when only position using ticks
+          ✔ partial position burn
+          ✔ entire position burn but other positions are using the ticks
+          ✔ burn entire position after some time passes
       #poke
-        ✔ best case (4670ms)
+        ✔ best case
       #collect
         - close to worst case
       #increaseObservationCardinalityNext
-        ✔ grow by 1 slot (4095ms)
-        ✔ no op (4098ms)
+        ✔ grow by 1 slot
+        ✔ no op
       #snapshotCumulativesInside
         ✔ tick inside
-        ✔ tick above (279ms)
-        ✔ tick below (253ms)
+        ✔ tick above
+        ✔ tick below
     fee is on
       #swapExact0For1
         - first swap in block with no tick movement
@@ -88,31 +88,31 @@
           - add to position after some time passes
       #burn
         around current price
-          ✔ burn when only position using ticks (4126ms)
-          ✔ partial position burn (4114ms)
-          ✔ entire position burn but other positions are using the ticks (4294ms)
-          ✔ burn entire position after some time passes (4163ms)
+          ✔ burn when only position using ticks
+          ✔ partial position burn
+          ✔ entire position burn but other positions are using the ticks
+          ✔ burn entire position after some time passes
         below current price
-          ✔ burn when only position using ticks (4124ms)
-          ✔ partial position burn (4167ms)
-          ✔ entire position burn but other positions are using the ticks (4256ms)
-          ✔ burn entire position after some time passes (4111ms)
+          ✔ burn when only position using ticks
+          ✔ partial position burn
+          ✔ entire position burn but other positions are using the ticks
+          ✔ burn entire position after some time passes
         above current price
-          ✔ burn when only position using ticks (4128ms)
-          ✔ partial position burn (4112ms)
-          ✔ entire position burn but other positions are using the ticks (4339ms)
-          ✔ burn entire position after some time passes (4187ms)
+          ✔ burn when only position using ticks
+          ✔ partial position burn
+          ✔ entire position burn but other positions are using the ticks
+          ✔ burn entire position after some time passes
       #poke
-        ✔ best case (4546ms)
+        ✔ best case
       #collect
         - close to worst case
       #increaseObservationCardinalityNext
-        ✔ grow by 1 slot (4165ms)
-        ✔ no op (4115ms)
+        ✔ grow by 1 slot
+        ✔ no op
       #snapshotCumulativesInside
         ✔ tick inside
-        ✔ tick above (372ms)
-        ✔ tick below (257ms)
+        ✔ tick above
+        ✔ tick below
 
 
 Snapshot Summary
@@ -167,6 +167,6 @@ Snapshot Summary
        • UniswapV3Pool gas tests fee is on #swapExact0For1 second swap in block, large swap crossing a single initialized tick 1
        • UniswapV3Pool gas tests fee is on #swapExact0For1 second swap in block, large swap crossing several initialized ticks 1
 
-  36 passing (18m)
+  36 passing
   48 pending
 

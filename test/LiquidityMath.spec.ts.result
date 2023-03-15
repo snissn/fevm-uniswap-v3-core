@@ -2,15 +2,15 @@
 
   LiquidityMath
     #addDelta
-      ✔ 1 + 0 (51ms)
-      ✔ 1 + -1 (4112ms)
-      ✔ 1 + 1 (4052ms)
-      ✔ 2**128-15 + 15 overflows (4058ms)
-      ✔ 0 + -1 underflows (4064ms)
-      ✔ 3 + -4 underflows (4049ms)
-      ✔ gas add (4059ms)
-      ✔ gas sub (4072ms)
+      ✔ 1 + 0
+      ✔ 1 + -1
+      ✔ 1 + 1
+      ✔ 2**128-15 + 15 overflows
+      ✔ 0 + -1 underflows
+      ✔ 3 + -4 underflows
+      ✔ gas add
+      ✔ gas sub
 
 
-  8 passing (34s)
+  8 passing
 
