@@ -13,7 +13,7 @@
       ✔ fails if token a == token b
       ✔ fails if token a is 0 or token b is 0
       ✔ fails if fee amount is not enabled
-      1) gas
+      - gas
     #setOwner
       ✔ fails if caller is not owner
       ✔ updates owner
@@ -31,26 +31,10 @@
 
 
 Snapshot Summary
- › 1 snapshot failed from 1 test suite. Inspect your code changes or re-run mocha with `--update` to update them to update them.
+ › 1 snapshot obsolete from 1 test suite. To remove it, re-run mocha with `--update` to update them.
+   ↳ test/UniswapV3Factory.spec.ts
+       • UniswapV3Factory #createPool gas 1
 
-  23 passing (2m)
-  1 failing
-
-  1) UniswapV3Factory
-       #createPool
-         gas:
-
-      AssertionError: Snapshot name: `UniswapV3Factory #createPool gas 1`: expected '120967422' to equal '122713950'
-      + expected - actual
-
-      -120967422
-      +122713950
-      
-      at SnapshotManager.assert (node_modules/mocha-chai-jest-snapshot/src/manager.ts:63:29)
-      at Proxy.<anonymous> (node_modules/mocha-chai-jest-snapshot/src/index.ts:81:20)
-      at Proxy.methodWrapper (node_modules/chai/lib/chai/utils/addMethod.js:57:25)
-      at snapshotGasCost (test/shared/snapshotGasCost.ts:23:39)
-      at async Context.<anonymous> (test/UniswapV3Factory.spec.ts:127:7)
-
-
+  23 passing
+  1 pending
 
