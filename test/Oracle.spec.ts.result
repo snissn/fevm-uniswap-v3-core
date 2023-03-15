@@ -2,85 +2,85 @@
 
   Oracle
     #initialize
-      ✔ index is 0 (164ms)
-      ✔ cardinality is 1 (8184ms)
-      ✔ cardinality next is 1 (4197ms)
-      ✔ sets first slot timestamp only (8198ms)
+      ✔ index is 0
+      ✔ cardinality is 1
+      ✔ cardinality next is 1
+      ✔ sets first slot timestamp only
       - gas
     #grow
-      ✔ increases the cardinality next for the first call (4183ms)
-      ✔ does not touch the first slot (4204ms)
-      ✔ is no op if oracle is already gte that size (8289ms)
-      ✔ adds data to all the slots (4123ms)
-      ✔ grow after wrap (8284ms)
+      ✔ increases the cardinality next for the first call
+      ✔ does not touch the first slot
+      ✔ is no op if oracle is already gte that size
+      ✔ adds data to all the slots
+      ✔ grow after wrap
       - gas for growing by 1 slot when index == cardinality - 1
       - gas for growing by 10 slots when index == cardinality - 1
       - gas for growing by 1 slot when index != cardinality - 1
       - gas for growing by 10 slots when index != cardinality - 1
     #write
-      ✔ single element array gets overwritten (12365ms)
-      ✔ does nothing if time has not changed (4211ms)
-      ✔ writes an index if time has changed (8312ms)
-      ✔ grows cardinality when writing past (8326ms)
-      ✔ wraps around (4236ms)
-      ✔ accumulates liquidity (4373ms)
+      ✔ single element array gets overwritten
+      ✔ does nothing if time has not changed
+      ✔ writes an index if time has changed
+      ✔ grows cardinality when writing past
+      ✔ wraps around
+      ✔ accumulates liquidity
     #observe
       before initialization
-        ✔ fails before initialize (4080ms)
+        ✔ fails before initialize
         1) fails if an older observation does not exist
-        2) does not fail across overflow boundary
-        ✔ interpolates correctly at max liquidity (8248ms)
-        ✔ interpolates correctly at min liquidity (8219ms)
-        ✔ interpolates the same as 0 liquidity for 1 liquidity (8266ms)
-        ✔ interpolates correctly across uint32 seconds boundaries (16567ms)
-        3) single observation at current time
-        4) single observation in past but not earlier than secondsAgo
-        5) single observation in past at exactly seconds ago
-        6) single observation in past counterfactual in past
-        7) single observation in past counterfactual now
-        ✔ two observations in chronological order 0 seconds ago exact (8184ms)
-        8) two observations in chronological order 0 seconds ago counterfactual
-        9) two observations in chronological order seconds ago is exactly on first observation
-        10) two observations in chronological order seconds ago is between first and second
-        ✔ two observations in reverse order 0 seconds ago exact (8285ms)
-        11) two observations in reverse order 0 seconds ago counterfactual
-        12) two observations in reverse order seconds ago is exactly on first observation
-        13) two observations in reverse order seconds ago is between first and second
-        14) can fetch multiple observations
-        15) gas for observe since most recent
-        16) gas for single observation at current time
-        17) gas for single observation at current time counterfactually computed
+        ✔ does not fail across overflow boundary
+        ✔ interpolates correctly at max liquidity
+        ✔ interpolates correctly at min liquidity
+        ✔ interpolates the same as 0 liquidity for 1 liquidity
+        ✔ interpolates correctly across uint32 seconds boundaries
+        ✔ single observation at current time
+        2) single observation in past but not earlier than secondsAgo
+        ✔ single observation in past at exactly seconds ago
+        ✔ single observation in past counterfactual in past
+        ✔ single observation in past counterfactual now
+        ✔ two observations in chronological order 0 seconds ago exact
+        ✔ two observations in chronological order 0 seconds ago counterfactual
+        ✔ two observations in chronological order seconds ago is exactly on first observation
+        ✔ two observations in chronological order seconds ago is between first and second
+        ✔ two observations in reverse order 0 seconds ago exact
+        ✔ two observations in reverse order 0 seconds ago counterfactual
+        ✔ two observations in reverse order seconds ago is exactly on first observation
+        ✔ two observations in reverse order seconds ago is between first and second
+        ✔ can fetch multiple observations
+        ✔ gas for observe since most recent
+        ✔ gas for single observation at current time
+        ✔ gas for single observation at current time counterfactually computed
       initialized with 5 observations with starting time of 5
         ✔ index, cardinality, cardinality next
         ✔ latest observation same time as latest
-        18) latest observation 5 seconds after latest
-        19) current observation 5 seconds after latest
+        ✔ latest observation 5 seconds after latest
+        ✔ current observation 5 seconds after latest
         ✔ between latest observation and just before latest observation at same time as latest
-        20) between latest observation and just before latest observation after the latest observation
-        21) older than oldest reverts
+        ✔ between latest observation and just before latest observation after the latest observation
+        3) older than oldest reverts
         ✔ oldest observation
-        22) oldest observation after some time
-        23) fetch many values
-        24) gas all of last 20 seconds
+        ✔ oldest observation after some time
+        ✔ fetch many values
+        ✔ gas all of last 20 seconds
         ✔ gas latest equal
-        ✔ gas latest transform (73ms)
+        ✔ gas latest transform
         ✔ gas oldest
         ✔ gas between oldest and oldest + 1
         ✔ gas middle
       initialized with 5 observations with starting time of 4294967291
         ✔ index, cardinality, cardinality next
         ✔ latest observation same time as latest
-        ✔ latest observation 5 seconds after latest (4129ms)
-        25) current observation 5 seconds after latest
+        ✔ latest observation 5 seconds after latest
+        ✔ current observation 5 seconds after latest
         ✔ between latest observation and just before latest observation at same time as latest
-        26) between latest observation and just before latest observation after the latest observation
-        27) older than oldest reverts
+        ✔ between latest observation and just before latest observation after the latest observation
+        4) older than oldest reverts
         ✔ oldest observation
-        28) oldest observation after some time
-        29) fetch many values
-        30) gas all of last 20 seconds
+        ✔ oldest observation after some time
+        ✔ fetch many values
+        ✔ gas all of last 20 seconds
         ✔ gas latest equal
-        ✔ gas latest transform (69ms)
+        ✔ gas latest transform
         ✔ gas oldest
         ✔ gas between oldest and oldest + 1
         ✔ gas middle
@@ -107,394 +107,46 @@
 
 
 Snapshot Summary
- › 6 snapshots obsolete from 1 test suite. To remove them all, re-run mocha with `--update` to update them.
+ › 4 snapshots written from 1 test suite.
+ › 5 snapshots obsolete from 1 test suite. To remove them all, re-run mocha with `--update` to update them.
    ↳ test/Oracle.spec.ts
        • Oracle #grow gas for growing by 1 slot when index != cardinality - 1 1
        • Oracle #grow gas for growing by 1 slot when index == cardinality - 1 1
        • Oracle #grow gas for growing by 10 slots when index != cardinality - 1 1
        • Oracle #grow gas for growing by 10 slots when index == cardinality - 1 1
        • Oracle #initialize gas 1
-       • Oracle #observe before initialization gas for single observation at current time counterfactually computed 1
 
-  41 passing (10m)
+  67 passing
   24 pending
-  30 failing
+  4 failing
 
   1) Oracle
        #observe
          before initialization
            fails if an older observation does not exist:
-     AssertionError: Expected transaction to be reverted with OLD, but other exception was thrown: Error: missing revert data in call exception; Transaction reverted without a reason string [ See: https://links.ethers.org/v5-errors-CALL_EXCEPTION ] (data="0x", transaction={"from":"0xF113C0c7741E1351A6263c7e8cF693494BCf58F7","to":"0x7451351499A36B3d0E937beB27B82795A36e7388","data":"0x883bdbfd000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000001","accessList":null}, error={"name":"ProviderError","_stack":"ProviderError: HttpProviderError\n    at HttpProvider.request (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/hardhat/src/internal/core/providers/http.ts:83:19)\n    at LocalAccountsProvider.request (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/hardhat/src/internal/core/providers/accounts.ts:187:34)\n    at runMicrotasks (<anonymous>)\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)\n    at async EthersProviderWrapper.send (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/@nomiclabs/hardhat-ethers/src/internal/ethers-provider-wrapper.ts:13:20)","code":1,"_isProviderError":true}, code=CALL_EXCEPTION, version=providers/5.7.2)
+     AssertionError: Expected transaction to be reverted with OLD, but other exception was thrown: Error: missing revert data in call exception; Transaction reverted without a reason string [ See: https://links.ethers.org/v5-errors-CALL_EXCEPTION ] (data="0x", transaction={"from":"0xF113C0c7741E1351A6263c7e8cF693494BCf58F7","to":"0x6d77C4530A6Ad90B6301e1eE731fBbf9F54D1c9A","data":"0x883bdbfd000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000001","accessList":null}, error={"name":"ProviderError","_stack":"ProviderError: HttpProviderError\n    at HttpProvider.request (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/hardhat/src/internal/core/providers/http.ts:83:19)\n    at LocalAccountsProvider.request (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/hardhat/src/internal/core/providers/accounts.ts:187:34)\n    at runMicrotasks (<anonymous>)\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)\n    at async EthersProviderWrapper.send (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/@nomiclabs/hardhat-ethers/src/internal/ethers-provider-wrapper.ts:13:20)","code":1,"_isProviderError":true}, code=CALL_EXCEPTION, version=providers/5.7.2)
   
 
   2) Oracle
        #observe
          before initialization
-           does not fail across overflow boundary:
-     Error: missing revert data in call exception; Transaction reverted without a reason string [ See: https://links.ethers.org/v5-errors-CALL_EXCEPTION ] (data="0x", transaction={"from":"0xF113C0c7741E1351A6263c7e8cF693494BCf58F7","to":"0x108AADeaB6d60Fd663BAd1b33cDD927C65273B67","data":"0x883bdbfd000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000001","accessList":null}, error={"name":"ProviderError","_stack":"ProviderError: HttpProviderError\n    at HttpProvider.request (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/hardhat/src/internal/core/providers/http.ts:83:19)\n    at LocalAccountsProvider.request (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/hardhat/src/internal/core/providers/accounts.ts:187:34)\n    at runMicrotasks (<anonymous>)\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)\n    at async EthersProviderWrapper.send (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/@nomiclabs/hardhat-ethers/src/internal/ethers-provider-wrapper.ts:13:20)","code":1,"_isProviderError":true}, code=CALL_EXCEPTION, version=providers/5.7.2)
-      at Logger.makeError (node_modules/@ethersproject/providers/node_modules/@ethersproject/logger/src.ts/index.ts:269:28)
-      at Logger.throwError (node_modules/@ethersproject/providers/node_modules/@ethersproject/logger/src.ts/index.ts:281:20)
-      at checkError (node_modules/@ethersproject/providers/src.ts/json-rpc-provider.ts:66:16)
-      at EthersProviderWrapper.<anonymous> (node_modules/@ethersproject/providers/src.ts/json-rpc-provider.ts:642:20)
-      at step (node_modules/@ethersproject/providers/lib/json-rpc-provider.js:48:23)
-      at Object.throw (node_modules/@ethersproject/providers/lib/json-rpc-provider.js:29:53)
-      at rejected (node_modules/@ethersproject/providers/lib/json-rpc-provider.js:21:65)
-      at runMicrotasks (<anonymous>)
-      at processTicksAndRejections (node:internal/process/task_queues:96:5)
+           single observation in past but not earlier than secondsAgo:
+     AssertionError: Expected transaction to be reverted with OLD, but other exception was thrown: Error: missing revert data in call exception; Transaction reverted without a reason string [ See: https://links.ethers.org/v5-errors-CALL_EXCEPTION ] (data="0x", transaction={"from":"0xF113C0c7741E1351A6263c7e8cF693494BCf58F7","to":"0x457344e8Fb4e7a4688C6Ba2216eB9cC99d2092A1","data":"0x883bdbfd000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000004","accessList":null}, error={"name":"ProviderError","_stack":"ProviderError: HttpProviderError\n    at HttpProvider.request (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/hardhat/src/internal/core/providers/http.ts:83:19)\n    at LocalAccountsProvider.request (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/hardhat/src/internal/core/providers/accounts.ts:187:34)\n    at runMicrotasks (<anonymous>)\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)\n    at async EthersProviderWrapper.send (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/@nomiclabs/hardhat-ethers/src/internal/ethers-provider-wrapper.ts:13:20)","code":1,"_isProviderError":true}, code=CALL_EXCEPTION, version=providers/5.7.2)
+  
 
   3) Oracle
        #observe
-         before initialization
-           single observation at current time:
-     Error: missing revert data in call exception; Transaction reverted without a reason string [ See: https://links.ethers.org/v5-errors-CALL_EXCEPTION ] (data="0x", transaction={"from":"0xF113C0c7741E1351A6263c7e8cF693494BCf58F7","to":"0xCda850009fcBa11A4703b3080cA5F1a350C6D23e","data":"0x883bdbfd000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000","accessList":null}, error={"name":"ProviderError","_stack":"ProviderError: HttpProviderError\n    at HttpProvider.request (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/hardhat/src/internal/core/providers/http.ts:83:19)\n    at LocalAccountsProvider.request (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/hardhat/src/internal/core/providers/accounts.ts:187:34)\n    at runMicrotasks (<anonymous>)\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)\n    at async EthersProviderWrapper.send (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/@nomiclabs/hardhat-ethers/src/internal/ethers-provider-wrapper.ts:13:20)","code":1,"_isProviderError":true}, code=CALL_EXCEPTION, version=providers/5.7.2)
-      at Logger.makeError (node_modules/@ethersproject/providers/node_modules/@ethersproject/logger/src.ts/index.ts:269:28)
-      at Logger.throwError (node_modules/@ethersproject/providers/node_modules/@ethersproject/logger/src.ts/index.ts:281:20)
-      at checkError (node_modules/@ethersproject/providers/src.ts/json-rpc-provider.ts:66:16)
-      at EthersProviderWrapper.<anonymous> (node_modules/@ethersproject/providers/src.ts/json-rpc-provider.ts:642:20)
-      at step (node_modules/@ethersproject/providers/lib/json-rpc-provider.js:48:23)
-      at Object.throw (node_modules/@ethersproject/providers/lib/json-rpc-provider.js:29:53)
-      at rejected (node_modules/@ethersproject/providers/lib/json-rpc-provider.js:21:65)
-      at runMicrotasks (<anonymous>)
-      at processTicksAndRejections (node:internal/process/task_queues:96:5)
+         initialized with 5 observations with starting time of 5
+           older than oldest reverts:
+     AssertionError: Expected transaction to be reverted with OLD, but other exception was thrown: Error: missing revert data in call exception; Transaction reverted without a reason string [ See: https://links.ethers.org/v5-errors-CALL_EXCEPTION ] (data="0x", transaction={"from":"0xF113C0c7741E1351A6263c7e8cF693494BCf58F7","to":"0x13887C1Cc251FFE42d4E4c7B68C910Cc953b2403","data":"0x883bdbfd00000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000000000f","accessList":null}, error={"name":"ProviderError","_stack":"ProviderError: HttpProviderError\n    at HttpProvider.request (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/hardhat/src/internal/core/providers/http.ts:83:19)\n    at LocalAccountsProvider.request (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/hardhat/src/internal/core/providers/accounts.ts:187:34)\n    at runMicrotasks (<anonymous>)\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)\n    at async EthersProviderWrapper.send (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/@nomiclabs/hardhat-ethers/src/internal/ethers-provider-wrapper.ts:13:20)","code":1,"_isProviderError":true}, code=CALL_EXCEPTION, version=providers/5.7.2)
+  
 
   4) Oracle
        #observe
-         before initialization
-           single observation in past but not earlier than secondsAgo:
-     AssertionError: Expected transaction to be reverted with OLD, but other exception was thrown: Error: missing revert data in call exception; Transaction reverted without a reason string [ See: https://links.ethers.org/v5-errors-CALL_EXCEPTION ] (data="0x", transaction={"from":"0xF113C0c7741E1351A6263c7e8cF693494BCf58F7","to":"0xA1d121c92A958154e810e343aA180F15d82d9eb7","data":"0x883bdbfd000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000004","accessList":null}, error={"name":"ProviderError","_stack":"ProviderError: HttpProviderError\n    at HttpProvider.request (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/hardhat/src/internal/core/providers/http.ts:83:19)\n    at LocalAccountsProvider.request (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/hardhat/src/internal/core/providers/accounts.ts:187:34)\n    at runMicrotasks (<anonymous>)\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)\n    at async EthersProviderWrapper.send (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/@nomiclabs/hardhat-ethers/src/internal/ethers-provider-wrapper.ts:13:20)","code":1,"_isProviderError":true}, code=CALL_EXCEPTION, version=providers/5.7.2)
-  
-
-  5) Oracle
-       #observe
-         before initialization
-           single observation in past at exactly seconds ago:
-     Error: missing revert data in call exception; Transaction reverted without a reason string [ See: https://links.ethers.org/v5-errors-CALL_EXCEPTION ] (data="0x", transaction={"from":"0xF113C0c7741E1351A6263c7e8cF693494BCf58F7","to":"0x0b11D249a208f571930103013F612cbBa4fF970b","data":"0x883bdbfd000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000003","accessList":null}, error={"name":"ProviderError","_stack":"ProviderError: HttpProviderError\n    at HttpProvider.request (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/hardhat/src/internal/core/providers/http.ts:83:19)\n    at LocalAccountsProvider.request (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/hardhat/src/internal/core/providers/accounts.ts:187:34)\n    at runMicrotasks (<anonymous>)\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)\n    at async EthersProviderWrapper.send (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/@nomiclabs/hardhat-ethers/src/internal/ethers-provider-wrapper.ts:13:20)","code":1,"_isProviderError":true}, code=CALL_EXCEPTION, version=providers/5.7.2)
-      at Logger.makeError (node_modules/@ethersproject/providers/node_modules/@ethersproject/logger/src.ts/index.ts:269:28)
-      at Logger.throwError (node_modules/@ethersproject/providers/node_modules/@ethersproject/logger/src.ts/index.ts:281:20)
-      at checkError (node_modules/@ethersproject/providers/src.ts/json-rpc-provider.ts:66:16)
-      at EthersProviderWrapper.<anonymous> (node_modules/@ethersproject/providers/src.ts/json-rpc-provider.ts:642:20)
-      at step (node_modules/@ethersproject/providers/lib/json-rpc-provider.js:48:23)
-      at Object.throw (node_modules/@ethersproject/providers/lib/json-rpc-provider.js:29:53)
-      at rejected (node_modules/@ethersproject/providers/lib/json-rpc-provider.js:21:65)
-      at runMicrotasks (<anonymous>)
-      at processTicksAndRejections (node:internal/process/task_queues:96:5)
-
-  6) Oracle
-       #observe
-         before initialization
-           single observation in past counterfactual in past:
-     Error: missing revert data in call exception; Transaction reverted without a reason string [ See: https://links.ethers.org/v5-errors-CALL_EXCEPTION ] (data="0x", transaction={"from":"0xF113C0c7741E1351A6263c7e8cF693494BCf58F7","to":"0x8e17Ec67B34d34C8412E3E201c8C37F65822696D","data":"0x883bdbfd000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000001","accessList":null}, error={"name":"ProviderError","_stack":"ProviderError: HttpProviderError\n    at HttpProvider.request (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/hardhat/src/internal/core/providers/http.ts:83:19)\n    at LocalAccountsProvider.request (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/hardhat/src/internal/core/providers/accounts.ts:187:34)\n    at runMicrotasks (<anonymous>)\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)\n    at async EthersProviderWrapper.send (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/@nomiclabs/hardhat-ethers/src/internal/ethers-provider-wrapper.ts:13:20)","code":1,"_isProviderError":true}, code=CALL_EXCEPTION, version=providers/5.7.2)
-      at Logger.makeError (node_modules/@ethersproject/providers/node_modules/@ethersproject/logger/src.ts/index.ts:269:28)
-      at Logger.throwError (node_modules/@ethersproject/providers/node_modules/@ethersproject/logger/src.ts/index.ts:281:20)
-      at checkError (node_modules/@ethersproject/providers/src.ts/json-rpc-provider.ts:66:16)
-      at EthersProviderWrapper.<anonymous> (node_modules/@ethersproject/providers/src.ts/json-rpc-provider.ts:642:20)
-      at step (node_modules/@ethersproject/providers/lib/json-rpc-provider.js:48:23)
-      at Object.throw (node_modules/@ethersproject/providers/lib/json-rpc-provider.js:29:53)
-      at rejected (node_modules/@ethersproject/providers/lib/json-rpc-provider.js:21:65)
-      at runMicrotasks (<anonymous>)
-      at processTicksAndRejections (node:internal/process/task_queues:96:5)
-
-  7) Oracle
-       #observe
-         before initialization
-           single observation in past counterfactual now:
-     Error: missing revert data in call exception; Transaction reverted without a reason string [ See: https://links.ethers.org/v5-errors-CALL_EXCEPTION ] (data="0x", transaction={"from":"0xF113C0c7741E1351A6263c7e8cF693494BCf58F7","to":"0x39862A6643bFE90B351101428510b4348Ccb124a","data":"0x883bdbfd000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000","accessList":null}, error={"name":"ProviderError","_stack":"ProviderError: HttpProviderError\n    at HttpProvider.request (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/hardhat/src/internal/core/providers/http.ts:83:19)\n    at LocalAccountsProvider.request (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/hardhat/src/internal/core/providers/accounts.ts:187:34)\n    at runMicrotasks (<anonymous>)\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)\n    at async EthersProviderWrapper.send (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/@nomiclabs/hardhat-ethers/src/internal/ethers-provider-wrapper.ts:13:20)","code":1,"_isProviderError":true}, code=CALL_EXCEPTION, version=providers/5.7.2)
-      at Logger.makeError (node_modules/@ethersproject/providers/node_modules/@ethersproject/logger/src.ts/index.ts:269:28)
-      at Logger.throwError (node_modules/@ethersproject/providers/node_modules/@ethersproject/logger/src.ts/index.ts:281:20)
-      at checkError (node_modules/@ethersproject/providers/src.ts/json-rpc-provider.ts:66:16)
-      at EthersProviderWrapper.<anonymous> (node_modules/@ethersproject/providers/src.ts/json-rpc-provider.ts:642:20)
-      at step (node_modules/@ethersproject/providers/lib/json-rpc-provider.js:48:23)
-      at Object.throw (node_modules/@ethersproject/providers/lib/json-rpc-provider.js:29:53)
-      at rejected (node_modules/@ethersproject/providers/lib/json-rpc-provider.js:21:65)
-      at runMicrotasks (<anonymous>)
-      at processTicksAndRejections (node:internal/process/task_queues:96:5)
-
-  8) Oracle
-       #observe
-         before initialization
-           two observations in chronological order 0 seconds ago counterfactual:
-     AssertionError: Expected "-20" to be equal -13
-      at Context.<anonymous> (test/Oracle.spec.ts:413:35)
-      at runMicrotasks (<anonymous>)
-      at processTicksAndRejections (node:internal/process/task_queues:96:5)
-
-  9) Oracle
-       #observe
-         before initialization
-           two observations in chronological order seconds ago is exactly on first observation:
-     Error: missing revert data in call exception; Transaction reverted without a reason string [ See: https://links.ethers.org/v5-errors-CALL_EXCEPTION ] (data="0x", transaction={"from":"0xF113C0c7741E1351A6263c7e8cF693494BCf58F7","to":"0xDF73D4c5C62364F16E12bda3d7949858c2523773","data":"0x883bdbfd00000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000000000b","accessList":null}, error={"name":"ProviderError","_stack":"ProviderError: HttpProviderError\n    at HttpProvider.request (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/hardhat/src/internal/core/providers/http.ts:83:19)\n    at LocalAccountsProvider.request (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/hardhat/src/internal/core/providers/accounts.ts:187:34)\n    at runMicrotasks (<anonymous>)\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)\n    at async EthersProviderWrapper.send (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/@nomiclabs/hardhat-ethers/src/internal/ethers-provider-wrapper.ts:13:20)","code":1,"_isProviderError":true}, code=CALL_EXCEPTION, version=providers/5.7.2)
-      at Logger.makeError (node_modules/@ethersproject/providers/node_modules/@ethersproject/logger/src.ts/index.ts:269:28)
-      at Logger.throwError (node_modules/@ethersproject/providers/node_modules/@ethersproject/logger/src.ts/index.ts:281:20)
-      at checkError (node_modules/@ethersproject/providers/src.ts/json-rpc-provider.ts:66:16)
-      at EthersProviderWrapper.<anonymous> (node_modules/@ethersproject/providers/src.ts/json-rpc-provider.ts:642:20)
-      at step (node_modules/@ethersproject/providers/lib/json-rpc-provider.js:48:23)
-      at Object.throw (node_modules/@ethersproject/providers/lib/json-rpc-provider.js:29:53)
-      at rejected (node_modules/@ethersproject/providers/lib/json-rpc-provider.js:21:65)
-      at runMicrotasks (<anonymous>)
-      at processTicksAndRejections (node:internal/process/task_queues:96:5)
-
-  10) Oracle
-       #observe
-         before initialization
-           two observations in chronological order seconds ago is between first and second:
-     Error: missing revert data in call exception; Transaction reverted without a reason string [ See: https://links.ethers.org/v5-errors-CALL_EXCEPTION ] (data="0x", transaction={"from":"0xF113C0c7741E1351A6263c7e8cF693494BCf58F7","to":"0x4deCA47Edec8c83Fa0eb583766F0a3aeeEe45372","data":"0x883bdbfd000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000009","accessList":null}, error={"name":"ProviderError","_stack":"ProviderError: HttpProviderError\n    at HttpProvider.request (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/hardhat/src/internal/core/providers/http.ts:83:19)\n    at LocalAccountsProvider.request (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/hardhat/src/internal/core/providers/accounts.ts:187:34)\n    at runMicrotasks (<anonymous>)\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)\n    at async EthersProviderWrapper.send (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/@nomiclabs/hardhat-ethers/src/internal/ethers-provider-wrapper.ts:13:20)","code":1,"_isProviderError":true}, code=CALL_EXCEPTION, version=providers/5.7.2)
-      at Logger.makeError (node_modules/@ethersproject/providers/node_modules/@ethersproject/logger/src.ts/index.ts:269:28)
-      at Logger.throwError (node_modules/@ethersproject/providers/node_modules/@ethersproject/logger/src.ts/index.ts:281:20)
-      at checkError (node_modules/@ethersproject/providers/src.ts/json-rpc-provider.ts:66:16)
-      at EthersProviderWrapper.<anonymous> (node_modules/@ethersproject/providers/src.ts/json-rpc-provider.ts:642:20)
-      at step (node_modules/@ethersproject/providers/lib/json-rpc-provider.js:48:23)
-      at Object.throw (node_modules/@ethersproject/providers/lib/json-rpc-provider.js:29:53)
-      at rejected (node_modules/@ethersproject/providers/lib/json-rpc-provider.js:21:65)
-      at runMicrotasks (<anonymous>)
-      at processTicksAndRejections (node:internal/process/task_queues:96:5)
-
-  11) Oracle
-       #observe
-         before initialization
-           two observations in reverse order 0 seconds ago counterfactual:
-     AssertionError: Expected "-17" to be equal -52
-      at Context.<anonymous> (test/Oracle.spec.ts:454:35)
-      at runMicrotasks (<anonymous>)
-      at processTicksAndRejections (node:internal/process/task_queues:96:5)
-
-  12) Oracle
-       #observe
-         before initialization
-           two observations in reverse order seconds ago is exactly on first observation:
-     Error: missing revert data in call exception; Transaction reverted without a reason string [ See: https://links.ethers.org/v5-errors-CALL_EXCEPTION ] (data="0x", transaction={"from":"0xF113C0c7741E1351A6263c7e8cF693494BCf58F7","to":"0x70A44a4a1467db7438f0698A0A87A1690adB147a","data":"0x883bdbfd00000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000000000a","accessList":null}, error={"name":"ProviderError","_stack":"ProviderError: HttpProviderError\n    at HttpProvider.request (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/hardhat/src/internal/core/providers/http.ts:83:19)\n    at LocalAccountsProvider.request (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/hardhat/src/internal/core/providers/accounts.ts:187:34)\n    at runMicrotasks (<anonymous>)\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)\n    at async EthersProviderWrapper.send (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/@nomiclabs/hardhat-ethers/src/internal/ethers-provider-wrapper.ts:13:20)","code":1,"_isProviderError":true}, code=CALL_EXCEPTION, version=providers/5.7.2)
-      at Logger.makeError (node_modules/@ethersproject/providers/node_modules/@ethersproject/logger/src.ts/index.ts:269:28)
-      at Logger.throwError (node_modules/@ethersproject/providers/node_modules/@ethersproject/logger/src.ts/index.ts:281:20)
-      at checkError (node_modules/@ethersproject/providers/src.ts/json-rpc-provider.ts:66:16)
-      at EthersProviderWrapper.<anonymous> (node_modules/@ethersproject/providers/src.ts/json-rpc-provider.ts:642:20)
-      at step (node_modules/@ethersproject/providers/lib/json-rpc-provider.js:48:23)
-      at Object.throw (node_modules/@ethersproject/providers/lib/json-rpc-provider.js:29:53)
-      at rejected (node_modules/@ethersproject/providers/lib/json-rpc-provider.js:21:65)
-      at runMicrotasks (<anonymous>)
-      at processTicksAndRejections (node:internal/process/task_queues:96:5)
-
-  13) Oracle
-       #observe
-         before initialization
-           two observations in reverse order seconds ago is between first and second:
-     Error: missing revert data in call exception; Transaction reverted without a reason string [ See: https://links.ethers.org/v5-errors-CALL_EXCEPTION ] (data="0x", transaction={"from":"0xF113C0c7741E1351A6263c7e8cF693494BCf58F7","to":"0xf4A856B2a6664592FD66741d507aae9bdD20A695","data":"0x883bdbfd000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000009","accessList":null}, error={"name":"ProviderError","_stack":"ProviderError: HttpProviderError\n    at HttpProvider.request (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/hardhat/src/internal/core/providers/http.ts:83:19)\n    at LocalAccountsProvider.request (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/hardhat/src/internal/core/providers/accounts.ts:187:34)\n    at runMicrotasks (<anonymous>)\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)\n    at async EthersProviderWrapper.send (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/@nomiclabs/hardhat-ethers/src/internal/ethers-provider-wrapper.ts:13:20)","code":1,"_isProviderError":true}, code=CALL_EXCEPTION, version=providers/5.7.2)
-      at Logger.makeError (node_modules/@ethersproject/providers/node_modules/@ethersproject/logger/src.ts/index.ts:269:28)
-      at Logger.throwError (node_modules/@ethersproject/providers/node_modules/@ethersproject/logger/src.ts/index.ts:281:20)
-      at checkError (node_modules/@ethersproject/providers/src.ts/json-rpc-provider.ts:66:16)
-      at EthersProviderWrapper.<anonymous> (node_modules/@ethersproject/providers/src.ts/json-rpc-provider.ts:642:20)
-      at step (node_modules/@ethersproject/providers/lib/json-rpc-provider.js:48:23)
-      at Object.throw (node_modules/@ethersproject/providers/lib/json-rpc-provider.js:29:53)
-      at rejected (node_modules/@ethersproject/providers/lib/json-rpc-provider.js:21:65)
-      at runMicrotasks (<anonymous>)
-      at processTicksAndRejections (node:internal/process/task_queues:96:5)
-
-  14) Oracle
-       #observe
-         before initialization
-           can fetch multiple observations:
-     Error: missing revert data in call exception; Transaction reverted without a reason string [ See: https://links.ethers.org/v5-errors-CALL_EXCEPTION ] (data="0x", transaction={"from":"0xF113C0c7741E1351A6263c7e8cF693494BCf58F7","to":"0x029B1936DB5CEdf42108b69565Beb8baFe0C1727","data":"0x883bdbfd00000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000006000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000030000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000000000000000000d000000000000000000000000000000000000000000000000000000000000000f0000000000000000000000000000000000000000000000000000000000000012","accessList":null}, error={"name":"ProviderError","_stack":"ProviderError: HttpProviderError\n    at HttpProvider.request (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/hardhat/src/internal/core/providers/http.ts:83:19)\n    at LocalAccountsProvider.request (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/hardhat/src/internal/core/providers/accounts.ts:187:34)\n    at runMicrotasks (<anonymous>)\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)\n    at async EthersProviderWrapper.send (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/@nomiclabs/hardhat-ethers/src/internal/ethers-provider-wrapper.ts:13:20)","code":1,"_isProviderError":true}, code=CALL_EXCEPTION, version=providers/5.7.2)
-      at Logger.makeError (node_modules/@ethersproject/providers/node_modules/@ethersproject/logger/src.ts/index.ts:269:28)
-      at Logger.throwError (node_modules/@ethersproject/providers/node_modules/@ethersproject/logger/src.ts/index.ts:281:20)
-      at checkError (node_modules/@ethersproject/providers/src.ts/json-rpc-provider.ts:66:16)
-      at EthersProviderWrapper.<anonymous> (node_modules/@ethersproject/providers/src.ts/json-rpc-provider.ts:642:20)
-      at step (node_modules/@ethersproject/providers/lib/json-rpc-provider.js:48:23)
-      at Object.throw (node_modules/@ethersproject/providers/lib/json-rpc-provider.js:29:53)
-      at rejected (node_modules/@ethersproject/providers/lib/json-rpc-provider.js:21:65)
-      at runMicrotasks (<anonymous>)
-      at processTicksAndRejections (node:internal/process/task_queues:96:5)
-
-  15) Oracle
-       #observe
-         before initialization
-           gas for observe since most recent:
-     Error: missing revert data in call exception; Transaction reverted without a reason string [ See: https://links.ethers.org/v5-errors-CALL_EXCEPTION ] (data="0x", transaction={"from":"0xF113C0c7741E1351A6263c7e8cF693494BCf58F7","to":"0xFC7abA4ef27Aa1EAf89Fe629cB22eF0c4BD9e696","data":"0x74e69cef000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000001","accessList":null}, error={"name":"ProviderError","_stack":"ProviderError: HttpProviderError\n    at HttpProvider.request (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/hardhat/src/internal/core/providers/http.ts:83:19)\n    at LocalAccountsProvider.request (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/hardhat/src/internal/core/providers/accounts.ts:187:34)\n    at runMicrotasks (<anonymous>)\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)\n    at async EthersProviderWrapper.send (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/@nomiclabs/hardhat-ethers/src/internal/ethers-provider-wrapper.ts:13:20)","code":1,"_isProviderError":true}, code=CALL_EXCEPTION, version=providers/5.7.2)
-      at Logger.makeError (node_modules/@ethersproject/providers/node_modules/@ethersproject/logger/src.ts/index.ts:269:28)
-      at Logger.throwError (node_modules/@ethersproject/providers/node_modules/@ethersproject/logger/src.ts/index.ts:281:20)
-      at checkError (node_modules/@ethersproject/providers/src.ts/json-rpc-provider.ts:66:16)
-      at EthersProviderWrapper.<anonymous> (node_modules/@ethersproject/providers/src.ts/json-rpc-provider.ts:642:20)
-      at step (node_modules/@ethersproject/providers/lib/json-rpc-provider.js:48:23)
-      at Object.throw (node_modules/@ethersproject/providers/lib/json-rpc-provider.js:29:53)
-      at rejected (node_modules/@ethersproject/providers/lib/json-rpc-provider.js:21:65)
-      at runMicrotasks (<anonymous>)
-      at processTicksAndRejections (node:internal/process/task_queues:96:5)
-
-  16) Oracle
-       #observe
-         before initialization
-           gas for single observation at current time:
-     Error: missing revert data in call exception; Transaction reverted without a reason string [ See: https://links.ethers.org/v5-errors-CALL_EXCEPTION ] (data="0x", transaction={"from":"0xF113C0c7741E1351A6263c7e8cF693494BCf58F7","to":"0x79d63c46C771D45023FF4B37108957eA8C950b85","data":"0x74e69cef000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000","accessList":null}, error={"name":"ProviderError","_stack":"ProviderError: HttpProviderError\n    at HttpProvider.request (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/hardhat/src/internal/core/providers/http.ts:83:19)\n    at LocalAccountsProvider.request (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/hardhat/src/internal/core/providers/accounts.ts:187:34)\n    at runMicrotasks (<anonymous>)\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)\n    at async EthersProviderWrapper.send (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/@nomiclabs/hardhat-ethers/src/internal/ethers-provider-wrapper.ts:13:20)","code":1,"_isProviderError":true}, code=CALL_EXCEPTION, version=providers/5.7.2)
-      at Logger.makeError (node_modules/@ethersproject/providers/node_modules/@ethersproject/logger/src.ts/index.ts:269:28)
-      at Logger.throwError (node_modules/@ethersproject/providers/node_modules/@ethersproject/logger/src.ts/index.ts:281:20)
-      at checkError (node_modules/@ethersproject/providers/src.ts/json-rpc-provider.ts:66:16)
-      at EthersProviderWrapper.<anonymous> (node_modules/@ethersproject/providers/src.ts/json-rpc-provider.ts:642:20)
-      at step (node_modules/@ethersproject/providers/lib/json-rpc-provider.js:48:23)
-      at Object.throw (node_modules/@ethersproject/providers/lib/json-rpc-provider.js:29:53)
-      at rejected (node_modules/@ethersproject/providers/lib/json-rpc-provider.js:21:65)
-      at runMicrotasks (<anonymous>)
-      at processTicksAndRejections (node:internal/process/task_queues:96:5)
-
-  17) Oracle
-       #observe
-         before initialization
-           gas for single observation at current time counterfactually computed:
-     Error: missing revert data in call exception; Transaction reverted without a reason string [ See: https://links.ethers.org/v5-errors-CALL_EXCEPTION ] (data="0x", transaction={"from":"0xF113C0c7741E1351A6263c7e8cF693494BCf58F7","to":"0xCC689B1522b020269B45Be4b30fD8d4451AEdecb","data":"0x74e69cef000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000","accessList":null}, error={"name":"ProviderError","_stack":"ProviderError: HttpProviderError\n    at HttpProvider.request (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/hardhat/src/internal/core/providers/http.ts:83:19)\n    at LocalAccountsProvider.request (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/hardhat/src/internal/core/providers/accounts.ts:187:34)\n    at runMicrotasks (<anonymous>)\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)\n    at async EthersProviderWrapper.send (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/@nomiclabs/hardhat-ethers/src/internal/ethers-provider-wrapper.ts:13:20)","code":1,"_isProviderError":true}, code=CALL_EXCEPTION, version=providers/5.7.2)
-      at Logger.makeError (node_modules/@ethersproject/providers/node_modules/@ethersproject/logger/src.ts/index.ts:269:28)
-      at Logger.throwError (node_modules/@ethersproject/providers/node_modules/@ethersproject/logger/src.ts/index.ts:281:20)
-      at checkError (node_modules/@ethersproject/providers/src.ts/json-rpc-provider.ts:66:16)
-      at EthersProviderWrapper.<anonymous> (node_modules/@ethersproject/providers/src.ts/json-rpc-provider.ts:642:20)
-      at step (node_modules/@ethersproject/providers/lib/json-rpc-provider.js:48:23)
-      at Object.throw (node_modules/@ethersproject/providers/lib/json-rpc-provider.js:29:53)
-      at rejected (node_modules/@ethersproject/providers/lib/json-rpc-provider.js:21:65)
-      at runMicrotasks (<anonymous>)
-      at processTicksAndRejections (node:internal/process/task_queues:96:5)
-
-  18) Oracle
-       #observe
-         initialized with 5 observations with starting time of 5
-           latest observation 5 seconds after latest:
-     AssertionError: Expected "-41" to be equal -21
-      at Context.<anonymous> (test/Oracle.spec.ts:561:37)
-      at runMicrotasks (<anonymous>)
-      at processTicksAndRejections (node:internal/process/task_queues:96:5)
-
-  19) Oracle
-       #observe
-         initialized with 5 observations with starting time of 5
-           current observation 5 seconds after latest:
-     AssertionError: Expected "-21" to be equal 9
-      at Context.<anonymous> (test/Oracle.spec.ts:567:37)
-      at runMicrotasks (<anonymous>)
-      at processTicksAndRejections (node:internal/process/task_queues:96:5)
-
-  20) Oracle
-       #observe
-         initialized with 5 observations with starting time of 5
-           between latest observation and just before latest observation after the latest observation:
-     AssertionError: Expected "-41" to be equal -33
-      at Context.<anonymous> (test/Oracle.spec.ts:578:37)
-      at runMicrotasks (<anonymous>)
-      at processTicksAndRejections (node:internal/process/task_queues:96:5)
-
-  21) Oracle
-       #observe
-         initialized with 5 observations with starting time of 5
-           older than oldest reverts:
-     AssertionError: Expected transaction to be reverted with OLD, but other exception was thrown: Error: missing revert data in call exception; Transaction reverted without a reason string [ See: https://links.ethers.org/v5-errors-CALL_EXCEPTION ] (data="0x", transaction={"from":"0xF113C0c7741E1351A6263c7e8cF693494BCf58F7","to":"0xc2Fc4e091519e80C8ee24150f649B147592B6349","data":"0x883bdbfd00000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000000000f","accessList":null}, error={"name":"ProviderError","_stack":"ProviderError: HttpProviderError\n    at HttpProvider.request (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/hardhat/src/internal/core/providers/http.ts:83:19)\n    at LocalAccountsProvider.request (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/hardhat/src/internal/core/providers/accounts.ts:187:34)\n    at runMicrotasks (<anonymous>)\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)\n    at async EthersProviderWrapper.send (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/@nomiclabs/hardhat-ethers/src/internal/ethers-provider-wrapper.ts:13:20)","code":1,"_isProviderError":true}, code=CALL_EXCEPTION, version=providers/5.7.2)
-  
-
-  22) Oracle
-       #observe
-         initialized with 5 observations with starting time of 5
-           oldest observation after some time:
-     Error: missing revert data in call exception; Transaction reverted without a reason string [ See: https://links.ethers.org/v5-errors-CALL_EXCEPTION ] (data="0x", transaction={"from":"0xF113C0c7741E1351A6263c7e8cF693494BCf58F7","to":"0x337798562200fD4099BadaaC863857A9f195dD23","data":"0x883bdbfd000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000014","accessList":null}, error={"name":"ProviderError","_stack":"ProviderError: HttpProviderError\n    at HttpProvider.request (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/hardhat/src/internal/core/providers/http.ts:83:19)\n    at LocalAccountsProvider.request (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/hardhat/src/internal/core/providers/accounts.ts:187:34)\n    at runMicrotasks (<anonymous>)\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)\n    at async EthersProviderWrapper.send (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/@nomiclabs/hardhat-ethers/src/internal/ethers-provider-wrapper.ts:13:20)","code":1,"_isProviderError":true}, code=CALL_EXCEPTION, version=providers/5.7.2)
-      at Logger.makeError (node_modules/@ethersproject/providers/node_modules/@ethersproject/logger/src.ts/index.ts:269:28)
-      at Logger.throwError (node_modules/@ethersproject/providers/node_modules/@ethersproject/logger/src.ts/index.ts:281:20)
-      at checkError (node_modules/@ethersproject/providers/src.ts/json-rpc-provider.ts:66:16)
-      at EthersProviderWrapper.<anonymous> (node_modules/@ethersproject/providers/src.ts/json-rpc-provider.ts:642:20)
-      at step (node_modules/@ethersproject/providers/lib/json-rpc-provider.js:48:23)
-      at Object.throw (node_modules/@ethersproject/providers/lib/json-rpc-provider.js:29:53)
-      at rejected (node_modules/@ethersproject/providers/lib/json-rpc-provider.js:21:65)
-      at runMicrotasks (<anonymous>)
-      at processTicksAndRejections (node:internal/process/task_queues:96:5)
-
-  23) Oracle
-       #observe
-         initialized with 5 observations with starting time of 5
-           fetch many values:
-     Error: missing revert data in call exception; Transaction reverted without a reason string [ See: https://links.ethers.org/v5-errors-CALL_EXCEPTION ] (data="0x", transaction={"from":"0xF113C0c7741E1351A6263c7e8cF693494BCf58F7","to":"0x3E3E677321d75200932decf305733D603DeD2dCE","data":"0x883bdbfd0000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000000700000000000000000000000000000000000000000000000000000000000000140000000000000000000000000000000000000000000000000000000000000011000000000000000000000000000000000000000000000000000000000000000d000000000000000000000000000000000000000000000000000000000000000a000000000000000000000000000000000000000000000000000000000000000500000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000","accessList":null}, error={"name":"ProviderError","_stack":"ProviderError: HttpProviderError\n    at HttpProvider.request (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/hardhat/src/internal/core/providers/http.ts:83:19)\n    at LocalAccountsProvider.request (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/hardhat/src/internal/core/providers/accounts.ts:187:34)\n    at runMicrotasks (<anonymous>)\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)\n    at async EthersProviderWrapper.send (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/@nomiclabs/hardhat-ethers/src/internal/ethers-provider-wrapper.ts:13:20)","code":1,"_isProviderError":true}, code=CALL_EXCEPTION, version=providers/5.7.2)
-      at Logger.makeError (node_modules/@ethersproject/providers/node_modules/@ethersproject/logger/src.ts/index.ts:269:28)
-      at Logger.throwError (node_modules/@ethersproject/providers/node_modules/@ethersproject/logger/src.ts/index.ts:281:20)
-      at checkError (node_modules/@ethersproject/providers/src.ts/json-rpc-provider.ts:66:16)
-      at EthersProviderWrapper.<anonymous> (node_modules/@ethersproject/providers/src.ts/json-rpc-provider.ts:642:20)
-      at step (node_modules/@ethersproject/providers/lib/json-rpc-provider.js:48:23)
-      at Object.throw (node_modules/@ethersproject/providers/lib/json-rpc-provider.js:29:53)
-      at rejected (node_modules/@ethersproject/providers/lib/json-rpc-provider.js:21:65)
-      at runMicrotasks (<anonymous>)
-      at processTicksAndRejections (node:internal/process/task_queues:96:5)
-
-  24) Oracle
-       #observe
-         initialized with 5 observations with starting time of 5
-           gas all of last 20 seconds:
-     Error: missing revert data in call exception; Transaction reverted without a reason string [ See: https://links.ethers.org/v5-errors-CALL_EXCEPTION ] (data="0x", transaction={"from":"0xF113C0c7741E1351A6263c7e8cF693494BCf58F7","to":"0x24a9b70897BF3C46baF6851d165d5c978b15A62C","data":"0x74e69cef0000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000001500000000000000000000000000000000000000000000000000000000000000140000000000000000000000000000000000000000000000000000000000000013000000000000000000000000000000000000000000000000000000000000001200000000000000000000000000000000000000000000000000000000000000110000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000f000000000000000000000000000000000000000000000000000000000000000e000000000000000000000000000000000000000000000000000000000000000d000000000000000000000000000000000000000000000000000000000000000c000000000000000000000000000000000000000000000000000000000000000b000000000000000000000000000000000000000000000000000000000000000a0000000000000000000000000000000000000000000000000000000000000009000000000000000000000000000000000000000000000000000000000000000800000000000000000000000000000000000000000000000000000000000000070000000000000000000000000000000000000000000000000000000000000006000000000000000000000000000000000000000000000000000000000000000500000000000000000000000000000000000000000000000000000000000000040000000000000000000000000000000000000000000000000000000000000003000000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000","accessList":null}, error={"name":"ProviderError","_stack":"ProviderError: HttpProviderError\n    at HttpProvider.request (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/hardhat/src/internal/core/providers/http.ts:83:19)\n    at LocalAccountsProvider.request (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/hardhat/src/internal/core/providers/accounts.ts:187:34)\n    at runMicrotasks (<anonymous>)\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)\n    at async EthersProviderWrapper.send (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/@nomiclabs/hardhat-ethers/src/internal/ethers-provider-wrapper.ts:13:20)","code":1,"_isProviderError":true}, code=CALL_EXCEPTION, version=providers/5.7.2)
-      at Logger.makeError (node_modules/@ethersproject/providers/node_modules/@ethersproject/logger/src.ts/index.ts:269:28)
-      at Logger.throwError (node_modules/@ethersproject/providers/node_modules/@ethersproject/logger/src.ts/index.ts:281:20)
-      at checkError (node_modules/@ethersproject/providers/src.ts/json-rpc-provider.ts:66:16)
-      at EthersProviderWrapper.<anonymous> (node_modules/@ethersproject/providers/src.ts/json-rpc-provider.ts:642:20)
-      at step (node_modules/@ethersproject/providers/lib/json-rpc-provider.js:48:23)
-      at Object.throw (node_modules/@ethersproject/providers/lib/json-rpc-provider.js:29:53)
-      at rejected (node_modules/@ethersproject/providers/lib/json-rpc-provider.js:21:65)
-      at runMicrotasks (<anonymous>)
-      at processTicksAndRejections (node:internal/process/task_queues:96:5)
-
-  25) Oracle
-       #observe
-         initialized with 5 observations with starting time of 4294967291
-           current observation 5 seconds after latest:
-     AssertionError: Expected "-21" to be equal 9
-      at Context.<anonymous> (test/Oracle.spec.ts:567:37)
-      at runMicrotasks (<anonymous>)
-      at processTicksAndRejections (node:internal/process/task_queues:96:5)
-
-  26) Oracle
-       #observe
-         initialized with 5 observations with starting time of 4294967291
-           between latest observation and just before latest observation after the latest observation:
-     AssertionError: Expected "-41" to be equal -33
-      at Context.<anonymous> (test/Oracle.spec.ts:578:37)
-      at runMicrotasks (<anonymous>)
-      at processTicksAndRejections (node:internal/process/task_queues:96:5)
-
-  27) Oracle
-       #observe
          initialized with 5 observations with starting time of 4294967291
            older than oldest reverts:
-     AssertionError: Expected transaction to be reverted with OLD, but other exception was thrown: Error: missing revert data in call exception; Transaction reverted without a reason string [ See: https://links.ethers.org/v5-errors-CALL_EXCEPTION ] (data="0x", transaction={"from":"0xF113C0c7741E1351A6263c7e8cF693494BCf58F7","to":"0x4c015510a66464B818Ff3C4B463B5318c611903C","data":"0x883bdbfd00000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000000000f","accessList":null}, error={"name":"ProviderError","_stack":"ProviderError: HttpProviderError\n    at HttpProvider.request (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/hardhat/src/internal/core/providers/http.ts:83:19)\n    at LocalAccountsProvider.request (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/hardhat/src/internal/core/providers/accounts.ts:187:34)\n    at runMicrotasks (<anonymous>)\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)\n    at async EthersProviderWrapper.send (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/@nomiclabs/hardhat-ethers/src/internal/ethers-provider-wrapper.ts:13:20)","code":1,"_isProviderError":true}, code=CALL_EXCEPTION, version=providers/5.7.2)
+     AssertionError: Expected transaction to be reverted with OLD, but other exception was thrown: Error: missing revert data in call exception; Transaction reverted without a reason string [ See: https://links.ethers.org/v5-errors-CALL_EXCEPTION ] (data="0x", transaction={"from":"0xF113C0c7741E1351A6263c7e8cF693494BCf58F7","to":"0xb9C4776Db18BBc7B2b612D0FC1c26fEEf8dE47dB","data":"0x883bdbfd00000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000000000f","accessList":null}, error={"name":"ProviderError","_stack":"ProviderError: HttpProviderError\n    at HttpProvider.request (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/hardhat/src/internal/core/providers/http.ts:83:19)\n    at LocalAccountsProvider.request (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/hardhat/src/internal/core/providers/accounts.ts:187:34)\n    at runMicrotasks (<anonymous>)\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)\n    at async EthersProviderWrapper.send (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/@nomiclabs/hardhat-ethers/src/internal/ethers-provider-wrapper.ts:13:20)","code":1,"_isProviderError":true}, code=CALL_EXCEPTION, version=providers/5.7.2)
   
-
-  28) Oracle
-       #observe
-         initialized with 5 observations with starting time of 4294967291
-           oldest observation after some time:
-     Error: missing revert data in call exception; Transaction reverted without a reason string [ See: https://links.ethers.org/v5-errors-CALL_EXCEPTION ] (data="0x", transaction={"from":"0xF113C0c7741E1351A6263c7e8cF693494BCf58F7","to":"0x12C776b8aE7D4F5977D9f5FfC30317a65a92D93C","data":"0x883bdbfd000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000014","accessList":null}, error={"name":"ProviderError","_stack":"ProviderError: HttpProviderError\n    at HttpProvider.request (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/hardhat/src/internal/core/providers/http.ts:83:19)\n    at LocalAccountsProvider.request (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/hardhat/src/internal/core/providers/accounts.ts:187:34)\n    at runMicrotasks (<anonymous>)\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)\n    at async EthersProviderWrapper.send (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/@nomiclabs/hardhat-ethers/src/internal/ethers-provider-wrapper.ts:13:20)","code":1,"_isProviderError":true}, code=CALL_EXCEPTION, version=providers/5.7.2)
-      at Logger.makeError (node_modules/@ethersproject/providers/node_modules/@ethersproject/logger/src.ts/index.ts:269:28)
-      at Logger.throwError (node_modules/@ethersproject/providers/node_modules/@ethersproject/logger/src.ts/index.ts:281:20)
-      at checkError (node_modules/@ethersproject/providers/src.ts/json-rpc-provider.ts:66:16)
-      at EthersProviderWrapper.<anonymous> (node_modules/@ethersproject/providers/src.ts/json-rpc-provider.ts:642:20)
-      at step (node_modules/@ethersproject/providers/lib/json-rpc-provider.js:48:23)
-      at Object.throw (node_modules/@ethersproject/providers/lib/json-rpc-provider.js:29:53)
-      at rejected (node_modules/@ethersproject/providers/lib/json-rpc-provider.js:21:65)
-      at runMicrotasks (<anonymous>)
-      at processTicksAndRejections (node:internal/process/task_queues:96:5)
-
-  29) Oracle
-       #observe
-         initialized with 5 observations with starting time of 4294967291
-           fetch many values:
-     Error: missing revert data in call exception; Transaction reverted without a reason string [ See: https://links.ethers.org/v5-errors-CALL_EXCEPTION ] (data="0x", transaction={"from":"0xF113C0c7741E1351A6263c7e8cF693494BCf58F7","to":"0xC7e34079fadedea1A5A5a14dACafb1B71d6119Bd","data":"0x883bdbfd0000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000000700000000000000000000000000000000000000000000000000000000000000140000000000000000000000000000000000000000000000000000000000000011000000000000000000000000000000000000000000000000000000000000000d000000000000000000000000000000000000000000000000000000000000000a000000000000000000000000000000000000000000000000000000000000000500000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000","accessList":null}, error={"name":"ProviderError","_stack":"ProviderError: HttpProviderError\n    at HttpProvider.request (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/hardhat/src/internal/core/providers/http.ts:83:19)\n    at LocalAccountsProvider.request (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/hardhat/src/internal/core/providers/accounts.ts:187:34)\n    at runMicrotasks (<anonymous>)\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)\n    at async EthersProviderWrapper.send (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/@nomiclabs/hardhat-ethers/src/internal/ethers-provider-wrapper.ts:13:20)","code":1,"_isProviderError":true}, code=CALL_EXCEPTION, version=providers/5.7.2)
-      at Logger.makeError (node_modules/@ethersproject/providers/node_modules/@ethersproject/logger/src.ts/index.ts:269:28)
-      at Logger.throwError (node_modules/@ethersproject/providers/node_modules/@ethersproject/logger/src.ts/index.ts:281:20)
-      at checkError (node_modules/@ethersproject/providers/src.ts/json-rpc-provider.ts:66:16)
-      at EthersProviderWrapper.<anonymous> (node_modules/@ethersproject/providers/src.ts/json-rpc-provider.ts:642:20)
-      at step (node_modules/@ethersproject/providers/lib/json-rpc-provider.js:48:23)
-      at Object.throw (node_modules/@ethersproject/providers/lib/json-rpc-provider.js:29:53)
-      at rejected (node_modules/@ethersproject/providers/lib/json-rpc-provider.js:21:65)
-      at runMicrotasks (<anonymous>)
-      at processTicksAndRejections (node:internal/process/task_queues:96:5)
-
-  30) Oracle
-       #observe
-         initialized with 5 observations with starting time of 4294967291
-           gas all of last 20 seconds:
-     Error: missing revert data in call exception; Transaction reverted without a reason string [ See: https://links.ethers.org/v5-errors-CALL_EXCEPTION ] (data="0x", transaction={"from":"0xF113C0c7741E1351A6263c7e8cF693494BCf58F7","to":"0x4EB7146168D3f04C16fbDFdbC82Dd005f2B42564","data":"0x74e69cef0000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000001500000000000000000000000000000000000000000000000000000000000000140000000000000000000000000000000000000000000000000000000000000013000000000000000000000000000000000000000000000000000000000000001200000000000000000000000000000000000000000000000000000000000000110000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000f000000000000000000000000000000000000000000000000000000000000000e000000000000000000000000000000000000000000000000000000000000000d000000000000000000000000000000000000000000000000000000000000000c000000000000000000000000000000000000000000000000000000000000000b000000000000000000000000000000000000000000000000000000000000000a0000000000000000000000000000000000000000000000000000000000000009000000000000000000000000000000000000000000000000000000000000000800000000000000000000000000000000000000000000000000000000000000070000000000000000000000000000000000000000000000000000000000000006000000000000000000000000000000000000000000000000000000000000000500000000000000000000000000000000000000000000000000000000000000040000000000000000000000000000000000000000000000000000000000000003000000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000","accessList":null}, error={"name":"ProviderError","_stack":"ProviderError: HttpProviderError\n    at HttpProvider.request (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/hardhat/src/internal/core/providers/http.ts:83:19)\n    at LocalAccountsProvider.request (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/hardhat/src/internal/core/providers/accounts.ts:187:34)\n    at runMicrotasks (<anonymous>)\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)\n    at async EthersProviderWrapper.send (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/@nomiclabs/hardhat-ethers/src/internal/ethers-provider-wrapper.ts:13:20)","code":1,"_isProviderError":true}, code=CALL_EXCEPTION, version=providers/5.7.2)
-      at Logger.makeError (node_modules/@ethersproject/providers/node_modules/@ethersproject/logger/src.ts/index.ts:269:28)
-      at Logger.throwError (node_modules/@ethersproject/providers/node_modules/@ethersproject/logger/src.ts/index.ts:281:20)
-      at checkError (node_modules/@ethersproject/providers/src.ts/json-rpc-provider.ts:66:16)
-      at EthersProviderWrapper.<anonymous> (node_modules/@ethersproject/providers/src.ts/json-rpc-provider.ts:642:20)
-      at step (node_modules/@ethersproject/providers/lib/json-rpc-provider.js:48:23)
-      at Object.throw (node_modules/@ethersproject/providers/lib/json-rpc-provider.js:29:53)
-      at rejected (node_modules/@ethersproject/providers/lib/json-rpc-provider.js:21:65)
-      at runMicrotasks (<anonymous>)
-      at processTicksAndRejections (node:internal/process/task_queues:96:5)
 
 
 
