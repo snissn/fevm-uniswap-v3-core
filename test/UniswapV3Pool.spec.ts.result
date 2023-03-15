@@ -183,21 +183,21 @@
       ✔ time increase above range is not counted
       ✔ positions minted after time spent
       ✔ overlapping liquidity is aggregated
-      1) relative behavior of snapshots
+      ✔ relative behavior of snapshots
     fees overflow scenarios
       ✔ up to max uint 128
       ✔ overflow max uint 128
       ✔ overflow max uint 128 after poke burns fees owed to 0
-      2) two positions at the same snapshot
+      ✔ two positions at the same snapshot
       ✔ two positions 1 wei of fees apart overflows exactly once
     swap underpayment tests
-      3) underpay zero for one and exact in
+      ✔ underpay zero for one and exact in
       ✔ pay in the wrong token zero for one and exact in
       ✔ overpay zero for one and exact in
-      4) underpay zero for one and exact out
+      ✔ underpay zero for one and exact out
       ✔ pay in the wrong token zero for one and exact out
       ✔ overpay zero for one and exact out
-      5) underpay one for zero and exact in
+      ✔ underpay one for zero and exact in
       ✔ pay in the wrong token one for zero and exact in
       ✔ overpay one for zero and exact in
       ✔ underpay one for zero and exact out
@@ -205,57 +205,5 @@
       ✔ overpay one for zero and exact out
 
 
-  161 passing (2h)
-  5 failing
-
-  1) UniswapV3Pool
-       #snapshotCumulativesInside
-         relative behavior of snapshots:
-     Error: missing revert data in call exception; Transaction reverted without a reason string [ See: https://links.ethers.org/v5-errors-CALL_EXCEPTION ] (data="0x", transaction={"from":"0xF113C0c7741E1351A6263c7e8cF693494BCf58F7","to":"0xD037ebD92968A62Fb244E0677e665c16Fe6C19d6","data":"0xa38807f2fffffffffffffffffffffffffffffffffffffffffffffffffffffffffff2764cffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffc4","accessList":null}, error={"name":"ProviderError","_stack":"ProviderError: HttpProviderError\n    at HttpProvider.request (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/hardhat/src/internal/core/providers/http.ts:83:19)\n    at LocalAccountsProvider.request (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/hardhat/src/internal/core/providers/accounts.ts:187:34)\n    at runMicrotasks (<anonymous>)\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)\n    at async EthersProviderWrapper.send (/Users/alex/Documents/Work/mob/filecoin/uniswap-v3-core/node_modules/@nomiclabs/hardhat-ethers/src/internal/ethers-provider-wrapper.ts:13:20)","code":1,"_isProviderError":true}, code=CALL_EXCEPTION, version=providers/5.7.2)
-      at Logger.makeError (node_modules/@ethersproject/providers/node_modules/@ethersproject/logger/src.ts/index.ts:269:28)
-      at Logger.throwError (node_modules/@ethersproject/providers/node_modules/@ethersproject/logger/src.ts/index.ts:281:20)
-      at checkError (node_modules/@ethersproject/providers/src.ts/json-rpc-provider.ts:66:16)
-      at EthersProviderWrapper.<anonymous> (node_modules/@ethersproject/providers/src.ts/json-rpc-provider.ts:642:20)
-      at step (node_modules/@ethersproject/providers/lib/json-rpc-provider.js:48:23)
-      at Object.throw (node_modules/@ethersproject/providers/lib/json-rpc-provider.js:29:53)
-      at rejected (node_modules/@ethersproject/providers/lib/json-rpc-provider.js:21:65)
-      at runMicrotasks (<anonymous>)
-      at processTicksAndRejections (node:internal/process/task_queues:96:5)
-
-  2) UniswapV3Pool
-       fees overflow scenarios
-         two positions at the same snapshot:
-     AssertionError: amount0 of other: Expected "340282366920938463463374607431768211455" to be equal 0
-      at Context.<anonymous> (test/UniswapV3Pool.spec.ts:1900:46)
-      at runMicrotasks (<anonymous>)
-      at processTicksAndRejections (node:internal/process/task_queues:96:5)
-
-  3) UniswapV3Pool
-       swap underpayment tests
-         underpay zero for one and exact in:
-     AssertionError: Expected transaction to be reverted with IIA, but other exception was thrown: ProviderError: failed to estimate gas: message execution failed: exit 33, reason: message failed with backtrace:
-00: f03032 (method 3844450837) -- contract reverted (33)
-01: f03031 (method 3844450837) -- contract reverted (33)
- (RetCode=33)
-  
-
-  4) UniswapV3Pool
-       swap underpayment tests
-         underpay zero for one and exact out:
-     AssertionError: Expected transaction to be reverted with IIA, but other exception was thrown: ProviderError: failed to estimate gas: message execution failed: exit 33, reason: message failed with backtrace:
-00: f03059 (method 3844450837) -- contract reverted (33)
-01: f03058 (method 3844450837) -- contract reverted (33)
- (RetCode=33)
-  
-
-  5) UniswapV3Pool
-       swap underpayment tests
-         underpay one for zero and exact in:
-     AssertionError: Expected transaction to be reverted with IIA, but other exception was thrown: ProviderError: failed to estimate gas: message execution failed: exit 33, reason: message failed with backtrace:
-00: f03086 (method 3844450837) -- contract reverted (33)
-01: f03085 (method 3844450837) -- contract reverted (33)
- (RetCode=33)
-  
-
-
+  166 passing
 

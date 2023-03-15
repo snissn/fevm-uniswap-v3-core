@@ -1785,7 +1785,7 @@ describe('UniswapV3Pool', () => {
     })
     it('relative behavior of snapshots', async () => {
       await pool.advanceTime(5)
-      await mint(wallet.address, getMinTick(tickSpacing), tickLower, 15)
+      await (await mint(wallet.address, getMinTick(tickSpacing), tickLower, 15)).wait()
       const {
         secondsPerLiquidityInsideX128: secondsPerLiquidityInsideX128Start,
         tickCumulativeInside: tickCumulativeInsideStart,
@@ -1867,7 +1867,7 @@ describe('UniswapV3Pool', () => {
       await flash(0, 0, wallet.address, MaxUint128, MaxUint128)
       await pool.burn(minTick, maxTick, 0)
       await flash(0, 0, wallet.address, 1, 1)
-      await pool.burn(minTick, maxTick, 0)
+      await (await pool.burn(minTick, maxTick, 0)).wait()
 
       const { amount0, amount1 } = await pool.callStatic.collect(
         wallet.address,
@@ -1891,7 +1891,7 @@ describe('UniswapV3Pool', () => {
       expect(feeGrowthGlobal0X128).to.eq(MaxUint128.shl(128))
       await flash(0, 0, wallet.address, 2, 0)
       await pool.burn(minTick, maxTick, 0)
-      await pool.connect(other).burn(minTick, maxTick, 0)
+      await (await pool.connect(other).burn(minTick, maxTick, 0)).wait()
       let { amount0 } = await pool.callStatic.collect(wallet.address, minTick, maxTick, MaxUint128, MaxUint128)
       expect(amount0, 'amount0 of wallet').to.eq(0)
       ;({ amount0 } = await pool
@@ -1929,7 +1929,7 @@ describe('UniswapV3Pool', () => {
       await token0.approve(underpay.address, constants.MaxUint256)
       await token1.approve(underpay.address, constants.MaxUint256)
       await pool.initialize(encodePriceSqrt(1, 1))
-      await mint(wallet.address, minTick, maxTick, expandTo18Decimals(1))
+      await (await mint(wallet.address, minTick, maxTick, expandTo18Decimals(1))).wait()
     })
 
     it('underpay zero for one and exact in', async () => {
