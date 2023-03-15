@@ -502,7 +502,7 @@ describe('UniswapV3Pool swap tests', () => {
       afterEach('check can burn positions', async () => {
         for (const { liquidity, tickUpper, tickLower } of poolCase.positions) {
           await pool.burn(tickLower, tickUpper, liquidity)
-          await pool.collect(POSITION_PROCEEDS_OUTPUT_ADDRESS, tickLower, tickUpper, MaxUint128, MaxUint128)
+          await (await pool.collect(POSITION_PROCEEDS_OUTPUT_ADDRESS, tickLower, tickUpper, MaxUint128, MaxUint128)).wait()
         }
       })
 
