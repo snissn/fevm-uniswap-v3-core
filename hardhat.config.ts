@@ -5,13 +5,6 @@ import '@nomiclabs/hardhat-etherscan'
 
 require('dotenv').config()
 
-var nodeUrl;
-try {
-  nodeUrl = require('../../kit').initNode(1000, 200);
-} catch {
-  nodeUrl = '';
-}
-
 export default {
   networks: {
     hardhat: {
