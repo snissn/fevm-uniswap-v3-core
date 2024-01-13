@@ -48,11 +48,11 @@ export default {
       accounts: [process.env.DEPLOYER_PRIVATE_KEY, process.env.USER_1_PRIVATE_KEY],
     },
     itest: {
-      url: nodeUrl,
+      url: ""http://localhost:8545",
       accounts: [process.env.DEPLOYER_PRIVATE_KEY, process.env.USER_1_PRIVATE_KEY],
     },
     local: {
-      url: process.env.LOCAL_NODE_URL,
+      url: ""http://localhost:8545",
       accounts: [process.env.DEPLOYER_PRIVATE_KEY, process.env.USER_1_PRIVATE_KEY],
     }
   },
