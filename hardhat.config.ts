@@ -6,6 +6,7 @@ import '@nomiclabs/hardhat-etherscan'
 require('dotenv').config()
 
 export default {
+  defaultNetwork: "local",
   networks: {
     hardhat: {
       allowUnlimitedContractSize: false,
