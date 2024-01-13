@@ -52,7 +52,7 @@ export default {
       accounts: [process.env.DEPLOYER_PRIVATE_KEY, process.env.USER_1_PRIVATE_KEY],
     },
     local: {
-      url: "http://localhost:8545",
+      url: "http://localhost:8545/rpc/v1",
       accounts: [process.env.DEPLOYER_PRIVATE_KEY, process.env.USER_1_PRIVATE_KEY],
     }
   },
