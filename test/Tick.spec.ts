@@ -12,6 +12,9 @@ describe('Tick', () => {
   let tickTest: TickTest
 
   beforeEach('deploy TickTest', async () => {
+    // Print out the RPC URL
+    console.log("RPC URL:", network.config.url);
+
     const tickTestFactory = await ethers.getContractFactory('TickTest')
     tickTest = (await tickTestFactory.deploy()) as TickTest
   })
