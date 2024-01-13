@@ -52,7 +52,7 @@ export default {
       accounts: [process.env.DEPLOYER_PRIVATE_KEY, process.env.USER_1_PRIVATE_KEY],
     },
     local: {
-      url: process.env.LOCAL_NODE_URL + "/rpc/v1",
+      url: process.env.LOCAL_NODE_URL,
       accounts: [process.env.DEPLOYER_PRIVATE_KEY, process.env.USER_1_PRIVATE_KEY],
     }
   },
