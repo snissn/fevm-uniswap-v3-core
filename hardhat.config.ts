@@ -48,7 +48,7 @@ export default {
       accounts: [process.env.DEPLOYER_PRIVATE_KEY, process.env.USER_1_PRIVATE_KEY],
     },
     itest: {
-      url: nodeUrl + "/rpc/v1",
+      url: nodeUrl,
       accounts: [process.env.DEPLOYER_PRIVATE_KEY, process.env.USER_1_PRIVATE_KEY],
     },
     local: {
