@@ -65,6 +65,10 @@ export default {
   mocha: {
     timeout: 100000000
   },
+  typechain: {
+    outDir: "typechain",
+    target: "ethers-v5",
+  },
   solidity: {
     version: '0.7.6',
     settings: {
