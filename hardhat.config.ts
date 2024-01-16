@@ -49,11 +49,11 @@ export default {
       accounts: [process.env.DEPLOYER_PRIVATE_KEY, process.env.USER_1_PRIVATE_KEY],
     },
     itest: {
-      url: "http://localhost:8545",
+      url: "http://127.0.0.1:8545",
       accounts: [process.env.DEPLOYER_PRIVATE_KEY, process.env.USER_1_PRIVATE_KEY],
     },
     local: {
-      url: "http://127.0.0.1:8545/",
+      url: "http://127.0.0.1:8545",
       accounts: [process.env.DEPLOYER_PRIVATE_KEY, process.env.USER_1_PRIVATE_KEY],
     }
   },
